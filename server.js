@@ -1,0 +1,83 @@
+// Get dependencies
+const log4js = require('log4js');
+const express = require('express');
+const path = require('path');
+const http = require('http');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const app = express();
+
+
+// Parsers for POST data
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+//configuring logger ----
+// Configuration file defines three appenders that are children of the clustered appender.
+// The clustered appender makes sure that only the master process writes to the log files
+// Three log files are defined: log/app.log gets all the log messages and is configured to
+// rotate everyday. log/errors.log uses the logLevelFilter to only get ERROR messages;
+// log/access.log contains only the http request logs, using the connect-logger, and is configured to rotate every day.
+log4js.configure(require("./server/resources/log4js.json"));
+app.use(log4js.connectLogger(log4js.getLogger("http"), { level: 'auto' }));
+var console = log4js.getLogger('[access]');
+
+// Point static path to dist
+var port;
+var server_detail = {};
+console.info("ENV is ::", process.env.ENV);
+if (!process.env.PORT) { console.info("PORT :: undefined, using defaults") }
+
+var environment = process.env.ENV || 'development';
+if (environment === 'production') {
+    port = 8888;
+    server_detail = {host:"api.pahadi.me", self_port:7700, protocol:"http://", env:"production", mailerver_host : "mail.pahadi.me", mailerver_host : "8062"}
+} else if (environment === 'staging') {
+    port = 8888;
+    server_detail = {host:"54.225.122.8", self_port:7000, protocol:"http://", env:"staging", mailerver_host : "54.152.105.234", mailerver_host : "8041"}
+} else {
+    port = 8888;
+    server_detail = {host:"54.225.122.8", self_port:6600, protocol:"http://", env:"development", mailerver_host : "54.152.105.234", mailerver_host : "8041"}
+}
+
+var connection = require('./configs/database')(mongoose);
+var models = require('./models/models')(connection);
+
+// Define and set API routes
+require('./server/routes')(app, port,environment,server_detail,console,models); // load our routes and pass in our app and fully configured passport
+
+
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+app.set('port', port);
+
+
+app.set('view engine', 'html'); // set up html for templating
+app.engine('.html', require('ejs').__express);
+// console.info(__dirname);
+app.set('views', __dirname + '/dist');
+app.use(express.static(path.join(__dirname, '/dist')));
+//app.use(express.session({ secret: 'keyboard cat' }));// persistent login sessions
+var methodOverride = require('method-override')
+var json = require('express-json')
+var urlEncoded = require("body-parser");
+app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(json);
+app.use(urlEncoded);
+app.use(cors); // for allowing cross origin calls
+console.info("Static path ", path.join(__dirname, '/dist'));
+
+/**
+ * Create HTTP server.
+ */
+const server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(port, function () { console.info('Server running on localhost', port) });
+
