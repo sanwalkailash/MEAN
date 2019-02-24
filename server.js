@@ -8,10 +8,10 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
 
-
 // Parsers for POST data
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: false }));
+
 
 //configuring logger ----
 // Configuration file defines three appenders that are children of the clustered appender.
@@ -41,6 +41,7 @@ if (environment === 'production') {
     server_detail = {host:"54.225.122.8", self_port:6600, protocol:"http://", env:"development", mailerver_host : "54.152.105.234", mailerver_host : "8041"}
 }
 
+mongoose.Promise = global.Promise;
 var connection = require('./configs/database')(mongoose);
 var models = require('./models/models')(connection);
 
@@ -57,12 +58,14 @@ app.set('port', port);
 
 
 app.set('view engine', 'html'); // set up html for templating
-app.engine('.html', require('ejs').__express);
+app.engine('html', require('ejs').__express);
 // console.info(__dirname);
 app.set('views', __dirname + '/dist');
 app.use(express.static(path.join(__dirname, '/dist')));
 //app.use(express.session({ secret: 'keyboard cat' }));// persistent login sessions
-var methodOverride = require('method-override')
+
+
+var methodOverride = require('method-override') // allow forms to send put and delete req.
 var json = require('express-json')
 var urlEncoded = require("body-parser");
 app.use(methodOverride('X-HTTP-Method-Override'));

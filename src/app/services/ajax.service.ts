@@ -45,22 +45,37 @@ export class AjaxService {
 
   apiCall_GET(perameterjson, apiPath) {
     console.log("perameter json for get call is ",perameterjson);
-    let token = localStorage.getItem('auth_token');
-    const headers = new Headers({ "auth_token": token });
-    let options = new RequestOptions({ headers: headers });
+    let url=environment.API_INVALID_PATH;
+    switch(apiPath) {
+        case environment.API_LIST_IDEAS:
+            url = environment.API_LIST_IDEAS+"?page="+perameterjson.page;
+            break;
+        case environment.API_CITIES_INDIA:
+            url = environment.API_LIST_IDEAS+"?page="+perameterjson.page;
+            break;
+        default:
+          console.error("ERROR -- : @apiCall_GET api path not added.");
+          return Observable.throw("api path not added.");
+    }
+    console.log("called api ["+url+"]");
+    return this.util.getHttpClient().get(url)
+    .catch((error: Response) => Observable.throw(error || 'Server error'));
+  }
+
+ apiCall_DELETE(data, apiPath) {
+    console.log("apiCall_DELETE data ",data);
     let url=environment.API_INVALID_PATH;
 
     switch(apiPath) {
-        case environment.API_LOGIN:
-            url = environment.API_LOGIN+'?userid='+perameterjson.userid+"&startIndex="+perameterjson.startIndex+"&pageSize="+perameterjson.pageSize;
+        case environment.API_DELETE_IDEA:
+            url = environment.API_DELETE_IDEA+data._id;
             break;
         default:
-            console.error("ERROR -- : @apiCall_GET api path not added.");
+            console.error("ERROR -- : @apiCall_DELETE api path not added.");
+return Observable.throw("api path not added.");
     }
-
     console.log("called api ["+url+"]");
-    return this.util.getHttpClient().get(url)
-    .map((res: Response) => res.json())
+    return this.util.getHttpClient().delete(url)
     .catch((error: Response) => Observable.throw(error || 'Server error'));
   }
 
@@ -69,35 +84,35 @@ export class AjaxService {
     let url=environment.API_INVALID_PATH;
 
     switch(apiPath) {
-        case environment.API_LOGIN:
-            url = environment.API_LOGIN;
+        case environment.API_DELETE_IDEA:
+            url = environment.API_DELETE_IDEA;
             break;
         default:
             console.error("ERROR -- : @apiCall_PUT api path not added.");
+return Observable.throw("api path not added.");
     }
-
     console.log("called api ["+url+"]");
     return this.util.getHttpClient().put(url, data)
-    .map((res: Response) => res.json())
     .catch((error: Response) => Observable.throw(error || 'Server error'));
   }
 
   apiCall_POST(data, apiPath) {
     console.log("post data ",data);
-    let token = localStorage.getItem('auth_token');
+    console.log("post apiPath ",apiPath);
     let url=environment.API_INVALID_PATH;
-
     switch(apiPath) {
         case environment.API_LOGIN:
             url = environment.API_LOGIN;
             break;
+        case environment.API_SAVE_IDEAS:
+            url = environment.API_SAVE_IDEAS;
+            break;
         default:
-            console.error("ERROR -- : @apiCall_PUT api path not added.");
+            console.error("ERROR -- : @apiCall_POST api path not added.");
+        return Observable.throw("api path not added.");
     }
-
     console.log("called api ["+url+"]");
     return this.util.getHttpClient().post(url, data)
-    .map((res: Response) => res.json())
     .catch((error: Response) => Observable.throw(error || 'Server error'));
   }
 

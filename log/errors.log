@@ -1,0 +1,375 @@
+[2019-02-17T11:34:41.729] [ERROR] [access] - TypeError: newIdea.toObject is not a function
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:51:51)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+[2019-02-17T12:57:08.952] [ERROR] [access] - TypeError: req.body.toObject is not a function
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:52:54)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+[2019-02-17T13:00:02.333] [ERROR] [access] - TypeError: (intermediate value).findByIdAndUpdate is not a function
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:52:38)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+[2019-02-17T13:04:11.242] [ERROR] [access] - { MongooseError: Callback must be a function, got [object Object]
+    at new MongooseError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/mongooseError.js:13:11)
+    at Function.Model.$wrapCallback (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:4682:11)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:3283:22)
+    at Function.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:3200:10)
+    at model.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/document.js:572:41)
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:52:38)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+  message: 'Callback must be a function, got [object Object]',
+  name: 'MongooseError' }
+[2019-02-17T13:05:58.508] [ERROR] [access] - { MongooseError: Callback must be a function, got [object Object]
+    at new MongooseError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/mongooseError.js:13:11)
+    at Function.Model.$wrapCallback (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:4682:11)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:3283:22)
+    at Function.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:3200:10)
+    at model.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/document.js:572:41)
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:52:38)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+  message: 'Callback must be a function, got [object Object]',
+  name: 'MongooseError' }
+[2019-02-17T13:08:41.901] [ERROR] [access] - { MongooseError: Callback must be a function, got [object Object]
+    at new MongooseError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/mongooseError.js:13:11)
+    at Function.Model.$wrapCallback (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:4682:11)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:3283:22)
+    at Function.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:3200:10)
+    at model.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/document.js:572:41)
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:52:38)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+  message: 'Callback must be a function, got [object Object]',
+  name: 'MongooseError' }
+[2019-02-17T13:17:29.818] [ERROR] [access] - { MongoError: Performing an update on the path '_id' would modify the immutable field '_id'
+    at Function.create (/Users/chalk/office/personal/MEAN/node_modules/mongodb-core/lib/error.js:43:12)
+    at toError (/Users/chalk/office/personal/MEAN/node_modules/mongodb/lib/utils.js:149:22)
+    at coll.s.topology.update (/Users/chalk/office/personal/MEAN/node_modules/mongodb/lib/operations/collection_ops.js:1414:39)
+    at /Users/chalk/office/personal/MEAN/node_modules/mongodb-core/lib/connection/pool.js:532:18
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  driver: true,
+  name: 'MongoError',
+  index: 0,
+  code: 66,
+  errmsg: 'Performing an update on the path \'_id\' would modify the immutable field \'_id\'',
+  [Symbol(mongoErrorContextSymbol)]: {} }
+[2019-02-17T13:30:38.526] [ERROR] [access] - TypeError: updateObj.updateOne is not a function
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:44:31)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+[2019-02-17T13:30:40.387] [ERROR] [access] - TypeError: updateObj.updateOne is not a function
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:44:31)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+[2019-02-17T13:34:44.298] [ERROR] [access] - ReferenceError: mongoose is not defined
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:46:26)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+[2019-02-17T13:40:07.703] [ERROR] [access] - { ObjectParameterError: Parameter "filter" to update() must be an object, got false
+    at new ObjectParameterError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/objectParameter.js:25:11)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3878:17)
+    at model.Query.Query.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3685:10)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mquery/lib/mquery.js:187:20)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1325:32)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mquery/lib/mquery.js:2473:11)
+    at model.Query.updateOne (/Users/chalk/office/personal/MEAN/node_modules/mquery/lib/mquery.js:2394:10)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3899:25)
+    at model.Query.Query.updateOne (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3792:10)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:3297:16)
+    at Function.updateOne (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:3247:10)
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:44:39)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+  message: 'Parameter "filter" to update() must be an object, got false',
+  name: 'ObjectParameterError' }
+[2019-02-17T13:42:32.051] [ERROR] [access] - TypeError: req.body.toObject is not a function
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:46:30)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+[2019-02-17T13:42:35.980] [ERROR] [access] - TypeError: req.body.toObject is not a function
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:46:30)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+[2019-02-17T13:42:55.760] [ERROR] [access] - { ObjectParameterError: Parameter "filter" to update() must be an object, got false
+    at new ObjectParameterError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/objectParameter.js:25:11)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3878:17)
+    at model.Query.Query.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3685:10)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mquery/lib/mquery.js:187:20)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1325:32)
+    at model.Query.Query.findOneAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:2808:10)
+    at Function.Model.findOneAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:2246:13)
+    at Function.Model.findByIdAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:2366:32)
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:44:39)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+  message: 'Parameter "filter" to update() must be an object, got false',
+  name: 'ObjectParameterError' }
+[2019-02-17T14:20:47.981] [ERROR] [access] - { ObjectParameterError: Parameter "filter" to update() must be an object, got false
+    at new ObjectParameterError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/objectParameter.js:25:11)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3878:17)
+    at model.Query.Query.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3685:10)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mquery/lib/mquery.js:187:20)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1325:32)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mquery/lib/mquery.js:2473:11)
+    at model.Query.update (/Users/chalk/office/personal/MEAN/node_modules/mquery/lib/mquery.js:2278:10)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3899:25)
+    at model.Query.Query.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3685:10)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:3297:16)
+    at Function.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:3200:10)
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:49:39)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+  message: 'Parameter "filter" to update() must be an object, got false',
+  name: 'ObjectParameterError' }
+[2019-02-17T14:27:23.848] [ERROR] [access] - { ObjectParameterError: Parameter "filter" to update() must be an object, got false
+    at new ObjectParameterError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/objectParameter.js:25:11)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3878:17)
+    at model.Query.Query.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3685:10)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mquery/lib/mquery.js:187:20)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1325:32)
+    at model.Query.Query.findOneAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:2808:10)
+    at Function.Model.findOneAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:2246:13)
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:49:39)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+  message: 'Parameter "filter" to update() must be an object, got false',
+  name: 'ObjectParameterError' }
+[2019-02-17T14:30:12.483] [ERROR] [access] - { ObjectParameterError: Parameter "filter" to update() must be an object, got false
+    at new ObjectParameterError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/objectParameter.js:25:11)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3878:17)
+    at model.Query.Query.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3685:10)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mquery/lib/mquery.js:187:20)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1325:32)
+    at model.Query.Query.findOneAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:2808:10)
+    at Function.Model.findOneAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:2246:13)
+    at Function.Model.findByIdAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:2366:32)
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:49:39)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+  message: 'Parameter "filter" to update() must be an object, got false',
+  name: 'ObjectParameterError' }
+[2019-02-17T14:30:38.403] [ERROR] [access] - { ObjectParameterError: Parameter "filter" to update() must be an object, got false
+    at new ObjectParameterError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/objectParameter.js:25:11)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3878:17)
+    at model.Query.Query.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3685:10)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mquery/lib/mquery.js:187:20)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1325:32)
+    at model.Query.Query.findOneAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:2808:10)
+    at Function.Model.findOneAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:2246:13)
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:49:39)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+  message: 'Parameter "filter" to update() must be an object, got false',
+  name: 'ObjectParameterError' }
+[2019-02-17T14:32:44.067] [ERROR] [access] - { ObjectParameterError: Parameter "filter" to update() must be an object, got false
+    at new ObjectParameterError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/objectParameter.js:25:11)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3878:17)
+    at model.Query.Query.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3685:10)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mquery/lib/mquery.js:187:20)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1325:32)
+    at model.Query.Query.findOneAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:2808:10)
+    at Function.Model.findOneAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:2246:13)
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:49:39)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+  message: 'Parameter "filter" to update() must be an object, got false',
+  name: 'ObjectParameterError' }
+[2019-02-17T14:33:45.230] [ERROR] [access] - { ObjectParameterError: Parameter "filter" to update() must be an object, got false
+    at new ObjectParameterError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/objectParameter.js:25:11)
+    at _update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3878:17)
+    at model.Query.Query.update (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:3685:10)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mquery/lib/mquery.js:187:20)
+    at model.Query.Query.setOptions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1325:32)
+    at model.Query.Query.findOneAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:2808:10)
+    at Function.Model.findOneAndUpdate (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/model.js:2246:13)
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:49:39)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+  message: 'Parameter "filter" to update() must be an object, got false',
+  name: 'ObjectParameterError' }
+[2019-02-17T16:21:36.122] [ERROR] [access] - ReferenceError: newIdea is not defined
+    at saveIdea (/Users/chalk/office/personal/MEAN/server/api/activityApi.js:27:43)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at getClientIp (/Users/chalk/office/personal/MEAN/server/api/Utility.js:46:12)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)

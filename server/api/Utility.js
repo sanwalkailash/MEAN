@@ -1,4 +1,4 @@
-module.exports = function (serverInfo,console) {
+module.exports = function (app, port,environment,server,console,models) {
     
 
     return{
@@ -26,5 +26,24 @@ module.exports = function (serverInfo,console) {
                 return false;
             }
           },
+          getClientIp : function(req,res,next) {
+          console.info("@getClientIp...")
+           var ipAddress;
+           // The request may be forwarded from local web server.
+           var forwardedIpsStr = req.header('x-forwarded-for');
+           if (forwardedIpsStr) {
+             // 'x-forwarded-for' header may return multiple IP addresses in
+             // the format: "client IP, proxy 1 IP, proxy 2 IP" so take the
+             // the first one
+             var forwardedIps = forwardedIpsStr.split(',');
+             ipAddress = forwardedIps[0];
+           }
+           if (!ipAddress) {
+             // If request was not forwarded
+             ipAddress = req.connection.remoteAddress;
+           }
+           console.info("client ip is -- ",ipAddress)
+           next()
+         }
     }
 }

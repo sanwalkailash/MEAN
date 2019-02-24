@@ -76,7 +76,7 @@ constructor(private inj: Injector, private util: UtilService) {
     req = req.clone({ headers: req.headers.set('locale', environment.APP_LOCALE) });
     req = req.clone({ headers: req.headers.set('appname', environment.APP_NAME) });
     // console.info(req);
-    const token: string = localStorage.getItem('auth_token');
+    const token: string = localStorage.getItem('token');
     if (token) {
       req = req.clone({ headers: req.headers.set('Authorization', token) });
     } else {
@@ -136,7 +136,7 @@ constructor(private inj: Injector, private util: UtilService) {
       const body = { refreshToken: localStorage.getItem("refresh_token") };
       this.util.getHttpClient().post(environment.REFRESH_API, body, ).subscribe((data: any) => {
         console.info(environment.APP_REFRESH_COUNT, "th refresh called,response", data);
-        this.util.setKeyVauleOnlocalStorage("auth_token", data.data.response.token);
+        this.util.setKeyVauleOnlocalStorage("token", data.data.response.token);
         this.util.setKeyVauleOnlocalStorage("refresh_token", data.data.response.refreshToken);
         this.retryFailedRequests(subscriber, next)
       },

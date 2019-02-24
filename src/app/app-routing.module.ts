@@ -7,14 +7,18 @@ import { UtilService } from './services/util.service';
 import { SigninComponent } from './signin/signin.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { IdeasComponent } from './ideas/ideas.component';
 
 const routes: Routes = [
   { path: 'login', component: SigninComponent },
-  { path: 'unknown', component: PageNotFoundComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/unknown', pathMatch: 'full' },
   { path: 'home', component: HomeComponent  },
-  ]
+  { path: environment.ROUTE_IDEAS, component: IdeasComponent  },
+  { path: environment.ROUTE_ADD_IDEA, component: IdeasComponent  },
+  { path: environment.ROUTE_EDIT_IDEA, component: IdeasComponent  },
+  { path: 'oops', component: PageNotFoundComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/oops', pathMatch: 'full' },
+]
 
 
 @NgModule({
@@ -30,7 +34,7 @@ const routes: Routes = [
 
 
 export class AppRoutingModule {
-    
+
 }
 
 

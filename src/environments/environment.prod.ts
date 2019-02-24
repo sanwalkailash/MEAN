@@ -1,11 +1,11 @@
 export const environment = {
 production: true,
 
-CONSUMER_KEY: 'someReallyStupidTextWhichWeHumansCantRead',
+MAP_KEY: 'AIzaSyAcV5MCnHAvcYREiHZfZR58oMTs_msaJvc',
 codes: [ 'AB', 'AC', 'XYZ' ],
 
 
-APP_NAME : "Chalk Portal",
+APP_NAME : "travellineOne",
 APP_LOCALE : "en",
 APP_REFRESH_COUNT : 0,
 
@@ -14,18 +14,30 @@ APP_CONFIG: "",
 APP_VOCAB: "",
 ROUTE_CONFIG: "",
 
+// app route paths
+ROUTE_LOGIN :'login',
+ROUTE_UNKNOWN :'unknown',
+ROUTE_HOME :'home',
+ROUTE_IDEAS :'ideas',
+ROUTE_ADD_IDEA :'ideas/add',
+ROUTE_EDIT_IDEA:"ideas/edit/:id",
+
 // api paths --
 apiHost: 'https://api.somedomain.com/prod/v1/',
-API_LOGIN: 'https://api.somedomain.com/prod/v1/',
+API_LOGIN: '/login/v1',
 API_INVALID_PATH : "/indalid",
 CONFIG_API : "/api/config",
 ROUTE_CONFIG_API : "/getrouteconfigs/",
+API_CITIES_INDIA : "/india/cities"
 REFRESH_API : "/api/refresh",
+API_SAVE_IDEAS:"/save/idea/v1",
+API_LIST_IDEAS:"/list/ideas/v1",
+API_DELETE_IDEA:"ideas/delete/v1/",
 
 // error codes --
 HTTP_ERROR_404 : 404,
-API_STATUS_SUCCESS : "success",
-API_STATUS_FAILURE : "failure",
+API_STATUS_SUCCESS : 1,
+API_STATUS_FAILURE : 0,
 
 // NOTIFICATION CODES
 APP_NOTIFICATION_LOADING : 0,

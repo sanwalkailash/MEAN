@@ -16,7 +16,10 @@ import { AuthService } from "./auth/auth.service";
 import { TokeninterceptorService } from "./auth/token-interceptor.service";
 import { AjaxService } from "./services/ajax.service";
 import {BroadcastService} from './services/broatcast.service';
-// import {NgxPaginationModule} from 'ngx-pagination';
+
+import {NgxPaginationModule} from 'ngx-pagination';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -26,6 +29,7 @@ import { MessageComponent } from './message/message.component';
 import { SigninComponent } from './signin/signin.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { IdeasComponent } from './ideas/ideas.component';
 
 
 
@@ -38,13 +42,15 @@ import { HomeComponent } from './home/home.component';
     MessageComponent,
     SigninComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    IdeasComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InfiniteScrollModule
   ],
   providers: [
     LoggerService, 

@@ -8,15 +8,15 @@ module.exports = function () {
     var production_port = ":80";
     var dev_port = ":8056";
     var appDetails = {
-        "uptest": {
-            "appKey": "AvayaExl",
+        "test_travelline": {
+            "appKey": "test@travelline",
             "ssoFor": {
                 "nodeApiName": {
                     "method": "post",
                     "url": "/mailReport/fetchDataV2" // api path must  include slash in the begining.
                 }
             },
-            "appname": "Avaya Portal",
+            "appname": "travelline Portal",
             "theme": {
                 "navbar": {
                     "bgColor": "#f08521",
@@ -82,14 +82,14 @@ module.exports = function () {
                 }
             },
             "contact": {
-                        "toEmail": "chalkdigitalsupport@avaya.com",
+                        "toEmail": "support@pahadi.me",
                         "cc": ""
                       }
         },
     }
 
     var routeData = {
-        'uptest': {
+        'test_travelline': {
             "home": {
                 "colors": { "label": "div1", "color": "grey" },
             },
@@ -108,7 +108,7 @@ module.exports = function () {
 
     };
     var routePath = {
-        'uptest': routeData.uptest,
+        'test_travelline': routeData.uptest,
         'uplive': routeData.uplive,
     };
     return {

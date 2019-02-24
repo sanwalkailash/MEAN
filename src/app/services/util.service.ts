@@ -51,6 +51,11 @@ export class UtilService {
       }, 100);
   }
 
+  getCurrentRoutePath() {
+      const targetPath = this.getRouter().url.split('#/'); // "http://localhost:8888/#/ideas/add";
+      return targetPath[targetPath.length - 1].substring(1); // [http://localhost:8888 , ideas/add]
+    }
+
   public logOut():void{
     localStorage.clear();
     this.getRouter().navigate(['/login']);
@@ -61,7 +66,7 @@ export class UtilService {
   }
 
   public getAuthToken(): any {
-    return localStorage.getItem('auth_token');
+    return localStorage.getItem('token');
   }
 
   public saveToStorage(key: string, value: any): void {
@@ -114,4 +119,7 @@ export class UtilService {
   public getDataFromStorageUsingKey(key:string): any {
     return JSON.parse(localStorage.getItem(key));
   }
+
+
+
 }

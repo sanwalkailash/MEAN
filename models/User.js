@@ -1,0 +1,29 @@
+const mongoose = require('mongoose');
+const moment = require('moment');
+const tokenLimit = 65;
+
+
+module.exports = function(connection) {
+
+    const Schema = mongoose.Schema;
+
+    const UserSchema = new Schema({
+        uid:{type:Number},
+        email: {type: String},
+        password: {type: String},
+        location:{type: String},
+        token : {
+            auth_token: {type: String},
+            created_at: {type: Date, required: true, default: moment()}
+        },
+    });
+
+    UserSchema.methods.hasExpired = function() {
+        return (moment().diff(this.token.createDate, 'minutes')) > tokenLimit;
+
+    };
+
+    const User = connection.model('user', UserSchema);
+
+    return User;
+}

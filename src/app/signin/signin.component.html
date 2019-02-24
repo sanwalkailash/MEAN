@@ -1,26 +1,42 @@
-<title>Login | EXL Service | Visitor Assistant</title>
-<div class="logo_continer_home">
-  <a href="#"><img src="assets/images/company-logo/logo.png" alt="EXL Services" /></a>
-</div>
-<div class="input_form">
-  <h4 style="padding-bottom:0;">Log In</h4>
-  <span class="tagline_short height_sht">
+<div class="container">
+  <div class="card " style="max-width: 500px;margin: auto;">
+    <div class="card-body">
+      <div class="logo_continer_home">
+        <a href="#"><img src="assets/images/company-logo/logo.png" alt="EXL Services" /></a>
+      </div>
+      <div class="input_form">
+        <h4 style="padding-bottom:0;">Log In</h4>
+        <span class="tagline_short height_sht">
             Please log In to proceed....
         </span>
-  <form class="form_vma">
-    <div class='input-append'>
-      <input class="input-subdomain_form" placeholder="Email*" type="text" />
-      <input class="input-subdomain_form margin-t" placeholder="Password*" type="text" />
-      <select class="input-subdomain_form margin-t">
-        <option>Location</option>
-        <option>Delhi</option>
-        <option>Gurgoan</option>
-        <option>Mumbai</option>
-        <option>Pune</option>
-        <option>Banglore</option>
-      </select>
+        <form class="px-4 py-3">
+          <div class="form-group">
+            <label for="exampleDropdownFormEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                   [(ngModel)]="loginJSON.login.email" name="email" placeholder="email@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleDropdownFormPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword1"
+                   [(ngModel)]="loginJSON.login.password" name="pass" placeholder="Password" required>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="dropdownCheck">
+            <label class="form-check-label" for="dropdownCheck">
+              Remember me
+            </label>
+          </div>
+          <select class="input-subdomain_form margin-t"
+                  [(ngModel)]="loginJSON.login.location" name="loc" required>
+            <option *ngFor="let city of loginJSON.cities">None</option>
+            <option *ngFor="let city of loginJSON.cities">{{city.city}}</option>
+          </select>
+          <button type="submit" (click)="login()" class="btn btn-primary">Sign in</button>
+        </form>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">New around here? Sign up</a>
+        <a class="dropdown-item" href="#">Forgot password?</a>
+      </div>
     </div>
-    <input type="button" class="btn_big" value="Log In" routerLink="home" />
-  </form>
+  </div>
 </div>
-

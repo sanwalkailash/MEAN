@@ -1,7 +1,7 @@
 module.exports = function(connection) {
-   var statsSavedReport = require("./statsSavedReport")(connection);
 
     return {
-        statsSavedReport: statsSavedReport,
+        ideaSchema: require('./Idea')(connection),
+        userSchema: require('./User')(connection)
     }
 }

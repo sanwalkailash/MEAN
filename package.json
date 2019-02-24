@@ -1,12 +1,13 @@
 {
   "name": "pahadi.here",
   "version": "0.0.0",
+  "main": "server.js",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "prod": "ng build --env=prod",
-    "pwatch": "ng build --env=prod --watch",
+    "build": "ng build --env=prod --watch",
     "dev": "ng build --env=dev",
     "dwatch": "ng build --env=dev --watch",
     "qa": "ng build --env=qa",
@@ -33,6 +34,9 @@
     "method-override": "^3.0.0",
     "moment": "^2.24.0",
     "mongoose": "^5.4.11",
+    "ngx-infinite-scroll": "^0.8.4",
+    "ngx-pagination": "^3.2.1",
+    "nodemon": "^1.18.10",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },

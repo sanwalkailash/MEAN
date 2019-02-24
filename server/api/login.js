@@ -1,9 +1,9 @@
-module.exports = function (serverInfo,console) {
+module.exports = function (app, port,environment,server,console,models) {
   var port = 6600;
 
 
-  var Utility = require("./Utility")(serverInfo)
-  
+  var Utility = require("./Utility")(server,console)
+  const appConstants = require('../AppConstants/Constants')
 
   return {
     login:function(req,res)        {
@@ -13,7 +13,7 @@ module.exports = function (serverInfo,console) {
       console.info("headers",req.headers);
       console.info('body::',body);
       var agentId = body.aID;
-      var host = req.headers.host.split('.')[0];
+      var host = req.headers.host.split('.')[appConstants.success];
       var appName = req.headers.appname;
 
       function callback(error, response, body) {
@@ -29,37 +29,37 @@ module.exports = function (serverInfo,console) {
               responseProfile = JSON.parse(body);
             }
             console.info(responseProfile);
-            if (responseProfile.status == 0) {
+            if (responseProfile.status == appConstants.success) {
               chalkToken = responseProfile.response.token;
 
               if (Utility.isVoid(responseProfile.response.agentInfo.agentPhoto)) {
                 responseProfile.response.agentInfo.agentPhoto = 'images/default.png';
                 res.json({
-                  "status": "success",
+                  "status": appConstants.success,
                   "message": "",
                   "profile": responseProfile.response.agentInfo,
-                  "auth_token": responseProfile.response.token,
+                  "token": responseProfile.response.token,
                   "refreshToken": responseProfile.response.refreshToken,
                 });
               }
               else
                 res.json({
-                  "status": "success",
+                  "status": appConstants.success,
                   "message": "",
                   "profile": responseProfile.response.agentInfo,
-                  "auth_token": responseProfile.response.token,
+                  "token": responseProfile.response.token,
                   "refreshToken": responseProfile.response.refreshToken,
                 });
             } else {
               res.json({
-                "status": "failure",
+                "status": appConstants.failure,
                 "message": responseProfile.edesc,
                 "errorcode": responseProfile.ec
               });
             }
           } else {
             res.json({
-              "status": "failure",
+              "status": appConstants.failure,
               "message": "Error while logging in, Please try again later",
               "errorcode": 500
             });
@@ -67,7 +67,7 @@ module.exports = function (serverInfo,console) {
         }catch(e) {
           console.trace(e);
           res.json({
-            "status": "failure",
+            "status": appConstants.failure,
             "message": "Error while logging in, Please try again later",
             "errorcode": 500
           });
@@ -89,7 +89,7 @@ module.exports = function (serverInfo,console) {
     },
 
     logout: function(req,res)        {
-      req.user.auth_token = null;
+      req.user.token = null;
       req.user.save(function(err,user){
         if (err){
           res.send(500, {'message': err});
@@ -101,7 +101,7 @@ module.exports = function (serverInfo,console) {
       console.info("Here in refresh", req.body);
       var request = require('request');
       var refreshData = {
-        url: serverInfo.protocol+serverInfo.host+":"+port+'/bh/refreshtoken/v1',
+        url: server.protocol+server.host+":"+port+'/bh/refreshtoken/v1',
         method: 'post',
         json: {refreshToken: req.body.refreshToken},
         headers: {'Content-Type': 'application/json'}
@@ -110,11 +110,11 @@ module.exports = function (serverInfo,console) {
       function callback(error, response, body) {
         if(!error && response.statusCode === 200) {
           console.info("Got Refresh Response ::: ", body, response.body);
-          res.json({"status": "success", data: body});
+          res.json({"status": appConstants.success, data: body});
         }
         else {
           console.info("Got Refresh Error ::::", error);
-          res.send(419, {"status": "failure", "message": "Unauthorized"});
+          res.send(419, {"status": appConstants.failure, "message": "Unauthorized"});
         }
       }
       request(refreshData, callback);

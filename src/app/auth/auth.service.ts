@@ -11,7 +11,7 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     var authenticated = false;
-    if (localStorage.getItem("auth_token") !== null)
+    if (localStorage.getItem("token") !== null)
       authenticated = true;
     return authenticated;
   }
