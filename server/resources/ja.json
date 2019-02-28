@@ -13,70 +13,13 @@
         "Privacy": "入力し",
         "Copyrights": "@2017,名とパスワー"
     },
-    "home": {
-        "Signout": "インする",
-        "Profile": "なたのユ",
-        "AddPoi": "力して",
-        "NoPoi": "た!のユーザー名を入力してく :(",
-        "AllPoi": "て 入力し",
-        "AddNewPoi":"名を入 力 してく",
-        "Show": "入力し",
-        "Status": "入力して",
-        "PoiName": "入力して 入",
-        "LocalName":"入力し 入力し",
-        "PoiLocations": "入力 して入力して",
-        "TargetingType":"して入 Tyし",
-        "Actions": "入力",
-        "Search": "入力",
-        "ShowingFrom": "入力 入",
-        "To": "入",
-        "Of":"力",
-        "Entries": "入力して",
-        "Edit": "入力して",
-        "View": "入力して",
-        "Delete": "入力して",
-        "search":"Search Your POI",
-        "chooseCountry":"Choose Country"
-    },
-    "edit":{
-        "id":"Japanese:ID",
-        "business":"BUSINESS",
-        "street":"STREET",
-        "city":"CITY",
-        "state":"STATE",
-        "zip":"ZIP",
-        "country":"COUNTRY",
-        "radius":"RADIUS",
-        "unit":"UNIT",
-        "latitude":"LATITUDE",
-        "longitude":"LONGITUDE",
-        "startDate":"START DATE",
-        "endDate":"END DATE",
-        "addPoiLocations":"Add POI Locations",
-        "NoLocationPresent":"No Location Found",
-        "search":"Search Store in zip,city,state",
-        "setMonitoring":"Monitoring Dates",
-        "timezone":"TIMEZONE",
-        "update":"UPDATE",
-        "deleteLocation":"Delete ",
-        "geocodeLocation":"Geocode ",
-        "updateMonitoring":"Update ",
-        "monitoringRadius":"Radius",
-        "distanceUnit":"Unit",
-        "savePage":"Save Page",
-        "reloadPage":"Reload Page"
-    },
     "messages": {
         "1": "Oops! ーザー名を入力してく ",
-        "2": "名を入力し...",
-        "3": "を入力し poi..."
+        "2": "名を入力し..."
     },
     "errors":{
         "0":{"code":0, "message":"Loading...","image":""},
-        "1":{"code":1, "message":"ah! no POI added :(","image":"../assets/images/no_poi.png"},
-        "2":{"code":2, "message":"ah! no POI locations added :(","image":"../assets/images/error.jpg"},
         "3":{"code":3, "message":"Please check your Internet Connection !","image":"../assets/images/error.jpg"},
-        "4":{"code":4, "message":"Oops! something is not right.","image":"../assets/images/error.jpg"},
-        "5":{"code":5, "message":"ah! no POI found :(","image":"../assets/images/no_poi.png"}
+        "4":{"code":4, "message":"Oops! something is not right.","image":"../assets/images/error.jpg"}
     }
 }

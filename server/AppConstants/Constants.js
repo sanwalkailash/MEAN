@@ -10,11 +10,23 @@ module.exports = Object.freeze({
     "uid":"",
     "title":"",
     "details":"",
-    "userId":"",
     "lat":"",
     "lng":"",
     "created_at":"",
-    "created_at":""
+    "created_at":"",
+    "like":0,
+    "views":0
   },
+  "user":{
+         "uid":0,
+         "email": "",
+         "password": "",
+         "location":{
+                    "city": "",
+                    "latitude": 0.0,
+                    "longitude": 0.0
+                },
+         "token" : "",
+     },
   "serverError":"Server Error, Please try again !"
 });

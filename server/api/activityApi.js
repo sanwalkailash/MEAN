@@ -32,6 +32,7 @@ module.exports = function (app, port,environment,server,console,models) {
                                              });
                                     },
                                     err => {
+                                        console.error(err)
                                         errors.push(appConstants.serverError)
                                         errors.push(err)
                                         res.json({
@@ -64,19 +65,6 @@ module.exports = function (app, port,environment,server,console,models) {
                               });
                     })
                 }
-//                .save(function(err, user) {
-//                        if (err) {
-//                            errors.push(appConstants.serverError)
-//                            errors.push(err)
-//                            return res.json(json({
-//                                                  "status":appConstants.failure,
-//                                                  "errors" : errors
-//                                              }));
-//                        }
-//                        res.json({
-//                                 "status":appConstants.success
-//                             });
-//                    });
             }
         }catch(e) {
             console.info("caught exception")
@@ -133,24 +121,49 @@ module.exports = function (app, port,environment,server,console,models) {
         },
     listIdeas:function(req,res)        {
             try {
+        console.info("@listIdeas...")
                 let errors = [];
-                models.ideaSchema
-                .find({})
-                .sort({updated_at:'desc'})
-                .then(ideas => {
-                    res.json({
-                             "status":appConstants.success,
-                             "ideas":ideas
-                         });
-                },
-                error => {
-                    errors.push(appConstants.serverError)
-                    errors.push(err)
-                    res.json(json({
-                          "status":appConstants.failure,
-                          "errors" : errors
-                      }));
-                })
+                if(!util.isVoid(req.query.id) && req.query.id != "undefined"){
+                    console.info("find by id --",req.query.id)
+                    models.ideaSchema
+                                    .findById(req.query.id)
+                                    .sort({updated_at:'desc'})
+                                    .then(ideas => {
+                                        res.json({
+                                                 "status":appConstants.success,
+                                                 "ideas":ideas
+                                             });
+                                    },
+                                    err => {
+                                        console.error(err)
+                                        errors.push(appConstants.serverError)
+                                        errors.push(err)
+                                        res.json({
+                                              "status":appConstants.failure,
+                                              "errors" : errors
+                                          });
+                                    })
+                } else {
+                    console.info("list all ideas")
+                    models.ideaSchema
+                                    .find({})
+                                    .sort({updated_at:'desc'})
+                                    .then(ideas => {
+                                        res.json({
+                                                 "status":appConstants.success,
+                                                 "ideas":ideas
+                                             });
+                                    },
+                                    err => {
+                                        console.error(err)
+                                        errors.push(appConstants.serverError)
+                                        errors.push(err)
+                                        res.json({
+                                              "status":appConstants.failure,
+                                              "errors" : errors
+                                          });
+                                    })
+                }
             }catch(e) {
                        console.trace(e);
                        res.json({

@@ -373,3 +373,738 @@
     at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
     at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
     at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+[2019-02-24T15:11:52.409] [ERROR] [access] - ReferenceError: util is not defined
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:13:11)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-02-24T22:40:12.224] [ERROR] [access] - ReferenceError: util is not defined
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:13:11)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-02-25T23:55:34.519] [ERROR] [access] - { CastError: Cast to ObjectId failed for value "undefined" at path "_id" for model "idea"
+    at new CastError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/cast.js:29:11)
+    at ObjectId.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schema/objectid.js:232:11)
+    at ObjectId.SchemaType.applySetters (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:845:12)
+    at ObjectId.SchemaType._castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1248:15)
+    at ObjectId.SchemaType.castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1238:15)
+    at ObjectId.SchemaType.castForQueryWrapper (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1217:15)
+    at cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/cast.js:307:32)
+    at model.Query.Query.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:4336:12)
+    at model.Query.Query._castConditions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1726:10)
+    at model.Query.<anonymous> (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1977:8)
+    at model.Query._wrappedThunk [as _findOne] (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/Users/chalk/office/personal/MEAN/node_modules/kareem/index.js:369:33)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  message: 'Cast to ObjectId failed for value "undefined" at path "_id" for model "idea"',
+  name: 'CastError',
+  stringValue: '"undefined"',
+  kind: 'ObjectId',
+  value: 'undefined',
+  path: '_id',
+  reason: undefined,
+  model: 
+   { [Function: model]
+     hooks: Kareem { _pres: [Object], _posts: [Object] },
+     base: 
+      Mongoose {
+        connections: [Array],
+        models: {},
+        modelSchemas: [Object],
+        options: [Object],
+        _pluralize: [Function: pluralize],
+        Schema: [Object],
+        model: [Function],
+        plugins: [Array] },
+     modelName: 'idea',
+     model: [Function: model],
+     db: 
+      NativeConnection {
+        base: [Object],
+        collections: [Object],
+        models: [Object],
+        config: [Object],
+        replica: false,
+        options: null,
+        otherDbs: [],
+        relatedDbs: {},
+        states: [Object],
+        _readyState: 1,
+        _closeCalled: false,
+        _hasOpened: true,
+        '$internalEmitter': [Object],
+        _listening: false,
+        _connectionOptions: [Object],
+        name: 'travelline',
+        host: '127.0.0.1',
+        port: 27017,
+        user: undefined,
+        pass: undefined,
+        client: [Object],
+        '$initialConnection': [Object],
+        _events: [Object],
+        _eventsCount: 3,
+        db: [Object] },
+     discriminators: undefined,
+     events: 
+      EventEmitter {
+        domain: null,
+        _events: {},
+        _eventsCount: 0,
+        _maxListeners: undefined },
+     '$appliedMethods': true,
+     '$appliedHooks': true,
+     _middleware: Kareem { _pres: [Object], _posts: [Object] },
+     schema: 
+      Schema {
+        obj: [Object],
+        paths: [Object],
+        aliases: {},
+        subpaths: {},
+        virtuals: {},
+        singleNestedPaths: {},
+        nested: {},
+        inherits: {},
+        callQueue: [],
+        _indexes: [],
+        methods: {},
+        methodOptions: {},
+        statics: {},
+        tree: [Object],
+        query: {},
+        childSchemas: [],
+        plugins: [Array],
+        '$id': 1,
+        s: [Object],
+        _userProvidedOptions: [Object],
+        options: [Object],
+        '$globalPluginsApplied': true },
+     collection: 
+      NativeCollection {
+        collection: [Object],
+        opts: [Object],
+        name: 'activity',
+        collectionName: 'activity',
+        conn: [Object],
+        queue: [],
+        buffer: false,
+        emitter: [Object] },
+     Query: { [Function] base: [Object] },
+     '$__insertMany': [Function],
+     '$init': Promise { [Circular] },
+     '$caught': true,
+     [Symbol(mongoose#Model)]: true } }
+[2019-02-25T23:56:29.328] [ERROR] [access] - { CastError: Cast to ObjectId failed for value "undefined" at path "_id" for model "idea"
+    at new CastError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/cast.js:29:11)
+    at ObjectId.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schema/objectid.js:232:11)
+    at ObjectId.SchemaType.applySetters (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:845:12)
+    at ObjectId.SchemaType._castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1248:15)
+    at ObjectId.SchemaType.castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1238:15)
+    at ObjectId.SchemaType.castForQueryWrapper (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1217:15)
+    at cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/cast.js:307:32)
+    at model.Query.Query.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:4336:12)
+    at model.Query.Query._castConditions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1726:10)
+    at model.Query.<anonymous> (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1977:8)
+    at model.Query._wrappedThunk [as _findOne] (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/Users/chalk/office/personal/MEAN/node_modules/kareem/index.js:369:33)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  message: 'Cast to ObjectId failed for value "undefined" at path "_id" for model "idea"',
+  name: 'CastError',
+  stringValue: '"undefined"',
+  kind: 'ObjectId',
+  value: 'undefined',
+  path: '_id',
+  reason: undefined,
+  model: 
+   { [Function: model]
+     hooks: Kareem { _pres: [Object], _posts: [Object] },
+     base: 
+      Mongoose {
+        connections: [Array],
+        models: {},
+        modelSchemas: [Object],
+        options: [Object],
+        _pluralize: [Function: pluralize],
+        Schema: [Object],
+        model: [Function],
+        plugins: [Array] },
+     modelName: 'idea',
+     model: [Function: model],
+     db: 
+      NativeConnection {
+        base: [Object],
+        collections: [Object],
+        models: [Object],
+        config: [Object],
+        replica: false,
+        options: null,
+        otherDbs: [],
+        relatedDbs: {},
+        states: [Object],
+        _readyState: 1,
+        _closeCalled: false,
+        _hasOpened: true,
+        '$internalEmitter': [Object],
+        _listening: false,
+        _connectionOptions: [Object],
+        name: 'travelline',
+        host: '127.0.0.1',
+        port: 27017,
+        user: undefined,
+        pass: undefined,
+        client: [Object],
+        '$initialConnection': [Object],
+        _events: [Object],
+        _eventsCount: 3,
+        db: [Object] },
+     discriminators: undefined,
+     events: 
+      EventEmitter {
+        domain: null,
+        _events: {},
+        _eventsCount: 0,
+        _maxListeners: undefined },
+     '$appliedMethods': true,
+     '$appliedHooks': true,
+     _middleware: Kareem { _pres: [Object], _posts: [Object] },
+     schema: 
+      Schema {
+        obj: [Object],
+        paths: [Object],
+        aliases: {},
+        subpaths: {},
+        virtuals: {},
+        singleNestedPaths: {},
+        nested: {},
+        inherits: {},
+        callQueue: [],
+        _indexes: [],
+        methods: {},
+        methodOptions: {},
+        statics: {},
+        tree: [Object],
+        query: {},
+        childSchemas: [],
+        plugins: [Array],
+        '$id': 1,
+        s: [Object],
+        _userProvidedOptions: [Object],
+        options: [Object],
+        '$globalPluginsApplied': true },
+     collection: 
+      NativeCollection {
+        collection: [Object],
+        opts: [Object],
+        name: 'activity',
+        collectionName: 'activity',
+        conn: [Object],
+        queue: [],
+        buffer: false,
+        emitter: [Object] },
+     Query: { [Function] base: [Object] },
+     '$__insertMany': [Function],
+     '$init': Promise { [Circular] },
+     '$caught': true,
+     [Symbol(mongoose#Model)]: true } }
+[2019-02-25T23:56:58.388] [ERROR] [access] - { CastError: Cast to ObjectId failed for value "undefined" at path "_id" for model "idea"
+    at new CastError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/cast.js:29:11)
+    at ObjectId.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schema/objectid.js:232:11)
+    at ObjectId.SchemaType.applySetters (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:845:12)
+    at ObjectId.SchemaType._castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1248:15)
+    at ObjectId.SchemaType.castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1238:15)
+    at ObjectId.SchemaType.castForQueryWrapper (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1217:15)
+    at cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/cast.js:307:32)
+    at model.Query.Query.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:4336:12)
+    at model.Query.Query._castConditions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1726:10)
+    at model.Query.<anonymous> (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1977:8)
+    at model.Query._wrappedThunk [as _findOne] (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/Users/chalk/office/personal/MEAN/node_modules/kareem/index.js:369:33)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  message: 'Cast to ObjectId failed for value "undefined" at path "_id" for model "idea"',
+  name: 'CastError',
+  stringValue: '"undefined"',
+  kind: 'ObjectId',
+  value: 'undefined',
+  path: '_id',
+  reason: undefined,
+  model: 
+   { [Function: model]
+     hooks: Kareem { _pres: [Object], _posts: [Object] },
+     base: 
+      Mongoose {
+        connections: [Array],
+        models: {},
+        modelSchemas: [Object],
+        options: [Object],
+        _pluralize: [Function: pluralize],
+        Schema: [Object],
+        model: [Function],
+        plugins: [Array] },
+     modelName: 'idea',
+     model: [Function: model],
+     db: 
+      NativeConnection {
+        base: [Object],
+        collections: [Object],
+        models: [Object],
+        config: [Object],
+        replica: false,
+        options: null,
+        otherDbs: [],
+        relatedDbs: {},
+        states: [Object],
+        _readyState: 1,
+        _closeCalled: false,
+        _hasOpened: true,
+        '$internalEmitter': [Object],
+        _listening: false,
+        _connectionOptions: [Object],
+        name: 'travelline',
+        host: '127.0.0.1',
+        port: 27017,
+        user: undefined,
+        pass: undefined,
+        client: [Object],
+        '$initialConnection': [Object],
+        _events: [Object],
+        _eventsCount: 3,
+        db: [Object] },
+     discriminators: undefined,
+     events: 
+      EventEmitter {
+        domain: null,
+        _events: {},
+        _eventsCount: 0,
+        _maxListeners: undefined },
+     '$appliedMethods': true,
+     '$appliedHooks': true,
+     _middleware: Kareem { _pres: [Object], _posts: [Object] },
+     schema: 
+      Schema {
+        obj: [Object],
+        paths: [Object],
+        aliases: {},
+        subpaths: {},
+        virtuals: {},
+        singleNestedPaths: {},
+        nested: {},
+        inherits: {},
+        callQueue: [],
+        _indexes: [],
+        methods: {},
+        methodOptions: {},
+        statics: {},
+        tree: [Object],
+        query: {},
+        childSchemas: [],
+        plugins: [Array],
+        '$id': 1,
+        s: [Object],
+        _userProvidedOptions: [Object],
+        options: [Object],
+        '$globalPluginsApplied': true },
+     collection: 
+      NativeCollection {
+        collection: [Object],
+        opts: [Object],
+        name: 'activity',
+        collectionName: 'activity',
+        conn: [Object],
+        queue: [],
+        buffer: false,
+        emitter: [Object] },
+     Query: { [Function] base: [Object] },
+     '$__insertMany': [Function],
+     '$init': Promise { [Circular] },
+     '$caught': true,
+     [Symbol(mongoose#Model)]: true } }
+[2019-02-25T23:57:56.046] [ERROR] [access] - { CastError: Cast to ObjectId failed for value "undefined" at path "_id" for model "idea"
+    at new CastError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/cast.js:29:11)
+    at ObjectId.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schema/objectid.js:232:11)
+    at ObjectId.SchemaType.applySetters (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:845:12)
+    at ObjectId.SchemaType._castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1248:15)
+    at ObjectId.SchemaType.castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1238:15)
+    at ObjectId.SchemaType.castForQueryWrapper (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1217:15)
+    at cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/cast.js:307:32)
+    at model.Query.Query.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:4336:12)
+    at model.Query.Query._castConditions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1726:10)
+    at model.Query.<anonymous> (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1977:8)
+    at model.Query._wrappedThunk [as _findOne] (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/Users/chalk/office/personal/MEAN/node_modules/kareem/index.js:369:33)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  message: 'Cast to ObjectId failed for value "undefined" at path "_id" for model "idea"',
+  name: 'CastError',
+  stringValue: '"undefined"',
+  kind: 'ObjectId',
+  value: 'undefined',
+  path: '_id',
+  reason: undefined,
+  model: 
+   { [Function: model]
+     hooks: Kareem { _pres: [Object], _posts: [Object] },
+     base: 
+      Mongoose {
+        connections: [Array],
+        models: {},
+        modelSchemas: [Object],
+        options: [Object],
+        _pluralize: [Function: pluralize],
+        Schema: [Object],
+        model: [Function],
+        plugins: [Array] },
+     modelName: 'idea',
+     model: [Function: model],
+     db: 
+      NativeConnection {
+        base: [Object],
+        collections: [Object],
+        models: [Object],
+        config: [Object],
+        replica: false,
+        options: null,
+        otherDbs: [],
+        relatedDbs: {},
+        states: [Object],
+        _readyState: 1,
+        _closeCalled: false,
+        _hasOpened: true,
+        '$internalEmitter': [Object],
+        _listening: false,
+        _connectionOptions: [Object],
+        name: 'travelline',
+        host: '127.0.0.1',
+        port: 27017,
+        user: undefined,
+        pass: undefined,
+        client: [Object],
+        '$initialConnection': [Object],
+        _events: [Object],
+        _eventsCount: 3,
+        db: [Object] },
+     discriminators: undefined,
+     events: 
+      EventEmitter {
+        domain: null,
+        _events: {},
+        _eventsCount: 0,
+        _maxListeners: undefined },
+     '$appliedMethods': true,
+     '$appliedHooks': true,
+     _middleware: Kareem { _pres: [Object], _posts: [Object] },
+     schema: 
+      Schema {
+        obj: [Object],
+        paths: [Object],
+        aliases: {},
+        subpaths: {},
+        virtuals: {},
+        singleNestedPaths: {},
+        nested: {},
+        inherits: {},
+        callQueue: [],
+        _indexes: [],
+        methods: {},
+        methodOptions: {},
+        statics: {},
+        tree: [Object],
+        query: {},
+        childSchemas: [],
+        plugins: [Array],
+        '$id': 1,
+        s: [Object],
+        _userProvidedOptions: [Object],
+        options: [Object],
+        '$globalPluginsApplied': true },
+     collection: 
+      NativeCollection {
+        collection: [Object],
+        opts: [Object],
+        name: 'activity',
+        collectionName: 'activity',
+        conn: [Object],
+        queue: [],
+        buffer: false,
+        emitter: [Object] },
+     Query: { [Function] base: [Object] },
+     '$__insertMany': [Function],
+     '$init': Promise { [Circular] },
+     '$caught': true,
+     [Symbol(mongoose#Model)]: true } }
+[2019-02-25T23:58:38.783] [ERROR] [access] - { CastError: Cast to ObjectId failed for value "undefined" at path "_id" for model "idea"
+    at new CastError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/cast.js:29:11)
+    at ObjectId.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schema/objectid.js:232:11)
+    at ObjectId.SchemaType.applySetters (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:845:12)
+    at ObjectId.SchemaType._castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1248:15)
+    at ObjectId.SchemaType.castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1238:15)
+    at ObjectId.SchemaType.castForQueryWrapper (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1217:15)
+    at cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/cast.js:307:32)
+    at model.Query.Query.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:4336:12)
+    at model.Query.Query._castConditions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1726:10)
+    at model.Query.<anonymous> (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1977:8)
+    at model.Query._wrappedThunk [as _findOne] (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/Users/chalk/office/personal/MEAN/node_modules/kareem/index.js:369:33)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  message: 'Cast to ObjectId failed for value "undefined" at path "_id" for model "idea"',
+  name: 'CastError',
+  stringValue: '"undefined"',
+  kind: 'ObjectId',
+  value: 'undefined',
+  path: '_id',
+  reason: undefined,
+  model: 
+   { [Function: model]
+     hooks: Kareem { _pres: [Object], _posts: [Object] },
+     base: 
+      Mongoose {
+        connections: [Array],
+        models: {},
+        modelSchemas: [Object],
+        options: [Object],
+        _pluralize: [Function: pluralize],
+        Schema: [Object],
+        model: [Function],
+        plugins: [Array] },
+     modelName: 'idea',
+     model: [Function: model],
+     db: 
+      NativeConnection {
+        base: [Object],
+        collections: [Object],
+        models: [Object],
+        config: [Object],
+        replica: false,
+        options: null,
+        otherDbs: [],
+        relatedDbs: {},
+        states: [Object],
+        _readyState: 1,
+        _closeCalled: false,
+        _hasOpened: true,
+        '$internalEmitter': [Object],
+        _listening: false,
+        _connectionOptions: [Object],
+        name: 'travelline',
+        host: '127.0.0.1',
+        port: 27017,
+        user: undefined,
+        pass: undefined,
+        client: [Object],
+        '$initialConnection': [Object],
+        _events: [Object],
+        _eventsCount: 3,
+        db: [Object] },
+     discriminators: undefined,
+     events: 
+      EventEmitter {
+        domain: null,
+        _events: {},
+        _eventsCount: 0,
+        _maxListeners: undefined },
+     '$appliedMethods': true,
+     '$appliedHooks': true,
+     _middleware: Kareem { _pres: [Object], _posts: [Object] },
+     schema: 
+      Schema {
+        obj: [Object],
+        paths: [Object],
+        aliases: {},
+        subpaths: {},
+        virtuals: {},
+        singleNestedPaths: {},
+        nested: {},
+        inherits: {},
+        callQueue: [],
+        _indexes: [],
+        methods: {},
+        methodOptions: {},
+        statics: {},
+        tree: [Object],
+        query: {},
+        childSchemas: [],
+        plugins: [Array],
+        '$id': 1,
+        s: [Object],
+        _userProvidedOptions: [Object],
+        options: [Object],
+        '$globalPluginsApplied': true },
+     collection: 
+      NativeCollection {
+        collection: [Object],
+        opts: [Object],
+        name: 'activity',
+        collectionName: 'activity',
+        conn: [Object],
+        queue: [],
+        buffer: false,
+        emitter: [Object] },
+     Query: { [Function] base: [Object] },
+     '$__insertMany': [Function],
+     '$init': Promise { [Circular] },
+     '$caught': true,
+     [Symbol(mongoose#Model)]: true } }
+[2019-02-26T19:44:00.214] [ERROR] [access] - ReferenceError: util is not defined
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:13:11)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-02-28T23:35:01.502] [ERROR] [access] - ReferenceError: util is not defined
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:13:11)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-02-28T23:44:42.716] [ERROR] [access] - ReferenceError: util is not defined
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:13:11)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-02-28T23:52:10.152] [ERROR] [access] - ReferenceError: util is not defined
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:13:11)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-02-28T23:52:39.919] [ERROR] [access] - ReferenceError: util is not defined
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:13:11)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-03-01T00:03:49.670] [ERROR] [access] - TypeError: models.UserSchema is not a constructor
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:39:19)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-03-01T00:03:56.231] [ERROR] [access] - TypeError: models.UserSchema is not a constructor
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:39:19)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-03-01T00:04:36.250] [ERROR] [access] - TypeError: models.UserSchema is not a constructor
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:39:19)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)

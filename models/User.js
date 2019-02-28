@@ -9,9 +9,14 @@ module.exports = function(connection) {
 
     const UserSchema = new Schema({
         uid:{type:Number},
+        name:{type:String},
         email: {type: String},
         password: {type: String},
-        location:{type: String},
+        location:{
+            city: {type: String},
+            latitude: {type:Number,default:0.0},
+            longitude: {type:Number,default:0.0}
+        },
         token : {
             auth_token: {type: String},
             created_at: {type: Date, required: true, default: moment()}
@@ -19,7 +24,7 @@ module.exports = function(connection) {
     });
 
     UserSchema.methods.hasExpired = function() {
-        return (moment().diff(this.token.createDate, 'minutes')) > tokenLimit;
+        return (moment().diff(this.token.created_at, 'minutes')) > tokenLimit;
 
     };
 

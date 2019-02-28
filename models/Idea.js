@@ -13,12 +13,16 @@ module.exports = function(connection) {
     "details":{"type":String,"required":true},
     "lat":{"type":Number,"required":true},
     "lng":{"type":Number,"required":true},
-    "created_at"    : { "type": Date,"default":Date.now },
+    "created_at"    : { "type": Date},
     "updated_at"    : { "type": Date,"default":Date.now },
-    "like":{}
+    "like":{type:Number},
+    "views":{type:Number},
     },{collection: 'activity'});
 
-
+//IdeaSchema.pre("save",(next)={
+//    created_at = new Date();
+//    next();
+//})
     const Idea = connection.model('idea', IdeaSchema);
 
     return Idea;

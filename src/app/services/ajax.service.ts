@@ -48,10 +48,10 @@ export class AjaxService {
     let url=environment.API_INVALID_PATH;
     switch(apiPath) {
         case environment.API_LIST_IDEAS:
-            url = environment.API_LIST_IDEAS+"?page="+perameterjson.page;
+            url = environment.API_LIST_IDEAS+"?page="+perameterjson.page+"&id="+perameterjson.id;
             break;
         case environment.API_CITIES_INDIA:
-            url = environment.API_LIST_IDEAS+"?page="+perameterjson.page;
+            url = environment.API_CITIES_INDIA;
             break;
         default:
           console.error("ERROR -- : @apiCall_GET api path not added.");
@@ -106,6 +106,9 @@ return Observable.throw("api path not added.");
             break;
         case environment.API_SAVE_IDEAS:
             url = environment.API_SAVE_IDEAS;
+            break;
+        case environment.API_REGISTER:
+            url = environment.API_REGISTER;
             break;
         default:
             console.error("ERROR -- : @apiCall_POST api path not added.");

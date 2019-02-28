@@ -5,7 +5,12 @@ const path = require('path');
 const http = require('http');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override') // allow forms to send put and delete req.
+const json = require('express-json')
 const mongoose = require('mongoose');
+const session = require('express-session');
+//const flash = require('connect-flash');
+
 const app = express();
 
 // Parsers for POST data
@@ -35,18 +40,19 @@ if (environment === 'production') {
     server_detail = {host:"api.pahadi.me", self_port:7700, protocol:"http://", env:"production", mailerver_host : "mail.pahadi.me", mailerver_host : "8062"}
 } else if (environment === 'staging') {
     port = 8888;
-    server_detail = {host:"54.225.122.8", self_port:7000, protocol:"http://", env:"staging", mailerver_host : "54.152.105.234", mailerver_host : "8041"}
+    server_detail = {host:"api.pahadi.me", self_port:7000, protocol:"http://", env:"staging", mailerver_host : "mail.pahadi.me", mailerver_host : "8041"}
 } else {
     port = 8888;
-    server_detail = {host:"54.225.122.8", self_port:6600, protocol:"http://", env:"development", mailerver_host : "54.152.105.234", mailerver_host : "8041"}
+    server_detail = {host:"api.pahadi.me", self_port:6600, protocol:"http://", env:"development", mailerver_host : "mail.pahadi.me", mailerver_host : "8041"}
 }
 
 mongoose.Promise = global.Promise;
 var connection = require('./configs/database')(mongoose);
 var models = require('./models/models')(connection);
 
-// Define and set API routes
-require('./server/routes')(app, port,environment,server_detail,console,models); // load our routes and pass in our app and fully configured passport
+// load App routes.
+// 1. travelline routes.
+require('./server/routes/travelline')(app, port,environment,server_detail,console,models); // load our routes and pass in our app and fully configured passport
 
 
 
@@ -55,24 +61,30 @@ require('./server/routes')(app, port,environment,server_detail,console,models); 
  */
 
 app.set('port', port);
-
-
 app.set('view engine', 'html'); // set up html for templating
 app.engine('html', require('ejs').__express);
 // console.info(__dirname);
 app.set('views', __dirname + '/dist');
 app.use(express.static(path.join(__dirname, '/dist')));
-//app.use(express.session({ secret: 'keyboard cat' }));// persistent login sessions
+console.info("Static path ", path.join(__dirname, '/dist'));
 
-
-var methodOverride = require('method-override') // allow forms to send put and delete req.
-var json = require('express-json')
-var urlEncoded = require("body-parser");
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(json);
-app.use(urlEncoded);
 app.use(cors); // for allowing cross origin calls
-console.info("Static path ", path.join(__dirname, '/dist'));
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+          secret: 'keyboard cat',
+          resave: false,
+          saveUninitialized: true,
+          cookie: { secure: true }
+        }));// persistent login sessions
+
+// Global variable for rest errors
+//app.use((req,res,next)=>{
+//res.locals.success_msg = req.flash('success_msg')
+//res.locals.error_msg = req.flash('error_msg')
+//res.locals.error = req.flash('error')
+//});
 
 /**
  * Create HTTP server.

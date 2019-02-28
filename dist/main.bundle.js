@@ -32,16 +32,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var router_1 = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var environment_1 = __webpack_require__("./src/environments/environment.ts");
+var auth_guard_1 = __webpack_require__("./src/app/auth/auth.guard.ts");
 var signin_component_1 = __webpack_require__("./src/app/signin/signin.component.ts");
 var page_not_found_component_1 = __webpack_require__("./src/app/page-not-found/page-not-found.component.ts");
 var home_component_1 = __webpack_require__("./src/app/home/home.component.ts");
 var ideas_component_1 = __webpack_require__("./src/app/ideas/ideas.component.ts");
 var routes = [
     { path: 'login', component: signin_component_1.SigninComponent },
-    { path: 'home', component: home_component_1.HomeComponent },
-    { path: environment_1.environment.ROUTE_IDEAS, component: ideas_component_1.IdeasComponent },
-    { path: environment_1.environment.ROUTE_ADD_IDEA, component: ideas_component_1.IdeasComponent },
-    { path: environment_1.environment.ROUTE_EDIT_IDEA, component: ideas_component_1.IdeasComponent },
+    { path: 'home', component: home_component_1.HomeComponent, canActivate: [auth_guard_1.AuthGuard] },
+    { path: environment_1.environment.ROUTE_IDEAS, component: ideas_component_1.IdeasComponent, canActivate: [auth_guard_1.AuthGuard] },
+    { path: environment_1.environment.ROUTE_ADD_IDEA, component: ideas_component_1.IdeasComponent, canActivate: [auth_guard_1.AuthGuard] },
+    { path: environment_1.environment.ROUTE_EDIT_IDEA, component: ideas_component_1.IdeasComponent, canActivate: [auth_guard_1.AuthGuard] },
+    { path: environment_1.environment.ROUTE_SHARE_IDEA, component: ideas_component_1.IdeasComponent, canActivate: [auth_guard_1.AuthGuard] },
     { path: 'oops', component: page_not_found_component_1.PageNotFoundComponent },
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: '**', redirectTo: '/oops', pathMatch: 'full' },
@@ -177,10 +179,10 @@ var route_configration_service_1 = __webpack_require__("./src/app/services/route
 var http_1 = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 var forms_1 = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
 var auth_service_1 = __webpack_require__("./src/app/auth/auth.service.ts");
+var auth_guard_1 = __webpack_require__("./src/app/auth/auth.guard.ts");
 var token_interceptor_service_1 = __webpack_require__("./src/app/auth/token-interceptor.service.ts");
 var ajax_service_1 = __webpack_require__("./src/app/services/ajax.service.ts");
 var broatcast_service_1 = __webpack_require__("./src/app/services/broatcast.service.ts");
-var ngx_infinite_scroll_1 = __webpack_require__("./node_modules/ngx-infinite-scroll/modules/ngx-infinite-scroll.es5.js");
 var app_routing_module_1 = __webpack_require__("./src/app/app-routing.module.ts");
 var footer_component_1 = __webpack_require__("./src/app/footer/footer.component.ts");
 var header_component_1 = __webpack_require__("./src/app/header/header.component.ts");
@@ -209,7 +211,6 @@ var AppModule = /** @class */ (function () {
                 forms_1.FormsModule,
                 http_1.HttpClientModule,
                 app_routing_module_1.AppRoutingModule,
-                ngx_infinite_scroll_1.InfiniteScrollModule
             ],
             providers: [
                 logger_service_1.LoggerService,
@@ -220,6 +221,7 @@ var AppModule = /** @class */ (function () {
                 ajax_service_1.AjaxService,
                 broatcast_service_1.BroadcastService,
                 auth_service_1.AuthService,
+                auth_guard_1.AuthGuard,
                 token_interceptor_service_1.TokeninterceptorService,
                 {
                     provide: http_1.HTTP_INTERCEPTORS,
@@ -257,6 +259,55 @@ exports.get_route_settings = get_route_settings;
 
 /***/ }),
 
+/***/ "./src/app/auth/auth.guard.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var util_service_1 = __webpack_require__("./src/app/services/util.service.ts");
+var auth_service_1 = __webpack_require__("./src/app/auth/auth.service.ts");
+var AuthGuard = /** @class */ (function () {
+    function AuthGuard(util, authService) {
+        this.util = util;
+        this.authService = authService;
+    }
+    AuthGuard.prototype.canActivate = function (next, state) {
+        var url = state.url;
+        console.warn('AuthGuard#canActivate called for --', url, "active : ", this.checkLogin(url));
+        return this.checkLogin(url);
+    };
+    AuthGuard.prototype.checkLogin = function (url) {
+        if (this.authService.isLoggedIn()) {
+            return true;
+        }
+        // Store the attempted URL for redirecting
+        this.authService.redirectUrl = url;
+        // Navigate to the login page with extras
+        this.util.getRouter().navigate(['/login']);
+        return false;
+    };
+    AuthGuard = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [util_service_1.UtilService, auth_service_1.AuthService])
+    ], AuthGuard);
+    return AuthGuard;
+}());
+exports.AuthGuard = AuthGuard;
+
+
+/***/ }),
+
 /***/ "./src/app/auth/auth.service.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -275,13 +326,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var AuthService = /** @class */ (function () {
     function AuthService() {
+        this.isLoggedIn = function () {
+            console.info("@isLoggedIn token--", localStorage.getItem("token"));
+            if (localStorage.getItem("token") !== null) {
+                return true;
+            }
+            return false;
+        };
     }
-    AuthService.prototype.isLoggedIn = function () {
-        var authenticated = false;
-        if (localStorage.getItem("token") !== null)
-            authenticated = true;
-        return authenticated;
-    };
     AuthService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [])
@@ -615,14 +667,14 @@ exports.HomeComponent = HomeComponent;
 /***/ "./src/app/ideas/ideas.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".card-link{\ncolor:#28a745;\ncursor:default;\n}"
 
 /***/ }),
 
 /***/ "./src/app/ideas/ideas.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" *ngIf=\"ideaJSON.errors.length>0\">\n  <p *ngFor=\" let error of ideaJSON.errors\">{{error}} <br/></p>\n  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"card card-body\" *ngIf=\"ideaJSON.activeRoute!='ideas'\">\n  <h3>Whats your Idea ?</h3>\n  <form>\n    <div class=\"form-group\">\n      <label for=\"title\">Title</label>\n      <input type=\"text\" class=\"form-control\" name=\"title\" [(ngModel)]=\"ideaJSON.idea.title\" required>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"details\">Details</label>\n      <textarea class=\"form-control\" name=\"details\" [(ngModel)]=\"ideaJSON.idea.details\" required></textarea>\n    </div>\n    <button type=\"submit\" (click)=\"saveIdea()\" class=\"btn btn-primary\">Submit</button>\n  </form>\n</div>\n\n<div class=\"card card-body\"\n     id=\"ideasDiv\"\n     infiniteScroll\n     [infiniteScrollDistance]=\"scrollDistance\"\n     [infiniteScrollUpDistance]=\"scrollUpDistance\"\n     [infiniteScrollThrottle]=\"throttle\"\n     (scrolled)=\"onScrollDown(event)\"\n     (scrolledUp)=\"onScrollUp(event)\"\n     [scrollWindow]=\"false\"\n     style=\"height: 80vh;\n        overflow: scroll;\"\n     *ngIf=\"ideaJSON.activeRoute=='ideas'\">\n  <h3 class=\"mb-2\">\n    Trending Ideas\n    <a href=\"#/ideas/add\" class=\"card-link btn btn-primary\">\n      <i class=\"material-icons \">add_box</i>\n    </a>\n  </h3>\n\n  <div  *ngFor=\" let idea of ideaJSON.ideas \">\n    <div class=\"card\">\n      <div class=\"card-body\">\n        <div style=\"float:right;width:fit-content;right:10px;position: absolute;\">\n          <span  class=\"card-link\" >\n            <span>1000</span>\n            <i class=\"material-icons\">\n              face\n            </i>\n          </span>\n          <span  (click)=\"editIdea(idea)\"  class=\"card-link\" >\n            <i class=\"material-icons\">\n              edit\n            </i>\n          </span>\n          <span  (click)=\"deleteIdea(idea)\"  class=\"card-link\" >\n            <i class=\"material-icons\">\n              delete\n            </i>\n          </span>\n          <span  (click)=\"markPublic(idea)\"  class=\"card-link\" >\n            <i class=\"material-icons\">\n              public\n            </i>\n          </span>\n        </div>\n        <h5 class=\"card-title\">{{idea.title}}</h5>\n        <h6 class=\"card-subtitle mb-2 text-muted\">\n          {{idea.created_at}}\n\n        </h6>\n        <p class=\"card-text\">{{idea.details}}</p>\n        <a href=\"#\" class=\"card-link\">\n          <i class=\"material-icons\">\n            thumb_up_alt\n          </i>\n        </a>\n        <a href=\"#\" class=\"card-link\">\n          <i class=\"material-icons\">\n            rate_review\n          </i>\n        </a>\n        <a class=\"card-link\" href=\"#/ideas\" (click)=\"_getDirectionsInGoogleMap(idea.lat,idea.lng)\" >\n          <i class=\"material-icons\">\n            directions\n          </i>\n        </a>\n      </div>\n\n    </div>\n  </div>\n  <div *ngIf=\"ideaJSON.ideas.length==0\">\n    No Ideas So Far\n\n  </div>\n</div>"
+module.exports = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" *ngIf=\"ideaJSON.errors.length>0\">\n  <p *ngFor=\" let error of ideaJSON.errors\">{{error}} <br/></p>\n  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n\n<!--edit idea-->\n<div class=\"card card-body\" *ngIf=\"ideaJSON.viewCode==1\">\n  <h3>Whats your Idea ?</h3>\n  <form>\n    <div class=\"form-group\">\n      <label for=\"title\">Title</label>\n      <input type=\"text\" class=\"form-control\" name=\"title\" [(ngModel)]=\"ideaJSON.idea.title\" required>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"details\">Details</label>\n      <textarea class=\"form-control\" name=\"details\" [(ngModel)]=\"ideaJSON.idea.details\" required></textarea>\n    </div>\n    <button type=\"submit\" (click)=\"saveIdea()\" class=\"btn btn-primary\">Submit</button>\n  </form>\n</div>\n\n<!--list ideas -->\n\n<div class=\"card card-body\"\n     id=\"ideasDiv\"\n     style=\"height: 80vh;\n        overflow: scroll;\"\n     *ngIf=\"ideaJSON.viewCode==0\">\n  <h3 class=\"mb-2\">\n    Trending Ideas\n    <b (click)=\"newIdea()\" class=\" btn btn-primary\">\n      <i class=\"material-icons \">add_box</i>\n    </b>\n  </h3>\n\n  <div  *ngFor=\" let idea of ideaJSON.ideas \">\n    <div class=\"card\" (click)=\"addView(idea)\">\n      <div class=\"card-body\">\n        <div style=\"float:right;width:fit-content;right:10px;position: absolute;\">\n          <span  class=\"card-link\" >\n            <span>{{idea.views}}</span>\n            <i class=\"material-icons\">\n              face\n            </i>\n          </span>\n          <span  (click)=\"editIdea(idea)\"  class=\"card-link\" >\n            <i class=\"material-icons\">\n              edit\n            </i>\n          </span>\n          <span  (click)=\"deleteIdea(idea)\"  class=\"card-link\" >\n            <i class=\"material-icons\">\n              delete\n            </i>\n          </span>\n          <span  (click)=\"markPublic(idea)\"  class=\"card-link\" >\n            <i class=\"material-icons\">\n              public\n            </i>\n          </span>\n        </div>\n        <h5 class=\"card-title\">{{idea.title}}</h5>\n        <h6 class=\"card-subtitle mb-2 text-muted\">\n          {{idea.created_at}}\n\n        </h6>\n        <p class=\"card-text\">{{idea.details}}</p>\n        <b  (click)=\"addLike(idea)\" class=\"card-link\">\n          <span>{{idea.like}}</span>\n          <i class=\"material-icons\">\n            thumb_up_alt\n          </i>\n        </b>\n        <b  class=\"card-link\">\n          <i class=\"material-icons\">\n            rate_review\n          </i>\n        </b>\n        <span class=\"card-link\" (click)=\"shareIdea(idea)\" >\n          <i class=\"material-icons\">\n            share\n          </i>\n        </span>\n        <b class=\"card-link\"  (click)=\"_getDirectionsInGoogleMap(idea.lat,idea.lng)\" >\n          <i class=\"material-icons\">\n            directions\n          </i>\n        </b>\n      </div>\n\n    </div>\n  </div>\n  <div *ngIf=\"ideaJSON.ideas.length==0\">\n    No Ideas So Far\n\n  </div>\n</div>\n\n<!--share idea -->\n<div class=\"container md\"\n     id=\"shareDiv\"\n     style=\"height: 80vh;\n        overflow: scroll;\"\n     *ngIf=\"ideaJSON.viewCode==2\">\n  <div >\n    <div class=\"card\" (click)=\"addView(ideaJSON.ideas)\">\n      <!--list ideas -->\n      <div class=\"card-body\">\n        <div style=\"float:right;width:fit-content;right:10px;position: absolute;\">\n          <span  class=\"card-link\" >\n            <span>{{ideaJSON.ideas.views}}</span>\n            <i class=\"material-icons\">\n              face\n            </i>\n          </span>\n          <span  (click)=\"editIdea(ideaJSON.ideas)\"  class=\"card-link\" >\n            <i class=\"material-icons\">\n              edit\n            </i>\n          </span>\n          <span  (click)=\"deleteIdea(ideaJSON.ideas)\"  class=\"card-link\" >\n            <i class=\"material-icons\">\n              delete\n            </i>\n          </span>\n          <span  (click)=\"markPublic(ideaJSON.ideas)\"  class=\"card-link\" >\n            <i class=\"material-icons\">\n              public\n            </i>\n          </span>\n        </div>\n        <h5 class=\"card-title\">{{ideaJSON.ideas.title}}</h5>\n        <h6 class=\"card-subtitle mb-2 text-muted\">\n          {{ideaJSON.ideas.created_at}}\n\n        </h6>\n        <p class=\"card-text\">{{ideaJSON.ideas.details}}</p>\n        <b  (click)=\"addLike(ideaJSON.ideas)\" class=\"card-link\">\n          <span>{{ideaJSON.ideas.like}}</span>\n          <i class=\"material-icons\">\n            thumb_up_alt\n          </i>\n        </b>\n        <b  class=\"card-link\">\n          <i class=\"material-icons\">\n            rate_review\n          </i>\n        </b>\n        <span class=\"card-link\" (click)=\"shareIdea(ideaJSON.ideas)\" >\n          <i class=\"material-icons\">\n            share\n          </i>\n        </span>\n        <b class=\"card-link\"  (click)=\"_getDirectionsInGoogleMap(ideaJSON.ideas.lat,ideaJSON.ideas.lng)\" >\n          <i class=\"material-icons\">\n            directions\n          </i>\n        </b>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -645,8 +697,9 @@ var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var ajax_service_1 = __webpack_require__("./src/app/services/ajax.service.ts");
 var util_service_1 = __webpack_require__("./src/app/services/util.service.ts");
 var environment_1 = __webpack_require__("./src/environments/environment.ts");
+var common_1 = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
 var IdeasComponent = /** @class */ (function () {
-    function IdeasComponent(ajax, util) {
+    function IdeasComponent(ajax, util, location) {
         this.ajax = ajax;
         this.util = util;
         this.throttle = 300;
@@ -659,30 +712,82 @@ var IdeasComponent = /** @class */ (function () {
         this.ideaJSON = {
             "idea": {
                 "_id": "",
+                "id": "",
+                "uid": "",
                 "title": "",
                 "details": "",
                 "lat": "",
-                "lng": ""
+                "lng": "",
+                "created_at": "",
+                "like": 0,
+                "views": 0
             },
             "errors": [],
             "activeRoute": this.util.getCurrentRoutePath(),
-            "ideas": []
+            "ideas": [],
+            "viewCode": 0
         };
-        if (!this.util.isVoid(localStorage.getItem("editIdea"))) {
-            this.ideaJSON.idea = JSON.parse(localStorage.getItem("editIdea"));
-        }
-        if (this.ideaJSON.activeRoute == environment_1.environment.ROUTE_IDEAS) {
-            this.fetchIdeas();
-        }
         console.info("this.ideaJSON", this.ideaJSON);
     };
+    IdeasComponent.prototype.setAppFlow = function () {
+        console.warn("this.ideaJSON.activeRoute........", this.ideaJSON.activeRoute);
+        if (this.ideaJSON.activeRoute == environment_1.environment.ROUTE_IDEAS) {
+            this.ideaJSON.viewCode = 0;
+            this.fetchIdeas();
+        }
+        if (this.ideaJSON.activeRoute.substring(0, 11) == "ideas/edit") {
+            this.ideaJSON.viewCode = 1;
+            console.info("this.ideaJSON.activeRoute.substring(12)", this.ideaJSON.activeRoute.substring(12));
+            if (!this.util.isVoid(localStorage.getItem("editIdea"))) {
+                this.ideaJSON.idea = JSON.parse(localStorage.getItem("editIdea"));
+            }
+            else {
+                console.error("nothing to edit");
+            }
+        }
+        if (this.ideaJSON.activeRoute.substring(0, 11) == environment_1.environment.ROUTE_ADD_IDEA) {
+            this.ideaJSON.viewCode = 1;
+        }
+        if (this.ideaJSON.activeRoute.substring(0, 11) == "ideas/share") {
+            this.ideaJSON.viewCode = 2;
+            console.info("this.ideaJSON.activeRoute.substring(12)", this.ideaJSON.activeRoute.substring(12));
+            this.fetchIdeas(1, this.ideaJSON.activeRoute.substring(12));
+        }
+    };
     IdeasComponent.prototype.ngOnInit = function () {
+        this.setAppFlow();
     };
     IdeasComponent.prototype.editIdea = function (idea) {
         console.info("@editIdea...");
         this.ideaJSON.idea = idea;
         localStorage.setItem("editIdea", JSON.stringify(this.ideaJSON.idea));
-        this.util.getRouter().navigate([environment_1.environment.ROUTE_EDIT_IDEA + idea._id]);
+        this.util.getRouter().navigate(["ideas/edit/" + idea._id]);
+    };
+    IdeasComponent.prototype.shareIdea = function (idea) {
+        this.util.getRouter().navigate(["ideas/share/" + idea._id]);
+    };
+    IdeasComponent.prototype.newIdea = function (idea) {
+        this.util.getRouter().navigate([environment_1.environment.ROUTE_ADD_IDEA]);
+    };
+    IdeasComponent.prototype.addView = function (idea) {
+        if (this.util.isVoid(idea.views)) {
+            idea.views = 1;
+        }
+        else {
+            idea.views += 1;
+        }
+        this.ideaJSON.idea = idea;
+        this.saveIdea();
+    };
+    IdeasComponent.prototype.addLike = function (idea) {
+        if (this.util.isVoid(idea.like)) {
+            idea.like = 1;
+        }
+        else {
+            idea.like += 1;
+        }
+        this.ideaJSON.idea = idea;
+        this.saveIdea();
     };
     IdeasComponent.prototype.markPublic = function (idea) {
     };
@@ -714,7 +819,9 @@ var IdeasComponent = /** @class */ (function () {
             .subscribe(function (data) {
             console.info("response", data);
             if (data.status) {
-                _this.util.getRouter().navigate([environment_1.environment.ROUTE_IDEAS]);
+                if (_this.ideaJSON.viewCode == 1) {
+                    _this.util.getRouter().navigate([environment_1.environment.ROUTE_IDEAS]);
+                }
             }
             else {
                 _this.ideaJSON.errors = data.errors;
@@ -729,26 +836,25 @@ var IdeasComponent = /** @class */ (function () {
     };
     IdeasComponent.prototype.onScrollUp = function (event) {
         console.info("event", event);
-        this.fetchIdeas(2);
+        this.fetchIdeas(1);
     };
-    IdeasComponent.prototype.fetchIdeas = function (page) {
+    IdeasComponent.prototype.fetchIdeas = function (page, _id) {
         var _this = this;
         if (page === void 0) { page = 1; }
         console.info("@fetchIdeas...");
         this.ideaJSON.errors = [];
-        this.ajax.apiCall_GET({ page: page }, environment_1.environment.API_LIST_IDEAS)
+        this.ajax.apiCall_GET({ page: page, id: _id }, environment_1.environment.API_LIST_IDEAS)
             .subscribe(function (data) {
             console.info("response", data);
             if (data.status) {
                 _this.ideaJSON.ideas = data.ideas;
-                var myDiv = document.getElementById('ideasDiv');
-                myDiv.scrollTop = 0;
             }
             else {
                 _this.ideaJSON.errors = data.errors;
             }
         }, function (error) {
             console.info("error.status:: ", error);
+            _this.ideaJSON.errors = error;
         });
     };
     IdeasComponent.prototype._getDirectionsInGoogleMap = function (lat, lng) {
@@ -760,7 +866,7 @@ var IdeasComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/ideas/ideas.component.html"),
             styles: [__webpack_require__("./src/app/ideas/ideas.component.css")]
         }),
-        __metadata("design:paramtypes", [ajax_service_1.AjaxService, util_service_1.UtilService])
+        __metadata("design:paramtypes", [ajax_service_1.AjaxService, util_service_1.UtilService, common_1.Location])
     ], IdeasComponent);
     return IdeasComponent;
 }());
@@ -917,10 +1023,10 @@ var AjaxService = /** @class */ (function () {
         var url = environment_1.environment.API_INVALID_PATH;
         switch (apiPath) {
             case environment_1.environment.API_LIST_IDEAS:
-                url = environment_1.environment.API_LIST_IDEAS + "?page=" + perameterjson.page;
+                url = environment_1.environment.API_LIST_IDEAS + "?page=" + perameterjson.page + "&id=" + perameterjson.id;
                 break;
             case environment_1.environment.API_CITIES_INDIA:
-                url = environment_1.environment.API_LIST_IDEAS + "?page=" + perameterjson.page;
+                url = environment_1.environment.API_CITIES_INDIA;
                 break;
             default:
                 console.error("ERROR -- : @apiCall_GET api path not added.");
@@ -970,6 +1076,9 @@ var AjaxService = /** @class */ (function () {
                 break;
             case environment_1.environment.API_SAVE_IDEAS:
                 url = environment_1.environment.API_SAVE_IDEAS;
+                break;
+            case environment_1.environment.API_REGISTER:
+                url = environment_1.environment.API_REGISTER;
                 break;
             default:
                 console.error("ERROR -- : @apiCall_POST api path not added.");
@@ -1307,7 +1416,7 @@ module.exports = "/*------------------------ Responsive stylesheet start -------
 /***/ "./src/app/signin/signin.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"card \" style=\"max-width: 500px;margin: auto;\">\n    <div class=\"card-body\">\n      <div class=\"logo_continer_home\">\n        <a href=\"#\"><img src=\"assets/images/company-logo/logo.png\" alt=\"EXL Services\" /></a>\n      </div>\n      <div class=\"input_form\">\n        <h4 style=\"padding-bottom:0;\">Log In</h4>\n        <span class=\"tagline_short height_sht\">\n            Please log In to proceed....\n        </span>\n        <form class=\"px-4 py-3\">\n          <div class=\"form-group\">\n            <label for=\"exampleDropdownFormEmail1\">Email address</label>\n            <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormEmail1\"\n                   [(ngModel)]=\"loginJSON.login.email\" name=\"email\" placeholder=\"email@example.com\" required>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"exampleDropdownFormPassword1\">Password</label>\n            <input type=\"password\" class=\"form-control\" id=\"exampleDropdownFormPassword1\"\n                   [(ngModel)]=\"loginJSON.login.password\" name=\"pass\" placeholder=\"Password\" required>\n          </div>\n          <div class=\"form-check\">\n            <input type=\"checkbox\" class=\"form-check-input\" id=\"dropdownCheck\">\n            <label class=\"form-check-label\" for=\"dropdownCheck\">\n              Remember me\n            </label>\n          </div>\n          <select class=\"input-subdomain_form margin-t\"\n                  [(ngModel)]=\"loginJSON.login.location\" name=\"loc\" required>\n            <option *ngFor=\"let city of loginJSON.cities\">None</option>\n            <option *ngFor=\"let city of loginJSON.cities\">{{city.city}}</option>\n          </select>\n          <button type=\"submit\" (click)=\"login()\" class=\"btn btn-primary\">Sign in</button>\n        </form>\n        <div class=\"dropdown-divider\"></div>\n        <a class=\"dropdown-item\" href=\"#\">New around here? Sign up</a>\n        <a class=\"dropdown-item\" href=\"#\">Forgot password?</a>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" *ngIf=\"loginJSON.errors.length>0\">\n    <p *ngFor=\" let error of loginJSON.errors\">{{error}} <br/></p>\n    <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"card \" style=\"max-width: 500px;margin: auto;\">\n    <div class=\"card-body\">\n      <div class=\"logo_continer_home\">\n        <a href=\"#\"><img src=\"assets/images/company-logo/logo.png\" alt=\"EXL Services\" /></a>\n      </div>\n      <div class=\"input_form\">\n        <h4 style=\"padding-bottom:0;\">Log In</h4>\n        <span class=\"tagline_short height_sht\">\n            Please log In to proceed....\n        </span>\n        <!--login box-->\n        <form class=\"px-4 py-3\" *ngIf=\"loginJSON.loginFormVeiw==0\">\n          <div class=\"form-group\" >\n            <label for=\"exampleDropdownFormEmail1\">Email address</label>\n            <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormEmail1\"\n                   [(ngModel)]=\"loginJSON.login.email\" name=\"email\" placeholder=\"email@example.com\" required>\n          </div>\n          <div class=\"form-group\" *ngIf=\"loginJSON.loginFormVeiw==0\">\n            <label for=\"exampleDropdownFormPassword1\">Password</label>\n            <input type=\"password\" class=\"form-control\" id=\"exampleDropdownFormPassword1\"\n                   [(ngModel)]=\"loginJSON.login.password\" name=\"pass\" placeholder=\"Password\" required>\n          </div>\n          <div class=\"form-check\" *ngIf=\"loginJSON.loginFormVeiw==0\">\n            <input type=\"checkbox\" class=\"form-check-input\" id=\"dropdownCheck\">\n            <label class=\"form-check-label\" for=\"dropdownCheck\">\n              Remember me\n            </label>\n          </div>\n          <button type=\"submit\" (click)=\"login()\" class=\"btn btn-primary\"> Sign in</button>\n        </form>\n        <!--sign up form-->\n        <form class=\"px-4 py-3\" *ngIf=\"loginJSON.loginFormVeiw==1\">\n          <div class=\"form-group\" >\n            <label for=\"exampleDropdownFormEmail1\">Name</label>\n            <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormname\"\n                   [(ngModel)]=\"loginJSON.register.name\" name=\"name\" placeholder=\"John Singh\" required>\n          </div>\n          <div class=\"form-group\" >\n            <label for=\"exampleDropdownFormEmail1\">Email address</label>\n            <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormEmail1\"\n                   [(ngModel)]=\"loginJSON.register.email\" name=\"email\" placeholder=\"email@example.com\" required>\n          </div>\n          <div class=\"form-group\" *ngIf=\"loginJSON.loginFormVeiw==0 || loginJSON.loginFormVeiw==1\">\n            <label for=\"exampleDropdownFormPassword1\">Password</label>\n            <input type=\"password\" class=\"form-control\" id=\"exampleDropdownFormPassword1\"\n                   [(ngModel)]=\"loginJSON.register.password\" name=\"pass\" placeholder=\"Password\" required>\n          </div>\n          <div class=\"form-check\" *ngIf=\"loginJSON.loginFormVeiw==0\">\n            <input type=\"checkbox\" class=\"form-check-input\" id=\"dropdownCheck\">\n            <label class=\"form-check-label\" for=\"dropdownCheck\">\n              Remember me\n            </label>\n          </div>\n          <select *ngIf=\"loginJSON.loginFormVeiw==1\"  class=\"input-subdomain_form margin-t\"\n                  [(ngModel)]=\"loginJSON.register.location\" name=\"loc\" required>\n            <option *ngFor=\"let city of loginJSON.cities\">{{city.city}}</option>\n          </select>\n          <button type=\"submit\" (click)=\"register()\"  class=\"btn btn-primary\"> Sign up</button>\n        </form>\n        <!--forgot password form -->\n        <form class=\"px-4 py-3\" *ngIf=\"loginJSON.loginFormVeiw==2\">\n          <div class=\"form-group\" >\n            <label for=\"exampleDropdownFormEmail1\">Email address</label>\n            <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormEmail1\"\n                   [(ngModel)]=\"loginJSON.login.email\" name=\"email\" placeholder=\"email@example.com\" required>\n          </div>\n          <button type=\"submit\" (click)=\"forgot()\"  class=\"btn btn-primary\">Send Link</button>\n        </form>\n        <div class=\"dropdown-divider\"></div>\n        <a class=\"dropdown-item\" href=\"#/login\" *ngIf=\"loginJSON.loginFormVeiw==0\" (click)=\"loginJSON.loginFormVeiw=1\">New around here? Sign up</a>\n        <a class=\"dropdown-item\" href=\"#/login\" *ngIf=\"loginJSON.loginFormVeiw==1\" (click)=\"loginJSON.loginFormVeiw=0\">Have account? Sign in</a>\n        <a class=\"dropdown-item\" href=\"#/login\"  *ngIf=\"loginJSON.loginFormVeiw!=2\" (click)=\"loginJSON.loginFormVeiw=2\">Forgot password?</a>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1338,37 +1447,79 @@ var SigninComponent = /** @class */ (function () {
     }
     SigninComponent.prototype.initJSON = function () {
         this.loginJSON = {
+            "register": {
+                "uid": 0,
+                "name": "",
+                "email": "",
+                "password": "",
+                "location": {
+                    "city": "",
+                    "latitude": 0.0,
+                    "longitude": 0.0
+                },
+                "token": "",
+                "remember": ""
+            },
             "login": {
                 "email": "",
                 "password": "",
-                "location": ""
+                "remember": ""
             },
-            "cities": []
+            "cities": [],
+            "loginFormVeiw": 0,
+            "errors": []
         };
+        console.info("@initJSON..", this.loginJSON);
     };
     SigninComponent.prototype.ngOnInit = function () {
         this.fetchCities();
     };
     SigninComponent.prototype.login = function () {
         var _this = this;
+        this.loginJSON.errors = [];
         console.info("@login..", this.loginJSON.login);
         this.ajax.apiCall_POST(this.loginJSON.login, environment_1.environment.API_LOGIN)
             .subscribe(function (data) {
-            if (data.status == 0) {
-                _this.util.getRouter().navigate("['/home']");
+            if (data.status) {
+                localStorage.setItem("user", JSON.stringify(data.user));
+                localStorage.setItem("token", data.token);
+                _this.util.getRouter().navigate(['/home']);
+            }
+            else {
+                _this.loginJSON.errors = data.errors;
             }
         }, function (error) {
             console.info("error.status:: ", error.status);
+            _this.loginJSON.errors = error;
         });
+    };
+    SigninComponent.prototype.register = function () {
+        var _this = this;
+        this.loginJSON.errors = [];
+        console.info("@register..", this.loginJSON.register);
+        this.ajax.apiCall_POST(this.loginJSON.register, environment_1.environment.API_REGISTER)
+            .subscribe(function (data) {
+            if (data.status) {
+                localStorage.setItem("user", JSON.stringify(data.user));
+                localStorage.setItem("token", data.token);
+                _this.util.getRouter().navigate(['/home']);
+            }
+            else {
+                _this.loginJSON.errors = data.errors;
+            }
+        }, function (error) {
+            console.info("error.status:: ", error.status);
+            _this.loginJSON.errors = error;
+        });
+    };
+    SigninComponent.prototype.forgot = function () {
     };
     SigninComponent.prototype.fetchCities = function () {
         var _this = this;
-        console.info("@login..", this.loginJSON.login);
+        console.info("@fetchCities..");
         this.ajax.apiCall_GET({}, environment_1.environment.API_CITIES_INDIA)
             .subscribe(function (data) {
-            if (data.status == 0) {
-                _this.loginJSON.cities = data.cities;
-            }
+            _this.loginJSON.cities = data.cities;
         }, function (error) {
             console.info("error.status:: ", error.status);
         });
@@ -1412,9 +1563,11 @@ exports.environment = {
     ROUTE_IDEAS: 'ideas',
     ROUTE_ADD_IDEA: 'ideas/add',
     ROUTE_EDIT_IDEA: "ideas/edit/:id",
+    ROUTE_SHARE_IDEA: "ideas/share/:id",
     // api paths --
     apiHost: 'https://api.somedomain.com/prod/v1/',
     API_LOGIN: '/login/v1',
+    API_REGISTER: '/register/v1',
     API_INVALID_PATH: "/indalid",
     CONFIG_API: "/api/config",
     ROUTE_CONFIG_API: "/getrouteconfigs/",

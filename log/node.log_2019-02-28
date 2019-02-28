@@ -1,0 +1,4747 @@
+[2019-02-28T00:12:00.656] [INFO] [access] - from /
+[2019-02-28T00:12:32.774] [INFO] [access] - from /
+[2019-02-28T00:12:33.632] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:12:33.633] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:12:33.634] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:12:33.634] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:12:33.639] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:12:33.641] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:12:33.641] [INFO] [access] - current route is login
+[2019-02-28T00:12:33.641] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:12:33.642] [INFO] [access] - config undefined
+[2019-02-28T00:12:33.642] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:12:45.634] [INFO] [access] - @listIdeas...
+[2019-02-28T00:12:45.634] [INFO] [access] - list all ideas
+[2019-02-28T00:12:49.619] [INFO] [access] - @listIdeas...
+[2019-02-28T00:12:49.620] [INFO] [access] - find by id -- 5c69a6e64d7463c6d678ca82
+[2019-02-28T00:13:44.372] [INFO] [access] - from /
+[2019-02-28T00:13:45.253] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:13:45.253] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:13:45.253] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:13:45.253] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:13:45.254] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:13:45.273] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:13:45.274] [INFO] [access] - current route is login
+[2019-02-28T00:13:45.274] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:13:45.274] [INFO] [access] - config undefined
+[2019-02-28T00:13:45.274] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:13:45.434] [INFO] [access] - @listIdeas...
+[2019-02-28T00:13:45.434] [INFO] [access] - find by id -- 5c69a6e64d7463c6d678ca82
+[2019-02-28T00:14:13.717] [INFO] [access] - from /
+[2019-02-28T00:14:14.802] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:14:14.802] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:14:14.802] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:14:14.802] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:14:14.803] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:14:14.811] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:14:14.811] [INFO] [access] - current route is login
+[2019-02-28T00:14:14.811] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:14:14.811] [INFO] [access] - config undefined
+[2019-02-28T00:14:14.811] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:14:15.056] [INFO] [access] - @listIdeas...
+[2019-02-28T00:14:15.056] [INFO] [access] - find by id -- 5c69a6e64d7463c6d678ca82
+[2019-02-28T00:19:08.020] [INFO] [access] - from /
+[2019-02-28T00:19:09.195] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:19:09.196] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:19:09.196] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:19:09.196] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:19:09.196] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:19:09.209] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:19:09.209] [INFO] [access] - current route is login
+[2019-02-28T00:19:09.209] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:19:09.209] [INFO] [access] - config undefined
+[2019-02-28T00:19:09.209] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:19:09.409] [INFO] [access] - @listIdeas...
+[2019-02-28T00:19:09.410] [INFO] [access] - find by id -- 5c69a6e64d7463c6d678ca82
+[2019-02-28T00:19:29.615] [INFO] [access] - from /
+[2019-02-28T00:19:30.627] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:19:30.628] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:19:30.628] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:19:30.628] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:19:30.628] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:19:30.633] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:19:30.633] [INFO] [access] - current route is login
+[2019-02-28T00:19:30.633] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:19:30.633] [INFO] [access] - config undefined
+[2019-02-28T00:19:30.633] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:19:30.768] [INFO] [access] - @listIdeas...
+[2019-02-28T00:19:30.768] [INFO] [access] - find by id -- 5c69a6e64d7463c6d678ca82
+[2019-02-28T00:19:34.643] [INFO] [access] - @getClientIp...
+[2019-02-28T00:19:34.643] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:19:34.644] [INFO] [access] - @saveIdeas.. request body { _id: '5c69a6e64d7463c6d678ca82',
+  title: 'Life with Buperdra ',
+  details: 'happy healthy full of food movies travel daru.',
+  lat: 0,
+  lng: 0,
+  created_at: '2019-02-17T18:24:38.031Z',
+  updated_at: '2019-02-17T18:24:38.031Z',
+  __v: 0,
+  views: 27,
+  like: 18 }
+[2019-02-28T00:19:34.644] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:19:34.644] [INFO] [access] - updating idea
+[2019-02-28T00:19:34.657] [INFO] [access] - @getClientIp...
+[2019-02-28T00:19:34.657] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:19:34.657] [INFO] [access] - @saveIdeas.. request body { _id: '5c69a6e64d7463c6d678ca82',
+  title: 'Life with Buperdra ',
+  details: 'happy healthy full of food movies travel daru.',
+  lat: 0,
+  lng: 0,
+  created_at: '2019-02-17T18:24:38.031Z',
+  updated_at: '2019-02-17T18:24:38.031Z',
+  __v: 0,
+  views: 28,
+  like: 18 }
+[2019-02-28T00:19:34.666] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:19:34.666] [INFO] [access] - updating idea
+[2019-02-28T00:19:34.718] [INFO] [access] - @listIdeas...
+[2019-02-28T00:19:34.718] [INFO] [access] - list all ideas
+[2019-02-28T00:19:54.207] [INFO] [access] - from /
+[2019-02-28T00:19:55.258] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:19:55.258] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:19:55.258] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:19:55.258] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:19:55.258] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:19:55.266] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:19:55.266] [INFO] [access] - current route is login
+[2019-02-28T00:19:55.266] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:19:55.266] [INFO] [access] - config undefined
+[2019-02-28T00:19:55.266] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:19:55.384] [INFO] [access] - @listIdeas...
+[2019-02-28T00:19:55.385] [INFO] [access] - list all ideas
+[2019-02-28T00:20:29.523] [INFO] [access] - from /
+[2019-02-28T00:20:30.411] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:20:30.411] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:20:30.411] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:20:30.411] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:20:30.412] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:20:30.427] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:20:30.428] [INFO] [access] - current route is login
+[2019-02-28T00:20:30.428] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:20:30.429] [INFO] [access] - config undefined
+[2019-02-28T00:20:30.429] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:20:30.579] [INFO] [access] - @listIdeas...
+[2019-02-28T00:20:30.580] [INFO] [access] - list all ideas
+[2019-02-28T00:20:47.818] [INFO] [access] - @getClientIp...
+[2019-02-28T00:20:47.820] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:20:47.821] [INFO] [access] - @deleteIdea.. id  5c693e264d7463c6d678ca81
+[2019-02-28T00:20:47.845] [INFO] [access] - @getClientIp...
+[2019-02-28T00:20:47.845] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:20:47.845] [INFO] [access] - @saveIdeas.. request body { _id: '5c693e264d7463c6d678ca81',
+  title: 'asd',
+  details: 'asd',
+  lat: 0,
+  lng: 0,
+  created_at: '2019-02-17T10:57:42.621Z',
+  updated_at: '2019-02-17T10:57:42.621Z',
+  __v: 0,
+  views: 8 }
+[2019-02-28T00:20:47.845] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:20:47.845] [INFO] [access] - updating idea
+[2019-02-28T00:20:47.873] [INFO] [access] - @listIdeas...
+[2019-02-28T00:20:47.875] [INFO] [access] - list all ideas
+[2019-02-28T00:20:48.608] [INFO] [access] - @getClientIp...
+[2019-02-28T00:20:48.608] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:20:48.608] [INFO] [access] - @deleteIdea.. id  5c693cd570525ac6c26d1522
+[2019-02-28T00:20:48.618] [INFO] [access] - @getClientIp...
+[2019-02-28T00:20:48.618] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:20:48.619] [INFO] [access] - @saveIdeas.. request body { _id: '5c693cd570525ac6c26d1522',
+  title: 'asdasdf',
+  details: 'asdf',
+  lat: 0,
+  lng: 0,
+  created_at: '2019-02-17T10:52:05.343Z',
+  updated_at: '2019-02-17T10:52:05.343Z',
+  __v: 0,
+  views: 1 }
+[2019-02-28T00:20:48.619] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:20:48.619] [INFO] [access] - updating idea
+[2019-02-28T00:20:48.635] [INFO] [access] - @listIdeas...
+[2019-02-28T00:20:48.635] [INFO] [access] - list all ideas
+[2019-02-28T00:20:50.149] [INFO] [access] - @getClientIp...
+[2019-02-28T00:20:50.150] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:20:50.150] [INFO] [access] - @deleteIdea.. id  5c693cc970525ac6c26d1521
+[2019-02-28T00:20:50.164] [INFO] [access] - @getClientIp...
+[2019-02-28T00:20:50.165] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:20:50.165] [INFO] [access] - @saveIdeas.. request body { _id: '5c693cc970525ac6c26d1521',
+  title: 'asd',
+  details: 'as',
+  lat: 0,
+  lng: 0,
+  created_at: '2019-02-17T10:51:53.401Z',
+  updated_at: '2019-02-17T10:51:53.401Z',
+  __v: 0,
+  views: 1 }
+[2019-02-28T00:20:50.165] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:20:50.165] [INFO] [access] - updating idea
+[2019-02-28T00:20:50.180] [INFO] [access] - @listIdeas...
+[2019-02-28T00:20:50.181] [INFO] [access] - list all ideas
+[2019-02-28T00:21:27.487] [INFO] [access] - from /
+[2019-02-28T00:21:28.451] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:21:28.451] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:21:28.451] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:21:28.452] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:21:28.452] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:21:28.455] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:21:28.455] [INFO] [access] - current route is login
+[2019-02-28T00:21:28.455] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:21:28.455] [INFO] [access] - config undefined
+[2019-02-28T00:21:28.455] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:21:28.613] [INFO] [access] - @listIdeas...
+[2019-02-28T00:21:28.613] [INFO] [access] - list all ideas
+[2019-02-28T00:22:55.764] [INFO] [access] - from /
+[2019-02-28T00:22:56.549] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:22:56.549] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:22:56.549] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:22:56.549] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:22:56.549] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:22:56.553] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:22:56.555] [INFO] [access] - current route is login
+[2019-02-28T00:22:56.555] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:22:56.555] [INFO] [access] - config undefined
+[2019-02-28T00:22:56.555] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:22:58.453] [INFO] [access] - @listIdeas...
+[2019-02-28T00:22:58.453] [INFO] [access] - list all ideas
+[2019-02-28T00:23:23.733] [INFO] [access] - @listIdeas...
+[2019-02-28T00:23:23.734] [INFO] [access] - list all ideas
+[2019-02-28T00:23:28.111] [INFO] [access] - @listIdeas...
+[2019-02-28T00:23:28.111] [INFO] [access] - list all ideas
+[2019-02-28T00:23:32.559] [INFO] [access] - @listIdeas...
+[2019-02-28T00:23:32.560] [INFO] [access] - list all ideas
+[2019-02-28T00:27:02.681] [INFO] [access] - from /
+[2019-02-28T00:27:03.714] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:27:03.714] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:27:03.714] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:27:03.714] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:27:03.715] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:27:03.723] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:27:03.723] [INFO] [access] - current route is login
+[2019-02-28T00:27:03.723] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:27:03.723] [INFO] [access] - config undefined
+[2019-02-28T00:27:03.723] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:27:06.794] [INFO] [access] - @listIdeas...
+[2019-02-28T00:27:06.794] [INFO] [access] - list all ideas
+[2019-02-28T00:27:10.328] [INFO] [access] - @listIdeas...
+[2019-02-28T00:27:10.328] [INFO] [access] - list all ideas
+[2019-02-28T00:27:12.359] [INFO] [access] - @listIdeas...
+[2019-02-28T00:27:12.359] [INFO] [access] - list all ideas
+[2019-02-28T00:27:14.853] [INFO] [access] - @listIdeas...
+[2019-02-28T00:27:14.854] [INFO] [access] - list all ideas
+[2019-02-28T00:27:27.611] [INFO] [access] - @listIdeas...
+[2019-02-28T00:27:27.611] [INFO] [access] - list all ideas
+[2019-02-28T00:27:58.074] [INFO] [access] - @getClientIp...
+[2019-02-28T00:27:58.074] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:27:58.074] [INFO] [access] - @saveIdeas.. request body { _id: '',
+  id: '',
+  uid: '',
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: '',
+  like: 0,
+  views: 0 }
+[2019-02-28T00:27:58.077] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:27:58.078] [INFO] [access] - saving new idea
+[2019-02-28T00:27:58.413] [INFO] [access] - @listIdeas...
+[2019-02-28T00:27:58.413] [INFO] [access] - list all ideas
+[2019-02-28T00:28:21.077] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:21.077] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:21.077] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 1,
+  views: 0,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:21.077] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:21.077] [INFO] [access] - updating idea
+[2019-02-28T00:28:21.098] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:21.098] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:21.098] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 1,
+  views: 1,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:21.098] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:21.099] [INFO] [access] - updating idea
+[2019-02-28T00:28:21.648] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:21.648] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:21.648] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 2,
+  views: 1,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:21.648] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:21.648] [INFO] [access] - updating idea
+[2019-02-28T00:28:21.663] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:21.663] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:21.664] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 2,
+  views: 2,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:21.664] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:21.664] [INFO] [access] - updating idea
+[2019-02-28T00:28:22.124] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:22.124] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:22.124] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 3,
+  views: 2,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:22.124] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:22.124] [INFO] [access] - updating idea
+[2019-02-28T00:28:22.133] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:22.133] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:22.133] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 3,
+  views: 3,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:22.133] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:22.133] [INFO] [access] - updating idea
+[2019-02-28T00:28:22.886] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:22.886] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:22.886] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 4,
+  views: 3,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:22.886] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:22.887] [INFO] [access] - updating idea
+[2019-02-28T00:28:22.900] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:22.901] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:22.901] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 4,
+  views: 4,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:22.901] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:22.901] [INFO] [access] - updating idea
+[2019-02-28T00:28:23.482] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:23.483] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:23.483] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 5,
+  views: 4,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:23.483] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:23.483] [INFO] [access] - updating idea
+[2019-02-28T00:28:23.495] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:23.495] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:23.495] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 5,
+  views: 5,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:23.495] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:23.496] [INFO] [access] - updating idea
+[2019-02-28T00:28:23.996] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:23.996] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:23.996] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 6,
+  views: 5,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:23.997] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:23.997] [INFO] [access] - updating idea
+[2019-02-28T00:28:24.010] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:24.010] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:24.010] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 6,
+  views: 6,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:24.010] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:24.010] [INFO] [access] - updating idea
+[2019-02-28T00:28:25.327] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:25.327] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:25.327] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 7,
+  views: 6,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:25.327] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:25.327] [INFO] [access] - updating idea
+[2019-02-28T00:28:25.336] [INFO] [access] - @getClientIp...
+[2019-02-28T00:28:25.337] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:28:25.337] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 7,
+  views: 7,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:28:25.337] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:28:25.337] [INFO] [access] - updating idea
+[2019-02-28T00:28:42.176] [INFO] [access] - @listIdeas...
+[2019-02-28T00:28:42.176] [INFO] [access] - find by id -- 5c76ddb69540f26c8937143e
+[2019-02-28T00:28:53.972] [INFO] [access] - @listIdeas...
+[2019-02-28T00:28:53.972] [INFO] [access] - list all ideas
+[2019-02-28T00:29:47.901] [INFO] [access] - @listIdeas...
+[2019-02-28T00:29:47.902] [INFO] [access] - find by id -- 5c76ddb69540f26c8937143e
+[2019-02-28T00:29:56.640] [INFO] [access] - @listIdeas...
+[2019-02-28T00:29:56.640] [INFO] [access] - list all ideas
+[2019-02-28T00:29:58.461] [INFO] [access] - @listIdeas...
+[2019-02-28T00:29:58.462] [INFO] [access] - find by id -- 5c76ddb69540f26c8937143e
+[2019-02-28T00:30:08.979] [INFO] [access] - @getClientIp...
+[2019-02-28T00:30:08.979] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:30:08.979] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 7,
+  views: 8,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:30:08.979] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:30:08.979] [INFO] [access] - updating idea
+[2019-02-28T00:30:09.081] [INFO] [access] - @listIdeas...
+[2019-02-28T00:30:09.082] [INFO] [access] - list all ideas
+[2019-02-28T00:30:10.724] [INFO] [access] - @listIdeas...
+[2019-02-28T00:30:10.724] [INFO] [access] - find by id -- 5c76ddb69540f26c8937143e
+[2019-02-28T00:30:11.965] [INFO] [access] - @getClientIp...
+[2019-02-28T00:30:11.965] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:30:11.965] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 8,
+  views: 8,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:30:11.965] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:30:11.965] [INFO] [access] - updating idea
+[2019-02-28T00:30:11.971] [INFO] [access] - @getClientIp...
+[2019-02-28T00:30:11.972] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:30:11.972] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 8,
+  views: 9,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:30:11.972] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:30:11.972] [INFO] [access] - updating idea
+[2019-02-28T00:30:12.034] [INFO] [access] - @listIdeas...
+[2019-02-28T00:30:12.037] [INFO] [access] - list all ideas
+[2019-02-28T00:30:16.622] [INFO] [access] - @listIdeas...
+[2019-02-28T00:30:16.622] [INFO] [access] - find by id -- 5c76ddb69540f26c8937143e
+[2019-02-28T00:30:23.968] [INFO] [access] - @getClientIp...
+[2019-02-28T00:30:23.968] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:30:23.968] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 9,
+  views: 9,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:30:23.968] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:30:23.968] [INFO] [access] - updating idea
+[2019-02-28T00:30:23.970] [INFO] [access] - @getClientIp...
+[2019-02-28T00:30:23.970] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:30:23.970] [INFO] [access] - @saveIdeas.. request body { _id: '5c76ddb69540f26c8937143e',
+  id: null,
+  uid: null,
+  title: 'Life in MAC',
+  details: 'Limited .',
+  lat: 28.6333059,
+  lng: 77.2759738,
+  created_at: null,
+  like: 9,
+  views: 10,
+  updated_at: '2019-02-27T18:57:58.166Z',
+  __v: 0 }
+[2019-02-28T00:30:23.971] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:30:23.971] [INFO] [access] - updating idea
+[2019-02-28T00:30:24.004] [INFO] [access] - @listIdeas...
+[2019-02-28T00:30:24.004] [INFO] [access] - list all ideas
+[2019-02-28T00:37:52.418] [INFO] [access] - from /
+[2019-02-28T00:37:53.419] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:37:53.419] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:37:53.419] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:37:53.419] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:37:53.420] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:37:53.426] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:37:53.426] [INFO] [access] - current route is login
+[2019-02-28T00:37:53.426] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:37:53.426] [INFO] [access] - config undefined
+[2019-02-28T00:37:53.426] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:37:53.709] [INFO] [access] - @listIdeas...
+[2019-02-28T00:37:53.709] [INFO] [access] - list all ideas
+[2019-02-28T00:38:03.182] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:03.182] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:03.182] [INFO] [access] - @saveIdeas.. request body { _id: '',
+  id: '',
+  uid: '',
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: '',
+  like: 0,
+  views: 0 }
+[2019-02-28T00:38:03.186] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:03.188] [INFO] [access] - saving new idea
+[2019-02-28T00:38:03.242] [INFO] [access] - @listIdeas...
+[2019-02-28T00:38:03.242] [INFO] [access] - list all ideas
+[2019-02-28T00:38:06.359] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:06.359] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:06.359] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 1,
+  views: 0,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:06.359] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:06.359] [INFO] [access] - updating idea
+[2019-02-28T00:38:06.366] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:06.367] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:06.367] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 1,
+  views: 1,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:06.367] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:06.367] [INFO] [access] - updating idea
+[2019-02-28T00:38:07.283] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:07.284] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:07.284] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 2,
+  views: 1,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:07.284] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:07.284] [INFO] [access] - updating idea
+[2019-02-28T00:38:07.299] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:07.299] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:07.299] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 2,
+  views: 2,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:07.299] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:07.299] [INFO] [access] - updating idea
+[2019-02-28T00:38:08.347] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:08.349] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:08.349] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 3,
+  views: 2,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:08.349] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:08.349] [INFO] [access] - updating idea
+[2019-02-28T00:38:08.355] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:08.355] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:08.355] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 3,
+  views: 3,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:08.355] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:08.355] [INFO] [access] - updating idea
+[2019-02-28T00:38:15.960] [INFO] [access] - @listIdeas...
+[2019-02-28T00:38:15.960] [INFO] [access] - find by id -- 5c76e0139540f26c8937143f
+[2019-02-28T00:38:17.202] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:17.202] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:17.202] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 4,
+  views: 3,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:17.202] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:17.203] [INFO] [access] - updating idea
+[2019-02-28T00:38:17.213] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:17.213] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:17.213] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 4,
+  views: 4,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:17.214] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:17.214] [INFO] [access] - updating idea
+[2019-02-28T00:38:17.942] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:17.942] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:17.942] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 5,
+  views: 4,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:17.942] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:17.942] [INFO] [access] - updating idea
+[2019-02-28T00:38:17.952] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:17.952] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:17.952] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 5,
+  views: 5,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:17.952] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:17.952] [INFO] [access] - updating idea
+[2019-02-28T00:38:18.555] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:18.555] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:18.555] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 6,
+  views: 5,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:18.555] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:18.555] [INFO] [access] - updating idea
+[2019-02-28T00:38:18.561] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:18.561] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:18.561] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 6,
+  views: 6,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:18.561] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:18.561] [INFO] [access] - updating idea
+[2019-02-28T00:38:20.046] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:20.046] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:20.047] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 6,
+  views: 7,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:20.047] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:20.047] [INFO] [access] - updating idea
+[2019-02-28T00:38:20.629] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:20.629] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:20.629] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 6,
+  views: 8,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:20.629] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:20.629] [INFO] [access] - updating idea
+[2019-02-28T00:38:23.342] [INFO] [access] - @getClientIp...
+[2019-02-28T00:38:23.342] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:38:23.342] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333171,
+  lng: 77.2759191,
+  created_at: null,
+  like: 6,
+  views: 9,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:38:23.342] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:38:23.342] [INFO] [access] - updating idea
+[2019-02-28T00:40:02.763] [INFO] [access] - from /
+[2019-02-28T00:40:03.535] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:40:03.535] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:40:03.536] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:40:03.536] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:40:03.536] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:40:03.548] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:40:03.548] [INFO] [access] - current route is login
+[2019-02-28T00:40:03.548] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:40:03.548] [INFO] [access] - config undefined
+[2019-02-28T00:40:03.548] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:40:03.735] [INFO] [access] - @listIdeas...
+[2019-02-28T00:40:03.735] [INFO] [access] - find by id -- 5c76e0139540f26c8937143f
+[2019-02-28T00:40:36.744] [INFO] [access] - from /
+[2019-02-28T00:40:37.581] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T00:40:37.581] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T00:40:37.581] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T00:40:37.581] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T00:40:37.593] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T00:40:37.596] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T00:40:37.596] [INFO] [access] - current route is login
+[2019-02-28T00:40:37.596] [INFO] [access] - host is ::  localhost
+[2019-02-28T00:40:37.596] [INFO] [access] - config undefined
+[2019-02-28T00:40:37.596] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T00:40:37.743] [INFO] [access] - @listIdeas...
+[2019-02-28T00:40:37.743] [INFO] [access] - find by id -- 5c76e0139540f26c8937143f
+[2019-02-28T00:41:07.418] [INFO] [access] - @listIdeas...
+[2019-02-28T00:41:07.419] [INFO] [access] - list all ideas
+[2019-02-28T00:41:12.544] [INFO] [access] - @listIdeas...
+[2019-02-28T00:41:12.545] [INFO] [access] - find by id -- 5c76e0139540f26c8937143f
+[2019-02-28T00:41:13.729] [INFO] [access] - @getClientIp...
+[2019-02-28T00:41:13.730] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:41:13.730] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333193,
+  lng: 77.2759191,
+  created_at: null,
+  like: 6,
+  views: 10,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:41:13.731] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:41:13.731] [INFO] [access] - updating idea
+[2019-02-28T00:41:14.101] [INFO] [access] - @getClientIp...
+[2019-02-28T00:41:14.102] [INFO] [access] - client ip is --  ::1
+[2019-02-28T00:41:14.102] [INFO] [access] - @saveIdeas.. request body { _id: '5c76e0139540f26c8937143f',
+  id: null,
+  uid: null,
+  title: 'test',
+  details: 'done',
+  lat: 28.6333193,
+  lng: 77.2759191,
+  created_at: null,
+  like: 6,
+  views: 11,
+  updated_at: '2019-02-27T19:08:03.191Z',
+  __v: 0 }
+[2019-02-28T00:41:14.102] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-02-28T00:41:14.102] [INFO] [access] - updating idea
+[2019-02-28T00:41:16.377] [INFO] [access] - @listIdeas...
+[2019-02-28T00:41:16.377] [INFO] [access] - list all ideas
+[2019-02-28T23:15:44.234] [INFO] [access] - from /
+[2019-02-28T23:15:47.186] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:15:47.189] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:15:47.190] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:15:47.192] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:15:47.208] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:15:47.213] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:15:47.213] [INFO] [access] - current route is login
+[2019-02-28T23:15:47.213] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:15:47.213] [INFO] [access] - config undefined
+[2019-02-28T23:15:47.213] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:28:12.238] [INFO] [access] - from /
+[2019-02-28T23:28:13.577] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:28:13.578] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:28:13.579] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:28:13.580] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:28:13.581] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:28:13.582] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:28:13.582] [INFO] [access] - current route is login
+[2019-02-28T23:28:13.583] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:28:13.583] [INFO] [access] - config undefined
+[2019-02-28T23:28:13.583] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:29:01.846] [INFO] [access] - from /
+[2019-02-28T23:29:02.474] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:29:02.474] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:29:02.474] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:29:02.474] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:29:02.474] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:29:02.477] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:29:02.477] [INFO] [access] - current route is login
+[2019-02-28T23:29:02.477] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:29:02.477] [INFO] [access] - config undefined
+[2019-02-28T23:29:02.477] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:29:03.375] [INFO] [access] - from /
+[2019-02-28T23:29:03.727] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:29:03.727] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:29:03.727] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:29:03.727] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:29:03.727] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:29:03.749] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:29:03.750] [INFO] [access] - current route is login
+[2019-02-28T23:29:03.750] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:29:03.750] [INFO] [access] - config undefined
+[2019-02-28T23:29:03.750] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:31:15.099] [INFO] [access] - from /
+[2019-02-28T23:31:16.563] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:31:16.563] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:31:16.563] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:31:16.563] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:31:16.565] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:31:16.571] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:31:16.571] [INFO] [access] - current route is login
+[2019-02-28T23:31:16.571] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:31:16.571] [INFO] [access] - config undefined
+[2019-02-28T23:31:16.571] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:33:46.508] [INFO] [access] - from /
+[2019-02-28T23:33:47.330] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:33:47.330] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:33:47.330] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:33:47.330] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:33:47.330] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:33:47.353] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:33:47.354] [INFO] [access] - current route is login
+[2019-02-28T23:33:47.354] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:33:47.354] [INFO] [access] - config undefined
+[2019-02-28T23:33:47.354] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:34:54.893] [INFO] [access] - from /
+[2019-02-28T23:34:55.672] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:34:55.674] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:34:55.675] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:34:55.675] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:34:55.675] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:34:55.760] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:34:55.762] [INFO] [access] - current route is login
+[2019-02-28T23:34:55.762] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:34:55.762] [INFO] [access] - config undefined
+[2019-02-28T23:34:55.762] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:35:01.493] [INFO] [access] - login Invoked
+[2019-02-28T23:35:01.502] [INFO] [access] - caught exception
+[2019-02-28T23:35:01.502] [ERROR] [access] - ReferenceError: util is not defined
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:13:11)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-02-28T23:35:05.717] [INFO] [access] - from /
+[2019-02-28T23:35:05.798] [INFO] [access] - from /
+[2019-02-28T23:35:06.971] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:35:06.971] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:35:06.971] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:35:06.971] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:35:06.972] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:35:06.993] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:35:06.993] [INFO] [access] - current route is login
+[2019-02-28T23:35:06.993] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:35:06.993] [INFO] [access] - config undefined
+[2019-02-28T23:35:06.993] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:35:54.229] [INFO] [access] - from /
+[2019-02-28T23:35:55.171] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:35:55.171] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:35:55.171] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:35:55.172] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:35:55.172] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:35:55.181] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:35:55.181] [INFO] [access] - current route is login
+[2019-02-28T23:35:55.181] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:35:55.181] [INFO] [access] - config undefined
+[2019-02-28T23:35:55.181] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:44:14.241] [INFO] [access] - ENV is :: undefined
+[2019-02-28T23:44:14.243] [INFO] [access] - PORT :: undefined, using defaults
+[2019-02-28T23:44:14.352] [INFO] [access] - travelline App route Initialized
+[2019-02-28T23:44:14.376] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
+[2019-02-28T23:44:14.389] [INFO] [access] - Server running on localhost 8888
+[2019-02-28T23:44:38.341] [INFO] [access] - from /
+[2019-02-28T23:44:38.984] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:44:38.984] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:44:38.985] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:44:38.986] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:44:38.986] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:44:38.996] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:44:38.996] [INFO] [access] - current route is login
+[2019-02-28T23:44:38.997] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:44:38.997] [INFO] [access] - config undefined
+[2019-02-28T23:44:38.997] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:44:42.716] [INFO] [access] - login Invoked
+[2019-02-28T23:44:42.716] [INFO] [access] - caught exception
+[2019-02-28T23:44:42.716] [ERROR] [access] - ReferenceError: util is not defined
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:13:11)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-02-28T23:51:54.269] [INFO] [access] - ENV is :: undefined
+[2019-02-28T23:51:54.270] [INFO] [access] - PORT :: undefined, using defaults
+[2019-02-28T23:51:54.340] [INFO] [access] - travelline App route Initialized
+[2019-02-28T23:51:54.348] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
+[2019-02-28T23:51:54.351] [INFO] [access] - Server running on localhost 8888
+[2019-02-28T23:52:00.510] [INFO] [access] - from /
+[2019-02-28T23:52:01.526] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:52:01.526] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:52:01.527] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:52:01.527] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:52:01.528] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:52:01.534] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:52:01.534] [INFO] [access] - current route is login
+[2019-02-28T23:52:01.534] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:52:01.534] [INFO] [access] - config undefined
+[2019-02-28T23:52:01.535] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:52:02.986] [INFO] [access] - from /
+[2019-02-28T23:52:03.836] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:52:03.836] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:52:03.836] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:52:03.836] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:52:03.836] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:52:03.844] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:52:03.845] [INFO] [access] - current route is login
+[2019-02-28T23:52:03.845] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:52:03.845] [INFO] [access] - config undefined
+[2019-02-28T23:52:03.845] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:52:10.152] [INFO] [access] - login Invoked
+[2019-02-28T23:52:10.152] [INFO] [access] - caught exception
+[2019-02-28T23:52:10.152] [ERROR] [access] - ReferenceError: util is not defined
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:13:11)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-02-28T23:52:35.339] [INFO] [access] - from /
+[2019-02-28T23:52:36.010] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:52:36.011] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:52:36.011] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:52:36.011] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:52:36.011] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:52:36.025] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:52:36.025] [INFO] [access] - current route is login
+[2019-02-28T23:52:36.025] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:52:36.025] [INFO] [access] - config undefined
+[2019-02-28T23:52:36.025] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:52:39.918] [INFO] [access] - login Invoked
+[2019-02-28T23:52:39.919] [INFO] [access] - caught exception
+[2019-02-28T23:52:39.919] [ERROR] [access] - ReferenceError: util is not defined
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:13:11)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-02-28T23:54:16.818] [INFO] [access] - ENV is :: undefined
+[2019-02-28T23:54:16.820] [INFO] [access] - PORT :: undefined, using defaults
+[2019-02-28T23:54:16.870] [INFO] [access] - travelline App route Initialized
+[2019-02-28T23:54:16.877] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
+[2019-02-28T23:54:16.881] [INFO] [access] - Server running on localhost 8888
+[2019-02-28T23:54:22.953] [INFO] [access] - from /
+[2019-02-28T23:54:23.730] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:54:23.730] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:54:23.732] [INFO] [access] - host is ::  test_travelline
+[2019-02-28T23:54:23.733] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-02-28T23:54:23.733] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  home: 
+   { Signout: 'signout',
+     Profile: 'Profile',
+     AddPoi: 'Add Poi',
+     NoPoi: 'ah! no POI added :(',
+     AllPoi: 'All POI',
+     AddNewPoi: 'ADD NEW POI',
+     Show: 'Show',
+     Status: 'Status',
+     PoiName: 'POI Name',
+     LocalName: 'Local Name',
+     PoiLocations: 'POI Locations',
+     TargetingType: 'Targeting Type',
+     Actions: 'Actions',
+     Search: 'Search',
+     ShowingFrom: 'Showing from',
+     To: 'to',
+     Of: 'Of',
+     Entries: 'entries',
+     Edit: 'EDIT',
+     View: 'VIEW',
+     Delete: 'DELETE',
+     search: 'Search Your POI',
+     chooseCountry: 'Choose Country' },
+  edit: 
+   { id: 'ID',
+     business: 'BUSINESS',
+     street: 'STREET',
+     city: 'CITY',
+     state: 'STATE',
+     zip: 'ZIP',
+     country: 'COUNTRY',
+     latitude: 'LATITUDE',
+     longitude: 'LONGITUDE',
+     radius: 'RADIUS',
+     unit: 'UNIT',
+     startDate: 'START DATE',
+     endDate: 'END DATE',
+     addPoiLocations: 'Add POI Locations',
+     NoLocationPresent: 'No Location Found',
+     search: 'Search Store in zip,city,state',
+     setMonitoring: 'Monitoring Dates',
+     timezone: 'TIMEZONE',
+     update: 'UPDATE',
+     deleteLocation: 'Delete ',
+     geocodeLocation: 'Geocode ',
+     updateMonitoring: 'Update ',
+     monitoringRadius: 'Radius',
+     distanceUnit: 'Unit',
+     savePage: 'Save Page',
+     reloadPage: 'Reload Page' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '3': 'Listing poi...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '1': 
+      { code: 1,
+        message: 'ah! no POI added :(',
+        image: '../assets/images/no_poi.png' },
+     '2': 
+      { code: 2,
+        message: 'ah! no POI locations added :(',
+        image: '../assets/images/error.png' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' },
+     '5': 
+      { code: 5,
+        message: 'ah! no POI found :(',
+        image: '../assets/images/no_poi.png' } } }
+[2019-02-28T23:54:23.745] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:54:23.746] [INFO] [access] - current route is login
+[2019-02-28T23:54:23.746] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:54:23.746] [INFO] [access] - config undefined
+[2019-02-28T23:54:23.746] [INFO] [access] - route confix is not defined for route [login]
+[2019-02-28T23:54:27.358] [INFO] [access] - login Invoked
+[2019-02-28T23:59:38.060] [INFO] [access] - ENV is :: undefined
+[2019-02-28T23:59:38.062] [INFO] [access] - PORT :: undefined, using defaults
+[2019-02-28T23:59:38.117] [INFO] [access] - travelline App route Initialized
+[2019-02-28T23:59:38.125] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
+[2019-02-28T23:59:38.130] [INFO] [access] - Server running on localhost 8888
+[2019-02-28T23:59:52.554] [INFO] [access] - from /
+[2019-02-28T23:59:53.443] [INFO] [access] - No host found, setting default host--uptest
+[2019-02-28T23:59:53.444] [INFO] [access] - req.headers.locale --  en
+[2019-02-28T23:59:53.445] [INFO] [access] - SyntaxError: /Users/chalk/office/personal/MEAN/server/resources/en.json: Unexpected token } in JSON at position 873
+    at JSON.parse (<anonymous>)
+    at Object.Module._extensions..json (module.js:671:27)
+    at Module.load (module.js:565:32)
+    at tryModuleLoad (module.js:505:12)
+    at Function.Module._load (module.js:497:3)
+    at Module.require (module.js:596:17)
+    at require (internal/module.js:11:18)
+    at /Users/chalk/office/personal/MEAN/server/routes/travelline.js:41:31
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+[2019-02-28T23:59:53.454] [INFO] [access] - /getrouteconfigs/
+[2019-02-28T23:59:53.455] [INFO] [access] - current route is login
+[2019-02-28T23:59:53.455] [INFO] [access] - host is ::  localhost
+[2019-02-28T23:59:53.455] [INFO] [access] - config undefined
+[2019-02-28T23:59:53.455] [INFO] [access] - route confix is not defined for route [login]

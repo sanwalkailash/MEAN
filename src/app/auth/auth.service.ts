@@ -9,10 +9,11 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
-  isLoggedIn(): boolean {
-    var authenticated = false;
-    if (localStorage.getItem("token") !== null)
-      authenticated = true;
-    return authenticated;
+  isLoggedIn = (): boolean => {
+    console.info("@isLoggedIn token--",localStorage.getItem("token"));
+    if (localStorage.getItem("token") !== null){
+      return true;
+    }
+    return false;
   }
 }

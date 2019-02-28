@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {UtilService} from '../services/util.service'
 import {AjaxService} from '../services/ajax.service';
 import {environment} from '../../environments/environment';
-import {UtilService} from '../services/util.service';
 
 @Component({
   selector: 'app-signin',
@@ -16,41 +15,86 @@ export class SigninComponent implements OnInit {
   }
   initJSON(){
     this.loginJSON = {
-        "login":{
-            "email":"",
-            "password":"",
-            "location":""
-        }
-"cities":[]
-    }
+        "register":{
+             "uid":0,
+             "name":"",
+             "email": "",
+             "password": "",
+             "location":{
+                        "city": "",
+                        "latitude": 0.0,
+                        "longitude": 0.0
+                    },
+             "token" : "",
+            "remember":""
+         },
+"login":{
+"email":"",
+"password":"",
+"remember":""
+},
+        "cities":[],
+        "loginFormVeiw":0,
+        "errors":[]
+            }
+console.info("@initJSON..",this.loginJSON);
   }
+
   ngOnInit() {
     this.fetchCities();
   }
 
 login(){
+this.loginJSON.errors=[];
 console.info("@login..",this.loginJSON.login)
  this.ajax.apiCall_POST(this.loginJSON.login,environment.API_LOGIN)
     .subscribe(
         data => {
-          if (data.status == 0) {
-            this.util.getRouter().navigate("['/home']");
+          if (data.status) {
+            localStorage.setItem("user",JSON.stringify(data.user))
+            localStorage.setItem("token",data.token)
+            this.util.getRouter().navigate(['/home']);
+          }else {
+            this.loginJSON.errors = data.errors;
           }
         },
         error => {
           console.info("error.status:: ", error.status);
+this.loginJSON.errors=error;
         }
       );
 }
 
+register(){
+this.loginJSON.errors=[];
+console.info("@register..",this.loginJSON.register)
+ this.ajax.apiCall_POST(this.loginJSON.register,environment.API_REGISTER)
+    .subscribe(
+        data => {
+          if (data.status) {
+            localStorage.setItem("user",JSON.stringify(data.user))
+            localStorage.setItem("token",data.token)
+            this.util.getRouter().navigate(['/home']);
+          }else {
+           this.loginJSON.errors = data.errors;
+          }
+        },
+        error => {
+          console.info("error.status:: ", error.status);
+this.loginJSON.errors=error;
+        }
+      );
+}
+
+forgot(){
+}
+
 fetchCities(){
-console.info("@login..",this.loginJSON.login)
+console.info("@fetchCities..")
  this.ajax.apiCall_GET({},environment.API_CITIES_INDIA)
     .subscribe(
         data => {
-          if (data.status == 0) {
 this.loginJSON.cities=data.cities
-          }
         },
         error => {
           console.info("error.status:: ", error.status);

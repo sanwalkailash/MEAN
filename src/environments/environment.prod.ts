@@ -21,14 +21,16 @@ ROUTE_HOME :'home',
 ROUTE_IDEAS :'ideas',
 ROUTE_ADD_IDEA :'ideas/add',
 ROUTE_EDIT_IDEA:"ideas/edit/:id",
+ROUTE_SHARE_IDEA:"ideas/share/:id",
 
 // api paths --
 apiHost: 'https://api.somedomain.com/prod/v1/',
 API_LOGIN: '/login/v1',
+API_REGISTER: '/register/v1',
 API_INVALID_PATH : "/indalid",
 CONFIG_API : "/api/config",
 ROUTE_CONFIG_API : "/getrouteconfigs/",
-API_CITIES_INDIA : "/india/cities"
+API_CITIES_INDIA : "/india/cities",
 REFRESH_API : "/api/refresh",
 API_SAVE_IDEAS:"/save/idea/v1",
 API_LIST_IDEAS:"/list/ideas/v1",

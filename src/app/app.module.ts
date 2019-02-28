@@ -13,12 +13,12 @@ import { Observable } from 'rxjs/Observable';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from "./auth/auth.service";
+import { AuthGuard } from "./auth/auth.guard";
 import { TokeninterceptorService } from "./auth/token-interceptor.service";
 import { AjaxService } from "./services/ajax.service";
 import {BroadcastService} from './services/broatcast.service';
 
 import {NgxPaginationModule} from 'ngx-pagination';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -50,7 +50,6 @@ import { IdeasComponent } from './ideas/ideas.component';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    InfiniteScrollModule
   ],
   providers: [
     LoggerService, 
@@ -61,6 +60,7 @@ import { IdeasComponent } from './ideas/ideas.component';
     AjaxService,
     BroadcastService,
     AuthService,
+    AuthGuard,
     TokeninterceptorService,
     {
       provide: HTTP_INTERCEPTORS,
