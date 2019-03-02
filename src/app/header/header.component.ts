@@ -7,7 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+    headerJSON:any;
+  constructor() {
+    this.initJSON();
+  }
+
+    initJSON(){
+        this.headerJSON={
+            "activeTab":0,
+            "navigationPanel":"true",
+            "clickEvent":0
+        }
+    }
+
 
   ngOnInit() {
   }

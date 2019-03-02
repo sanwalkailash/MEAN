@@ -30,6 +30,7 @@ import { SigninComponent } from './signin/signin.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { IdeasComponent } from './ideas/ideas.component';
+import { NavPanelComponent } from './nav-panel/nav-panel.component';
 
 
 
@@ -43,7 +44,8 @@ import { IdeasComponent } from './ideas/ideas.component';
     SigninComponent,
     PageNotFoundComponent,
     HomeComponent,
-    IdeasComponent
+    IdeasComponent,
+    NavPanelComponent
   ],
   imports: [
     BrowserModule,

@@ -1,83 +1,110 @@
 <div class="container">
-  <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="loginJSON.errors.length>0">
-    <p *ngFor=" let error of loginJSON.errors">{{error}} <br/></p>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="card " style="max-width: 500px;margin: auto;">
-    <div class="card-body">
-      <div class="logo_continer_home">
-        <a href="#"><img src="assets/images/company-logo/logo.png" alt="EXL Services" /></a>
+
+</div>
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--8-col">
+
+      <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="loginJSON.errors.length>0">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="input_form">
-        <h4 style="padding-bottom:0;">Log In</h4>
-        <span class="tagline_short height_sht">
+      <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar" *ngIf="loginJSON.errors.length>0">
+        <div class="mdl-snackbar__text">
+          <p *ngFor=" let error of loginJSON.errors">{{error}} <br/></p>
+        </div>
+        <button class="mdl-snackbar__action" type="button" (click)="loginJSON.errors=[]"></button>
+      </div>
+      <div class="card " style="max-width: 500px;margin: auto;">
+        <div class="card-body">
+          <div class="logo_continer_home">
+            <a href="#"><img src="assets/images/company-logo/logo.png" alt="EXL Services" /></a>
+          </div>
+          <div class="input_form">
+            <h4 style="padding-bottom:0;">Log In</h4>
+            <span class="tagline_short height_sht">
             Please log In to proceed....
         </span>
-        <!--login box-->
-        <form class="px-4 py-3" *ngIf="loginJSON.loginFormVeiw==0">
-          <div class="form-group" >
-            <label for="exampleDropdownFormEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleDropdownFormEmail1"
-                   [(ngModel)]="loginJSON.login.email" name="email" placeholder="email@example.com" required>
+            <!--login box-->
+            <form class="px-4 py-3" *ngIf="loginJSON.loginFormVeiw==0">
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="fname">
+                <label class="mdl-textfield__label" for="fname">First name</label>
+              </div>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="fname">
+                <label class="mdl-textfield__label" for="fname">First name</label>
+              </div>
+              <div class="form-group" >
+                <label for="exampleDropdownFormEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                       [(ngModel)]="loginJSON.login.email" name="email" placeholder="email@example.com" required>
+              </div>
+              <div class="form-group" *ngIf="loginJSON.loginFormVeiw==0">
+                <label for="exampleDropdownFormPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleDropdownFormPassword1"
+                       [(ngModel)]="loginJSON.login.password" name="pass" placeholder="Password" required>
+              </div>
+              <div class="form-check" *ngIf="loginJSON.loginFormVeiw==0">
+                <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                <label class="form-check-label" for="dropdownCheck">
+                  Remember me
+                </label>
+              </div>
+              <button type="submit" (click)="login()" class="btn btn-primary"> Sign in</button>
+            </form>
+            <!--sign up form-->
+            <form class="px-4 py-3" *ngIf="loginJSON.loginFormVeiw==1">
+              <div class="form-group" >
+                <label for="exampleDropdownFormEmail1">Name</label>
+                <input type="email" class="form-control" id="exampleDropdownFormname"
+                       [(ngModel)]="loginJSON.register.name" name="name" placeholder="John Singh" required>
+              </div>
+              <div class="form-group" >
+                <label for="exampleDropdownFormEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                       [(ngModel)]="loginJSON.register.email" name="email" placeholder="email@example.com" required>
+              </div>
+              <div class="form-group" *ngIf="loginJSON.loginFormVeiw==0 || loginJSON.loginFormVeiw==1">
+                <label for="exampleDropdownFormPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleDropdownFormPassword1"
+                       [(ngModel)]="loginJSON.register.password" name="pass" placeholder="Password" required>
+              </div>
+              <div class="form-check" *ngIf="loginJSON.loginFormVeiw==0">
+                <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                <label class="form-check-label" for="dropdownCheck">
+                  Remember me
+                </label>
+              </div>
+              <select *ngIf="loginJSON.loginFormVeiw==1"  class="input-subdomain_form margin-t"
+                      [(ngModel)]="loginJSON.register.location" name="loc" required>
+                <option *ngFor="let city of loginJSON.cities">{{city.city}}</option>
+              </select>
+              <button type="submit" (click)="register()"  class="btn btn-primary"> Sign up</button>
+            </form>
+            <!--forgot password form -->
+            <form class="px-4 py-3" *ngIf="loginJSON.loginFormVeiw==2">
+              <div class="form-group" >
+                <label for="exampleDropdownFormEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                       [(ngModel)]="loginJSON.login.email" name="email" placeholder="email@example.com" required>
+              </div>
+              <button type="submit" (click)="forgot()"  class="btn btn-primary">Send Link</button>
+            </form>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#/login" *ngIf="loginJSON.loginFormVeiw==0" (click)="loginJSON.loginFormVeiw=1">New around here? Sign up</a>
+            <a class="dropdown-item" href="#/login" *ngIf="loginJSON.loginFormVeiw==1" (click)="loginJSON.loginFormVeiw=0">Have account? Sign in</a>
+            <a class="dropdown-item" href="#/login"  *ngIf="loginJSON.loginFormVeiw!=2" (click)="loginJSON.loginFormVeiw=2">Forgot password?</a>
           </div>
-          <div class="form-group" *ngIf="loginJSON.loginFormVeiw==0">
-            <label for="exampleDropdownFormPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleDropdownFormPassword1"
-                   [(ngModel)]="loginJSON.login.password" name="pass" placeholder="Password" required>
-          </div>
-          <div class="form-check" *ngIf="loginJSON.loginFormVeiw==0">
-            <input type="checkbox" class="form-check-input" id="dropdownCheck">
-            <label class="form-check-label" for="dropdownCheck">
-              Remember me
-            </label>
-          </div>
-          <button type="submit" (click)="login()" class="btn btn-primary"> Sign in</button>
-        </form>
-        <!--sign up form-->
-        <form class="px-4 py-3" *ngIf="loginJSON.loginFormVeiw==1">
-          <div class="form-group" >
-            <label for="exampleDropdownFormEmail1">Name</label>
-            <input type="email" class="form-control" id="exampleDropdownFormname"
-                   [(ngModel)]="loginJSON.register.name" name="name" placeholder="John Singh" required>
-          </div>
-          <div class="form-group" >
-            <label for="exampleDropdownFormEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleDropdownFormEmail1"
-                   [(ngModel)]="loginJSON.register.email" name="email" placeholder="email@example.com" required>
-          </div>
-          <div class="form-group" *ngIf="loginJSON.loginFormVeiw==0 || loginJSON.loginFormVeiw==1">
-            <label for="exampleDropdownFormPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleDropdownFormPassword1"
-                   [(ngModel)]="loginJSON.register.password" name="pass" placeholder="Password" required>
-          </div>
-          <div class="form-check" *ngIf="loginJSON.loginFormVeiw==0">
-            <input type="checkbox" class="form-check-input" id="dropdownCheck">
-            <label class="form-check-label" for="dropdownCheck">
-              Remember me
-            </label>
-          </div>
-          <select *ngIf="loginJSON.loginFormVeiw==1"  class="input-subdomain_form margin-t"
-                  [(ngModel)]="loginJSON.register.location" name="loc" required>
-            <option *ngFor="let city of loginJSON.cities">{{city.city}}</option>
-          </select>
-          <button type="submit" (click)="register()"  class="btn btn-primary"> Sign up</button>
-        </form>
-        <!--forgot password form -->
-        <form class="px-4 py-3" *ngIf="loginJSON.loginFormVeiw==2">
-          <div class="form-group" >
-            <label for="exampleDropdownFormEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleDropdownFormEmail1"
-                   [(ngModel)]="loginJSON.login.email" name="email" placeholder="email@example.com" required>
-          </div>
-          <button type="submit" (click)="forgot()"  class="btn btn-primary">Send Link</button>
-        </form>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#/login" *ngIf="loginJSON.loginFormVeiw==0" (click)="loginJSON.loginFormVeiw=1">New around here? Sign up</a>
-        <a class="dropdown-item" href="#/login" *ngIf="loginJSON.loginFormVeiw==1" (click)="loginJSON.loginFormVeiw=0">Have account? Sign in</a>
-        <a class="dropdown-item" href="#/login"  *ngIf="loginJSON.loginFormVeiw!=2" (click)="loginJSON.loginFormVeiw=2">Forgot password?</a>
+        </div>
       </div>
     </div>
+    <div class="mdl-cell mdl-cell--4-col">4</div>
+    <div class="mdl-cell mdl-cell--2-col">2</div>
   </div>
-</div>
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">6 (8 tablet)</div>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">4 (6 tablet)</div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">2 (4 phone)</div>
+  </div>

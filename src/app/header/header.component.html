@@ -1,23 +1,52 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
-    <a class="navbar-brand" href="/"><img class="icon" src="assets/images/company-logo/logo.png" alt="travelline" /></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#/ideas">Idea</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#/ideas">Live</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-color--primary mdl-layout__header--waterfall  mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer" style="width: 100vw;">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">
+                Markline
+            </span>
+            &nbsp;
+            <!--search box -->
+            <form style=" width: 200px;">
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="search">
+                    <label class="mdl-textfield__label" for="search">
+                        <i class="material-icons">search</i>
+                    </label>
+                </div>
+            </form>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation " data-upgraded=",MaterialRipple">
+                <a href="#/login" class="mdl-layout__tab " ngClass="{{headerJSON.activeTab==0?'is-active':''}}">Login<span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple"><span class="mdl-ripple is-animating" style="width: 267.57px; height: 267.57px; transform: translate(-50%, -50%) translate(87px, 28px);"></span></span></a>
+                <a href="#/home" class="mdl-layout__tab " ngClass="{{headerJSON.activeTab==1?'is-active':''}}">Home<span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple"><span class="mdl-ripple is-animating" style="width: 267.57px; height: 267.57px; transform: translate(-50%, -50%) translate(87px, 28px);"></span></span></a>
+                <a href="#/ideas" class="mdl-layout__tab" ngClass="{{headerJSON.activeTab==2?'is-active':''}}">Ideas<span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple"><span class="mdl-ripple is-animating" style="width: 264.918px; height: 264.918px; transform: translate(-50%, -50%) translate(52px, 40px);"></span></span></a>
+                <a href="#/ideas" class="mdl-layout__tab" ngClass="{{headerJSON.activeTab==3?'is-active':''}}">Live<span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple"><span class="mdl-ripple is-animating" style="width: 243.123px; height: 243.123px; transform: translate(-50%, -50%) translate(9px, 49px);"></span></span></a>
+            </nav>
+            <button class="mdl-button mdl-button--icon" id="hdrbtn" (click)="headerJSON.clickEvent=2">
+                <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="drop-down-menu" for="hdrbtn" *ngIf="headerJSON.clickEvent==2">
+                <li class="mdl-navigation__link">About</li>
+                <li class="mdl-navigation__link">Contact</li>
+                <li class="mdl-navigation__link">Legal information</li>
+            </ul>
+            <div class="demo-avatar-dropdown" style="width:fit-content !important;">
+                <img src="assets/images/company-logo/logo.png" class="demo-avatar">
+                <span>hello@example.com</span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-button--icon" (click)="headerJSON.clickEvent=1">
+                    <i class="material-icons" role="presentation">arrow_drop_down</i>
+                    <span class="visuallyhidden">Accounts</span>
+                </button>
+                <ul class="drop-down-menu" for="accbtn" *ngIf="headerJSON.clickEvent==1">
+                    <li class="mdl-navigation__link">hello@example.com</li>
+                    <li class="mdl-navigation__link">info@example.com</li>
+                    <li class="mdl-navigation__link"><i class="material-icons">add</i>Add another account...</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+</div>
