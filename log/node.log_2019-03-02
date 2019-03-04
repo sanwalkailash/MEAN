@@ -1,23 +1,13 @@
-[2019-03-03T11:22:43.152] [INFO] [access] - ENV is :: undefined
-[2019-03-03T11:22:43.156] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T11:22:43.276] [INFO] [access] - travelline App route Initialized
-[2019-03-03T11:22:43.287] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T11:22:43.290] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T14:50:26.068] [INFO] [access] - ENV is :: undefined
-[2019-03-03T14:50:26.070] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T14:50:26.177] [INFO] [access] - travelline App route Initialized
-[2019-03-03T14:50:26.185] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T14:50:26.189] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T14:51:10.358] [INFO] [access] - ENV is :: undefined
-[2019-03-03T14:51:10.360] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T14:51:10.483] [INFO] [access] - travelline App route Initialized
-[2019-03-03T14:51:10.491] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T14:51:10.494] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T14:51:22.093] [INFO] [access] - from /
-[2019-03-03T14:51:23.762] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T14:51:23.762] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T14:51:23.763] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T14:51:23.763] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T00:00:38.604] [INFO] [access] - ENV is :: undefined
+[2019-03-01T00:00:38.621] [INFO] [access] - PORT :: undefined, using defaults
+[2019-03-01T00:00:38.681] [INFO] [access] - travelline App route Initialized
+[2019-03-01T00:00:38.690] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
+[2019-03-01T00:00:38.694] [INFO] [access] - Server running on localhost 8888
+[2019-03-01T00:00:39.946] [INFO] [access] - from /
+[2019-03-01T00:00:40.830] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T00:00:40.830] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T00:00:40.831] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T00:00:40.831] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -63,7 +53,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T14:51:23.764] [INFO] [access] - vocab { login: 
+[2019-03-01T00:00:40.831] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -87,32 +77,16 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T14:51:23.768] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T14:51:23.768] [INFO] [access] - current route is login
-[2019-03-03T14:51:23.769] [INFO] [access] - host is ::  localhost
-[2019-03-03T14:51:23.769] [INFO] [access] - config undefined
-[2019-03-03T14:51:23.769] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T14:51:44.208] [INFO] [access] - login Invoked
-[2019-03-03T14:51:44.209] [INFO] [access] - saving new user
-[2019-03-03T14:56:11.915] [INFO] [access] - ENV is :: undefined
-[2019-03-03T14:56:11.918] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T14:56:12.074] [INFO] [access] - travelline App route Initialized
-[2019-03-03T14:56:12.082] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T14:56:12.087] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T14:56:15.144] [INFO] [access] - login Invoked
-[2019-03-03T14:56:15.144] [INFO] [access] - saving new user
-[2019-03-03T14:56:15.171] [INFO] [access] - login Invoked
-[2019-03-03T14:56:15.171] [INFO] [access] - generating token..
-[2019-03-03T15:04:58.035] [INFO] [access] - ENV is :: undefined
-[2019-03-03T15:04:58.039] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T15:04:58.156] [INFO] [access] - travelline App route Initialized
-[2019-03-03T15:04:58.164] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T15:04:58.167] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T15:05:10.636] [INFO] [access] - from /
-[2019-03-03T15:05:11.480] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T15:05:11.480] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T15:05:11.481] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T15:05:11.481] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T00:00:40.843] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T00:00:40.843] [INFO] [access] - current route is login
+[2019-03-01T00:00:40.843] [INFO] [access] - host is ::  localhost
+[2019-03-01T00:00:40.844] [INFO] [access] - config undefined
+[2019-03-01T00:00:40.844] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T00:00:43.029] [INFO] [access] - from /
+[2019-03-01T00:00:43.645] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T00:00:43.645] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T00:00:43.645] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T00:00:43.645] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -158,7 +132,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T15:05:11.482] [INFO] [access] - vocab { login: 
+[2019-03-01T00:00:43.645] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -182,21 +156,86 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T15:05:11.484] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T15:05:11.484] [INFO] [access] - current route is login
-[2019-03-03T15:05:11.484] [INFO] [access] - host is ::  localhost
-[2019-03-03T15:05:11.484] [INFO] [access] - config undefined
-[2019-03-03T15:05:11.485] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T15:06:49.693] [INFO] [access] - ENV is :: undefined
-[2019-03-03T15:06:49.694] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T15:06:49.802] [INFO] [access] - travelline App route Initialized
-[2019-03-03T15:06:49.811] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T15:06:49.814] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T15:06:55.694] [INFO] [access] - from /
-[2019-03-03T15:06:56.394] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T15:06:56.394] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T15:06:56.395] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T15:06:56.395] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T00:00:43.657] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T00:00:43.658] [INFO] [access] - current route is login
+[2019-03-01T00:00:43.658] [INFO] [access] - host is ::  localhost
+[2019-03-01T00:00:43.658] [INFO] [access] - config undefined
+[2019-03-01T00:00:43.658] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T00:00:48.690] [INFO] [access] - login Invoked
+[2019-03-01T00:01:45.542] [INFO] [access] - login Invoked
+[2019-03-01T00:03:38.089] [INFO] [access] - login Invoked
+[2019-03-01T00:03:49.669] [INFO] [access] - login Invoked
+[2019-03-01T00:03:49.669] [INFO] [access] - saving new user
+[2019-03-01T00:03:49.670] [INFO] [access] - caught exception
+[2019-03-01T00:03:49.670] [ERROR] [access] - TypeError: models.UserSchema is not a constructor
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:39:19)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-03-01T00:03:56.230] [INFO] [access] - login Invoked
+[2019-03-01T00:03:56.230] [INFO] [access] - saving new user
+[2019-03-01T00:03:56.231] [INFO] [access] - caught exception
+[2019-03-01T00:03:56.231] [ERROR] [access] - TypeError: models.UserSchema is not a constructor
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:39:19)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-03-01T00:04:36.250] [INFO] [access] - login Invoked
+[2019-03-01T00:04:36.250] [INFO] [access] - saving new user
+[2019-03-01T00:04:36.250] [INFO] [access] - caught exception
+[2019-03-01T00:04:36.250] [ERROR] [access] - TypeError: models.UserSchema is not a constructor
+    at login (/Users/chalk/office/personal/MEAN/server/api/login.js:39:19)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at /Users/chalk/office/personal/MEAN/node_modules/log4js/lib/connect-logger.js:266:14
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:317:13)
+    at /Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
+    at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-03-01T00:05:47.636] [INFO] [access] - ENV is :: undefined
+[2019-03-01T00:05:47.638] [INFO] [access] - PORT :: undefined, using defaults
+[2019-03-01T00:05:47.692] [INFO] [access] - travelline App route Initialized
+[2019-03-01T00:05:47.699] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
+[2019-03-01T00:05:47.703] [INFO] [access] - Server running on localhost 8888
+[2019-03-01T00:05:50.659] [INFO] [access] - login Invoked
+[2019-03-01T00:05:50.660] [INFO] [access] - saving new user
+[2019-03-01T00:55:18.706] [INFO] [access] - from /
+[2019-03-01T00:55:22.351] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T00:55:22.352] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T00:55:22.353] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T00:55:22.354] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -242,7 +281,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T15:06:56.395] [INFO] [access] - vocab { login: 
+[2019-03-01T00:55:22.354] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -266,32 +305,21 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T15:06:56.398] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T15:06:56.399] [INFO] [access] - current route is login
-[2019-03-03T15:06:56.399] [INFO] [access] - host is ::  localhost
-[2019-03-03T15:06:56.399] [INFO] [access] - config undefined
-[2019-03-03T15:06:56.399] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T15:07:04.275] [INFO] [access] - login Invoked
-[2019-03-03T15:07:04.276] [INFO] [access] - authonticating user
-[2019-03-03T15:07:11.697] [INFO] [access] - login Invoked
-[2019-03-03T15:07:11.698] [INFO] [access] - authonticating user
-[2019-03-03T15:07:11.715] [INFO] [access] - @generateAuthToken..
-[2019-03-03T15:07:11.715] [INFO] [access] - Authorizing user by generating token..
-[2019-03-03T15:22:38.129] [INFO] [access] - ENV is :: undefined
-[2019-03-03T15:22:38.131] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T15:22:38.242] [INFO] [access] - travelline App route Initialized
-[2019-03-03T15:22:38.250] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T15:22:38.253] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T15:24:11.174] [INFO] [access] - ENV is :: undefined
-[2019-03-03T15:24:11.176] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T15:24:11.280] [INFO] [access] - travelline App route Initialized
-[2019-03-03T15:24:11.285] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T15:24:11.289] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T15:24:15.666] [INFO] [access] - from /
-[2019-03-03T15:24:16.309] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T15:24:16.310] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T15:24:16.310] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T15:24:16.310] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T00:55:22.393] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T00:55:22.393] [INFO] [access] - current route is login
+[2019-03-01T00:55:22.394] [INFO] [access] - host is ::  localhost
+[2019-03-01T00:55:22.395] [INFO] [access] - config undefined
+[2019-03-01T00:55:22.395] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:02:56.414] [INFO] [access] - ENV is :: undefined
+[2019-03-01T01:02:56.416] [INFO] [access] - PORT :: undefined, using defaults
+[2019-03-01T01:02:56.484] [INFO] [access] - travelline App route Initialized
+[2019-03-01T01:02:56.493] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
+[2019-03-01T01:02:56.497] [INFO] [access] - Server running on localhost 8888
+[2019-03-01T01:03:00.350] [INFO] [access] - from /
+[2019-03-01T01:03:01.232] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:03:01.232] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:03:01.233] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:03:01.233] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -337,7 +365,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T15:24:16.311] [INFO] [access] - vocab { login: 
+[2019-03-01T01:03:01.233] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -361,29 +389,21 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T15:24:16.321] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T15:24:16.321] [INFO] [access] - current route is login
-[2019-03-03T15:24:16.321] [INFO] [access] - host is ::  localhost
-[2019-03-03T15:24:16.321] [INFO] [access] - config undefined
-[2019-03-03T15:24:16.321] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T15:24:23.666] [INFO] [access] - login Invoked
-[2019-03-03T15:24:23.666] [INFO] [access] - authonticating user
-[2019-03-03T15:26:03.861] [INFO] [access] - login Invoked
-[2019-03-03T15:26:03.861] [INFO] [access] - authonticating user
-[2019-03-03T15:26:18.774] [INFO] [access] - login Invoked
-[2019-03-03T15:26:18.775] [INFO] [access] - saving new user
-[2019-03-03T15:26:18.867] [INFO] [access] - @generateAuthToken..
-[2019-03-03T15:26:18.867] [INFO] [access] - Authorizing user by generating token..
-[2019-03-03T15:27:25.775] [INFO] [access] - ENV is :: undefined
-[2019-03-03T15:27:25.777] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T15:27:25.882] [INFO] [access] - travelline App route Initialized
-[2019-03-03T15:27:25.891] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T15:27:25.895] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T15:27:39.106] [INFO] [access] - from /
-[2019-03-03T15:27:39.819] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T15:27:39.819] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T15:27:39.820] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T15:27:39.820] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:03:01.241] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:03:01.241] [INFO] [access] - current route is login
+[2019-03-01T01:03:01.241] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:03:01.241] [INFO] [access] - config undefined
+[2019-03-01T01:03:01.241] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:04:00.331] [INFO] [access] - from /
+[2019-03-01T01:04:01.333] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:04:01.338] [INFO] [access] - current route is login
+[2019-03-01T01:04:01.338] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:04:01.338] [INFO] [access] - config undefined
+[2019-03-01T01:04:01.338] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:04:01.341] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:04:01.341] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:04:01.341] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:04:01.341] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -429,7 +449,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T15:27:39.820] [INFO] [access] - vocab { login: 
+[2019-03-01T01:04:01.342] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -453,16 +473,11 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T15:27:39.824] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T15:27:39.824] [INFO] [access] - current route is login
-[2019-03-03T15:27:39.825] [INFO] [access] - host is ::  localhost
-[2019-03-03T15:27:39.825] [INFO] [access] - config undefined
-[2019-03-03T15:27:39.825] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T15:27:44.667] [INFO] [access] - from /
-[2019-03-03T15:27:45.282] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T15:27:45.282] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T15:27:45.282] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T15:27:45.282] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:06:22.097] [INFO] [access] - from /
+[2019-03-01T01:06:23.338] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:06:23.338] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:06:23.338] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:06:23.338] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -508,7 +523,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T15:27:45.282] [INFO] [access] - vocab { login: 
+[2019-03-01T01:06:23.339] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -532,25 +547,30 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T15:27:45.291] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T15:27:45.291] [INFO] [access] - current route is login
-[2019-03-03T15:27:45.292] [INFO] [access] - host is ::  localhost
-[2019-03-03T15:27:45.292] [INFO] [access] - config undefined
-[2019-03-03T15:27:45.292] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T15:27:55.364] [INFO] [access] - login Invoked
-[2019-03-03T15:27:55.379] [INFO] [access] - saving new user
-[2019-03-03T15:27:55.404] [INFO] [access] - @generateAuthToken..
-[2019-03-03T15:27:55.404] [INFO] [access] - Authorizing user by generating token..
-[2019-03-03T15:31:51.768] [INFO] [access] - ENV is :: undefined
-[2019-03-03T15:31:51.770] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T15:31:51.881] [INFO] [access] - travelline App route Initialized
-[2019-03-03T15:31:51.889] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T15:31:51.893] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T15:31:59.556] [INFO] [access] - from /
-[2019-03-03T15:32:00.134] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T15:32:00.134] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T15:32:00.135] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T15:32:00.135] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:06:23.373] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:06:23.373] [INFO] [access] - current route is login
+[2019-03-01T01:06:23.373] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:06:23.373] [INFO] [access] - config undefined
+[2019-03-01T01:06:23.373] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:06:27.171] [INFO] [access] - login Invoked
+[2019-03-01T01:06:47.553] [INFO] [access] - ENV is :: undefined
+[2019-03-01T01:06:47.555] [INFO] [access] - PORT :: undefined, using defaults
+[2019-03-01T01:06:47.604] [INFO] [access] - travelline App route Initialized
+[2019-03-01T01:06:47.613] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
+[2019-03-01T01:06:47.617] [INFO] [access] - Server running on localhost 8888
+[2019-03-01T01:06:53.162] [INFO] [access] - login Invoked
+[2019-03-01T01:07:32.308] [INFO] [access] - login Invoked
+[2019-03-01T01:07:32.308] [INFO] [access] - saving new user
+[2019-03-01T01:23:33.945] [INFO] [access] - ENV is :: undefined
+[2019-03-01T01:23:33.948] [INFO] [access] - PORT :: undefined, using defaults
+[2019-03-01T01:23:34.103] [INFO] [access] - travelline App route Initialized
+[2019-03-01T01:23:34.117] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
+[2019-03-01T01:23:34.121] [INFO] [access] - Server running on localhost 8888
+[2019-03-01T01:23:59.724] [INFO] [access] - from /
+[2019-03-01T01:24:01.995] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:24:01.996] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:24:01.996] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:24:01.997] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -596,7 +616,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T15:32:00.135] [INFO] [access] - vocab { login: 
+[2019-03-01T01:24:01.997] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -620,31 +640,16 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T15:32:00.144] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T15:32:00.144] [INFO] [access] - current route is login
-[2019-03-03T15:32:00.145] [INFO] [access] - host is ::  localhost
-[2019-03-03T15:32:00.145] [INFO] [access] - config undefined
-[2019-03-03T15:32:00.145] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T15:32:16.553] [INFO] [access] - login Invoked
-[2019-03-03T15:33:12.841] [INFO] [access] - login Invoked
-[2019-03-03T15:33:12.846] [INFO] [access] - saving new user
-[2019-03-03T15:33:12.866] [INFO] [access] - @generateAuthToken..
-[2019-03-03T15:33:12.866] [INFO] [access] - Authorizing user by generating token..
-[2019-03-03T16:10:22.978] [INFO] [access] - ENV is :: undefined
-[2019-03-03T16:10:22.980] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T16:10:23.091] [INFO] [access] - travelline App route Initialized
-[2019-03-03T16:10:23.101] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T16:10:23.104] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T16:47:32.746] [INFO] [access] - ENV is :: undefined
-[2019-03-03T16:47:32.748] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T16:47:32.860] [INFO] [access] - travelline App route Initialized
-[2019-03-03T16:47:32.869] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T16:47:32.873] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T16:47:38.934] [INFO] [access] - from /
-[2019-03-03T16:47:39.736] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T16:47:39.736] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T16:47:39.737] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T16:47:39.737] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:24:02.001] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:24:02.001] [INFO] [access] - current route is login
+[2019-03-01T01:24:02.002] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:24:02.002] [INFO] [access] - config undefined
+[2019-03-01T01:24:02.002] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:29:35.066] [INFO] [access] - from /
+[2019-03-01T01:29:36.321] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:29:36.322] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:29:36.322] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:29:36.322] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -690,7 +695,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T16:47:39.738] [INFO] [access] - vocab { login: 
+[2019-03-01T01:29:36.323] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -714,33 +719,16 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T16:47:39.749] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T16:47:39.749] [INFO] [access] - current route is login
-[2019-03-03T16:47:39.749] [INFO] [access] - host is ::  localhost
-[2019-03-03T16:47:39.749] [INFO] [access] - config undefined
-[2019-03-03T16:47:39.749] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T16:47:52.900] [INFO] [access] - login Invoked
-[2019-03-03T16:47:52.901] [INFO] [access] - authonticating user
-[2019-03-03T16:48:07.551] [INFO] [access] - login Invoked
-[2019-03-03T16:48:28.824] [INFO] [access] - login Invoked
-[2019-03-03T16:48:28.825] [INFO] [access] - saving new user
-[2019-03-03T16:48:28.851] [INFO] [access] - @generateAuthToken..
-[2019-03-03T16:48:28.851] [INFO] [access] - Authorizing user by generating token..
-[2019-03-03T16:49:19.878] [INFO] [access] - ENV is :: undefined
-[2019-03-03T16:49:19.879] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T16:49:19.994] [INFO] [access] - travelline App route Initialized
-[2019-03-03T16:49:20.003] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T16:49:20.006] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T16:50:39.043] [INFO] [access] - ENV is :: undefined
-[2019-03-03T16:50:39.045] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T16:50:39.139] [INFO] [access] - travelline App route Initialized
-[2019-03-03T16:50:39.147] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T16:50:39.151] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T16:50:44.863] [INFO] [access] - from /
-[2019-03-03T16:50:45.925] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T16:50:45.925] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T16:50:45.926] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T16:50:45.926] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:29:36.337] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:29:36.337] [INFO] [access] - current route is login
+[2019-03-01T01:29:36.338] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:29:36.338] [INFO] [access] - config undefined
+[2019-03-01T01:29:36.338] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:30:12.437] [INFO] [access] - from /
+[2019-03-01T01:30:13.279] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:30:13.279] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:30:13.279] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:30:13.279] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -786,7 +774,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T16:50:45.926] [INFO] [access] - vocab { login: 
+[2019-03-01T01:30:13.279] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -810,26 +798,16 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T16:50:45.931] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T16:50:45.931] [INFO] [access] - current route is login
-[2019-03-03T16:50:45.931] [INFO] [access] - host is ::  localhost
-[2019-03-03T16:50:45.931] [INFO] [access] - config undefined
-[2019-03-03T16:50:45.931] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T16:51:02.799] [INFO] [access] - login Invoked
-[2019-03-03T16:51:30.286] [INFO] [access] - login Invoked
-[2019-03-03T16:51:30.289] [INFO] [access] - saving new user
-[2019-03-03T16:51:30.349] [INFO] [access] - @generateAuthToken..
-[2019-03-03T16:51:30.349] [INFO] [access] - Authorizing user by generating token..
-[2019-03-03T16:55:52.779] [INFO] [access] - ENV is :: undefined
-[2019-03-03T16:55:52.781] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T16:55:52.886] [INFO] [access] - travelline App route Initialized
-[2019-03-03T16:55:52.894] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T16:55:52.898] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T16:55:59.874] [INFO] [access] - from /
-[2019-03-03T16:56:00.835] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T16:56:00.835] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T16:56:00.836] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T16:56:00.836] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:30:13.289] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:30:13.289] [INFO] [access] - current route is login
+[2019-03-01T01:30:13.290] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:30:13.290] [INFO] [access] - config undefined
+[2019-03-01T01:30:13.290] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:30:15.544] [INFO] [access] - from /
+[2019-03-01T01:30:16.204] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:30:16.205] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:30:16.205] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:30:16.205] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -875,7 +853,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T16:56:00.836] [INFO] [access] - vocab { login: 
+[2019-03-01T01:30:16.205] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -899,25 +877,16 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T16:56:00.840] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T16:56:00.840] [INFO] [access] - current route is login
-[2019-03-03T16:56:00.840] [INFO] [access] - host is ::  localhost
-[2019-03-03T16:56:00.840] [INFO] [access] - config undefined
-[2019-03-03T16:56:00.840] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T16:56:20.143] [INFO] [access] - login Invoked
-[2019-03-03T16:56:20.144] [INFO] [access] - authonticating user
-[2019-03-03T16:56:20.159] [INFO] [access] - @generateAuthToken..
-[2019-03-03T16:56:20.160] [INFO] [access] - Authorizing user by generating token..
-[2019-03-03T18:21:45.908] [INFO] [access] - ENV is :: undefined
-[2019-03-03T18:21:45.910] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T18:21:46.017] [INFO] [access] - travelline App route Initialized
-[2019-03-03T18:21:46.026] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T18:21:46.029] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T18:21:55.338] [INFO] [access] - from /
-[2019-03-03T18:21:56.733] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T18:21:56.733] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T18:21:56.734] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T18:21:56.734] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:30:16.207] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:30:16.207] [INFO] [access] - current route is login
+[2019-03-01T01:30:16.207] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:30:16.207] [INFO] [access] - config undefined
+[2019-03-01T01:30:16.207] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:30:18.096] [INFO] [access] - from /
+[2019-03-01T01:30:18.662] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:30:18.662] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:30:18.662] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:30:18.662] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -963,7 +932,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T18:21:56.735] [INFO] [access] - vocab { login: 
+[2019-03-01T01:30:18.663] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -987,33 +956,16 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T18:21:56.741] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T18:21:56.741] [INFO] [access] - current route is login
-[2019-03-03T18:21:56.741] [INFO] [access] - host is ::  localhost
-[2019-03-03T18:21:56.742] [INFO] [access] - config undefined
-[2019-03-03T18:21:56.742] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T18:22:11.170] [INFO] [access] - login Invoked
-[2019-03-03T18:22:11.170] [INFO] [access] - authonticating user
-[2019-03-03T18:22:11.186] [INFO] [access] - @generateAuthToken..
-[2019-03-03T18:22:11.187] [INFO] [access] - Authorizing user by generating token..for  [ { location: { latitude: 0, longitude: 0, city: '' },
-    created_at: 2019-03-03T11:20:39.134Z,
-    updated_at: 2019-03-03T11:20:39.134Z,
-    _id: 5c7bb8baa84aca235d8da2a6,
-    appName: 'travellineOne',
-    name: 'Deepti pandey',
-    email: 'dptpnd1@gmail.com',
-    password: '123123',
-    __v: 0 } ]
-[2019-03-03T18:24:31.548] [INFO] [access] - ENV is :: undefined
-[2019-03-03T18:24:31.550] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T18:24:31.625] [INFO] [access] - travelline App route Initialized
-[2019-03-03T18:24:31.634] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T18:24:31.638] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T18:24:37.083] [INFO] [access] - from /
-[2019-03-03T18:24:37.857] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T18:24:37.857] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T18:24:37.859] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T18:24:37.859] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:30:18.668] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:30:18.669] [INFO] [access] - current route is login
+[2019-03-01T01:30:18.669] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:30:18.669] [INFO] [access] - config undefined
+[2019-03-01T01:30:18.669] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:30:19.998] [INFO] [access] - from /
+[2019-03-01T01:30:20.567] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:30:20.567] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:30:20.567] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:30:20.567] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -1059,7 +1011,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T18:24:37.859] [INFO] [access] - vocab { login: 
+[2019-03-01T01:30:20.568] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -1083,33 +1035,16 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T18:24:37.863] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T18:24:37.863] [INFO] [access] - current route is login
-[2019-03-03T18:24:37.864] [INFO] [access] - host is ::  localhost
-[2019-03-03T18:24:37.864] [INFO] [access] - config undefined
-[2019-03-03T18:24:37.864] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T18:24:46.137] [INFO] [access] - login Invoked
-[2019-03-03T18:24:46.138] [INFO] [access] - authonticating user
-[2019-03-03T18:24:46.154] [INFO] [access] - @generateAuthToken..
-[2019-03-03T18:24:46.154] [INFO] [access] - Authorizing user by generating token..for  [ { location: { latitude: 0, longitude: 0, city: '' },
-    created_at: 2019-03-03T11:20:39.134Z,
-    updated_at: 2019-03-03T11:20:39.134Z,
-    _id: 5c7bb8baa84aca235d8da2a6,
-    appName: 'travellineOne',
-    name: 'Deepti pandey',
-    email: 'dptpnd1@gmail.com',
-    password: '123123',
-    __v: 0 } ]
-[2019-03-03T18:36:52.199] [INFO] [access] - ENV is :: undefined
-[2019-03-03T18:36:52.201] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T18:36:52.305] [INFO] [access] - travelline App route Initialized
-[2019-03-03T18:36:52.314] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T18:36:52.318] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T18:37:02.916] [INFO] [access] - from /
-[2019-03-03T18:37:03.513] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T18:37:03.513] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T18:37:03.514] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T18:37:03.520] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:30:20.581] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:30:20.581] [INFO] [access] - current route is login
+[2019-03-01T01:30:20.581] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:30:20.581] [INFO] [access] - config undefined
+[2019-03-01T01:30:20.581] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:30:21.507] [INFO] [access] - from /
+[2019-03-01T01:30:22.077] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:30:22.077] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:30:22.077] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:30:22.077] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -1155,7 +1090,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T18:37:03.521] [INFO] [access] - vocab { login: 
+[2019-03-01T01:30:22.077] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -1179,20 +1114,18 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T18:37:03.528] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T18:37:03.528] [INFO] [access] - current route is login
-[2019-03-03T18:37:03.528] [INFO] [access] - host is ::  localhost
-[2019-03-03T18:37:03.529] [INFO] [access] - config undefined
-[2019-03-03T18:37:03.529] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T18:37:10.895] [INFO] [access] - login Invoked
-[2019-03-03T18:37:10.895] [INFO] [access] - authonticating user
-[2019-03-03T18:37:10.912] [INFO] [access] - @generateAuthToken..
-[2019-03-03T18:37:10.912] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T18:39:56.454] [INFO] [access] - from /
-[2019-03-03T18:39:57.031] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T18:39:57.031] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T18:39:57.031] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T18:39:57.031] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:30:22.088] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:30:22.088] [INFO] [access] - current route is login
+[2019-03-01T01:30:22.088] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:30:22.089] [INFO] [access] - config undefined
+[2019-03-01T01:30:22.089] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:30:31.014] [INFO] [access] - login Invoked
+[2019-03-01T01:30:36.784] [INFO] [access] - login Invoked
+[2019-03-01T01:33:43.382] [INFO] [access] - from /
+[2019-03-01T01:33:44.668] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:33:44.668] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:33:44.668] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:33:44.668] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -1238,7 +1171,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T18:39:57.032] [INFO] [access] - vocab { login: 
+[2019-03-01T01:33:44.669] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -1262,25 +1195,18 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T18:39:57.041] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T18:39:57.041] [INFO] [access] - current route is login
-[2019-03-03T18:39:57.041] [INFO] [access] - host is ::  localhost
-[2019-03-03T18:39:57.041] [INFO] [access] - config undefined
-[2019-03-03T18:39:57.042] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T18:40:05.348] [INFO] [access] - login Invoked
-[2019-03-03T18:40:05.348] [INFO] [access] - authonticating user
-[2019-03-03T18:40:05.352] [INFO] [access] - @generateAuthToken..
-[2019-03-03T18:40:05.353] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T18:40:16.422] [INFO] [access] - ENV is :: undefined
-[2019-03-03T18:40:16.424] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T18:40:16.517] [INFO] [access] - travelline App route Initialized
-[2019-03-03T18:40:16.525] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T18:40:16.528] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T18:40:20.893] [INFO] [access] - from /
-[2019-03-03T18:40:21.464] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T18:40:21.464] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T18:40:21.464] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T18:40:21.465] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:33:44.683] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:33:44.683] [INFO] [access] - current route is login
+[2019-03-01T01:33:44.683] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:33:44.684] [INFO] [access] - config undefined
+[2019-03-01T01:33:44.684] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:33:46.799] [INFO] [access] - @listIdeas...
+[2019-03-01T01:33:46.800] [INFO] [access] - list all ideas
+[2019-03-01T01:34:39.785] [INFO] [access] - from /
+[2019-03-01T01:34:40.632] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:34:40.632] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:34:40.632] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:34:40.632] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -1326,7 +1252,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T18:40:21.465] [INFO] [access] - vocab { login: 
+[2019-03-01T01:34:40.633] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -1350,35 +1276,16 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T18:40:21.469] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T18:40:21.469] [INFO] [access] - current route is login
-[2019-03-03T18:40:21.469] [INFO] [access] - host is ::  localhost
-[2019-03-03T18:40:21.469] [INFO] [access] - config undefined
-[2019-03-03T18:40:21.469] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T18:40:29.987] [INFO] [access] - login Invoked
-[2019-03-03T18:40:29.987] [INFO] [access] - authonticating user
-[2019-03-03T18:40:30.003] [INFO] [access] - @generateAuthToken..
-[2019-03-03T18:40:30.003] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T19:30:31.320] [INFO] [access] - ENV is :: undefined
-[2019-03-03T19:30:31.322] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T19:30:31.452] [INFO] [access] - travelline App route Initialized
-[2019-03-03T19:30:31.462] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T19:30:31.465] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T19:30:55.526] [INFO] [access] - ENV is :: undefined
-[2019-03-03T19:30:55.527] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T19:30:55.634] [INFO] [access] - travelline App route Initialized
-[2019-03-03T19:30:55.643] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T19:30:55.647] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T19:32:39.601] [INFO] [access] - ENV is :: undefined
-[2019-03-03T19:32:39.607] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T19:32:39.951] [INFO] [access] - travelline App route Initialized
-[2019-03-03T19:32:39.973] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T19:32:39.986] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T19:32:46.135] [INFO] [access] - from /
-[2019-03-03T19:32:53.279] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T19:32:53.279] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T19:32:53.281] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T19:32:53.282] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:34:40.635] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:34:40.635] [INFO] [access] - current route is login
+[2019-03-01T01:34:40.635] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:34:40.635] [INFO] [access] - config undefined
+[2019-03-01T01:34:40.635] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:35:07.183] [INFO] [access] - from /
+[2019-03-01T01:35:07.769] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:35:07.770] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:35:07.770] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:35:07.770] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -1424,7 +1331,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T19:32:53.284] [INFO] [access] - vocab { login: 
+[2019-03-01T01:35:07.770] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -1448,25 +1355,18 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T19:32:53.296] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T19:32:53.296] [INFO] [access] - current route is login
-[2019-03-03T19:32:53.297] [INFO] [access] - host is ::  localhost
-[2019-03-03T19:32:53.298] [INFO] [access] - config undefined
-[2019-03-03T19:32:53.298] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T19:33:01.474] [INFO] [access] - @generateAuthToken..
-[2019-03-03T19:33:01.475] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T19:33:01.645] [INFO] [access] - ------####-----
-[2019-03-03T19:33:01.645] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:33:47.771] [INFO] [access] - ENV is :: undefined
-[2019-03-03T19:33:47.780] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T19:33:48.127] [INFO] [access] - travelline App route Initialized
-[2019-03-03T19:33:48.152] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T19:33:48.168] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T19:37:24.534] [INFO] [access] - from /
-[2019-03-03T19:37:32.812] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T19:37:32.813] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T19:37:32.821] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T19:37:32.822] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:35:07.780] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:35:07.780] [INFO] [access] - current route is login
+[2019-03-01T01:35:07.781] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:35:07.781] [INFO] [access] - config undefined
+[2019-03-01T01:35:07.781] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:35:09.392] [INFO] [access] - @listIdeas...
+[2019-03-01T01:35:09.392] [INFO] [access] - list all ideas
+[2019-03-01T01:36:18.487] [INFO] [access] - from /
+[2019-03-01T01:36:19.426] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:36:19.426] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:36:19.427] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:36:19.427] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -1512,7 +1412,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T19:37:32.826] [INFO] [access] - vocab { login: 
+[2019-03-01T01:36:19.427] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -1536,25 +1436,18 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T19:37:32.861] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T19:37:32.861] [INFO] [access] - current route is login
-[2019-03-03T19:37:32.862] [INFO] [access] - host is ::  localhost
-[2019-03-03T19:37:32.863] [INFO] [access] - config undefined
-[2019-03-03T19:37:32.863] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T19:37:33.959] [INFO] [access] - @generateAuthToken..
-[2019-03-03T19:37:33.960] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T19:37:34.313] [INFO] [access] - ------####-----
-[2019-03-03T19:37:34.392] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:42:01.713] [INFO] [access] - ENV is :: undefined
-[2019-03-03T19:42:01.714] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T19:42:01.822] [INFO] [access] - travelline App route Initialized
-[2019-03-03T19:42:01.831] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T19:42:01.835] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T19:42:06.307] [INFO] [access] - from /
-[2019-03-03T19:42:07.230] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T19:42:07.230] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T19:42:07.231] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T19:42:07.231] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:36:19.432] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:36:19.432] [INFO] [access] - current route is login
+[2019-03-01T01:36:19.432] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:36:19.433] [INFO] [access] - config undefined
+[2019-03-01T01:36:19.433] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:36:19.544] [INFO] [access] - @listIdeas...
+[2019-03-01T01:36:19.545] [INFO] [access] - list all ideas
+[2019-03-01T01:36:33.129] [INFO] [access] - from /
+[2019-03-01T01:36:33.978] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:36:33.978] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:36:33.978] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:36:33.978] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -1600,7 +1493,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T19:42:07.231] [INFO] [access] - vocab { login: 
+[2019-03-01T01:36:33.981] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -1624,25 +1517,22 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T19:42:07.235] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T19:42:07.235] [INFO] [access] - current route is login
-[2019-03-03T19:42:07.236] [INFO] [access] - host is ::  localhost
-[2019-03-03T19:42:07.236] [INFO] [access] - config undefined
-[2019-03-03T19:42:07.236] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T19:42:07.477] [INFO] [access] - @generateAuthToken..
-[2019-03-03T19:42:07.477] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T19:42:07.508] [INFO] [access] - ------####-----
-[2019-03-03T19:42:07.509] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:43:44.810] [INFO] [access] - ENV is :: undefined
-[2019-03-03T19:43:44.812] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T19:43:44.901] [INFO] [access] - travelline App route Initialized
-[2019-03-03T19:43:44.908] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T19:43:44.912] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T19:44:00.565] [INFO] [access] - from /
-[2019-03-03T19:44:01.214] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T19:44:01.215] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T19:44:01.216] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T19:44:01.216] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:36:33.983] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:36:33.983] [INFO] [access] - current route is login
+[2019-03-01T01:36:33.983] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:36:33.983] [INFO] [access] - config undefined
+[2019-03-01T01:36:33.984] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:36:34.149] [INFO] [access] - @listIdeas...
+[2019-03-01T01:36:34.150] [INFO] [access] - list all ideas
+[2019-03-01T01:38:09.949] [INFO] [access] - @listIdeas...
+[2019-03-01T01:38:09.950] [INFO] [access] - list all ideas
+[2019-03-01T01:42:11.600] [INFO] [access] - @listIdeas...
+[2019-03-01T01:42:11.602] [INFO] [access] - list all ideas
+[2019-03-01T01:43:38.382] [INFO] [access] - from /
+[2019-03-01T01:43:39.604] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:43:39.604] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:43:39.604] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:43:39.604] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -1688,7 +1578,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T19:44:01.216] [INFO] [access] - vocab { login: 
+[2019-03-01T01:43:39.605] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -1712,31 +1602,32 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T19:44:01.220] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T19:44:01.221] [INFO] [access] - current route is login
-[2019-03-03T19:44:01.221] [INFO] [access] - host is ::  localhost
-[2019-03-03T19:44:01.221] [INFO] [access] - config undefined
-[2019-03-03T19:44:01.221] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T19:44:01.585] [INFO] [access] - @authenticateToken token received [  undefined  ]
-[2019-03-03T19:44:01.585] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T19:44:01.617] [INFO] [access] - ------####-----
-[2019-03-03T19:44:01.618] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:44:01.618] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:45:25.538] [INFO] [access] - ENV is :: undefined
-[2019-03-03T19:45:25.540] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T19:45:25.645] [INFO] [access] - travelline App route Initialized
-[2019-03-03T19:45:25.654] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T19:45:25.658] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T19:45:27.918] [INFO] [access] - from /
-[2019-03-03T19:45:28.955] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T19:45:28.956] [INFO] [access] - current route is login
-[2019-03-03T19:45:28.957] [INFO] [access] - host is ::  localhost
-[2019-03-03T19:45:28.957] [INFO] [access] - config undefined
-[2019-03-03T19:45:28.957] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T19:45:28.960] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T19:45:28.960] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T19:45:28.961] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T19:45:28.961] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:43:39.610] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:43:39.610] [INFO] [access] - current route is login
+[2019-03-01T01:43:39.610] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:43:39.610] [INFO] [access] - config undefined
+[2019-03-01T01:43:39.610] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:43:39.822] [INFO] [access] - @listIdeas...
+[2019-03-01T01:43:39.822] [INFO] [access] - list all ideas
+[2019-03-01T01:46:48.123] [INFO] [access] - @getClientIp...
+[2019-03-01T01:46:48.124] [INFO] [access] - client ip is --  ::1
+[2019-03-01T01:46:48.153] [INFO] [access] - @saveIdeas.. request body { _id: '5c69a6e64d7463c6d678ca82',
+  title: 'Life with Buperdra ',
+  details: 'happy healthy full of food movies travel daru.',
+  lat: 0,
+  lng: 0,
+  created_at: '2019-02-17T18:24:38.031Z',
+  updated_at: '2019-02-17T18:24:38.031Z',
+  __v: 0,
+  views: 29,
+  like: 18 }
+[2019-03-01T01:46:48.157] [INFO] [access] - @saveIdeas.. fetching ip
+[2019-03-01T01:46:48.157] [INFO] [access] - updating idea
+[2019-03-01T01:49:24.975] [INFO] [access] - from /
+[2019-03-01T01:49:26.071] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:49:26.071] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:49:26.071] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:49:26.071] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -1782,7 +1673,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T19:45:28.961] [INFO] [access] - vocab { login: 
+[2019-03-01T01:49:26.071] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -1806,33 +1697,18 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T19:45:29.122] [INFO] [access] - @authenticateToken token received [  { host: 'localhost:8888',
-  connection: 'keep-alive',
-  accept: 'application/json, text/plain, */*',
-  authorization: 'U2FsdGVkX19Hi30Cs1MftNI8l0nr0+D2AMhMla+xtdlTanmGbQRUPbteFWiuc/i2Xk7K+1su5e2yBB/l8csz8AfIyg68/tSaEY0oRLMTIlY=',
-  appname: 'travellineOne',
-  locale: 'en',
-  'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36',
-  'content-type': 'application/json',
-  referer: 'http://localhost:8888/',
-  'accept-encoding': 'gzip, deflate, br',
-  'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
-  cookie: 'Idea-afaff80e=892c06cc-6720-45fe-a902-19e93a5e8c77',
-  'if-none-match': 'W/"42-2WrPfHxwa1e4jpJg4KGV5fE3fSQ"' }  ]
-[2019-03-03T19:45:29.122] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T19:45:29.165] [INFO] [access] - ------####-----
-[2019-03-03T19:45:29.165] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:45:29.166] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:46:26.549] [INFO] [access] - ENV is :: undefined
-[2019-03-03T19:46:26.551] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T19:46:26.634] [INFO] [access] - travelline App route Initialized
-[2019-03-03T19:46:26.641] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T19:46:26.646] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T19:46:28.459] [INFO] [access] - from /
-[2019-03-03T19:46:29.355] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T19:46:29.355] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T19:46:29.356] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T19:46:29.356] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:49:26.082] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:49:26.082] [INFO] [access] - current route is login
+[2019-03-01T01:49:26.083] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:49:26.083] [INFO] [access] - config undefined
+[2019-03-01T01:49:26.083] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:49:26.251] [INFO] [access] - @listIdeas...
+[2019-03-01T01:49:26.251] [INFO] [access] - list all ideas
+[2019-03-01T01:49:57.391] [INFO] [access] - from /
+[2019-03-01T01:49:58.300] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:49:58.301] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:49:58.301] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:49:58.301] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -1878,7 +1754,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T19:46:29.356] [INFO] [access] - vocab { login: 
+[2019-03-01T01:49:58.301] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -1902,35 +1778,18 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T19:46:29.359] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T19:46:29.359] [INFO] [access] - current route is login
-[2019-03-03T19:46:29.360] [INFO] [access] - host is ::  localhost
-[2019-03-03T19:46:29.360] [INFO] [access] - config undefined
-[2019-03-03T19:46:29.360] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T19:46:29.502] [INFO] [access] - @authenticateToken token received [  U2FsdGVkX19Hi30Cs1MftNI8l0nr0+D2AMhMla+xtdlTanmGbQRUPbteFWiuc/i2Xk7K+1su5e2yBB/l8csz8AfIyg68/tSaEY0oRLMTIlY=  ]
-[2019-03-03T19:46:29.502] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T19:46:29.537] [INFO] [access] - ------####-----
-[2019-03-03T19:46:29.537] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:46:29.537] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:46:29.546] [INFO] [access] - undefined,undefined,undefined,undefined,1551618630008
-[2019-03-03T19:46:29.546] [INFO] [access] - ------####-----
-[2019-03-03T19:48:29.515] [INFO] [access] - @authenticateToken token received [  U2FsdGVkX19Hi30Cs1MftNI8l0nr0+D2AMhMla+xtdlTanmGbQRUPbteFWiuc/i2Xk7K+1su5e2yBB/l8csz8AfIyg68/tSaEY0oRLMTIlY=  ]
-[2019-03-03T19:48:29.515] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T19:48:29.519] [INFO] [access] - ------####-----
-[2019-03-03T19:48:29.519] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:48:29.519] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:48:29.520] [INFO] [access] - undefined,undefined,undefined,undefined,1551618630008
-[2019-03-03T19:48:29.520] [INFO] [access] - ------####-----
-[2019-03-03T19:49:42.893] [INFO] [access] - ENV is :: undefined
-[2019-03-03T19:49:42.895] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T19:49:43.000] [INFO] [access] - travelline App route Initialized
-[2019-03-03T19:49:43.010] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T19:49:43.013] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T19:49:45.060] [INFO] [access] - from /
-[2019-03-03T19:49:45.817] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T19:49:45.818] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T19:49:45.819] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T19:49:45.819] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:49:58.309] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:49:58.309] [INFO] [access] - current route is login
+[2019-03-01T01:49:58.309] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:49:58.309] [INFO] [access] - config undefined
+[2019-03-01T01:49:58.309] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:49:58.471] [INFO] [access] - @listIdeas...
+[2019-03-01T01:49:58.471] [INFO] [access] - list all ideas
+[2019-03-01T01:51:08.063] [INFO] [access] - from /
+[2019-03-01T01:51:08.999] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:51:08.999] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:51:08.999] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:51:08.999] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -1976,7 +1835,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T19:49:45.820] [INFO] [access] - vocab { login: 
+[2019-03-01T01:51:09.000] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -2000,30 +1859,18 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T19:49:45.827] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T19:49:45.827] [INFO] [access] - current route is login
-[2019-03-03T19:49:45.827] [INFO] [access] - host is ::  localhost
-[2019-03-03T19:49:45.828] [INFO] [access] - config undefined
-[2019-03-03T19:49:45.828] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T19:49:45.976] [INFO] [access] - @authenticateToken token received [  U2FsdGVkX19Hi30Cs1MftNI8l0nr0+D2AMhMla+xtdlTanmGbQRUPbteFWiuc/i2Xk7K+1su5e2yBB/l8csz8AfIyg68/tSaEY0oRLMTIlY=  ]
-[2019-03-03T19:49:45.976] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T19:49:45.979] [INFO] [access] - @listIdeas...
-[2019-03-03T19:49:45.979] [INFO] [access] - list all ideas
-[2019-03-03T19:49:46.015] [INFO] [access] - ------####-----
-[2019-03-03T19:49:46.016] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:49:46.016] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:49:46.025] [INFO] [access] - undefined,undefined,undefined,undefined,1551618630008
-[2019-03-03T19:49:46.026] [INFO] [access] - ------####-----
-[2019-03-03T19:52:39.329] [INFO] [access] - ENV is :: undefined
-[2019-03-03T19:52:39.330] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T19:52:39.435] [INFO] [access] - travelline App route Initialized
-[2019-03-03T19:52:39.444] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T19:52:39.447] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T19:52:40.912] [INFO] [access] - from /
-[2019-03-03T19:52:41.558] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T19:52:41.558] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T19:52:41.559] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T19:52:41.559] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:51:09.005] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:51:09.006] [INFO] [access] - current route is login
+[2019-03-01T01:51:09.006] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:51:09.006] [INFO] [access] - config undefined
+[2019-03-01T01:51:09.006] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:51:09.139] [INFO] [access] - @listIdeas...
+[2019-03-01T01:51:09.139] [INFO] [access] - list all ideas
+[2019-03-01T01:51:38.881] [INFO] [access] - from /
+[2019-03-01T01:51:39.667] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:51:39.667] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:51:39.667] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:51:39.667] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -2069,7 +1916,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T19:52:41.559] [INFO] [access] - vocab { login: 
+[2019-03-01T01:51:39.667] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -2093,35 +1940,16 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T19:52:41.562] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T19:52:41.563] [INFO] [access] - current route is login
-[2019-03-03T19:52:41.563] [INFO] [access] - host is ::  localhost
-[2019-03-03T19:52:41.563] [INFO] [access] - config undefined
-[2019-03-03T19:52:41.563] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T19:52:41.895] [INFO] [access] - @authenticateToken token received [  U2FsdGVkX19Hi30Cs1MftNI8l0nr0+D2AMhMla+xtdlTanmGbQRUPbteFWiuc/i2Xk7K+1su5e2yBB/l8csz8AfIyg68/tSaEY0oRLMTIlY=  ]
-[2019-03-03T19:52:41.895] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T19:52:41.925] [INFO] [access] - ------####-----
-[2019-03-03T19:52:41.926] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:52:41.926] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:52:41.934] [INFO] [access] - undefined,undefined,undefined,undefined,1551618630008
-[2019-03-03T19:52:41.934] [INFO] [access] - ------####-----
-[2019-03-03T19:54:41.913] [INFO] [access] - @authenticateToken token received [  U2FsdGVkX19Hi30Cs1MftNI8l0nr0+D2AMhMla+xtdlTanmGbQRUPbteFWiuc/i2Xk7K+1su5e2yBB/l8csz8AfIyg68/tSaEY0oRLMTIlY=  ]
-[2019-03-03T19:54:41.913] [INFO] [access] - Authorizing user by generating token.. 
-[2019-03-03T19:54:41.920] [INFO] [access] - ------####-----
-[2019-03-03T19:54:41.920] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:54:41.920] [INFO] [access] - valid token, Details are following.
-[2019-03-03T19:54:41.921] [INFO] [access] - undefined,undefined,undefined,undefined,1551618630008
-[2019-03-03T19:54:41.921] [INFO] [access] - ------####-----
-[2019-03-03T19:56:04.571] [INFO] [access] - ENV is :: undefined
-[2019-03-03T19:56:04.573] [INFO] [access] - PORT :: undefined, using defaults
-[2019-03-03T19:56:04.682] [INFO] [access] - travelline App route Initialized
-[2019-03-03T19:56:04.689] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
-[2019-03-03T19:56:04.693] [INFO] [access] - Server running on localhost 8888
-[2019-03-03T19:56:06.260] [INFO] [access] - from /
-[2019-03-03T19:56:07.268] [INFO] [access] - No host found, setting default host--uptest
-[2019-03-03T19:56:07.268] [INFO] [access] - req.headers.locale --  en
-[2019-03-03T19:56:07.269] [INFO] [access] - host is ::  test_travelline
-[2019-03-03T19:56:07.269] [INFO] [access] - config { appKey: 'test@travelline',
+[2019-03-01T01:51:39.680] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:51:39.680] [INFO] [access] - current route is login
+[2019-03-01T01:51:39.680] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:51:39.680] [INFO] [access] - config undefined
+[2019-03-01T01:51:39.680] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:53:10.428] [INFO] [access] - from /
+[2019-03-01T01:53:11.199] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:53:11.199] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:53:11.199] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:53:11.199] [INFO] [access] - config { appKey: 'test@travelline',
   ssoFor: 
    { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
   appname: 'travelline Portal',
@@ -2167,7 +1995,7 @@
         appCalenderPickerClass: 'chalk-calender-picker',
         appRootLayoutClass: 'appRootLayout' } },
   contact: { toEmail: 'support@pahadi.me', cc: '' } }
-[2019-03-03T19:56:07.269] [INFO] [access] - vocab { login: 
+[2019-03-01T01:53:11.199] [INFO] [access] - vocab { login: 
    { SignIn: 'Sign In',
      SignInMsg: 'Please enter your username and password to login',
      UserName: 'Username',
@@ -2191,28 +2019,848 @@
       { code: 4,
         message: 'Oops! something is not right.',
         image: '../assets/images/error.png' } } }
-[2019-03-03T19:56:07.272] [INFO] [access] - /getrouteconfigs/
-[2019-03-03T19:56:07.272] [INFO] [access] - current route is login
-[2019-03-03T19:56:07.273] [INFO] [access] - host is ::  localhost
-[2019-03-03T19:56:07.273] [INFO] [access] - config undefined
-[2019-03-03T19:56:07.273] [INFO] [access] - route confix is not defined for route [login]
-[2019-03-03T19:56:07.412] [INFO] [access] - @authenticateToken token received [  U2FsdGVkX19Hi30Cs1MftNI8l0nr0+D2AMhMla+xtdlTanmGbQRUPbteFWiuc/i2Xk7K+1su5e2yBB/l8csz8AfIyg68/tSaEY0oRLMTIlY=  ]
-[2019-03-03T19:56:07.441] [INFO] [access] - ------####-----
-[2019-03-03T19:56:07.442] [INFO] [access] - User Details
-[2019-03-03T19:56:07.450] [INFO] [access] - undefined,undefined,undefined,undefined,1551618630008
-[2019-03-03T19:56:07.450] [INFO] [access] - token log
-[2019-03-03T19:56:07.450] [INFO] [access] - [ { created_at: 2019-03-03T13:10:16.513Z,
-    _id: 5c7bd246a6e68b23d6da9882,
-    token: 'U2FsdGVkX19Hi30Cs1MftNI8l0nr0+D2AMhMla+xtdlTanmGbQRUPbteFWiuc/i2Xk7K+1su5e2yBB/l8csz8AfIyg68/tSaEY0oRLMTIlY=',
-    __v: 0 } ]
-[2019-03-03T19:56:07.452] [INFO] [access] - ------####-----
-[2019-03-03T19:58:07.425] [INFO] [access] - @authenticateToken token received [  U2FsdGVkX19Hi30Cs1MftNI8l0nr0+D2AMhMla+xtdlTanmGbQRUPbteFWiuc/i2Xk7K+1su5e2yBB/l8csz8AfIyg68/tSaEY0oRLMTIlY=  ]
-[2019-03-03T19:58:07.429] [INFO] [access] - ------####-----
-[2019-03-03T19:58:07.429] [INFO] [access] - User Details
-[2019-03-03T19:58:07.430] [INFO] [access] - undefined,undefined,undefined,undefined,1551618630008
-[2019-03-03T19:58:07.430] [INFO] [access] - token log
-[2019-03-03T19:58:07.430] [INFO] [access] - [ { created_at: 2019-03-03T13:10:16.513Z,
-    _id: 5c7bd246a6e68b23d6da9882,
-    token: 'U2FsdGVkX19Hi30Cs1MftNI8l0nr0+D2AMhMla+xtdlTanmGbQRUPbteFWiuc/i2Xk7K+1su5e2yBB/l8csz8AfIyg68/tSaEY0oRLMTIlY=',
-    __v: 0 } ]
-[2019-03-03T19:58:07.431] [INFO] [access] - ------####-----
+[2019-03-01T01:53:11.212] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:53:11.212] [INFO] [access] - current route is login
+[2019-03-01T01:53:11.213] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:53:11.213] [INFO] [access] - config undefined
+[2019-03-01T01:53:11.213] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:53:20.721] [INFO] [access] - from /
+[2019-03-01T01:53:21.316] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:53:21.316] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:53:21.316] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:53:21.316] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-03-01T01:53:21.317] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' } } }
+[2019-03-01T01:53:21.327] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:53:21.327] [INFO] [access] - current route is login
+[2019-03-01T01:53:21.327] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:53:21.327] [INFO] [access] - config undefined
+[2019-03-01T01:53:21.327] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:53:22.896] [INFO] [access] - from /
+[2019-03-01T01:53:23.496] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:53:23.497] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:53:23.497] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:53:23.497] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-03-01T01:53:23.497] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' } } }
+[2019-03-01T01:53:23.511] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:53:23.511] [INFO] [access] - current route is login
+[2019-03-01T01:53:23.512] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:53:23.512] [INFO] [access] - config undefined
+[2019-03-01T01:53:23.512] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T01:53:28.307] [INFO] [access] - from /
+[2019-03-01T01:53:28.864] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T01:53:28.864] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T01:53:28.864] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T01:53:28.864] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-03-01T01:53:28.865] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' } } }
+[2019-03-01T01:53:28.873] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T01:53:28.873] [INFO] [access] - current route is login
+[2019-03-01T01:53:28.873] [INFO] [access] - host is ::  localhost
+[2019-03-01T01:53:28.874] [INFO] [access] - config undefined
+[2019-03-01T01:53:28.874] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T02:07:09.444] [INFO] [access] - from /
+[2019-03-01T02:07:11.297] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T02:07:11.297] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T02:07:11.297] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T02:07:11.297] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-03-01T02:07:11.298] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' } } }
+[2019-03-01T02:07:11.301] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T02:07:11.301] [INFO] [access] - current route is login
+[2019-03-01T02:07:11.301] [INFO] [access] - host is ::  localhost
+[2019-03-01T02:07:11.301] [INFO] [access] - config undefined
+[2019-03-01T02:07:11.301] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T02:07:50.811] [INFO] [access] - from /
+[2019-03-01T02:07:51.792] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T02:07:51.793] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T02:07:51.793] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T02:07:51.793] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-03-01T02:07:51.793] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' } } }
+[2019-03-01T02:07:51.810] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T02:07:51.811] [INFO] [access] - current route is login
+[2019-03-01T02:07:51.812] [INFO] [access] - host is ::  localhost
+[2019-03-01T02:07:51.812] [INFO] [access] - config undefined
+[2019-03-01T02:07:51.812] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T02:17:35.377] [INFO] [access] - from /
+[2019-03-01T02:17:37.198] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T02:17:37.199] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T02:17:37.199] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T02:17:37.199] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-03-01T02:17:37.200] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' } } }
+[2019-03-01T02:17:37.214] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T02:17:37.214] [INFO] [access] - current route is login
+[2019-03-01T02:17:37.214] [INFO] [access] - host is ::  localhost
+[2019-03-01T02:17:37.214] [INFO] [access] - config undefined
+[2019-03-01T02:17:37.214] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T02:17:51.139] [INFO] [access] - from /
+[2019-03-01T02:17:52.036] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T02:17:52.037] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T02:17:52.037] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T02:17:52.037] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-03-01T02:17:52.038] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' } } }
+[2019-03-01T02:17:52.053] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T02:17:52.053] [INFO] [access] - current route is login
+[2019-03-01T02:17:52.053] [INFO] [access] - host is ::  localhost
+[2019-03-01T02:17:52.053] [INFO] [access] - config undefined
+[2019-03-01T02:17:52.053] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T02:18:03.923] [INFO] [access] - from /
+[2019-03-01T02:18:04.512] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T02:18:04.513] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T02:18:04.513] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T02:18:04.513] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-03-01T02:18:04.513] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' } } }
+[2019-03-01T02:18:04.529] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T02:18:04.529] [INFO] [access] - current route is login
+[2019-03-01T02:18:04.529] [INFO] [access] - host is ::  localhost
+[2019-03-01T02:18:04.529] [INFO] [access] - config undefined
+[2019-03-01T02:18:04.529] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-01T02:23:31.759] [INFO] [access] - from /
+[2019-03-01T02:23:32.444] [INFO] [access] - No host found, setting default host--uptest
+[2019-03-01T02:23:32.444] [INFO] [access] - req.headers.locale --  en
+[2019-03-01T02:23:32.444] [INFO] [access] - host is ::  test_travelline
+[2019-03-01T02:23:32.444] [INFO] [access] - config { appKey: 'test@travelline',
+  ssoFor: 
+   { nodeApiName: { method: 'post', url: '/mailReport/fetchDataV2' } },
+  appname: 'travelline Portal',
+  theme: 
+   { navbar: 
+      { bgColor: '#f08521',
+        logo: '/assets/images/cd_logo.png',
+        defaultUserLogo: '/assets/images/default.png' },
+     footer: 
+      { backgroundColor: 'white',
+        backgroundColorLogin: '#f08521',
+        color: 'black',
+        colorLogin: 'white',
+        fontSize: '11px' },
+     loginForm: { header: [Object], input: [Object], button: '#f08521' },
+     errorComponent: { noPoiPresent: [Object], loader: [Object] },
+     listPoiComponent: 
+      { listPoiTablePaginationClass: 'chalk-pagination-theme',
+        listPoiTableEnabledStatusClass: 'chalk-uplive-status green',
+        listPoiTableDisabledStatusClass: 'chalk-uplive-status red',
+        monitoringStatusIconClass: 'chalk-uplive-status ',
+        monitoringEnabledImageSrc: '../assets/images/enableMonitorView.png',
+        monitoringDisabledImageSrc: '../assets/images/disableMonitorView.png' },
+     ediPoiLocationsComponent: 
+      { mapPin: '/assets/images/pin.png',
+        save: '/assets/images/save.png',
+        save1: '/assets/images/save1.png',
+        refresh: '/assets/images/refresh.png',
+        close: '/assets/images/cancelIcon.png',
+        clear: '/assets/images/clear.png',
+        back: '/assets/images/back.png',
+        retry: '/assets/images/retry.png',
+        delete: '/assets/images/delete.png',
+        pinRadius: '/assets/images/pinRadius.jpg',
+        goBack: '/assets/images/left.png',
+        goForward: '/assets/images/right.png' },
+     commonProperties: 
+      { addPoiButtonClass: 'btn-chalk btn-theme-chalk btn-shadow-grey',
+        editPoiLocationsButton: 'btn-chalk btn-theme-grey',
+        deletePoiLocationsButton: 'btn-chalk btn-theme-red',
+        chalkIconLarge: 'portal-icons upliventer',
+        chalkIconSmall: 'small-icons upliventer',
+        appCalenderPickerClass: 'chalk-calender-picker',
+        appRootLayoutClass: 'appRootLayout' } },
+  contact: { toEmail: 'support@pahadi.me', cc: '' } }
+[2019-03-01T02:23:32.445] [INFO] [access] - vocab { login: 
+   { SignIn: 'Sign In',
+     SignInMsg: 'Please enter your username and password to login',
+     UserName: 'Username',
+     UserNameMsg: 'Please enter your username',
+     Password: 'Password',
+     PasswordMsg: 'Please enter your password',
+     Submit: 'Submit',
+     RememberMe: 'Rememer Me' },
+  footer: { Privacy: 'Privacy', Copyrights: '@2017,Powered by' },
+  messages: 
+   { '1': 'Oops! Something is not right',
+     '2': 'Welcome...',
+     '4': 'Updating ...' },
+  errors: 
+   { '0': { code: 0, message: 'Loading...', image: '' },
+     '3': 
+      { code: 3,
+        message: 'Please check your Internet Connection !',
+        image: '../assets/images/error.png' },
+     '4': 
+      { code: 4,
+        message: 'Oops! something is not right.',
+        image: '../assets/images/error.png' } } }
+[2019-03-01T02:23:32.452] [INFO] [access] - /getrouteconfigs/
+[2019-03-01T02:23:32.453] [INFO] [access] - current route is login
+[2019-03-01T02:23:32.453] [INFO] [access] - host is ::  localhost
+[2019-03-01T02:23:32.453] [INFO] [access] - config undefined
+[2019-03-01T02:23:32.453] [INFO] [access] - route confix is not defined for route [login]
+[2019-03-02T14:36:29.710] [INFO] [access] - ENV is :: undefined
+[2019-03-02T14:36:29.712] [INFO] [access] - PORT :: undefined, using defaults
+[2019-03-02T14:36:29.765] [INFO] [access] - travelline App route Initialized
+[2019-03-02T14:36:29.772] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
+[2019-03-02T14:36:29.776] [INFO] [access] - Server running on localhost 8888
+[2019-03-02T14:36:35.521] [INFO] [access] - login Invoked
+[2019-03-02T14:36:35.521] [INFO] [access] - authorizing user
+[2019-03-02T14:36:35.528] [ERROR] [access] - { CastError: Cast to ObjectId failed for value "{ email: 'sanwalkailash@yahoo.com' }" at path "_id" for model "user"
+    at new CastError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/cast.js:29:11)
+    at ObjectId.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schema/objectid.js:232:11)
+    at ObjectId.SchemaType.applySetters (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:845:12)
+    at ObjectId.SchemaType._castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1248:15)
+    at ObjectId.SchemaType.castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1238:15)
+    at ObjectId.SchemaType.castForQueryWrapper (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1217:15)
+    at cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/cast.js:252:34)
+    at model.Query.Query.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:4336:12)
+    at model.Query.Query._castConditions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1726:10)
+    at model.Query.<anonymous> (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1977:8)
+    at model.Query._wrappedThunk [as _findOne] (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/Users/chalk/office/personal/MEAN/node_modules/kareem/index.js:369:33)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  message: 'Cast to ObjectId failed for value "{ email: \'sanwalkailash@yahoo.com\' }" at path "_id" for model "user"',
+  name: 'CastError',
+  stringValue: '"{ email: \'sanwalkailash@yahoo.com\' }"',
+  kind: 'ObjectId',
+  value: { email: 'sanwalkailash@yahoo.com' },
+  path: '_id',
+  reason: undefined,
+  model: 
+   { [Function: model]
+     hooks: Kareem { _pres: [Object], _posts: [Object] },
+     base: 
+      Mongoose {
+        connections: [Array],
+        models: {},
+        modelSchemas: [Object],
+        options: [Object],
+        _pluralize: [Function: pluralize],
+        Schema: [Object],
+        model: [Function],
+        plugins: [Array] },
+     modelName: 'user',
+     model: [Function: model],
+     db: 
+      NativeConnection {
+        base: [Object],
+        collections: [Object],
+        models: [Object],
+        config: [Object],
+        replica: false,
+        options: null,
+        otherDbs: [],
+        relatedDbs: {},
+        states: [Object],
+        _readyState: 1,
+        _closeCalled: false,
+        _hasOpened: true,
+        '$internalEmitter': [Object],
+        _listening: false,
+        _connectionOptions: [Object],
+        name: 'travelline',
+        host: '127.0.0.1',
+        port: 27017,
+        user: undefined,
+        pass: undefined,
+        client: [Object],
+        '$initialConnection': [Object],
+        _events: [Object],
+        _eventsCount: 3,
+        db: [Object] },
+     discriminators: undefined,
+     events: 
+      EventEmitter {
+        domain: null,
+        _events: {},
+        _eventsCount: 0,
+        _maxListeners: undefined },
+     '$appliedMethods': true,
+     '$appliedHooks': true,
+     _middleware: Kareem { _pres: [Object], _posts: [Object] },
+     schema: 
+      Schema {
+        obj: [Object],
+        paths: [Object],
+        aliases: {},
+        subpaths: {},
+        virtuals: [Object],
+        singleNestedPaths: {},
+        nested: [Object],
+        inherits: {},
+        callQueue: [],
+        _indexes: [],
+        methods: [Object],
+        methodOptions: {},
+        statics: {},
+        tree: [Object],
+        query: {},
+        childSchemas: [],
+        plugins: [Array],
+        '$id': 2,
+        s: [Object],
+        _userProvidedOptions: {},
+        options: [Object],
+        '$globalPluginsApplied': true },
+     collection: 
+      NativeCollection {
+        collection: [Object],
+        opts: [Object],
+        name: 'users',
+        collectionName: 'users',
+        conn: [Object],
+        queue: [],
+        buffer: false,
+        emitter: [Object] },
+     Query: { [Function] base: [Object] },
+     '$__insertMany': [Function],
+     '$init': Promise { [Circular] },
+     '$caught': true,
+     [Symbol(mongoose#Model)]: true } }
+[2019-03-02T14:37:16.212] [INFO] [access] - ENV is :: undefined
+[2019-03-02T14:37:16.215] [INFO] [access] - PORT :: undefined, using defaults
+[2019-03-02T14:37:16.268] [INFO] [access] - travelline App route Initialized
+[2019-03-02T14:37:16.275] [INFO] [access] - Static path  /Users/chalk/office/personal/MEAN/dist
+[2019-03-02T14:37:16.279] [INFO] [access] - Server running on localhost 8888
+[2019-03-02T14:37:19.133] [INFO] [access] - login Invoked
+[2019-03-02T14:37:19.134] [INFO] [access] - authorizing user
+[2019-03-02T14:37:57.554] [INFO] [access] - login Invoked
+[2019-03-02T14:37:57.554] [INFO] [access] - authorizing user

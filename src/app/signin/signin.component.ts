@@ -16,7 +16,7 @@ export class SigninComponent implements OnInit {
   initJSON(){
     this.loginJSON = {
         "register":{
-             "uid":0,
+            "appName":environment.APP_NAME,
              "name":"",
              "email": "",
              "password": "",
@@ -31,6 +31,7 @@ export class SigninComponent implements OnInit {
 "login":{
 "email":"",
 "password":"",
+"appName":environment.APP_NAME,
 "remember":""
 },
         "cities":[],

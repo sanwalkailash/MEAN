@@ -1,6 +1,7 @@
 module.exports = function (app, port,environment,server,console,models) {
   var port = 6600;
 const util = require("./Utility")(server,console)
+const tokenApi = require("./token")(app, port,environment,server,console,models)
   const appConstants = require('../AppConstants/Constants')
    const mongoose = require("mongoose")
 
@@ -18,6 +19,9 @@ const util = require("./Utility")(server,console)
           if(util.isVoid(req.body.name)){
                         errors.push("Name missing !");
                     }
+           if(util.isVoid(req.body.appName)){
+                                  errors.push("app name missing !");
+                              }
           if(util.isVoid(req.body.password)){
                         errors.push("Enter missing !");
                     }
@@ -34,25 +38,46 @@ const util = require("./Utility")(server,console)
               });
           }else {
               if(util.isVoid(req.body._id)){
-                  delete req.body._id;
-                  console.info("saving new user")
-                  new models.userSchema(req.body)
-                                  .save()
-                                  .then(user => {
-                                      res.json({
-                                               "status":appConstants.success,
-                                               "user":user,
-                                               "token":"secret"
-                                           });
-                                  },
-                                  err => {
-                                      errors.push(appConstants.serverError)
-                                      errors.push(err)
-                                      res.json({
-                                                "status":appConstants.failure,
-                                                "errors" : errors
-                                            });
-                                  })
+                  models.userSchema.find(
+                                    {
+                                      "email":req.body.email,
+                                      "appName":req.body.appName
+                                    }
+                                    )
+                                    .then(user => {
+                                        if(util.isVoid(user)){
+                                          console.info("saving new user")
+                                            new models.userSchema(req.body)
+                                                            .save()
+                                                            .then(user => {
+                                                                tokenApi.generateAuthToken(req,res,user);
+                                                            },
+                                                            err => {
+                                                                errors.push(appConstants.serverError)
+                                                                errors.push(err)
+                                                                res.json({
+                                                                          "status":appConstants.failure,
+                                                                          "errors" : errors
+                                                                      });
+                                                            })
+                                        }else {
+                                            errors.push("Already registered !");
+                                            res.json({
+                                                  "status":appConstants.failure,
+                                                  "errors" : errors
+                                              });
+                                        }
+                                    },
+                                    err => {
+                                        console.error(err)
+                                        errors.push(appConstants.serverError)
+                                        errors.push(err)
+                                        res.json({
+                                                  "status":appConstants.failure,
+                                                  "errors" : errors
+                                              });
+                                    })
+
               }else {
               console.info("updating user")
                   models.userSchema.findOneAndUpdate(
@@ -63,10 +88,7 @@ const util = require("./Utility")(server,console)
                     }
                   )
                   .then(user => {
-                      res.json({
-                               "status":appConstants.success,
-                               "user":user
-                           });
+                      tokenApi.generateAuthToken(req,res,user);
                   },
                   err => {
                       console.error(err)
@@ -89,6 +111,99 @@ const util = require("./Utility")(server,console)
                  });
                }
     },
+    updateProfile:function(req,res)        {
+          console.info("login Invoked");
+          try {
+              let errors = [];
+              if(util.isVoid(req.body.email)){
+                  errors.push("Email missing !");
+              }
+              if(util.isVoid(req.body._id)){
+                                errors.push("User does not exist !");
+                            }
+              if(util.isVoid(req.body.location)){
+                            errors.push("Location missing !");
+                        }
+              if(util.isVoid(req.body.name)){
+                            errors.push("Name missing !");
+                        }
+               if(util.isVoid(req.body.appName)){
+                                      errors.push("app name missing !");
+                                  }
+              if(util.isVoid(req.body.password)){
+                            errors.push("Enter missing !");
+                        }
+              if(req.body.password.length<6 || req.body.password.length>10){
+                            errors.push("Password must be six to ten charactes !");
+                        }
+              if(errors.length){
+                          errors.push("Please add details.");
+                      }
+              if(errors.length>0){
+                  res.json({
+                      "status":appConstants.failure,
+                      "errors" : errors
+                  });
+              }else {
+                  models.userSchema.find({
+                    "_id":req.body._id,
+                    "email":req.body.email,
+                    "appName":req.body.appName
+                  }).then(user => {
+                      if(util.isVoid(user)){
+                          errors.push("User doesn't exist !");
+                          res.json({
+                                "status":appConstants.failure,
+                                "errors" : errors
+                            });
+                        console.info("saving new user")
+                        models.userSchema.findOneAndUpdate(
+                          {_id:req.body._id},
+                          { $set: req.body },
+                          {
+                              multi:false,upsert:false
+                          }
+                        )
+                        .then(user => {
+                            tokenApi.generateAuthToken(req,res,user);
+                        },
+                        err => {
+                            console.error(err)
+                            errors.push(appConstants.serverError)
+                            errors.push(err)
+                            res.json({
+                                      "status":appConstants.failure,
+                                      "errors" : errors
+                                  });
+                        })
+                      }else {
+                          errors.push("Already registered !");
+                          res.json({
+                                "status":appConstants.failure,
+                                "errors" : errors
+                            });
+                      }
+                  },
+                  err => {
+                      console.error(err)
+                      errors.push(appConstants.serverError)
+                      errors.push(err)
+                      res.json({
+                                "status":appConstants.failure,
+                                "errors" : errors
+                            });
+                  })
+              }
+          }catch(e) {
+              console.info("caught exception")
+                     console.error(e);
+                     res.json({
+                       "status": appConstants.failure,
+                       "message": e,
+                       "errorcode": 500
+                     });
+                   }
+        },
     login:function(req,res)        {
       console.info("login Invoked");
       try {
@@ -106,9 +221,13 @@ const util = require("./Utility")(server,console)
                   "errors" : errors
               });
           }else {
-               console.info("authorizing user")
-               models.userSchema.findById(
-                  {email:req.body.email}
+               console.info("authonticating user")
+               models.userSchema.find(
+                  {
+                    "email":req.body.email,
+                    "password":req.body.password,
+                    "appName":req.body.appName
+                  }
                   )
                   .then(user => {
                       if(util.isVoid(user)){
@@ -118,11 +237,7 @@ const util = require("./Utility")(server,console)
                               "errors" : errors
                           });
                       }else {
-                        res.json({
-                               "status":appConstants.success,
-                               "user":user,
-                               "token":"secret"
-                           });
+                        tokenApi.generateAuthToken(req,res,user);
                       }
                   },
                   err => {
@@ -145,8 +260,7 @@ const util = require("./Utility")(server,console)
                  });
                }
     },
-
-    logout: function(req,res)        {
+    logout: function(req,res){
       req.user.token = null;
       req.user.save(function(err,user){
         if (err){

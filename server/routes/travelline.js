@@ -5,17 +5,19 @@ module.exports = function(router, port,environment,server,console,models) {
     console.info("travelline App route Initialized")
     const util = require("./../api/Utility")(router, port,environment,server,console,models)
     const loginApi = require('./../api/login')(router, port,environment,server,console,models);
+    const tokenApi = require('./../api/token')(router, port,environment,server,console,models);
     const activityApi = require('./../api/activityApi')(router, port,environment,server,console,models);
 
     // login api
     router.post('/login/v1', loginApi.login);
     router.post('/register/v1', loginApi.register);
+    router.post('/user/update/v1', loginApi.updateProfile);
     router.post('/refresh/v1', loginApi.refresh);
 
     // activity apies
-    router.post('/save/idea/v1',util.getClientIp,activityApi.saveIdea)
-    router.get('/list/ideas/v1',activityApi.listIdeas)
-    router.delete('/ideas/delete/v1/:id',util.getClientIp,activityApi.deleteIdea)
+    router.post('/save/idea/v1',tokenApi.authenticateToken,util.getClientIp,activityApi.saveIdea)
+    router.get('/list/ideas/v1',tokenApi.authenticateToken,activityApi.listIdeas)
+    router.delete('/ideas/delete/v1/:id',tokenApi.authenticateToken,util.getClientIp,activityApi.deleteIdea)
 
 
     // api route setting ends ---

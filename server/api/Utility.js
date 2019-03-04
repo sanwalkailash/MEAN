@@ -1,5 +1,7 @@
+const appConstants = require('../AppConstants/Constants')
+const CryptoJS = require('crypto-js');
+
 module.exports = function (app, port,environment,server,console,models) {
-    
 
     return{
         isVoid:function(obj){
@@ -44,6 +46,14 @@ module.exports = function (app, port,environment,server,console,models) {
            }
            console.info("client ip is -- ",ipAddress)
            next()
-         }
+        },
+        encrypt: function(word) {
+         	 var ciphertext = CryptoJS.AES.encrypt(word, appConstants.AppProperties.secret);
+         	 return ciphertext.toString();
+         },
+        decrypt: function(word){
+            var decrypt = CryptoJS.AES.decrypt(word, appConstants.AppProperties.secret);
+            return CryptoJS.enc.Utf8.stringify(decrypt).toString();
+        }
     }
 }

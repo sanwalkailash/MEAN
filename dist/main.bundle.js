@@ -1448,7 +1448,7 @@ var SigninComponent = /** @class */ (function () {
     SigninComponent.prototype.initJSON = function () {
         this.loginJSON = {
             "register": {
-                "uid": 0,
+                "appName": environment_1.environment.APP_NAME,
                 "name": "",
                 "email": "",
                 "password": "",
@@ -1463,6 +1463,7 @@ var SigninComponent = /** @class */ (function () {
             "login": {
                 "email": "",
                 "password": "",
+                "appName": environment_1.environment.APP_NAME,
                 "remember": ""
             },
             "cities": [],

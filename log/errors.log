@@ -1108,3 +1108,116 @@
     at next (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/index.js:275:10)
     at urlencodedParser (/Users/chalk/office/personal/MEAN/node_modules/body-parser/lib/types/urlencoded.js:82:7)
     at Layer.handle [as handle_request] (/Users/chalk/office/personal/MEAN/node_modules/express/lib/router/layer.js:95:5)
+[2019-03-02T14:36:35.528] [ERROR] [access] - { CastError: Cast to ObjectId failed for value "{ email: 'sanwalkailash@yahoo.com' }" at path "_id" for model "user"
+    at new CastError (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/error/cast.js:29:11)
+    at ObjectId.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schema/objectid.js:232:11)
+    at ObjectId.SchemaType.applySetters (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:845:12)
+    at ObjectId.SchemaType._castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1248:15)
+    at ObjectId.SchemaType.castForQuery (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1238:15)
+    at ObjectId.SchemaType.castForQueryWrapper (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/schematype.js:1217:15)
+    at cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/cast.js:252:34)
+    at model.Query.Query.cast (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:4336:12)
+    at model.Query.Query._castConditions (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1726:10)
+    at model.Query.<anonymous> (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/query.js:1977:8)
+    at model.Query._wrappedThunk [as _findOne] (/Users/chalk/office/personal/MEAN/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/Users/chalk/office/personal/MEAN/node_modules/kareem/index.js:369:33)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  message: 'Cast to ObjectId failed for value "{ email: \'sanwalkailash@yahoo.com\' }" at path "_id" for model "user"',
+  name: 'CastError',
+  stringValue: '"{ email: \'sanwalkailash@yahoo.com\' }"',
+  kind: 'ObjectId',
+  value: { email: 'sanwalkailash@yahoo.com' },
+  path: '_id',
+  reason: undefined,
+  model: 
+   { [Function: model]
+     hooks: Kareem { _pres: [Object], _posts: [Object] },
+     base: 
+      Mongoose {
+        connections: [Array],
+        models: {},
+        modelSchemas: [Object],
+        options: [Object],
+        _pluralize: [Function: pluralize],
+        Schema: [Object],
+        model: [Function],
+        plugins: [Array] },
+     modelName: 'user',
+     model: [Function: model],
+     db: 
+      NativeConnection {
+        base: [Object],
+        collections: [Object],
+        models: [Object],
+        config: [Object],
+        replica: false,
+        options: null,
+        otherDbs: [],
+        relatedDbs: {},
+        states: [Object],
+        _readyState: 1,
+        _closeCalled: false,
+        _hasOpened: true,
+        '$internalEmitter': [Object],
+        _listening: false,
+        _connectionOptions: [Object],
+        name: 'travelline',
+        host: '127.0.0.1',
+        port: 27017,
+        user: undefined,
+        pass: undefined,
+        client: [Object],
+        '$initialConnection': [Object],
+        _events: [Object],
+        _eventsCount: 3,
+        db: [Object] },
+     discriminators: undefined,
+     events: 
+      EventEmitter {
+        domain: null,
+        _events: {},
+        _eventsCount: 0,
+        _maxListeners: undefined },
+     '$appliedMethods': true,
+     '$appliedHooks': true,
+     _middleware: Kareem { _pres: [Object], _posts: [Object] },
+     schema: 
+      Schema {
+        obj: [Object],
+        paths: [Object],
+        aliases: {},
+        subpaths: {},
+        virtuals: [Object],
+        singleNestedPaths: {},
+        nested: [Object],
+        inherits: {},
+        callQueue: [],
+        _indexes: [],
+        methods: [Object],
+        methodOptions: {},
+        statics: {},
+        tree: [Object],
+        query: {},
+        childSchemas: [],
+        plugins: [Array],
+        '$id': 2,
+        s: [Object],
+        _userProvidedOptions: {},
+        options: [Object],
+        '$globalPluginsApplied': true },
+     collection: 
+      NativeCollection {
+        collection: [Object],
+        opts: [Object],
+        name: 'users',
+        collectionName: 'users',
+        conn: [Object],
+        queue: [],
+        buffer: false,
+        emitter: [Object] },
+     Query: { [Function] base: [Object] },
+     '$__insertMany': [Function],
+     '$init': Promise { [Circular] },
+     '$caught': true,
+     [Symbol(mongoose#Model)]: true } }
