@@ -1,14 +1,14 @@
-import { Injectable} from '@angular/core';
-import { Router } from "@angular/router";
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
-import { UtilService } from './util.service';
+import {UtilService} from './util.service';
+
 @Injectable()
 export class RouteConfigLoaderService {
-    constructor(private util:UtilService) {
+    constructor(private util: UtilService) {
     }
+
     setRouteConfig(route: string): Promise<any> {
-        const promise =  this.util.getHttpClient().get(environment.ROUTE_CONFIG_API+route)
+        const promise = this.util.getHttpClient().get(environment.ROUTE_CONFIG_API + route)
             .toPromise()
             .then(settings => {
                 console.log(`Settings from API: `, settings);

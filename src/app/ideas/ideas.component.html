@@ -1,24 +1,24 @@
 <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="ideaJSON.errors.length>0">
-  <p *ngFor=" let error of ideaJSON.errors">{{error}} <br/></p>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
+    <p *ngFor=" let error of ideaJSON.errors">{{error}} <br/></p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
 </div>
 
 <!--edit idea-->
 <div class="card card-body" *ngIf="ideaJSON.viewCode==1">
-  <h3>Whats your Idea ?</h3>
-  <form>
-    <div class="form-group">
-      <label for="title">Title</label>
-      <input type="text" class="form-control" name="title" [(ngModel)]="ideaJSON.idea.title" required>
-    </div>
-    <div class="form-group">
-      <label for="details">Details</label>
-      <textarea class="form-control" name="details" [(ngModel)]="ideaJSON.idea.details" required></textarea>
-    </div>
-    <button type="submit" (click)="saveIdea()" class="btn btn-primary">Submit</button>
-  </form>
+    <h3>Whats your Idea ?</h3>
+    <form>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" [(ngModel)]="ideaJSON.idea.title" required>
+        </div>
+        <div class="form-group">
+            <label for="details">Details</label>
+            <textarea class="form-control" name="details" [(ngModel)]="ideaJSON.idea.details" required></textarea>
+        </div>
+        <button type="submit" (click)="saveIdea()" class="btn btn-primary">Submit</button>
+    </form>
 </div>
 
 <!--list ideas -->
@@ -28,74 +28,74 @@
      style="height: 80vh;
         overflow: scroll;"
      *ngIf="ideaJSON.viewCode==0">
-  <h3 class="mb-2">
-    Trending Ideas
-    <b (click)="newIdea()" class=" btn btn-primary">
-      <i class="material-icons ">add_box</i>
-    </b>
-  </h3>
+    <h3 class="mb-2">
+        Trending Ideas
+        <b (click)="newIdea()" class=" btn btn-primary">
+            <i class="material-icons ">add_box</i>
+        </b>
+    </h3>
 
-  <div  *ngFor=" let idea of ideaJSON.ideas ">
-    <div class="card" (click)="addView(idea)">
-      <div class="card-body">
-        <div style="float:right;width:fit-content;right:10px;position: absolute;">
-          <span  class="card-link" >
+    <div *ngFor=" let idea of ideaJSON.ideas ">
+        <div class="card" (click)="addView(idea)">
+            <div class="card-body">
+                <div style="float:right;width:fit-content;right:10px;position: absolute;">
+          <span class="card-link">
             <span>{{idea.views}}</span>
             <i class="material-icons">
               face
             </i>
           </span>
-          <span  (click)="editIdea(idea)"  class="card-link" >
+                    <span (click)="editIdea(idea)" class="card-link">
             <i class="material-icons">
               edit
             </i>
           </span>
-          <span  (click)="deleteIdea(idea)"  class="card-link" >
+                    <span (click)="deleteIdea(idea)" class="card-link">
             <i class="material-icons">
               delete
             </i>
           </span>
-          <span  (click)="markPublic(idea)"  class="card-link" >
+                    <span (click)="markPublic(idea)" class="card-link">
             <i class="material-icons">
               public
             </i>
           </span>
-        </div>
-        <h5 class="card-title">{{idea.title}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">
-          {{idea.created_at}}
+                </div>
+                <h5 class="card-title">{{idea.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    {{idea.created_at}}
 
-        </h6>
-        <p class="card-text">{{idea.details}}</p>
-        <b  (click)="addLike(idea)" class="card-link">
-          <span>{{idea.like}}</span>
-          <i class="material-icons">
-            thumb_up_alt
-          </i>
-        </b>
-        <b  class="card-link">
-          <i class="material-icons">
-            rate_review
-          </i>
-        </b>
-        <span class="card-link" (click)="shareIdea(idea)" >
+                </h6>
+                <p class="card-text">{{idea.details}}</p>
+                <b (click)="addLike(idea)" class="card-link">
+                    <span>{{idea.like}}</span>
+                    <i class="material-icons">
+                        thumb_up_alt
+                    </i>
+                </b>
+                <b class="card-link">
+                    <i class="material-icons">
+                        rate_review
+                    </i>
+                </b>
+                <span class="card-link" (click)="shareIdea(idea)">
           <i class="material-icons">
             share
           </i>
         </span>
-        <b class="card-link"  (click)="_getDirectionsInGoogleMap(idea.lat,idea.lng)" >
-          <i class="material-icons">
-            directions
-          </i>
-        </b>
-      </div>
+                <b class="card-link" (click)="_getDirectionsInGoogleMap(idea.lat,idea.lng)">
+                    <i class="material-icons">
+                        directions
+                    </i>
+                </b>
+            </div>
+
+        </div>
+    </div>
+    <div *ngIf="ideaJSON.ideas.length==0">
+        No Ideas So Far
 
     </div>
-  </div>
-  <div *ngIf="ideaJSON.ideas.length==0">
-    No Ideas So Far
-
-  </div>
 </div>
 
 <!--share idea -->
@@ -104,61 +104,61 @@
      style="height: 80vh;
         overflow: scroll;"
      *ngIf="ideaJSON.viewCode==2">
-  <div >
-    <div class="card" (click)="addView(ideaJSON.ideas)">
-      <!--list ideas -->
-      <div class="card-body">
-        <div style="float:right;width:fit-content;right:10px;position: absolute;">
-          <span  class="card-link" >
+    <div>
+        <div class="card" (click)="addView(ideaJSON.ideas)">
+            <!--list ideas -->
+            <div class="card-body">
+                <div style="float:right;width:fit-content;right:10px;position: absolute;">
+          <span class="card-link">
             <span>{{ideaJSON.ideas.views}}</span>
             <i class="material-icons">
               face
             </i>
           </span>
-          <span  (click)="editIdea(ideaJSON.ideas)"  class="card-link" >
+                    <span (click)="editIdea(ideaJSON.ideas)" class="card-link">
             <i class="material-icons">
               edit
             </i>
           </span>
-          <span  (click)="deleteIdea(ideaJSON.ideas)"  class="card-link" >
+                    <span (click)="deleteIdea(ideaJSON.ideas)" class="card-link">
             <i class="material-icons">
               delete
             </i>
           </span>
-          <span  (click)="markPublic(ideaJSON.ideas)"  class="card-link" >
+                    <span (click)="markPublic(ideaJSON.ideas)" class="card-link">
             <i class="material-icons">
               public
             </i>
           </span>
-        </div>
-        <h5 class="card-title">{{ideaJSON.ideas.title}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">
-          {{ideaJSON.ideas.created_at}}
+                </div>
+                <h5 class="card-title">{{ideaJSON.ideas.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    {{ideaJSON.ideas.created_at}}
 
-        </h6>
-        <p class="card-text">{{ideaJSON.ideas.details}}</p>
-        <b  (click)="addLike(ideaJSON.ideas)" class="card-link">
-          <span>{{ideaJSON.ideas.like}}</span>
-          <i class="material-icons">
-            thumb_up_alt
-          </i>
-        </b>
-        <b  class="card-link">
-          <i class="material-icons">
-            rate_review
-          </i>
-        </b>
-        <span class="card-link" (click)="shareIdea(ideaJSON.ideas)" >
+                </h6>
+                <p class="card-text">{{ideaJSON.ideas.details}}</p>
+                <b (click)="addLike(ideaJSON.ideas)" class="card-link">
+                    <span>{{ideaJSON.ideas.like}}</span>
+                    <i class="material-icons">
+                        thumb_up_alt
+                    </i>
+                </b>
+                <b class="card-link">
+                    <i class="material-icons">
+                        rate_review
+                    </i>
+                </b>
+                <span class="card-link" (click)="shareIdea(ideaJSON.ideas)">
           <i class="material-icons">
             share
           </i>
         </span>
-        <b class="card-link"  (click)="_getDirectionsInGoogleMap(ideaJSON.ideas.lat,ideaJSON.ideas.lng)" >
-          <i class="material-icons">
-            directions
-          </i>
-        </b>
-      </div>
+                <b class="card-link" (click)="_getDirectionsInGoogleMap(ideaJSON.ideas.lat,ideaJSON.ideas.lng)">
+                    <i class="material-icons">
+                        directions
+                    </i>
+                </b>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

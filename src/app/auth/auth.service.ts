@@ -1,19 +1,19 @@
-import { Injectable }               from '@angular/core';
-import { AuthGuard }                from './auth.guard';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class AuthService {
 
-  constructor() { }
-
-  // store the URL so we can redirect after logging in
-  redirectUrl: string;
-
-  isLoggedIn = (): boolean => {
-    console.info("@isLoggedIn token--",localStorage.getItem("token"));
-    if (localStorage.getItem("token") !== null){
-      return true;
+    constructor() {
     }
-    return false;
-  }
+
+    // store the URL so we can redirect after logging in
+    redirectUrl: string;
+
+    isLoggedIn = (): boolean => {
+        console.info("@isLoggedIn token--", localStorage.getItem("token"));
+        if (localStorage.getItem("token") !== null) {
+            return true;
+        }
+        return false;
+    }
 }

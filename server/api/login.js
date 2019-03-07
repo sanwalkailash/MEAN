@@ -2,6 +2,7 @@ module.exports = function (app, port,environment,server,console,models) {
   var port = 6600;
 const util = require("./Utility")(server,console)
 const tokenApi = require("./token")(app, port,environment,server,console,models)
+const appAccountApi = require("./Account")(app, port,environment,server,console,models)
   const appConstants = require('../AppConstants/Constants')
    const mongoose = require("mongoose")
 
@@ -15,6 +16,9 @@ const tokenApi = require("./token")(app, port,environment,server,console,models)
           }
           if(util.isVoid(req.body.location)){
                         errors.push("Location missing !");
+                    }
+          if(util.isVoid(req.body.company)){
+                        errors.push("company missing !");
                     }
           if(util.isVoid(req.body.name)){
                         errors.push("Name missing !");
@@ -50,7 +54,7 @@ const tokenApi = require("./token")(app, port,environment,server,console,models)
                                             new models.userSchema(req.body)
                                                             .save()
                                                             .then(user => {
-                                                                tokenApi.generateAuthToken(req,res,user);
+                                                                appAccountApi.createAppAccount(req,res,user);
                                                             },
                                                             err => {
                                                                 errors.push(appConstants.serverError)
@@ -81,14 +85,14 @@ const tokenApi = require("./token")(app, port,environment,server,console,models)
               }else {
               console.info("updating user")
                   models.userSchema.findOneAndUpdate(
-                    {_id:req.body._id},
+                    {$and:[{_id:req.body._id}.{_id:req.body.email}]},
                     { $set: req.body },
                     {
                         multi:false,upsert:false
                     }
                   )
                   .then(user => {
-                      tokenApi.generateAuthToken(req,res,user);
+                      appAccountApi.createAppAccount(req,res,user);
                   },
                   err => {
                       console.error(err)

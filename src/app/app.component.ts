@@ -1,53 +1,53 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ImLive';
-    Notification:any;
-    userLocation={
-"lat":0.0,
-"lng":0.0
-}
-
- ngOnInit() {
-localStorage.setItem("userLoc",JSON.stringify(this.userLocation))
-this.getLocation()
- }
-
-     getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError);
-      } else {
-        this.Notification = "Geolocation is not supported by this browser.";
-      }
+    title = 'ImLive';
+    Notification: any;
+    userLocation = {
+        "lat": 0.0,
+        "lng": 0.0
     }
 
- showError = (error) =>{
-  switch(error.code) {
-    case error.PERMISSION_DENIED:
-      this.Notification = "User denied the request for Geolocation."
-      break;
-    case error.POSITION_UNAVAILABLE:
-      this.Notification = "Location information is unavailable."
-      break;
-    case error.TIMEOUT:
-      this.Notification = "The request to get user location timed out."
-      break;
-    case error.UNKNOWN_ERROR:
-      this.Notification = "An unknown error occurred."
-      break;
-  }
-}
+    ngOnInit() {
+        localStorage.setItem("userLoc", JSON.stringify(this.userLocation))
+        this.getLocation()
+    }
 
- setUserLocation = (position) => {
-  this.userLocation.lat = position.coords.latitude;
-  this.userLocation.lng = position.coords.longitude;
-localStorage.setItem("userLoc",JSON.stringify(this.userLocation))
-}
+    getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError);
+        } else {
+            this.Notification = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    showError = (error) => {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                this.Notification = "User denied the request for Geolocation."
+                break;
+            case error.POSITION_UNAVAILABLE:
+                this.Notification = "Location information is unavailable."
+                break;
+            case error.TIMEOUT:
+                this.Notification = "The request to get user location timed out."
+                break;
+            case error.UNKNOWN_ERROR:
+                this.Notification = "An unknown error occurred."
+                break;
+        }
+    }
+
+    setUserLocation = (position) => {
+        this.userLocation.lat = position.coords.latitude;
+        this.userLocation.lng = position.coords.longitude;
+        localStorage.setItem("userLoc", JSON.stringify(this.userLocation))
+    }
 
 }
