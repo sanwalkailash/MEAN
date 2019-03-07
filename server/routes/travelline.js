@@ -4,7 +4,7 @@ module.exports = function(router, port,environment,server,console,models) {
 
     console.info("travelline App route Initialized")
     const util = require("./../api/Utility")(router, port,environment,server,console,models)
-    const loginApi = require('./../api/login')(router, port,environment,server,console,models);
+    const loginApi = require('../api/loginApi')(router, port,environment,server,console,models);
     const tokenApi = require('./../api/token')(router, port,environment,server,console,models);
     const activityApi = require('./../api/activityApi')(router, port,environment,server,console,models);
 

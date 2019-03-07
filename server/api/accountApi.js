@@ -5,19 +5,27 @@ const tokenApi = require("./token")(app, port,environment,server,console,models)
    const mongoose = require("mongoose")
 
   return {
-    createAppAccount : function(req,res,user){
+    createAppAccount : function(req,res,user,company){
         console.info("@createAppAccount..");
         try {
-          if(util.isVoid(user._id)){
+            let accountDetails = {
+                appName: user.appName,
+                email: user.email,
+                role: "admin",
+                accountUid: user._id, // this is user _id account owner.
+                company: company,
+            }
+            console.info("account to save ",accountDetails)
+          if(util.isVoid(accountDetails._id)){
             models.accountSchema.find(
                               {
-                            "email":user.email,
-                                "appName":user.appName
+                                "email":accountDetails.email,
+                                "appName":accountDetails.appName
                               }
                               )
                               .then(accountDetails => {
                                   if(util.isVoid(accountDetails)){
-                                      new models.accountSchema(user)
+                                      new models.accountSchema(accountDetails)
                                                       .save()
                                                       .then(accountDetails => {
                                                          console.info("saved new accountDetails",accountDetails)
@@ -53,7 +61,7 @@ const tokenApi = require("./token")(app, port,environment,server,console,models)
         console.info("updating accountDetails")
             models.accountSchema.findOneAndUpdate(
               {$and:[{_id:req.body._id},{email:req.body.email}]},
-              { $set: user },
+              { $set: accountDetails },
               {
                   multi:false,upsert:false
               }

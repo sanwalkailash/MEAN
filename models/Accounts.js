@@ -15,7 +15,7 @@ module.exports = function (connection) {
         updated_at: {type: Date, default: moment()}
     });
 
-    const app = connection.model('accounts', accountSchema);
+    const account = connection.model('accounts', accountSchema);
 
-    return app;
+    return account;
 }

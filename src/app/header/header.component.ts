@@ -10,13 +10,15 @@ export class HeaderComponent implements OnInit {
     headerJSON: any;
 
     constructor() {
+        this.initJSON()
     }
 
     initJSON() {
         this.headerJSON = {
             "isLoggedIn": localStorage.getItem("user") ? true : false,
-            "user": localStorage.getItem("user") || {}
+            "user": localStorage.getItem("user")? JSON.parse(localStorage.getItem("user")) : {}
         }
+        console.info(this.headerJSON);
     }
 
     ngOnInit() {

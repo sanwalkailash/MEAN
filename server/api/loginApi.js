@@ -41,6 +41,8 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
                   "errors" : errors
               });
           }else {
+              let company = req.body.company;
+              delete req.body.company;
               if(util.isVoid(req.body._id)){
                   models.userSchema.find(
                                     {
@@ -54,7 +56,7 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
                                             new models.userSchema(req.body)
                                                             .save()
                                                             .then(user => {
-                                                                appAccountApi.createAppAccount(req,res,user);
+                                                                appAccountApi.createAppAccount(req,res,user,company);
                                                             },
                                                             err => {
                                                                 errors.push(appConstants.serverError)
@@ -92,7 +94,7 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
                     }
                   )
                   .then(user => {
-                      appAccountApi.createAppAccount(req,res,user);
+                      appAccountApi.createAppAccount(req,res,user,company);
                   },
                   err => {
                       console.error(err)
