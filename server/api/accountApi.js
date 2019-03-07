@@ -52,7 +52,7 @@ const tokenApi = require("./token")(app, port,environment,server,console,models)
         }else {
         console.info("updating accountDetails")
             models.accountSchema.findOneAndUpdate(
-              {$and:[{_id:req.body._id}.{_id:req.body.email}]},
+              {$and:[{_id:req.body._id},{email:req.body.email}]},
               { $set: user },
               {
                   multi:false,upsert:false

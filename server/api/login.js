@@ -2,7 +2,7 @@ module.exports = function (app, port,environment,server,console,models) {
   var port = 6600;
 const util = require("./Utility")(server,console)
 const tokenApi = require("./token")(app, port,environment,server,console,models)
-const appAccountApi = require("./Account")(app, port,environment,server,console,models)
+const appAccountApi = require("./accountApi")(app, port,environment,server,console,models)
   const appConstants = require('../AppConstants/Constants')
    const mongoose = require("mongoose")
 
@@ -85,7 +85,7 @@ const appAccountApi = require("./Account")(app, port,environment,server,console,
               }else {
               console.info("updating user")
                   models.userSchema.findOneAndUpdate(
-                    {$and:[{_id:req.body._id}.{_id:req.body.email}]},
+                    {$and:[{_id:req.body._id},{email:req.body.email}]},
                     { $set: req.body },
                     {
                         multi:false,upsert:false
