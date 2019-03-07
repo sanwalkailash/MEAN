@@ -1,14 +1,18 @@
+# MEAN
+Angular 5 app framework having <br/>
+    * multiple language support <br/>
+    * white label platform <br/>
+    * configurable UI <br/>
+    * multiple account support <br/>
+    * multiple app support <br/>
+
 #server start
 ./node_modules/nodemon/bin/nodemon.js
 
 #build app
 npm run build
 
-
-# MEAN
-Angular 5 app framework having multiple language support, white label , configurable UI.
-
-#node modules installation
+#dependancy modules installation
 sudo npm install --unsafe-perm=true --allow-root
 
 # Pahadi.Here
