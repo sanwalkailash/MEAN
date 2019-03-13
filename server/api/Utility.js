@@ -1,6 +1,6 @@
 const appConstants = require('../AppConstants/Constants')
 const CryptoJS = require('crypto-js');
-
+const fs = require('fs');
 module.exports = function (app, port,environment,server,console,models) {
 
     return{
@@ -54,6 +54,21 @@ module.exports = function (app, port,environment,server,console,models) {
         decrypt: function(word){
             var decrypt = CryptoJS.AES.decrypt(word, appConstants.AppProperties.secret);
             return CryptoJS.enc.Utf8.stringify(decrypt).toString();
+        },
+        mkdirIfNotExist : function(dir){
+            console.info("@mkdirIfNotExist, create dir if not exist.", dir);
+            fs.promises.mkdir(dir, { recursive: true }).catch(error => { console.error('@mkdirIfNotExist caught exception : ', error.message); });
+        },
+        saveFile:function(dir,filename,content){
+            fs.promises.mkdir(dir, { recursive: true })
+                .then(result => { console.info("dir check done.") })
+                .catch(error => { console.error('caught exception : ', error.message); throw error });
+            let base64Data = content.split(';base64,').pop();
+            console.info("base64Data",base64Data);
+            fs.writeFile(dir+filename, base64Data,{encoding: 'base64'}, function (err) {
+                if (err) throw err;
+                console.info('file saved!');
+            });
         }
     }
 }

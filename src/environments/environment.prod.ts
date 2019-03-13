@@ -5,7 +5,7 @@ export const environment = {
     codes: ['AB', 'AC', 'XYZ'],
 
 
-    APP_NAME: "travellineOne",
+    APP_NAME: "resourcemanager",
     APP_LOCALE: "en",
     APP_REFRESH_COUNT: 0,
 

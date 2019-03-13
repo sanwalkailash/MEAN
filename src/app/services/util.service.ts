@@ -17,6 +17,7 @@ export class UtilService {
         switch (typeof (obj)) {
             case "undefined":
             case "object":
+              
                 for (var x in obj) {
                     if (obj.hasOwnProperty(x))
                         return false;
@@ -120,6 +121,14 @@ export class UtilService {
 
     public getDataFromStorageUsingKey(key: string): any {
         return JSON.parse(localStorage.getItem(key));
+    }
+
+    uploadFile(fileToUpload: File) {
+        const _formData = new FormData();
+        _formData.append('file', fileToUpload, fileToUpload.name);
+        return _formData //note: no HttpHeaders passed as 3d param to POST!
+        //So no Content-Type constructed manually.
+        //Angular 4.x-6.x does it automatically.
     }
 
 

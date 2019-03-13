@@ -21,11 +21,15 @@ export class SigninComponent implements OnInit {
                 "appName": environment.APP_NAME,
                 "name": "",
                 "email": "",
+                "dob": "",
+                "contact": "",
                 "password": "",
-                "location": {
-                    "city": "",
-                    "latitude": 0.0,
-                    "longitude": 0.0
+                "resume": {
+                    "name":"",
+                    "size":"",
+                    "type":"",
+                    "lastModifiedDate":"",
+                    "result":""
                 },
                 "token": "",
                 "remember": ""
@@ -104,5 +108,22 @@ export class SigninComponent implements OnInit {
                 }
             );
     }
+
+    public fileEvent(event) {
+        this.loginJSON.register.resume.name = event.target.files[0].name;
+        this.loginJSON.register.resume.type = event.target.files[0].type;
+        this.loginJSON.register.resume.size = event.target.files[0].size;
+        this.loginJSON.register.resume.lastModifiedDate = event.target.files[0].lastModifiedDate;
+        var reader = new FileReader();
+        reader.onload = (evt) => {
+            console.info("reader object onload: ",evt)
+            this.loginJSON.register.resume.result = evt.target.result
+        };
+        reader.readAsDataURL(event.target.files[0]);
+        // console.info("fileSelected",this.util.uploadFile(event.target.files[0]))
+        console.info("this.loginJSON.register.resume",this.loginJSON.register.resume)
+    }
+
+
 
 }

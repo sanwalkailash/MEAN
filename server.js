@@ -9,6 +9,7 @@ const methodOverride = require('method-override') // allow forms to send put and
 const json = require('express-json')
 const mongoose = require('mongoose');
 const session = require('express-session');
+const fileUpload = require('express-fileupload');
 //const flash = require('connect-flash');
 
 const app = express();
@@ -17,6 +18,14 @@ const app = express();
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+    useTempFiles : true,
+    tempFileDir : '/tmp/',
+    safeFileNames : true,
+    abortOnLimit : true,
+
+}));
 
 //configuring logger ----
 // Configuration file defines three appenders that are children of the clustered appender.
@@ -70,7 +79,11 @@ console.info("Static path ", path.join(__dirname, '/dist'));
 
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(json);
-app.use(cors); // for allowing cross origin calls
+var corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions)); // for allowing cross origin calls
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
           secret: 'keyboard cat',

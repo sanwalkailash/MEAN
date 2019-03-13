@@ -1,12 +1,12 @@
 module.exports = function (app, port,environment,server,console,models) {
   var port = 6600;
-const util = require("./Utility")(server,console)
+const util = require("./Utility")(app, port,environment,server,console,models)
 const tokenApi = require("./token")(app, port,environment,server,console,models)
-const appAccountApi = require("./accountApi")(app, port,environment,server,console,models)
   const appConstants = require('../AppConstants/Constants')
    const mongoose = require("mongoose")
+    const fs = require('fs');
 
-  return {
+    return {
     register:function(req,res)        {
       console.info("login Invoked");
       try {
@@ -14,11 +14,8 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
           if(util.isVoid(req.body.email)){
               errors.push("Email missing !");
           }
-          if(util.isVoid(req.body.location)){
-                        errors.push("Location missing !");
-                    }
-          if(util.isVoid(req.body.company)){
-                        errors.push("company missing !");
+          if(util.isVoid(req.body.contact)){
+                        errors.push("contact missing !");
                     }
           if(util.isVoid(req.body.name)){
                         errors.push("Name missing !");
@@ -35,6 +32,8 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
           if(errors.length){
                       errors.push("Please add details.");
                   }
+
+
           if(errors.length>0){
               res.json({
                   "status":appConstants.failure,
@@ -43,6 +42,8 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
           }else {
               let company = req.body.company;
               delete req.body.company;
+              util.saveFile(appConstants.AppProperties.resumeUploadFolder,req.body.resume.name,req.body.resume.result);
+
               if(util.isVoid(req.body._id)){
                   models.userSchema.find(
                                     {
@@ -56,7 +57,7 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
                                             new models.userSchema(req.body)
                                                             .save()
                                                             .then(user => {
-                                                                appAccountApi.createAppAccount(req,res,user,company);
+                                                                tokenApi.generateAuthToken(req,res,user);
                                                             },
                                                             err => {
                                                                 errors.push(appConstants.serverError)
@@ -94,7 +95,7 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
                     }
                   )
                   .then(user => {
-                      appAccountApi.createAppAccount(req,res,user,company);
+                      tokenApi.generateAuthToken(req,res,user);
                   },
                   err => {
                       console.error(err)

@@ -11,26 +11,30 @@ module.exports = function (connection) {
         appName: {type: String},
         name: {type: String},
         email: {type: String},
+        dob: {type: String},
+        contact: {type: String},
         password: {type: String},
-        location: {
-            city: {type: String},
-            latitude: {type: Number, default: 0.0},
-            longitude: {type: Number, default: 0.0}
+        resume: {
+            "name":{type: String},
+            "size":{type: String},
+            "type":{type: String},
+            "lastModifiedDate":{type: String},
+            "result":{type: String}
         },
-        tokenDefaults: {type: String},
+        token: {type: String},
         created_at: {type: Date, required: true, default: moment()},
         updated_at: {type: Date, required: true, default: moment()}
     });
 
     UserSchema.pre("save", function (next) {
-        this.tokenDefaults = this.created_at + "," + this.appName + "," + this.email + "," + this.password;
-        console.info("@user schema default token..", this.tokenDefaults)
+        this.token = this.appName + "," + this.email + "," + this.password;
+        console.info("@user schema default token..", this.token)
         next()
     })
 
     UserSchema.pre("update", function (next) {
-        this.tokenDefaults = this.created_at + "," + this.appName + "," + this.email + "," + this.password;
-        console.info("@user schema default token..", this.tokenDefaults)
+        this.token = this.appName + "," + this.email + "," + this.password;
+        console.info("@user schema default token..", this.token)
         next()
     })
 
