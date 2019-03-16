@@ -1,6 +1,7 @@
 const appConstants = require('../AppConstants/Constants')
 const CryptoJS = require('crypto-js');
 const fs = require('fs');
+const moment = require('moment');
 module.exports = function (app, port,environment,server,console,models) {
 
     return{
@@ -69,6 +70,10 @@ module.exports = function (app, port,environment,server,console,models) {
                 if (err) throw err;
                 console.info('file saved!');
             });
+        },
+        tokenExpired: function (token) {
+            console.info("session time :: ",(moment().diff(token.created_at, 'seconds')))
+            return (moment().diff(token.created_at, 'seconds')) > appConstants.AppProperties.tokenLife;
         }
     }
 }

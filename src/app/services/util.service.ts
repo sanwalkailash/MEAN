@@ -56,7 +56,7 @@ export class UtilService {
 
     getCurrentRoutePath() {
         const targetPath = this.getRouter().url.split('#/'); // "http://localhost:8888/#/ideas/add";
-        return targetPath[targetPath.length - 1].substring(1); // [http://localhost:8888 , ideas/add]
+        return targetPath[targetPath.length - 1].substring(1); // [http://localhost:8888 , Ideas/add]
     }
 
     public logOut(): void {

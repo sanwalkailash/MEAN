@@ -46,13 +46,14 @@ export class IdeasComponent implements OnInit {
 
     setAppFlow() {
         console.warn("this.ideaJSON.activeRoute........", this.ideaJSON.activeRoute)
+        console.warn("this.ideaJSON.activeRoute.substring(0, 11)........", this.ideaJSON.activeRoute.substring(0, 11))
 
         if (this.ideaJSON.activeRoute == environment.ROUTE_IDEAS) {
             this.ideaJSON.viewCode = 0;
             this.fetchIdeas();
         }
 
-        if (this.ideaJSON.activeRoute.substring(0, 11) == "ideas/edit") {
+        if (this.ideaJSON.activeRoute.substring(0, 11) == "ideas/edit/") {
             this.ideaJSON.viewCode = 1;
             console.info("this.ideaJSON.activeRoute.substring(12)", this.ideaJSON.activeRoute.substring(12));
             if (!this.util.isVoid(localStorage.getItem("editIdea"))) {
@@ -68,7 +69,7 @@ export class IdeasComponent implements OnInit {
         }
 
 
-        if (this.ideaJSON.activeRoute.substring(0, 11) == "ideas/share") {
+        if (this.ideaJSON.activeRoute.substring(0, 11) == "ideas/share/") {
             this.ideaJSON.viewCode = 2;
             console.info("this.ideaJSON.activeRoute.substring(12)", this.ideaJSON.activeRoute.substring(12));
             this.fetchIdeas(1, this.ideaJSON.activeRoute.substring(12));

@@ -19,8 +19,8 @@ module.exports = function (connection) {
         next();
     })
 
-    TokenSchema.methods.hasExpired = function () {
-        return (moment().diff(this.created_at, 'seconds')) > appConstants.AppProperties.tokenLife;
+    TokenSchema.methods.expired = function (token) {
+        return (moment().diff(token.created_at, 'seconds')) > appConstants.AppProperties.tokenLife;
     };
 
     const token = connection.model('tokens', TokenSchema);

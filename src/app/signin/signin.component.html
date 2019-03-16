@@ -1,3 +1,4 @@
+<app-header ></app-header>
 <div class="container">
     <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="loginJSON.errors.length>0">
         <p *ngFor=" let error of loginJSON.errors">{{error}} <br/></p>
@@ -100,3 +101,5 @@
         </div>
     </div>
 </div>
+
+<app-footer ></app-footer>

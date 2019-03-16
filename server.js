@@ -61,7 +61,7 @@ var models = require('./models/models')(connection);
 
 // load App routes.
 // 1. travelline routes.
-require('./server/routes/travelline')(app, port,environment,server_detail,console,models); // load our routes and pass in our app and fully configured passport
+require('./server/routes/resourcemanager')(app, port,environment,server_detail,console,models); // load our routes and pass in our app and fully configured passport
 
 
 

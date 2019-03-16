@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {UtilService} from '../services/util.service';
+import {environment} from '../../environments/environment';
 
 @Component({
     selector: 'app-header',
@@ -9,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
     headerJSON: any;
 
-    constructor() {
+    constructor(private util: UtilService) {
         this.initJSON()
     }
 
@@ -18,10 +20,16 @@ export class HeaderComponent implements OnInit {
             "isLoggedIn": localStorage.getItem("user") ? true : false,
             "user": localStorage.getItem("user")? JSON.parse(localStorage.getItem("user")) : {}
         }
-        console.info(this.headerJSON);
+        console.info("header",this.headerJSON);
     }
 
     ngOnInit() {
+    }
+
+    logout(){
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        this.util.getRouter().navigate([environment.ROUTE_LOGIN]);
     }
 
 }

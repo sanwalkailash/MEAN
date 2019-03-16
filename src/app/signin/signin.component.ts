@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UtilService} from '../services/util.service'
 import {AjaxService} from '../services/ajax.service';
 import {environment} from '../../environments/environment';
-
+import {AuthService} from '../auth/auth.service';
 @Component({
     selector: 'app-signin',
     templateUrl: './signin.component.html',
@@ -11,7 +11,7 @@ import {environment} from '../../environments/environment';
 export class SigninComponent implements OnInit {
     loginJSON: any;
 
-    constructor(private ajax: AjaxService, private util: UtilService) {
+    constructor(private ajax: AjaxService, private util: UtilService,private auth: AuthService) {
         this.initJSON()
     }
 
@@ -49,6 +49,9 @@ export class SigninComponent implements OnInit {
 
     ngOnInit() {
         this.fetchCities();
+        if(this.auth.isLoggedIn){
+            this.util.getRouter().navigate([environment.ROUTE_HOME]);
+        }
     }
 
     login() {
@@ -81,7 +84,7 @@ export class SigninComponent implements OnInit {
                     if (data.status) {
                         localStorage.setItem("user", JSON.stringify(data.user))
                         localStorage.setItem("token", data.token)
-                        this.util.getRouter().navigate(['/home']);
+                        this.util.getRouter().navigate([environment.ROUTE_HOME]);
                     } else {
                         this.loginJSON.errors = data.errors;
                     }
@@ -117,7 +120,7 @@ export class SigninComponent implements OnInit {
         var reader = new FileReader();
         reader.onload = (evt) => {
             console.info("reader object onload: ",evt)
-            this.loginJSON.register.resume.result = evt.target.result
+            this.loginJSON.register.resume.result = evt.target["result"]
         };
         reader.readAsDataURL(event.target.files[0]);
         // console.info("fileSelected",this.util.uploadFile(event.target.files[0]))

@@ -229,7 +229,7 @@ const tokenApi = require("./token")(app, port,environment,server,console,models)
               });
           }else {
                console.info("authonticating user")
-               models.userSchema.find(
+               models.userSchema.findOne(
                   {
                     "email":req.body.email,
                     "password":req.body.password,

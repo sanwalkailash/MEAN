@@ -16,8 +16,8 @@ module.exports = function(router, port,environment,server,console,models) {
 
     // activity apies
     router.post('/save/idea/v1',tokenApi.authenticateToken,util.getClientIp,activityApi.saveIdea)
-    router.get('/list/ideas/v1',tokenApi.authenticateToken,activityApi.listIdeas)
-    router.delete('/ideas/delete/v1/:id',tokenApi.authenticateToken,util.getClientIp,activityApi.deleteIdea)
+    router.get('/list/Ideas/v1',tokenApi.authenticateToken,activityApi.listIdeas)
+    router.delete('/Ideas/delete/v1/:id',tokenApi.authenticateToken,util.getClientIp,activityApi.deleteIdea)
 
 
     // api route setting ends ---

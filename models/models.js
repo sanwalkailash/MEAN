@@ -5,6 +5,8 @@ module.exports = function (connection) {
         userSchema: require('./User')(connection),
         tokenSchema: require('./Token')(connection),
         applicationSchema: require('./Applications')(connection),
-        accountSchema: require('./Accounts')(connection)
+        accountSchema: require('./Accounts')(connection),
+        attendanceSchema: require('./Attendance')(connection),
+        employeeSchema: require('./Employee')(connection)
     }
 }

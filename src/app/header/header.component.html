@@ -4,19 +4,22 @@
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02"  *ngIf="headerJSON.isLoggedIn">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#/home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#/ideas">Attendance</a>
+                <a class="nav-link" href="#/attendance">Attendance</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#/ideas">Holidays</a>
+                <a class="nav-link" href="#/holidays">Holidays</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#/ideas">Resources</a>
+                <a class="nav-link" href="#/resources">Resources</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/ideas">Ideas</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -30,9 +33,7 @@
             {{headerJSON.user.name}}
         </button>
         <div class="dropdown-menu dropdown-menu-right">
-            <button class="dropdown-item" type="button">Action</button>
-            <button class="dropdown-item" type="button">Another action</button>
-            <button class="dropdown-item" type="button">Something else here</button>
+            <button class="dropdown-item" type="button" (click)="logout()">Logout</button>
         </div>
     </div>
 </nav>

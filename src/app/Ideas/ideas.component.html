@@ -1,3 +1,4 @@
+<app-header ></app-header>
 <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="ideaJSON.errors.length>0">
     <p *ngFor=" let error of ideaJSON.errors">{{error}} <br/></p>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -162,3 +163,4 @@
         </div>
     </div>
 </div>
+<app-footer ></app-footer>

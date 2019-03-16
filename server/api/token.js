@@ -1,5 +1,5 @@
 module.exports = function (app, port,environment,server,console,models) {
-const util = require("./Utility")(server,console)
+const util = require("./Utility")(app, port,environment,server,console,models)
   const appConstants = require('../AppConstants/Constants')
    const mongoose = require("mongoose")
 
@@ -68,14 +68,13 @@ const util = require("./Utility")(server,console)
                         console.info("token log");
                         console.info(token);
                         console.info("------####-----")
-                        if(token.hasExpired()){
+                        if(util.tokenExpired(token)) {
                             errors.push("Token Expired.");
                             res.json({
-                                   "status":appConstants.failure,
-                                   "errors" : errors,
-                                   "errorcode": 401
-                               });
-                             return;
+                                "status": appConstants.failure,
+                                "errors": errors,
+                                "errorcode": 401
+                            });
                         }else {
                             return next();
                         }
@@ -88,7 +87,7 @@ const util = require("./Utility")(server,console)
                                "status":appConstants.failure,
                                "errors" : errors
                            });
-                     return;
+                     return next();
                  })
 
       }catch(e) {

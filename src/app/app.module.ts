@@ -14,7 +14,7 @@ import {AuthService} from "./auth/auth.service";
 import {AuthGuard} from "./auth/auth.guard";
 import {TokeninterceptorService} from "./auth/token-interceptor.service";
 import {AjaxService} from "./services/ajax.service";
-import {BroadcastService} from './services/broatcast.service';
+import {BroadcastService} from './services/broadcast.service';
 
 
 import {AppRoutingModule} from './app-routing.module';
@@ -25,7 +25,10 @@ import {MessageComponent} from './message/message.component';
 import {SigninComponent} from './signin/signin.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {HomeComponent} from './home/home.component';
-import {IdeasComponent} from './ideas/ideas.component';
+import {IdeasComponent} from './Ideas/ideas.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { HolidaysComponent } from './holidays/holidays.component';
+import { ResourcesComponent } from './resources/resources.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import {IdeasComponent} from './ideas/ideas.component';
         SigninComponent,
         PageNotFoundComponent,
         HomeComponent,
-        IdeasComponent
+        IdeasComponent,
+        AttendanceComponent,
+        HolidaysComponent,
+        ResourcesComponent
     ],
     imports: [
         BrowserModule,
