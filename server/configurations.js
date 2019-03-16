@@ -10,10 +10,10 @@ module.exports = function () {
     var appDetails = {
         "test_travelline": {
             "appKey": "test@travelline",
-            "ssoFor": {
-                "nodeApiName": {
+            "sso": {
+                "abccompany": {
                     "method": "post",
-                    "url": "/mailReport/fetchDataV2" // api path must  include slash in the begining.
+                    "url": "/abccompany/ideas" // api path must  include slash in the begining.
                 }
             },
             "appname": "travelline Portal",
