@@ -40,45 +40,6 @@ module.exports = function () {
                         "borderBottom": "1px solid #bebebe"
                     },
                     "button": "#f08521"
-                },
-                "errorComponent": {
-                    "noPoiPresent": {
-                        "image": "../assets/images/no_uplive.png",
-                    },
-                    "loader": {
-                        "background": "rgb(240, 133, 33)"
-                    }
-                },
-                "listPoiComponent": {
-                    "listPoiTablePaginationClass": "chalk-pagination-theme",
-                    "listPoiTableEnabledStatusClass": "chalk-uplive-status green",
-                    "listPoiTableDisabledStatusClass": "chalk-uplive-status red",
-                    "monitoringStatusIconClass": "chalk-uplive-status ",
-                    "monitoringEnabledImageSrc": "../assets/images/enableMonitorView.png",
-                    "monitoringDisabledImageSrc": "../assets/images/disableMonitorView.png",
-                },
-                "ediPoiLocationsComponent":{
-                    "mapPin":"/assets/images/pin.png",
-                    "save":"/assets/images/save.png",
-                    "save1":"/assets/images/save1.png",
-                    "refresh":"/assets/images/refresh.png",
-                    "close":"/assets/images/cancelIcon.png",
-                    "clear":"/assets/images/clear.png",
-                    "back":"/assets/images/back.png",
-                    "retry":"/assets/images/retry.png",
-                    "delete":"/assets/images/delete.png",
-                    "pinRadius":"/assets/images/pinRadius.jpg",
-                    "goBack":"/assets/images/left.png",
-                    "goForward":"/assets/images/right.png"
-                },
-                "commonProperties": {
-                    "addPoiButtonClass": "btn-chalk btn-theme-chalk btn-shadow-grey",
-                    "editPoiLocationsButton": "btn-chalk btn-theme-grey",
-                    "deletePoiLocationsButton": "btn-chalk btn-theme-red",
-                    "chalkIconLarge":"portal-icons upliventer",
-                    "chalkIconSmall":"small-icons upliventer",
-                    "appCalenderPickerClass":"chalk-calender-picker",
-                    "appRootLayoutClass":"appRootLayout"
                 }
             },
             "contact": {
