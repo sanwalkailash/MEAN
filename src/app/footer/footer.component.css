@@ -3,7 +3,7 @@
     width: 100%;
     padding:18px 0;
     background: #f6f6f6;
-	/*position:fixed;*/
+	position:fixed;
 	bottom:0;
 	z-index:9;
 	margin-top:37px;
