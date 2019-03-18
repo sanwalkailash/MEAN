@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+declare const google:any,window:any;
+
 
 @Component({
     selector: 'app-root',
@@ -16,7 +18,7 @@ export class AppComponent {
 
     ngOnInit() {
         localStorage.setItem("userLoc", JSON.stringify(this.userLocation))
-        this.getLocation()
+        this.getLocation();
     }
 
     getLocation() {
@@ -30,16 +32,16 @@ export class AppComponent {
     showError = (error) => {
         switch (error.code) {
             case error.PERMISSION_DENIED:
-                this.Notification = "User denied the request for Geolocation."
+                this.Notification = "Error : Share Location"
                 break;
             case error.POSITION_UNAVAILABLE:
-                this.Notification = "Location information is unavailable."
+                this.Notification = "Error : Location unavailable."
                 break;
             case error.TIMEOUT:
                 this.Notification = "The request to get user location timed out."
                 break;
             case error.UNKNOWN_ERROR:
-                this.Notification = "An unknown error occurred."
+                this.Notification = "Error : An unknown error occurred."
                 break;
         }
     }
