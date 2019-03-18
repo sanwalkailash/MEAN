@@ -33,7 +33,6 @@
     "core-js": "^2.4.1",
     "cors": "^2.8.5",
     "crypto-js": "^3.1.9-1",
-    "express-fileupload": "^1.1.2-alpha.1",
     "express-json": "^1.0.0",
     "express-session": "^1.15.6",
     "method-override": "^3.0.0",
