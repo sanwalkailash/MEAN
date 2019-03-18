@@ -238,7 +238,7 @@ const tokenApi = require("./token")(app, port,environment,server,console,models)
                   )
                   .then(user => {
                       if(util.isVoid(user)){
-                        errors.push("Not registered, Please Sign up !");
+                        errors.push("User-Password Not found !");
                         res.json({
                               "status":appConstants.failure,
                               "errors" : errors
