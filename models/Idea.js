@@ -12,10 +12,18 @@ module.exports = function (connection) {
         "details": {"type": String, "required": true},
         "lat": {"type": Number, "required": true},
         "lng": {"type": Number, "required": true},
-        "created_at": {type: Date, required: true, default: moment()},
+        "created_at": {type: Date, "default": moment()},
         "updated_at": {"type": Date, "default": moment()},
         "like": {type: Number},
         "views": {type: Number},
+        "cover":  {
+            "name":{type: String},
+            "size":{type: String},
+            "type":{type: String},
+            "lastModifiedDate":{type: String},
+            "result":{type: String},
+            "location":{type:String}
+        }
     });
 
     const Idea = connection.model('ideas', IdeaSchema);

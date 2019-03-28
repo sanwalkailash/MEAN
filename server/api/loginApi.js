@@ -1,6 +1,6 @@
 module.exports = function (app, port,environment,server,console,models) {
   var port = 6600;
-const util = require("./Utility")(server,console)
+const util = require("./Utility")(app, port,environment,server,console,models)
 const tokenApi = require("./token")(app, port,environment,server,console,models)
 const appAccountApi = require("./accountApi")(app, port,environment,server,console,models)
   const appConstants = require('../AppConstants/Constants')
@@ -44,7 +44,7 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
               let company = req.body.company;
               delete req.body.company;
               if(util.isVoid(req.body._id)){
-                  models.userSchema.find(
+                  models.userSchema.findOne(
                                     {
                                       "email":req.body.email,
                                       "appName":req.body.appName
@@ -151,7 +151,7 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
                       "errors" : errors
                   });
               }else {
-                  models.userSchema.find({
+                  models.userSchema.findOne({
                     "_id":req.body._id,
                     "email":req.body.email,
                     "appName":req.body.appName
@@ -228,7 +228,7 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
               });
           }else {
                console.info("authonticating user")
-               models.userSchema.find(
+               models.userSchema.findOne(
                   {
                     "email":req.body.email,
                     "password":req.body.password,

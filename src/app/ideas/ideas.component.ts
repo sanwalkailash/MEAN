@@ -32,7 +32,14 @@ export class IdeasComponent implements OnInit {
                 "lng": "",
                 "created_at": "",
                 "like": 0,
-                "views": 0
+                "views": 0,
+                "cover":  {
+                    "name":"",
+                    "size":"",
+                    "type":"",
+                    "lastModifiedDate":"",
+                    "result":""
+                }
             },
             "errors": [],
             "activeRoute": this.util.getCurrentRoutePath(),
@@ -45,14 +52,14 @@ export class IdeasComponent implements OnInit {
     }
 
     setAppFlow() {
-        console.warn("this.ideaJSON.activeRoute........", this.ideaJSON.activeRoute)
+        console.warn("this.ideaJSON.activeRoute.substring(0, 11)........", this.ideaJSON.activeRoute.substring(0, 11))
 
         if (this.ideaJSON.activeRoute == environment.ROUTE_IDEAS) {
             this.ideaJSON.viewCode = 0;
             this.fetchIdeas();
         }
 
-        if (this.ideaJSON.activeRoute.substring(0, 11) == "ideas/edit") {
+        if (this.ideaJSON.activeRoute.substring(0, 11) == "ideas/edit/") {
             this.ideaJSON.viewCode = 1;
             console.info("this.ideaJSON.activeRoute.substring(12)", this.ideaJSON.activeRoute.substring(12));
             if (!this.util.isVoid(localStorage.getItem("editIdea"))) {
@@ -120,6 +127,7 @@ export class IdeasComponent implements OnInit {
     }
 
     deleteIdea(idea: any) {
+        this.ideaJSON.errors = []
         this.ajax.apiCall_DELETE(idea, environment.API_DELETE_IDEA)
             .subscribe(
                 data => {
@@ -198,6 +206,11 @@ export class IdeasComponent implements OnInit {
 
     _getDirectionsInGoogleMap(lat: any, lng: any) {
         window.open('https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lng);
+    }
+
+    fileEvent(event){
+        this.ideaJSON.idea.cover = this.util.readfile(event);
+        console.info("added cover -- ",this.ideaJSON)
     }
 
 }

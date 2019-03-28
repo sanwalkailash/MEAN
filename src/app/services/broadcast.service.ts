@@ -28,8 +28,8 @@ export class BroadcastService {
 
     }
 
-    clearMessage(key, a) {
-        a[key].next();
+    clearMessage(key) {
+        this.subject[key].next(null);
     }
 
 }

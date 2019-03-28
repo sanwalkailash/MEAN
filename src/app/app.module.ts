@@ -14,7 +14,7 @@ import {AuthService} from "./auth/auth.service";
 import {AuthGuard} from "./auth/auth.guard";
 import {TokeninterceptorService} from "./auth/token-interceptor.service";
 import {AjaxService} from "./services/ajax.service";
-import {BroadcastService} from './services/broatcast.service';
+import {BroadcastService} from './services/broadcast.service';
 
 
 import {AppRoutingModule} from './app-routing.module';

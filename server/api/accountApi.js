@@ -1,5 +1,5 @@
 module.exports = function (app, port,environment,server,console,models) {
-const util = require("./Utility")(server,console)
+const util = require("./Utility")(app, port,environment,server,console,models)
   const appConstants = require('../AppConstants/Constants')
 const tokenApi = require("./token")(app, port,environment,server,console,models)
    const mongoose = require("mongoose")

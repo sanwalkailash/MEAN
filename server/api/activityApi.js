@@ -1,5 +1,5 @@
 module.exports = function (app, port,environment,server,console,models) {
-  const util = require("./Utility")(server,console)
+  const util = require("./Utility")(app, port,environment,server,console,models)
   const appConstants = require('../AppConstants/Constants')
    const mongoose = require("mongoose")
 
@@ -21,6 +21,7 @@ module.exports = function (app, port,environment,server,console,models) {
                     "errors" : errors
                 });
             }else {
+                req.body.cover["location"] = util.saveFile(appConstants.AppProperties.coverFolder,req.body.cover.name,req.body.cover.result);
                 if(util.isVoid(req.body._id)){
                     delete req.body._id;
                     console.info("saving new idea")

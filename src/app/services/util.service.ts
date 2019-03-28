@@ -122,5 +122,27 @@ export class UtilService {
         return JSON.parse(localStorage.getItem(key));
     }
 
+    public readfile(event) {
+        let fileObj = {
+            "name":"",
+            "type":"",
+            "size":"",
+            "lastModifiedDate":"",
+            "result":""
+        }
+        fileObj.name = event.target.files[0].name;
+        fileObj.type = event.target.files[0].type;
+        fileObj.size = event.target.files[0].size;
+        fileObj.lastModifiedDate = event.target.files[0].lastModifiedDate;
+        var reader = new FileReader();
+        reader.onload = (evt) => {
+            console.info("reader object onload: ",evt)
+            fileObj.result = evt.target["result"]
+        };
+        reader.readAsDataURL(event.target.files[0]);
+        // console.info("fileSelected",this.util.uploadFile(event.target.files[0]))
+        // console.info("fileObj",fileObj)
+        return fileObj;
+    }
 
 }

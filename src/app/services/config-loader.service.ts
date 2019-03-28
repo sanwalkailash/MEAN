@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {environment} from '../../environments/environment';
 import {UtilService} from './util.service';
-import {BroadcastService} from './broatcast.service';
+import {BroadcastService} from './broadcast.service';
 
 @Injectable()
 export class AppConfigLoaderService {

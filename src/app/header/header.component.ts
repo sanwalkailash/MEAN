@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {UtilService} from '../services/util.service';
+import {BroadcastService} from '../services/broadcast.service';
+import {environment} from '../../environments/environment';
 
 @Component({
     selector: 'app-header',
@@ -7,21 +10,31 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-    headerJSON: any;
-
-    constructor() {
-        this.initJSON()
+    headerJSON=this.headerJSON={
+        "isLoggedIn": false,
+        "user": localStorage.getItem("user")? JSON.parse(localStorage.getItem("user")) : {}
+    }
+    status:any;
+    constructor(private util: UtilService,private broadcast:BroadcastService) {
     }
 
     initJSON() {
-        this.headerJSON = {
-            "isLoggedIn": localStorage.getItem("user") ? true : false,
-            "user": localStorage.getItem("user")? JSON.parse(localStorage.getItem("user")) : {}
-        }
-        console.info(this.headerJSON);
+        this.status = this.broadcast.getMessage("isLoggedIn").subscribe((status)=>{
+            console.info("login status",status);
+            this.headerJSON.isLoggedIn=status;
+            console.info("header",this.headerJSON);
+        })
     }
 
     ngOnInit() {
+        this.initJSON()
+    }
+
+    logout(){
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        this.broadcast.clearMessage("isLoggedIn");
+        this.util.getRouter().navigate([environment.ROUTE_LOGIN]);
     }
 
 }
