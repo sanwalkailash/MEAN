@@ -12,7 +12,7 @@ module.exports = function(router, port,environment,server,console,models) {
     router.post('/login/v1', loginApi.login);
     router.post('/register/v1', loginApi.register);
     router.post('/user/update/v1', loginApi.updateProfile);
-    router.post('/refresh/v1', loginApi.refresh);
+    router.post('/refresh/v1', tokenApi.authenticateRefreshToken,tokenApi.regenerateTokenFromToken);
 
     // activity apies
     router.post('/save/idea/v1',tokenApi.authenticateToken,util.getClientIp,activityApi.saveIdea)

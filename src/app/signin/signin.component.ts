@@ -56,7 +56,8 @@ export class SigninComponent implements OnInit {
                     if (data.status) {
                         localStorage.setItem("user", JSON.stringify(data.user))
                         localStorage.setItem("token", data.token)
-                        this.util.getRouter().navigate(['/home']);
+                        localStorage.setItem("refreshToken", data.refreshToken);
+                        this.util.getRouter().navigate([environment.ROUTE_HOME]);
                     } else {
                         this.loginJSON.errors = data.errors;
                     }
@@ -77,7 +78,8 @@ export class SigninComponent implements OnInit {
                     if (data.status) {
                         localStorage.setItem("user", JSON.stringify(data.user))
                         localStorage.setItem("token", data.token)
-                        this.util.getRouter().navigate(['/home']);
+                        localStorage.setItem("refreshToken", data.refreshToken);
+                        this.util.getRouter().navigate([environment.ROUTE_HOME]);
                     } else {
                         this.loginJSON.errors = data.errors;
                     }

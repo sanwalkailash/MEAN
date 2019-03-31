@@ -123,15 +123,15 @@ export class TokeninterceptorService implements HttpInterceptor {
         }
         this.cachedRequests.push(req);
         console.info("saving unauthrized call to cache, now total cashed request are ", this.cachedRequests.length)
-        if (!this.appRefreshUnderWay && !this.util.isVoid(localStorage.getItem("refresh_token"))) {
+        if (!this.appRefreshUnderWay && !this.util.isVoid(localStorage.getItem("refreshToken"))) {
             environment.APP_REFRESH_COUNT++;
             this.appRefreshUnderWay = true;
             // this.refreshApp.refreshToken(localStorage.getItem("refresh_token"))
-            const body = {refreshToken: localStorage.getItem("refresh_token")};
-            this.util.getHttpClient().post(environment.REFRESH_API, body,).subscribe((data: any) => {
+            const body = {refreshToken: localStorage.getItem("refreshToken")};
+            this.util.getHttpClient().post(environment.API_REFRESH, body,).subscribe((data: any) => {
                     console.info(environment.APP_REFRESH_COUNT, "th refresh called,response", data);
-                    this.util.setKeyVauleOnlocalStorage("token", data.data.response.token);
-                    this.util.setKeyVauleOnlocalStorage("refresh_token", data.data.response.refreshToken);
+                    this.util.setKeyVauleOnlocalStorage("token", data.token);
+                    this.util.setKeyVauleOnlocalStorage("refreshToken", data.refreshToken);
                     this.retryFailedRequests(subscriber, next)
                 },
                 err => () => {

@@ -27,6 +27,7 @@ export const environment = {
     apiHost: 'https://api.somedomain.com/prod/v1/',
     API_LOGIN: '/login/v1',
     API_REGISTER: '/register/v1',
+    API_REFRESH : "/refresh/v1",
     API_INVALID_PATH: "/indalid",
     CONFIG_API: "/api/config",
     ROUTE_CONFIG_API: "/getrouteconfigs/",

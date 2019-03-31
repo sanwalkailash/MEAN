@@ -9,19 +9,17 @@ module.exports = function (connection) {
 
     const TokenSchema = new Schema({
         token: {type: String},
+        refreshToken: {type: String},
         created_at: {type: Date, required: true, default: moment()}
     });
 
 
     TokenSchema.pre('save', function (next) {
-        this.token = util.encrypt(this.token + "," + moment())
+        this.token = util.encrypt(this.token + ",timestamp," + moment().format())
+        this.refreshToken = util.encrypt(this.token + ",reftimestamp," + moment().add(1, 'hour').startOf('hour').format())
         console.info("generated token...", this.token)
         next();
     })
-
-    TokenSchema.methods.hasExpired = function () {
-        return (moment().diff(this.created_at, 'seconds')) > appConstants.AppProperties.tokenLife;
-    };
 
     const token = connection.model('tokens', TokenSchema);
 
