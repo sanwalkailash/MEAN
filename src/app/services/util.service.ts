@@ -2,6 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Injectable, Injector} from '@angular/core';
 import {environment} from '../../environments/environment';
+import {AjaxService} from "./ajax.service";
 
 @Injectable()
 export class UtilService {
@@ -56,11 +57,6 @@ export class UtilService {
     getCurrentRoutePath() {
         const targetPath = this.getRouter().url.split('#/'); // "http://localhost:8888/#/ideas/add";
         return targetPath[targetPath.length - 1].substring(1); // [http://localhost:8888 , ideas/add]
-    }
-
-    public logOut(): void {
-        localStorage.clear();
-        this.getRouter().navigate(['/login']);
     }
 
     public getHttpClient(): HttpClient { //this creates router property on your service.

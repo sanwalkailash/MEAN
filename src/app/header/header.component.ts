@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UtilService} from '../services/util.service';
 import {BroadcastService} from '../services/broadcast.service';
+import {AuthService} from '../auth/auth.service';
 import {environment} from '../../environments/environment';
 
 @Component({
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit {
         "user": localStorage.getItem("user")? JSON.parse(localStorage.getItem("user")) : {}
     }
     status:any;
-    constructor(private util: UtilService,private broadcast:BroadcastService) {
+    constructor(private util: UtilService,private broadcast:BroadcastService,private authService:AuthService) {
     }
 
     initJSON() {
@@ -31,10 +32,7 @@ export class HeaderComponent implements OnInit {
     }
 
     logout(){
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
-        this.broadcast.clearMessage("isLoggedIn");
-        this.util.getRouter().navigate([environment.ROUTE_LOGIN]);
+        this.authService.logOut();
     }
 
 }

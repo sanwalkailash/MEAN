@@ -2,11 +2,12 @@ import {Injectable} from '@angular/core';
 import {environment} from "../../environments/environment";
 import {UtilService} from '../services/util.service';
 import {BroadcastService} from '../services/broadcast.service';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Injectable()
 export class AuthService {
 
-    constructor(private util: UtilService,private broadcast:BroadcastService) {
+    constructor(private util: UtilService,private broadcast:BroadcastService,private router:Router) {
     }
 
     // store the URL so we can redirect after logging in
@@ -20,6 +21,13 @@ export class AuthService {
         }
         this.broadcast.sendMessage("isLoggedIn",false);
         return false;
+    }
+
+
+    public logOut(): void {
+        localStorage.clear();
+        this.broadcast.sendMessage("isLoggedIn",false);
+        this.router.navigate([environment.ROUTE_LOGIN]);
     }
 
 }

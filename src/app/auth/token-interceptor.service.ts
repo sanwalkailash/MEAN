@@ -6,18 +6,22 @@ import 'rxjs/add/operator/catch';
 import {environment} from '../../environments/environment';
 import {UtilService} from '../services/util.service';
 import {AjaxService} from '../services/ajax.service';
+import {AuthService} from '../auth/auth.service';
 import 'rxjs/Rx';
+import {Response} from "@angular/http";
 
 @Injectable()
 export class TokeninterceptorService implements HttpInterceptor {
     refreshCount: number;
     private refreshApp;
     private ajaxService;
+    private authService;
     private appRefreshUnderWay = false;
     cachedRequests: Array<HttpRequest<any>> = [];
 
     constructor(private inj: Injector, private util: UtilService) {
         this.ajaxService = inj.get(AjaxService);
+        this.authService = inj.get(AuthService);
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -39,6 +43,9 @@ export class TokeninterceptorService implements HttpInterceptor {
                             switch (error.status) {
                                 case 401:
                                 case 419:
+                                    if(environment.APP_REFRESH_COUNT<2){
+                                        this.appRefreshUnderWay = false;
+                                    }
                                     console.info('@interceptor 401 error, trying to re-refresh');
                                     this.handle401Error(req, next, subscriber)
                                     break;
@@ -118,30 +125,30 @@ export class TokeninterceptorService implements HttpInterceptor {
             console.info("refresh tries crossed threshhold. loggin out.");
             subscriber.error("reach max refresh calls. quiting..");
             environment.APP_REFRESH_COUNT = 0
-            this.util.logOut();
+            this.authService.logOut();
             return null;
         }
         this.cachedRequests.push(req);
         console.info("saving unauthrized call to cache, now total cashed request are ", this.cachedRequests.length)
         if (!this.appRefreshUnderWay && !this.util.isVoid(localStorage.getItem("refreshToken"))) {
             environment.APP_REFRESH_COUNT++;
+            console.info("refresh called ", environment.APP_REFRESH_COUNT, "times.")
             this.appRefreshUnderWay = true;
             // this.refreshApp.refreshToken(localStorage.getItem("refresh_token"))
             const body = {refreshToken: localStorage.getItem("refreshToken")};
-            this.util.getHttpClient().post(environment.API_REFRESH, body,).subscribe((data: any) => {
+            this.ajaxService.apiCall_POST(body,environment.API_REFRESH)
+                .subscribe((data: any) => {
                     console.info(environment.APP_REFRESH_COUNT, "th refresh called,response", data);
                     this.util.setKeyVauleOnlocalStorage("token", data.token);
                     this.util.setKeyVauleOnlocalStorage("refreshToken", data.refreshToken);
-                    this.retryFailedRequests(subscriber, next)
+                    this.retryFailedRequests(subscriber, next);
+                    this.appRefreshUnderWay = false;
                 },
                 err => () => {
-                    console.info("refres failed, ", environment.APP_REFRESH_COUNT, "times.")
-                    if (environment.APP_REFRESH_COUNT == 1) {
+                    console.info("error in refresh:",err)
+                    if(environment.APP_REFRESH_COUNT<2){
                         this.appRefreshUnderWay = false;
                     }
-                },
-                () => {
-                    console.info("refres done successfully..")
                 })
         } else {
             console.info("refresh call under progress, saving current api call in cache.")

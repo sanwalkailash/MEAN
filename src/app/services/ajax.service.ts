@@ -107,6 +107,9 @@ export class AjaxService {
             case environment.API_REGISTER:
                 url = environment.API_REGISTER;
                 break;
+            case environment.API_REFRESH:
+                url = environment.API_REFRESH;
+                break;
             default:
                 console.error("ERROR -- : @apiCall_POST api path not added.");
                 return Observable.throw("api path not added.");

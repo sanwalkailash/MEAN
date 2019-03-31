@@ -106,20 +106,20 @@ module.exports = function (app, port,environment,server,console,models) {
                     console.info("token not present, redirect to login.")
                 }
                 if(errors.length>0){
-                    return res.status(401).json({
+                    return res.status(419).json({
                         "status":appConstants.failure,
                         "errors" : errors,
-                        "errorcode": 401
+                        "errorcode": 419
                     });
                 }
                 models.tokenSchema.findOne({"refreshToken":req.body.refreshToken})
                     .then(token => {
                         if(util.isVoid(token)){
                             errors.push("Invlaid token.");
-                            return res.status(401).json({
+                            return res.status(419).json({
                                 "status":appConstants.failure,
                                 "errors" : errors,
-                                "errorcode": 401
+                                "errorcode": 419
                             });
                         }
                         console.info("------####-----")
@@ -127,10 +127,10 @@ module.exports = function (app, port,environment,server,console,models) {
                         console.info("------####-----")
                         if(util.tokenExpired(util.decrypt(req.body.refreshToken))) {
                             errors.push("Token Expired.");
-                            return res.status(401).json({
+                            return res.status(419).json({
                                 "status": appConstants.failure,
                                 "errors": errors,
-                                "errorcode": 401
+                                "errorcode": 419
                             });
                         }
                         return next();
@@ -138,7 +138,7 @@ module.exports = function (app, port,environment,server,console,models) {
                 err => {
                     errors.push(appConstants.serverError)
                     errors.push(err)
-                    return res.status(401).json({
+                    return res.status(419).json({
                         "status":appConstants.failure,
                         "errors" : errors
                     });
@@ -146,10 +146,10 @@ module.exports = function (app, port,environment,server,console,models) {
             }catch(e) {
                 console.info("caught exception")
                 console.error(e);
-                return res.status(401).json({
+                return res.status(419).json({
                     "status": appConstants.failure,
                     "message": e,
-                    "errorcode": 401
+                    "errorcode": 419
                 });
             }
         },
