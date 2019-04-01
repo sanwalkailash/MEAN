@@ -38,7 +38,7 @@ export class IdeasComponent implements OnInit {
                     "size":"",
                     "type":"",
                     "lastModifiedDate":"",
-                    "result":""
+                    "result":"/assets/images/cover.png"
                 }
             },
             "errors": [],

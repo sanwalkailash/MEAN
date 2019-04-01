@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
         this.status = this.broadcast.getMessage("isLoggedIn").subscribe((status)=>{
             console.info("login status",status);
             this.headerJSON.isLoggedIn=status;
+            this.headerJSON.user=localStorage.getItem("user")? JSON.parse(localStorage.getItem("user")) : {}
             console.info("header",this.headerJSON);
         })
     }

@@ -6,18 +6,20 @@
 </div>
 
 <!--edit idea-->
-<div class="card " *ngIf="ideaJSON.viewCode==1">
+<div class="card mb-3" *ngIf="ideaJSON.viewCode==1">
     <h3>Whats your Idea ?</h3>
     <form class="form-group card-body">
         <div >
-            <img  [src]="ideaJSON.idea.cover.result" alt="Cover" />
+            <div class="upload custom-file">
+                <input class="btn btn-outline-secondary" placeholder="Add Cover" type="file" accept="image/*"  (change)=fileEvent($event) >
+            </div>
+            <img class="card-img-top img-fluid rounded" [src]="ideaJSON.idea.cover.result" alt="Cover" />
             <label for="title">Title</label>
             <input type="text" class="form-control" name="title" [(ngModel)]="ideaJSON.idea.title" required>
         </div>
         <div >
             <label for="details">Details</label>
             <textarea class="form-control" name="details" [(ngModel)]="ideaJSON.idea.details" required></textarea>
-            <input  placeholder="Add Cover" type="file" accept="image/*"  (change)=fileEvent($event) >
         </div>
         <button type="submit" (click)="saveIdea()" class="btn btn-primary">Submit</button>
     </form>
@@ -39,7 +41,8 @@
 
     <div *ngFor=" let idea of ideaJSON.ideas ">
         <div class="card mb-3" (click)="addView(idea)">
-            <img class="card-img-top" [src]="idea.cover.result" alt="Cover" />
+            <img class="card-img-top rounded" [src]="idea.cover.result" alt="Cover" />
+            <br/>
             <div class="card-body">
                 <div style="float:right;width:fit-content;right:10px;position: absolute;">
                   <span class="card-link">
@@ -111,7 +114,7 @@
     <div>
         <div class="card" (click)="addView(ideaJSON.ideas)">
             <!--list ideas -->
-            <img class="card-img-top" [src]="ideaJSON.ideas.cover.result" alt="Cover" />
+            <img class="card-img-top img-fluid rounded" [src]="ideaJSON.ideas.cover.result" alt="Cover" />
             <div class="card-body">
                 <div style="float:right;width:fit-content;right:10px;position: absolute;">
                   <span class="card-link">
