@@ -31,8 +31,7 @@ var console = log4js.getLogger('[access]');
 // Point static path to dist
 var port;
 var server_detail = {};
-console.info("ENV is ::", process.env.ENV);
-if (!process.env.PORT) { console.info("PORT :: undefined, using defaults") }
+
 
 var environment = process.env.ENV || 'development';
 if (environment === 'production') {
@@ -44,6 +43,12 @@ if (environment === 'production') {
 } else {
     port = 8888;
     server_detail = {host:"api.pahadi.me", self_port:6600, protocol:"http://", env:"development", mailerver_host : "mail.pahadi.me", mailerver_host : "8041"}
+}
+
+console.info("ENV is ::", environment);
+if (process.env.PORT) {
+    port = process.env.PORT;
+    console.info("Updating process port [",port,"]")
 }
 
 mongoose.Promise = global.Promise;

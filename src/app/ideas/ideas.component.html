@@ -33,7 +33,7 @@
         overflow: scroll;"
      *ngIf="ideaJSON.viewCode==0">
     <h3 class="mb-2">
-        Trending Ideas
+        Your Ideas
         <b (click)="newIdea()" class=" btn btn-primary">
             <i class="material-icons ">add_box</i>
         </b>
@@ -100,7 +100,7 @@
         </div>
     </div>
     <div *ngIf="ideaJSON.ideas.length==0">
-        No Ideas So Far
+        No public ideas so far
 
     </div>
 </div>

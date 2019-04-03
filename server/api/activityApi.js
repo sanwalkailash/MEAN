@@ -9,6 +9,10 @@ module.exports = function (app, port,environment,server,console,models) {
             console.info("@saveIdeas.. fetching ip");
         try {
             let errors = [];
+            let user = util.getUsernameFromToken(util.decrypt(req.headers.authorization));
+            if(user!=req.body.user){
+                errors.push("Invalid Idea Owner");
+            }
             if(util.isVoid(req.body.title)){
                 errors.push("Please add title");
             }
@@ -125,7 +129,7 @@ module.exports = function (app, port,environment,server,console,models) {
         console.info("@listIdeas...")
                 let errors = [];
                 if(!util.isVoid(req.query.id) && req.query.id != "undefined"){
-                    console.info("find by id --",req.query.id)
+                    console.info("Share idea query --",req.query.id)
                     models.ideaSchema
                                     .findById(req.query.id)
                                     .sort({updated_at:'desc'})
@@ -145,9 +149,10 @@ module.exports = function (app, port,environment,server,console,models) {
                                           });
                                     })
                 } else {
-                    console.info("list all ideas")
+                    let user = util.getUsernameFromToken(util.decrypt(req.headers.authorization));
+                    console.info("list all ideas for ["+user+"]")
                     models.ideaSchema
-                                    .find({})
+                                    .find({private:false})
                                     .sort({updated_at:'desc'})
                                     .then(ideas => {
                                         res.json({
@@ -176,6 +181,39 @@ module.exports = function (app, port,environment,server,console,models) {
 
 
         },
+      listUserIdeas:function(req,res)        {
+          try {
+              console.info("@listUserIdeas...")
+              let errors = [];
+              let user = util.getUsernameFromToken(util.decrypt(req.headers.authorization));
+              console.info("list all ideas for ["+user+"]")
+              models.ideaSchema
+                          .find({"user":user})
+                          .sort({updated_at:'desc'})
+                          .then(ideas => {
+                              res.json({
+                                  "status":appConstants.success,
+                                  "ideas":ideas
+                              });
+                         },
+                          err => {
+                              console.error(err)
+                              errors.push(appConstants.serverError)
+                              errors.push(err)
+                              res.json({
+                                  "status":appConstants.failure,
+                                  "errors" : errors
+                              });
+                          })
+          }catch(e) {
+              console.trace(e);
+              res.json({
+                  "status": appConstants.failure,
+                  "message": e,
+                  "errorcode": 500
+              });
+          }
+      },
   }
 };
 

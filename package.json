@@ -5,10 +5,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "prod": "ng build --env=prod",
-    "build": "ng build --env=prod --watch",
-    "dev": "ng build --env=dev",
+    "build": "ng build --env=prod ",
+    "dev": "ng build --env=dev --watch",
     "dwatch": "ng build --env=dev --watch",
     "qa": "ng build --env=qa",
     "qwatch": "ng build --env=qa --watch",
@@ -16,7 +16,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": true, 
   "dependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",

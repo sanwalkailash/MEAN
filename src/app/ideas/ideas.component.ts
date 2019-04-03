@@ -24,8 +24,6 @@ export class IdeasComponent implements OnInit {
         this.ideaJSON = {
             "idea": {
                 "_id": "",
-                "id": "",
-                "uid": "",
                 "title": "",
                 "details": "",
                 "lat": "",
@@ -39,7 +37,9 @@ export class IdeasComponent implements OnInit {
                     "type":"",
                     "lastModifiedDate":"",
                     "result":"/assets/images/cover.png"
-                }
+                },
+                "user":JSON.parse(localStorage.getItem("user")).email,
+                "private":false
             },
             "errors": [],
             "activeRoute": this.util.getCurrentRoutePath(),
@@ -124,6 +124,9 @@ export class IdeasComponent implements OnInit {
     }
 
     markPublic(idea: any) {
+        idea.private=!idea.private;
+        this.ideaJSON.idea=idea;
+        this.saveIdea();
     }
 
     deleteIdea(idea: any) {
@@ -186,7 +189,7 @@ export class IdeasComponent implements OnInit {
     fetchIdeas(page = 1, _id?: any) {
         console.info("@fetchIdeas...");
         this.ideaJSON.errors = []
-        this.ajax.apiCall_GET({page: page, id: _id}, environment.API_LIST_IDEAS)
+        this.ajax.apiCall_GET({page: page, id: _id}, environment.API_LIST_USER_IDEAS)
             .subscribe(
                 data => {
                     console.info("response", data);

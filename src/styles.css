@@ -140,3 +140,13 @@ div.upload input {
     width: 110px !important;
     overflow: hidden !important;
 }
+
+
+.card-link{
+    color:#28a745;
+    cursor:default;
+}
+
+img{
+    width: 100%;
+}

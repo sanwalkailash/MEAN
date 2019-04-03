@@ -7,11 +7,10 @@ module.exports = function (connection) {
     const Schema = mongoose.Schema;
 
     const IdeaSchema = new Schema({
-        "id": {type: Number},
         "title": {"type": String, "required": true},
         "details": {"type": String, "required": true},
-        "lat": {"type": Number, "required": true},
-        "lng": {"type": Number, "required": true},
+        "lat": {"type": Number},
+        "lng": {"type": Number},
         "created_at": {type: Date, "default": moment()},
         "updated_at": {"type": Date, "default": moment()},
         "like": {type: Number},
@@ -23,7 +22,9 @@ module.exports = function (connection) {
             "lastModifiedDate":{type: String},
             "result":{type: String},
             "location":{type:String}
-        }
+        },
+        "user":{"type":String,"required":true},
+        "private":{"type":Boolean,"default":false}
     });
 
     const Idea = connection.model('ideas', IdeaSchema);

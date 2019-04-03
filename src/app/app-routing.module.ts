@@ -9,8 +9,8 @@ import {HomeComponent} from './home/home.component';
 import {IdeasComponent} from './ideas/ideas.component';
 
 const routes: Routes = [
-    {path: 'login', component: SigninComponent},
-    {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+    {path: environment.ROUTE_LOGIN, component: SigninComponent},
+    {path: environment.ROUTE_HOME, component: HomeComponent, canActivate: [AuthGuard]},
     {path: environment.ROUTE_IDEAS, component: IdeasComponent, canActivate: [AuthGuard]},
     {path: environment.ROUTE_ADD_IDEA, component: IdeasComponent, canActivate: [AuthGuard]},
     {path: environment.ROUTE_EDIT_IDEA, component: IdeasComponent, canActivate: [AuthGuard]},

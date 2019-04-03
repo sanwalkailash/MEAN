@@ -44,8 +44,11 @@ export class AjaxService {
         console.log("perameter json for get call is ", perameterjson);
         let url = environment.API_INVALID_PATH;
         switch (apiPath) {
-            case environment.API_LIST_IDEAS:
-                url = environment.API_LIST_IDEAS + "?page=" + perameterjson.page + "&id=" + perameterjson.id;
+            case environment.API_LIST_USER_IDEAS:
+                url = environment.API_LIST_USER_IDEAS + "?page=" + perameterjson.page + "&id=" + perameterjson.id;
+                break;
+            case environment.API_LIST_PUBLIC_IDEAS:
+                url = environment.API_LIST_PUBLIC_IDEAS + "?page=" + perameterjson.page + "&id=" + perameterjson.id;
                 break;
             case environment.API_CITIES_INDIA:
                 url = environment.API_CITIES_INDIA;

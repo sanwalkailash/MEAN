@@ -19,7 +19,7 @@ module.exports = function(mongoose) {
 
     // When successfully connected
     connection.on('connected', function () {
-        console.info('Mongoose connection open to ' + dbURI);
+        console.info('Mongoose connection open for ['+process.env.NODE_ENV+'] URI [' + dbURI+' ]');
     });
 
     // If the connection throws an error
