@@ -1,6 +1,6 @@
 {
   "name": "pahadi.here",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "server.js",
   "license": "MIT",
   "scripts": {
@@ -64,5 +64,9 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
+  },
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
   }
 }
