@@ -1,7 +1,7 @@
 module.exports = Object.freeze({
   "AppProperties":{
     "appName":"travelLine",
-    "database":process.env.NODE_ENV=='production'?"mongodb+srv://demo:demo@travelline-hkaiu.mongodb.net/test?retryWrites=true":"mongodb://127.0.0.1:27017/travelline",
+    "database":process.env.NODE_ENV=='production'?"mongodb+srv://demo:demo@cluster0-tl9za.mongodb.net/test?retryWrites=true":"mongodb://127.0.0.1:27017/travelline",
     "secret":"QwErt!2#4",
     "tokenLife":60,
     "profileFolder":"uploads/profile/",
