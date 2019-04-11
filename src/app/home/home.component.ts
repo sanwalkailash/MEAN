@@ -62,6 +62,10 @@ export class HomeComponent implements OnInit {
             );
     }
 
+    shareIdea(idea: any) {
+        this.util.getRouter().navigate(["ideas/share/" + idea._id])
+    }
+
     saveIdea() {
         this.homeJSON.errors = []
         localStorage.removeItem("editIdea");
