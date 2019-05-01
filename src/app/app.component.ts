@@ -30,7 +30,7 @@ export class AppComponent {
     showError = (error) => {
         switch (error.code) {
             case error.PERMISSION_DENIED:
-                this.Notification = "User denied the request for Geolocation."
+                this.Notification = "Please provide us your location."
                 break;
             case error.POSITION_UNAVAILABLE:
                 this.Notification = "Location information is unavailable."

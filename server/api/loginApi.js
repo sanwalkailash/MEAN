@@ -14,12 +14,12 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
           if(util.isVoid(req.body.email)){
               errors.push("Email missing !");
           }
-          if(util.isVoid(req.body.location)){
-                        errors.push("Location missing !");
-                    }
-          if(util.isVoid(req.body.company)){
-                        errors.push("company missing !");
-                    }
+          // if(util.isVoid(req.body.location)){
+          //               errors.push("Location missing !");
+          //           }
+          // if(util.isVoid(req.body.company)){
+          //               errors.push("company missing !");
+          //           }
           if(util.isVoid(req.body.name)){
                         errors.push("Name missing !");
                     }
@@ -56,7 +56,16 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
                                             new models.userSchema(req.body)
                                                             .save()
                                                             .then(user => {
-                                                                appAccountApi.createAppAccount(req,res,user,company);
+                                                                if(user){
+                                                                    // appAccountApi.createAppAccount(req,res,user,company);
+                                                                    tokenApi.generateAuthToken(req,res,user);
+
+                                                                }else {
+                                                    res.json({
+                                                        "status":appConstants.failure,
+                                                        "errors" :appConstants.registrationFailure
+                                                    });
+                                                }
                                                             },
                                                             err => {
                                                                 errors.push(appConstants.serverError)
@@ -94,7 +103,15 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
                     }
                   )
                   .then(user => {
-                      appAccountApi.createAppAccount(req,res,user,company);
+                      if(user){
+                          // appAccountApi.createAppAccount(req,res,user,company);
+                          tokenApi.generateAuthToken(req,res,user);
+                      }else {
+                          res.json({
+                              "status":appConstants.failure,
+                              "errors" : appConstants.registrationFailure
+                          });
+                      }
                   },
                   err => {
                       console.error(err)
@@ -228,6 +245,59 @@ const appAccountApi = require("./accountApi")(app, port,environment,server,conso
               });
           }else {
                console.info("authonticating user")
+               models.userSchema.findOne(
+                  {
+                    "email":req.body.email,
+                    "password":req.body.password,
+                    "appName":req.body.appName
+                  }
+                  )
+                  .then(user => {
+                      if(util.isVoid(user)){
+                        errors.push("Not registered, Please Sign up !");
+                        res.json({
+                              "status":appConstants.failure,
+                              "errors" : errors
+                          });
+                      }else {
+                        tokenApi.generateAuthToken(req,res,user);
+                      }
+                  },
+                  err => {
+                      console.error(err)
+                      errors.push(appConstants.serverError)
+                      errors.push(err)
+                      res.json({
+                                "status":appConstants.failure,
+                                "errors" : errors
+                            });
+                  })
+          }
+      }catch(e) {
+          console.info("caught exception")
+                 console.error(e);
+                 res.json({
+                   "status": appConstants.failure,
+                   "message": e,
+                   "errorcode": 500
+                 });
+               }
+    },
+    sso:function(req,res)        {
+      console.info("login Invoked");
+      try {
+          let errors = [];
+          if(util.isVoid(req.query.code)){
+              errors.push("token missing !");
+          }
+
+          if(errors.length>0){
+              res.json({
+                  "status":appConstants.failure,
+                  "errors" : errors
+              });
+          }else {
+               console.info("SSO user")
                models.userSchema.findOne(
                   {
                     "email":req.body.email,

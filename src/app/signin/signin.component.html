@@ -89,6 +89,9 @@
                    (click)="loginJSON.loginFormVeiw=0">Have account? Sign in</a>
                 <a class="dropdown-item" href="#/login" *ngIf="loginJSON.loginFormVeiw!=2"
                    (click)="loginJSON.loginFormVeiw=2">Forgot password?</a>
+                <a class="dropdown-item" href="/auth/google" *ngIf="loginJSON.loginFormVeiw!=2">
+                    Login With Google
+                </a>
             </div>
         </div>
     </div>

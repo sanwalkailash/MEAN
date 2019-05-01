@@ -3,6 +3,7 @@ import {AjaxService} from '../services/ajax.service';
 import {UtilService} from '../services/util.service';
 import {environment} from '../../environments/environment';
 import {Location} from '@angular/common';
+import { AppComponent } from '../app.component';
 
 @Component({
     selector: 'app-ideas',
@@ -16,7 +17,7 @@ export class IdeasComponent implements OnInit {
     scrollUpDistance = 2;
     userLoc = JSON.parse(localStorage.getItem("userLoc"));
 
-    constructor(private ajax: AjaxService, private util: UtilService, location: Location) {
+    constructor(private ajax: AjaxService, private util: UtilService, location: Location, private app:AppComponent) {
         this.initProperties();
     }
 
@@ -150,10 +151,14 @@ export class IdeasComponent implements OnInit {
     saveIdea() {
         this.ideaJSON.errors = []
         localStorage.removeItem("editIdea");
-        if (!this.util.isVoid(this.userLoc)) {
+        if (!this.util.isVoid(this.userLoc) && this.userLoc.lat!=0.0) {
             console.info("saving device location", this.userLoc);
             this.ideaJSON.idea.lat = this.userLoc.lat;
             this.ideaJSON.idea.lng = this.userLoc.lng;
+        }else {
+            this.ideaJSON.errors.push("Please provide your location.");
+            this.app.getLocation();
+            return;
         }
         this.ajax.apiCall_POST(this.ideaJSON.idea, environment.API_SAVE_IDEAS)
             .subscribe(

@@ -8,10 +8,21 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override') // allow forms to send put and delete req.
 const json = require('express-json')
 const mongoose = require('mongoose');
-const session = require('express-session');
+// const session = require('express-session');
+const passport = require('passport');
 //const flash = require('connect-flash');
 
+
 const app = express();
+
+// app.use(session({
+//           secret: 'keyboard cat',
+//           resave: false,
+//           saveUninitialized: true,
+//           cookie: { secure: true }
+//         }));// persistent login sessions
+app.use(passport.initialize());
+// app.use(passport.session());
 
 // Parsers for POST data
 app.use(bodyParser.json({ limit: '50mb' }));
@@ -57,7 +68,7 @@ var models = require('./models/models')(connection);
 
 // load App routes.
 // 1. travelline routes.
-require('./server/routes/travelline')(app, port,environment,server_detail,console,models); // load our routes and pass in our app and fully configured passport
+require('./server/routes/travelline')(app, port,environment,server_detail,console,models,passport); // load our routes and pass in our app and fully configured passport
 
 
 
@@ -77,12 +88,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(json);
 app.use(cors); // for allowing cross origin calls
 app.set('trust proxy', 1) // trust first proxy
-app.use(session({
-          secret: 'keyboard cat',
-          resave: false,
-          saveUninitialized: true,
-          cookie: { secure: true }
-        }));// persistent login sessions
+
 
 // Global variable for rest errors
 //app.use((req,res,next)=>{

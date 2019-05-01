@@ -9,6 +9,7 @@ module.exports = function (connection) {
 
     const UserSchema = new Schema({
         appName: {type: String},
+        provider: {type: String,default: appConstants.AppProperties.appName},
         name: {type: String},
         email: {type: String},
         password: {type: String},

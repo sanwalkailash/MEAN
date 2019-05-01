@@ -65,6 +65,9 @@ export class HomeComponent implements OnInit {
     shareIdea(idea: any) {
         this.util.getRouter().navigate(["ideas/share/" + idea._id])
     }
+    _getDirectionsInGoogleMap(lat: any, lng: any) {
+        window.open('https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lng);
+    }
 
     saveIdea() {
         this.homeJSON.errors = []
