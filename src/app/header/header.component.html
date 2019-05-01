@@ -21,9 +21,11 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
+    &nbsp;
     <div class="btn-group" *ngIf="headerJSON.isLoggedIn">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+        <button type="button" class="btn btn-secondary dropdown-toggle" style="max-width:150px;overflow:hidden;text-overflow: ellipsis;" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
+            <img class="icon rounded" style="width:20px;height:20px; border:1px solid white; margin-bottom:1px;  " src="assets/images/company-logo/logo.png" alt="travelline"/>
             {{headerJSON.user.name}}
         </button>
         <div class="dropdown-menu dropdown-menu-right">

@@ -9,15 +9,16 @@
      id="ideasDiv"
      style="height: 80vh;
         overflow: scroll;">
-  <div class="col-sm-2 card card-body" >
+  <div class="col-sm-2 jumbotron jumbotron-fluid" >
     <ul>
-        <li><a href="#/">option</a></li>
-        <li><a href="#/">option</a></li>
-        <li><a href="#/">option</a></li>
-        <li><a href="#/">option</a></li>
+      <a class="btn btn-outline-primary" href="#">Everything</a>
+      <a class="btn btn-outline-primary" href="#">Delhi</a>
+      <a class="btn btn-outline-primary" href="#">Gurgaon</a>
+      <a class="btn btn-outline-primary" href="#">Noida</a>
+      <a class="btn btn-outline-primary" href="#">Hotel</a>
     </ul>
   </div>
-  <div class="col-sm-5 offset-sm-1">
+  <div class="col-sm-5">
     <h3 class="mb-2">
       Trending Ideas
       <b [routerLink]="['/ideas/add']" class=" btn btn-primary">
@@ -73,13 +74,26 @@
       No Ideas So Far
     </div>
   </div>
-  <div class="col-sm-3 offset-sm-1 card-body" >
+  <div class="col-sm-3 card-body" >
     <img class=" rounded" src="/assets/images/pnf.jpg" alt="Cover" />
-    <div *ngFor=" let idea of homeJSON.ideas ">
-      <hr/>
-      <img class="col-sm-5 card-img-top rounded" [src]="idea.cover.result" alt="Cover" />
-    </div>
     <hr/>
+    <div class="jumbotron jumbotron-fluid card-body">
+      <hr style="width: 100%; height: 1px;"/>
+      <div class="container">
+        <div class="row" *ngFor=" let idea of homeJSON.ideas ">
+          <img class="col-sm-5 card-img-left rounded" [src]="idea.cover.result" alt="Cover" style="max-height: 80px;" />
+          <div class="col-sm-7" >
+            {{idea.user}}
+            <a class="btn btn-sm btn-outline-primary" href="#">Follow</a>
+          </div>
+          <hr style="width: 100%; height: 1px;"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-2 card" >
+    * Travelline Live
+    <img class=" rounded" src="/assets/images/pnf.jpg" alt="Cover" />
   </div>
 </div>
 

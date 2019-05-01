@@ -150,3 +150,17 @@ div.upload input {
 img{
     width: 100%;
 }
+
+.jumbotron {
+    background:#e9ebee61;
+}
+
+hr {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-outline-primary {
+    border-radius: 2rem;
+    margin:2px;
+}

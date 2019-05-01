@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = 'ImLive';
+    title = 'ImHere';
     Notification: any;
     userLocation = {
         "lat": 0.0,
