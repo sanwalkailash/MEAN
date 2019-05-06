@@ -20,7 +20,8 @@ module.exports = function (connection) {
         },
         tokenDefaults: {type: String},
         created_at: {type: Date, required: true, default: moment()},
-        updated_at: {type: Date, required: true, default: moment()}
+        updated_at: {type: Date, required: true, default: moment()},
+        deleted:{type:Number, default:0}
     });
 
     UserSchema.pre("save", function (next) {

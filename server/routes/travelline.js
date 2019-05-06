@@ -8,6 +8,7 @@ module.exports = function(router, port,environment,server,console,models,passpor
     const loginApi = require('../api/loginApi')(router, port,environment,server,console,models);
     const tokenApi = require('./../api/token')(router, port,environment,server,console,models);
     const activityApi = require('./../api/activityApi')(router, port,environment,server,console,models);
+    const carActivityApi = require('../api/carActivityApi')(router, port,environment,server,console,models);
 
     // passport O auth
     router.get("/auth/google",passportApi.googleOAuth);
@@ -16,8 +17,9 @@ module.exports = function(router, port,environment,server,console,models,passpor
         function(req, res) {
             console.info("auth done with google ",req.query.code)
             console.info("auth done with google ",req.user)
-            tokenApi.generateAuthToken(req,res,req.user);
-            // res.redirect("/?code="+JSON.stringify(req.user))
+            var response = tokenApi.generateTokenForSocialMediaUser(req,res,req.user);
+            console.info("token generated for google..",response)
+
         });
 
     // login api
@@ -34,6 +36,10 @@ module.exports = function(router, port,environment,server,console,models,passpor
     router.delete('/ideas/delete/v1/:id',tokenApi.authenticateToken,util.getClientIp,activityApi.deleteIdea)
 
 
+    //car activity api
+    router.get('/car/drive/v1',carActivityApi.saveCarPosition)
+    router.get('/car/drive/history/v1',carActivityApi.fetchCarActivityForTheDay)
+    router.get('/car/stream/activity/v1',carActivityApi.streamCarActivityToClient)
     // api route setting ends ---
 
     // ui routes setting --
@@ -49,7 +55,7 @@ module.exports = function(router, port,environment,server,console,models,passpor
             if (appHost != "localhost") {
                 appHost = req.headers.host.split('.')[0];
             } else {
-                console.info("No host found, setting default host--uptest")
+                console.info("No host found, setting default host--test_travelline")
                 appHost = "test_travelline";
             }
             var localeVocab = ""

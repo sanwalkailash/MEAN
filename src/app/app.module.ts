@@ -26,6 +26,7 @@ import {SigninComponent} from './signin/signin.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {HomeComponent} from './home/home.component';
 import {IdeasComponent} from './ideas/ideas.component';
+import { ActivityComponent } from './activity/activity.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {IdeasComponent} from './ideas/ideas.component';
         SigninComponent,
         PageNotFoundComponent,
         HomeComponent,
-        IdeasComponent
+        IdeasComponent,
+        ActivityComponent,
     ],
     imports: [
         BrowserModule,

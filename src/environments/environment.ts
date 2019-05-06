@@ -23,6 +23,7 @@ export const environment = {
     ROUTE_ADD_IDEA: 'ideas/add',
     ROUTE_EDIT_IDEA: "ideas/edit/:id",
     ROUTE_SHARE_IDEA: "ideas/share/:id",
+    ROUTE_ACTIVITY: "activity/:id",
 
 // api paths --
     apiHost: 'https://api.somedomain.com/prod/v1/',

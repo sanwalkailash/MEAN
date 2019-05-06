@@ -6,6 +6,7 @@ module.exports = function (connection) {
         googleUserSchema : require('./GoogleUser')(connection),
         tokenSchema: require('./Token')(connection),
         applicationSchema: require('./Applications')(connection),
-        accountSchema: require('./Accounts')(connection)
+        accountSchema: require('./Accounts')(connection),
+        carPositionSchema: require('./CarPosition')(connection)
     }
 }

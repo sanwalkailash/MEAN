@@ -9,7 +9,8 @@ module.exports = function (connection) {
         name: {type: String},
         company: {type: String},
         created_at: {type: Date, required: true, default: moment()},
-        updated_at: {type: Date, default: moment()}
+        updated_at: {type: Date, default: moment()},
+        deleted:{type:Number, default:0}
     });
 
     const app = connection.model('applications', applicationSchema);

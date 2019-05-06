@@ -24,7 +24,8 @@ module.exports = function (connection) {
             "location":{type:String}
         },
         "user":{"type":String,"required":true},
-        "private":{"type":Boolean,"default":false}
+        "private":{"type":Boolean,"default":false},
+        deleted:{type:Number, default:0}
     });
 
     const Idea = connection.model('ideas', IdeaSchema);

@@ -21,7 +21,8 @@ module.exports = function (connection) {
         accessToken: {type: String},
         refreshToken: {type: String},
         created_at: {type: Date, required: true, default: moment()},
-        updated_at: {type: Date, required: true, default: moment()}
+        updated_at: {type: Date, required: true, default: moment()},
+        deleted:{type:Number, default:0}
     });
 
     const User = connection.model('google_users', GoogleUserSchema);

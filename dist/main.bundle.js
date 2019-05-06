@@ -17,6 +17,78 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/activity/activity.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/activity/activity.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  activity works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/activity/activity.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+__webpack_require__("./node_modules/rxjs/_esm5/add/observable/throw.js");
+__webpack_require__("./node_modules/rxjs/_esm5/add/operator/catch.js");
+var ActivityComponent = /** @class */ (function () {
+    function ActivityComponent() {
+    }
+    ActivityComponent.prototype.ngOnInit = function () {
+        var sseSource = new EventSource('http://localhost:8888/car/stream/activity/v1');
+        console.info(sseSource);
+        sseSource.addEventListener('myEvent', function (e) {
+            var messageData = e.data;
+            console.info("message", e);
+            // ...
+            // ...
+        });
+        sseSource.onmessage = function (e) {
+            var messageData = e.data;
+            console.info("message", e);
+            if (e.lastEventId === '-1') {
+                // This is the end of the stream
+                eventSource.close();
+            }
+            // ...
+            // ...
+        };
+        // When finished with the source close the connection
+        //     sseSource.close();
+    };
+    ActivityComponent = __decorate([
+        core_1.Component({
+            selector: 'app-activity',
+            template: __webpack_require__("./src/app/activity/activity.component.html"),
+            styles: [__webpack_require__("./src/app/activity/activity.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ActivityComponent);
+    return ActivityComponent;
+}());
+exports.ActivityComponent = ActivityComponent;
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37,6 +109,7 @@ var signin_component_1 = __webpack_require__("./src/app/signin/signin.component.
 var page_not_found_component_1 = __webpack_require__("./src/app/page-not-found/page-not-found.component.ts");
 var home_component_1 = __webpack_require__("./src/app/home/home.component.ts");
 var ideas_component_1 = __webpack_require__("./src/app/ideas/ideas.component.ts");
+var activity_component_1 = __webpack_require__("./src/app/activity/activity.component.ts");
 var routes = [
     { path: environment_1.environment.ROUTE_LOGIN, component: signin_component_1.SigninComponent },
     { path: environment_1.environment.ROUTE_SSO_GOOGLE, component: signin_component_1.SigninComponent },
@@ -45,6 +118,7 @@ var routes = [
     { path: environment_1.environment.ROUTE_ADD_IDEA, component: ideas_component_1.IdeasComponent, canActivate: [auth_guard_1.AuthGuard] },
     { path: environment_1.environment.ROUTE_EDIT_IDEA, component: ideas_component_1.IdeasComponent, canActivate: [auth_guard_1.AuthGuard] },
     { path: environment_1.environment.ROUTE_SHARE_IDEA, component: ideas_component_1.IdeasComponent, canActivate: [auth_guard_1.AuthGuard] },
+    { path: environment_1.environment.ROUTE_ACTIVITY, component: activity_component_1.ActivityComponent, canActivate: [auth_guard_1.AuthGuard] },
     { path: 'oops', component: page_not_found_component_1.PageNotFoundComponent },
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: '**', redirectTo: '/oops', pathMatch: 'full' },
@@ -192,6 +266,7 @@ var signin_component_1 = __webpack_require__("./src/app/signin/signin.component.
 var page_not_found_component_1 = __webpack_require__("./src/app/page-not-found/page-not-found.component.ts");
 var home_component_1 = __webpack_require__("./src/app/home/home.component.ts");
 var ideas_component_1 = __webpack_require__("./src/app/ideas/ideas.component.ts");
+var activity_component_1 = __webpack_require__("./src/app/activity/activity.component.ts");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -205,7 +280,8 @@ var AppModule = /** @class */ (function () {
                 signin_component_1.SigninComponent,
                 page_not_found_component_1.PageNotFoundComponent,
                 home_component_1.HomeComponent,
-                ideas_component_1.IdeasComponent
+                ideas_component_1.IdeasComponent,
+                activity_component_1.ActivityComponent,
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -596,7 +672,7 @@ module.exports = ""
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-sm navbar-light bg-light mb-3\">\n    <a class=\"navbar-brand\" href=\"/\"><img class=\"icon\" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/></a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\"\n            aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\"  *ngIf=\"headerJSON.isLoggedIn\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"#/home\">Market <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/ideas\">Mine</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/live\">Live</a>\n            </li>\n        </ul>\n        <form class=\"form-inline my-2 my-lg-0\">\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\">\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n        </form>\n    </div>\n    &nbsp;\n    <div class=\"btn-group\" *ngIf=\"headerJSON.isLoggedIn\">\n        <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" style=\"max-width:150px;overflow:hidden;text-overflow: ellipsis;\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n                aria-expanded=\"false\">\n            <img class=\"icon rounded\" style=\"width:20px;height:20px; border:1px solid white; margin-bottom:1px;  \" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/>\n            {{headerJSON.user.name}}\n        </button>\n        <div class=\"dropdown-menu dropdown-menu-right\">\n            <button class=\"dropdown-item\" type=\"button\" (click)=\"logout()\">Logout</button>\n        </div>\n    </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-expand-sm navbar-light bg-light mb-3\">\n    <a class=\"navbar-brand\" href=\"/\"><img class=\"icon\" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/></a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\"\n            aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\"  *ngIf=\"headerJSON.isLoggedIn\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"#/home\">Market <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/ideas\">Mine</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/live\">Live</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/activity/5caf92bdb7e8a638f268f99e\">Live</a>\n            </li>\n        </ul>\n        <form class=\"form-inline my-2 my-lg-0\">\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\">\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n        </form>\n    </div>\n    &nbsp;\n    <div class=\"btn-group\" *ngIf=\"headerJSON.isLoggedIn\">\n        <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" style=\"max-width:150px;overflow:hidden;text-overflow: ellipsis;\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n                aria-expanded=\"false\">\n            <img class=\"icon rounded\" style=\"width:20px;height:20px; border:1px solid white; margin-bottom:1px;  \" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/>\n            {{headerJSON.user.name}}\n        </button>\n        <div class=\"dropdown-menu dropdown-menu-right\">\n            <button class=\"dropdown-item\" type=\"button\" (click)=\"logout()\">Logout</button>\n        </div>\n    </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1737,6 +1813,7 @@ exports.environment = {
     ROUTE_ADD_IDEA: 'ideas/add',
     ROUTE_EDIT_IDEA: "ideas/edit/:id",
     ROUTE_SHARE_IDEA: "ideas/share/:id",
+    ROUTE_ACTIVITY: "activity/:id",
     // api paths --
     apiHost: 'https://api.somedomain.com/prod/v1/',
     API_LOGIN: '/login/v1',

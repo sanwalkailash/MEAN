@@ -12,7 +12,8 @@ module.exports = function (connection) {
         accountUid: {type: String}, // this is user _id account owner.
         company: {type: String},
         created_at: {type: Date, required: true, default: moment()},
-        updated_at: {type: Date, default: moment()}
+        updated_at: {type: Date, default: moment()},
+        deleted:{type:Number, default:0}
     });
 
     const account = connection.model('accounts', accountSchema);

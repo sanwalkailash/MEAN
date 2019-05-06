@@ -4,6 +4,30 @@ module.exports = function (app, port,environment,server,console,models) {
     const mongoose = require("mongoose")
 
     return {
+        generateTokenForSocialMediaUser : function(req,res,user){
+            console.info("@generateAuthToken..");
+            try {
+                var errors=[];
+                console.info("Authorizing user by generating token.. ")
+                new models.tokenSchema({"token":user.created_at+","+user.appName+","+user.email+","+user.password})
+                    .save()
+                    .then(token => {
+                            res.cookie('token', "gauth "+ JSON.stringify(token.token));
+                            res.cookie('refreshToken', JSON.stringify(token.refreshToken));
+                            res.cookie('user', JSON.stringify(user));
+                            res.redirect("/login?code="+JSON.stringify(user))
+                    },
+                    err => {
+                        errors.push(appConstants.serverError)
+                        errors.push(err)
+                        res.redirect("/login")
+                    })
+                }catch(e) {
+                    console.info("caught exception")
+                    console.error(e);
+                    res.redirect("/login")
+                }
+        },
         generateAuthToken : function(req,res,user){
             console.info("@generateAuthToken..");
             try {
