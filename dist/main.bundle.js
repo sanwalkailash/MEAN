@@ -66,7 +66,7 @@ var ActivityComponent = /** @class */ (function () {
             console.info("message", e);
             if (e.lastEventId === '-1') {
                 // This is the end of the stream
-                eventSource.close();
+                sseSource.close();
             }
             // ...
             // ...
@@ -112,7 +112,6 @@ var ideas_component_1 = __webpack_require__("./src/app/ideas/ideas.component.ts"
 var activity_component_1 = __webpack_require__("./src/app/activity/activity.component.ts");
 var routes = [
     { path: environment_1.environment.ROUTE_LOGIN, component: signin_component_1.SigninComponent },
-    { path: environment_1.environment.ROUTE_SSO_GOOGLE, component: signin_component_1.SigninComponent },
     { path: environment_1.environment.ROUTE_HOME, component: home_component_1.HomeComponent, canActivate: [auth_guard_1.AuthGuard] },
     { path: environment_1.environment.ROUTE_IDEAS, component: ideas_component_1.IdeasComponent, canActivate: [auth_guard_1.AuthGuard] },
     { path: environment_1.environment.ROUTE_ADD_IDEA, component: ideas_component_1.IdeasComponent, canActivate: [auth_guard_1.AuthGuard] },
@@ -1718,6 +1717,19 @@ var SigninComponent = /** @class */ (function () {
         console.info("@initJSON..", this.loginJSON);
     };
     SigninComponent.prototype.ngOnInit = function () {
+        if (document.cookie) {
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var cookies = decodedCookie.split(';');
+            console.info("document.cookie array --- ", cookies);
+            if (cookies.length == 3) {
+                localStorage.setItem("token", cookies[0]);
+                localStorage.setItem("refreshToken", cookies[1]);
+                localStorage.setItem("user", JSON.stringify(cookies[2]));
+            }
+            if (localStorage.getItem("token") && localStorage.getItem("refreshToken") && localStorage.getItem("user")) {
+                this.util.getRouter().navigate([environment_1.environment.ROUTE_HOME]);
+            }
+        }
         this.fetchCities();
     };
     SigninComponent.prototype.login = function () {
@@ -1806,7 +1818,6 @@ exports.environment = {
     ROUTE_CONFIG: "",
     // app route paths
     ROUTE_LOGIN: 'login',
-    ROUTE_SSO_GOOGLE: 'sso/google',
     ROUTE_UNKNOWN: 'unknown',
     ROUTE_HOME: 'home',
     ROUTE_IDEAS: 'ideas',
