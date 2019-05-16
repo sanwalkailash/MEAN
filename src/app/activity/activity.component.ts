@@ -27,7 +27,7 @@ export class ActivityComponent implements OnInit {
       console.info("message",e)
       if (e.lastEventId === '-1') {
         // This is the end of the stream
-        eventSource.close();
+        sseSource.close();
       }
       // ...
       // ...

@@ -4,28 +4,28 @@ module.exports = function (app, port,environment,server,console,models) {
     const mongoose = require("mongoose")
 
     return {
-        generateTokenForSocialMediaUser : function(req,res,user){
+        generateTokenForSocialMediaUser : function(req,res){
             console.info("@generateAuthToken..");
             try {
                 var errors=[];
                 console.info("Authorizing user by generating token.. ")
-                new models.tokenSchema({"token":user.created_at+","+user.appName+","+user.email+","+user.password})
+                new models.tokenSchema({"token":req.user.created_at+","+req.user.appName+","+req.user.email+","+req.user.password})
                     .save()
                     .then(token => {
-                            res.cookie('token', "gauth "+ JSON.stringify(token.token));
-                            res.cookie('refreshToken', JSON.stringify(token.refreshToken));
-                            res.cookie('user', JSON.stringify(user));
-                            res.redirect("/login?code="+JSON.stringify(user))
+                            res.cookie('token', token.token,{maxAge: 1000, httpOnly: true, secure: false, overwrite: true});
+                            res.cookie('refreshToken', token.refreshToken,{maxAge: 1000, httpOnly: true, secure: false, overwrite: true});
+                            res.cookie('user', req.user,{maxAge: 1000, httpOnly: true, secure: false, overwrite: true});
+                            res.render('index');
                     },
                     err => {
                         errors.push(appConstants.serverError)
                         errors.push(err)
-                        res.redirect("/login")
+                        res.render('index');
                     })
                 }catch(e) {
                     console.info("caught exception")
                     console.error(e);
-                    res.redirect("/login")
+                    res.render('index');
                 }
         },
         generateAuthToken : function(req,res,user){

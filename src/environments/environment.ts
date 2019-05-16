@@ -16,7 +16,6 @@ export const environment = {
 
 // app route paths
     ROUTE_LOGIN: 'login',
-    ROUTE_SSO_GOOGLE: 'sso/google',
     ROUTE_UNKNOWN: 'unknown',
     ROUTE_HOME: 'home',
     ROUTE_IDEAS: 'ideas',

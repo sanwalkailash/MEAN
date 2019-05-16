@@ -15,7 +15,7 @@ module.exports = function (connection) {
 
 
     TokenSchema.pre('save', function (next) {
-        this.token = util.encrypt(this.token + ",timestamp," + moment().format())
+        this.token = util.encrypt(this.token + ",timestamp," + moment().add(1, 'hour').format())
         this.refreshToken = util.encrypt(this.token + ",reftimestamp," + moment().add(1, 'hour').format())
         console.info("generated token...", this.token)
         console.info("generated refreshToken...", this.refreshToken)

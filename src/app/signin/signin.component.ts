@@ -16,6 +16,7 @@ export class SigninComponent implements OnInit {
     }
 
     initJSON() {
+
         this.loginJSON = {
             "register": {
                 "appName": environment.APP_NAME,
@@ -44,6 +45,19 @@ export class SigninComponent implements OnInit {
     }
 
     ngOnInit() {
+        if(document.cookie){
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var cookies = decodedCookie.split(';');
+            console.info("document.cookie array --- ",cookies)
+            if(cookies.length==3){
+                localStorage.setItem("token", cookies[0])
+                localStorage.setItem("refreshToken", cookies[1])
+                localStorage.setItem("user", JSON.stringify(cookies[2]))
+            }
+            if(localStorage.getItem("token") && localStorage.getItem("refreshToken") && localStorage.getItem("user")){
+                this.util.getRouter().navigate([environment.ROUTE_HOME]);
+            }
+        }
         this.fetchCities();
     }
 

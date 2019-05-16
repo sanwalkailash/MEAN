@@ -14,13 +14,7 @@ module.exports = function(router, port,environment,server,console,models,passpor
     router.get("/auth/google",passportApi.googleOAuth);
     router.get('/auth/google/callback',
         passportApi.googleCallbackHandler,
-        function(req, res) {
-            console.info("auth done with google ",req.query.code)
-            console.info("auth done with google ",req.user)
-            var response = tokenApi.generateTokenForSocialMediaUser(req,res,req.user);
-            console.info("token generated for google..",response)
-
-        });
+        tokenApi.generateTokenForSocialMediaUser);
 
     // login api
     router.post('/login/v1', loginApi.login);
