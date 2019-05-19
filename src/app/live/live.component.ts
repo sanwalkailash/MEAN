@@ -118,7 +118,8 @@ export class LiveComponent implements OnInit {
           "type":"",
           "lastModifiedDate":"",
           "result":"",
-        }
+        },
+        "isMilestone":false
       }
     }
 
@@ -182,6 +183,8 @@ export class LiveComponent implements OnInit {
 
   fileEvent(event) {
     this.liveJSON.activity.milestone = this.util.readfile(event);
+    this.liveJSON.isMilestone=true;
+    this.logActivity();
     console.info("added cover -- ", this.liveJSON.activity.milestone)
   }
 
@@ -211,6 +214,7 @@ export class LiveComponent implements OnInit {
               } else {
                 this.liveJSON.errors = data.errors;
               }
+              this.liveJSON.isMilestone=false;
             },
             error => {
               console.info("error.status:: ", error);

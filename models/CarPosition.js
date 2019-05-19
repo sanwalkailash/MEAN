@@ -29,6 +29,7 @@ module.exports = function (connection) {
             "lastModifiedDate":{type: String},
             "result":{type: String},
         },
+        "isMilestone":{type: Boolean, default: false},
         "created_at": {type: Date, required: true, default: moment()},
         "updated_at": {type: Date, required: true, default: moment()},
         "deleted":{type:Number, default:0}
