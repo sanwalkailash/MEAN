@@ -22,6 +22,13 @@ module.exports = function (connection) {
         "native_longitude": {type:Number},
         "native_geohash": {type:String},
         "native_type": {type:String},
+        "milestone":{
+            "name":{type: String},
+            "size":{type: String},
+            "type":{type: String},
+            "lastModifiedDate":{type: String},
+            "result":{type: String},
+        },
         "created_at": {type: Date, required: true, default: moment()},
         "updated_at": {type: Date, required: true, default: moment()},
         "deleted":{type:Number, default:0}

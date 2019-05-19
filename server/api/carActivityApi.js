@@ -8,39 +8,46 @@ module.exports =  function (app, port,environment,server,console,models) {
     const precision = 12;
     return {
         saveCarPosition:function(req,res){
-            let hits = setInterval(()=>{
-                let lat = util.getRandomInRange(-90,90,3);
-                let lon = util.getRandomInRange(-180,180,3);
-                console.info("geohash created -- ",Geohash.encode(lat, lon, [precision]))
-                new models.carPositionSchema({
-                        "user_id":"5caf92bdb7e8a638f268f99e",
-                        "shift_state": null,
-                        "speed": null,
-                        "power": 0,
-                        "latitude": lat,
-                        "longitude": lon,
-                        "geohash":Geohash.encode(lat, lon, [precision]),
-                        "native_geohash":Geohash.encode(40.459729, -79.923444, [precision]),
-                        "heading": "340",
-                        "gps_as_of": "1532927048",
-                        "native_location_supported": 1,
-                        "native_latitude": 40.459729,
-                        "native_longitude": -79.923444,
-                        "native_type": "wgs",
-                }).save()
-                .then( carPosition => {
-                        console.info("saved car position",carPosition)
-                },
+            let errors = []
+            if(util.isVoid(req.body.user_id)){
+                errors.push("User does not exist.")
+            }
+
+            req.body.geohash=Geohash.encode(req.body.latitude,req.body.longitude,[precision]);
+            // new models.carPositionSchema({
+            //         "user_id":"5caf92bdb7e8a638f268f99e",
+            //         "shift_state": moment(),
+            //         "speed": null,
+            //         "power": 0,
+            //         "latitude": lat,
+            //         "longitude": lon,
+            //         "geohash":Geohash.encode(lat, lon, [precision]),
+            //         "native_geohash":Geohash.encode(40.459729, -79.923444, [precision]),
+            //         "heading": "340",
+            //         "gps_as_of": "1532927048",
+            //         "native_location_supported": 1,
+            //         "native_latitude": 40.459729,
+            //         "native_longitude": -79.923444,
+            //         "native_type": "wgs",
+            //         "milestone":
+            // }).save()
+            new models.carPositionSchema(req.body).save()
+                .then( carActivityLog => {
+                console.info("saved car position",carActivityLog)
+                res.json({
+                    "status":appConstants.success,
+                    "carActivityLog":carActivityLog
+                });
+            },
                 err => {
-                        console.info("error occured ",err)
-                })
-            },1)
-
-            setTimeout(()=>{
-                clearInterval(hits);
-                console.info("clearing interval")
-            },600000);
-
+                console.info("error occured ",err)
+                errors.push(appConstants.serverError)
+                errors.push(err)
+                res.json({
+                    "status":appConstants.failure,
+                    "errors" : errors
+                });
+            })
         },
         fetchCarActivityForTheDay:function(req,res){
             console.info("@fetchCarActivityForTheDay.")

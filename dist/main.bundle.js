@@ -206,16 +206,16 @@ var AppComponent = /** @class */ (function () {
             }
         };
         this.setUserLocation = function (position) {
-            _this.userLocation.lat = position.coords.latitude;
-            _this.userLocation.lng = position.coords.longitude;
+            _this.userLocation.lat = position.coords.latitude ? position.coords.latitude : 0;
+            _this.userLocation.lng = position.coords.longitude ? position.coords.longitude : 0;
             localStorage.setItem("userLoc", JSON.stringify(_this.userLocation));
         };
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        localStorage.setItem("userLoc", JSON.stringify(this.userLocation));
         var loctimer = setInterval(function () {
             _this.getLocation();
+            console.info("updated user location--", _this.userLocation);
         }, 2000);
         // clearInterval(loctimer);
     };
@@ -1117,7 +1117,7 @@ module.exports = "#maps-container{\n    position: fixed !important;\n    width: 
 /***/ "./src/app/live/live.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div id=\"maps-container\">\n  <div id=\"map-canvas\"></div>\n  <div id=\"street-view\" [hidden]=\"!liveJSON.enableStreetView\"></div>\n</div>\n<div class=\"menu\">\n  <ul class=\"nav nav-pills\">\n    <li class=\"nav-item\">\n      <b class=\"nav-link \" [ngClass]=\"{'active':liveJSON.enableStreetView}\" (click)=\"toggleStreetView()\">Streets</b>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"nav-link\" (click)=\"toggleMapView()\">\n        <input type=\"file\" accept=\"image/*\" capture=\"camera\">\n      </b>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"nav-link\" (click)=\"toggleMapView()\">Link</b>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"nav-link disabled\" (click)=\"toggleMapView()\">Disabled</b>\n    </li>\n  </ul>\n</div>\n"
+module.exports = "\n<div id=\"maps-container\">\n  <div id=\"map-canvas\"></div>\n  <div id=\"street-view\" [hidden]=\"!liveJSON.enableStreetView\"></div>\n</div>\n<div class=\"menu\">\n  <ul class=\"nav nav-pills\">\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primary\" [ngClass]=\"{'active':liveJSON.enableStreetView}\" (click)=\"toggleStreetView()\">Streets</b>\n    </li>\n    <li class=\"nav-item\">\n      <div>\n        <input class=\"btn btn-outline-primary\"  type=\"button\" id=\"milestone\" value=\"Add Milestone\" onclick=\"document.getElementById('file').click()\" />\n        <input style=\"display:none;\" id=\"file\" name=\"file\" type=\"file\" accept=\"image/*\" capture=\"camera\" (change)=fileEvent($event)>\n      </div>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primary\" (click)=\"updateUserLocation()\">Update</b>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primarydisabled\" (click)=\"toggleMapView()\">Disabled</b>\n    </li>\n  </ul>\n  <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" *ngIf=\"liveJSON.errors.length>0\">\n    <p *ngFor=\" let error of liveJSON.errors\">{{error}} <br/></p>\n    <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1138,8 +1138,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var environment_1 = __webpack_require__("./src/environments/environment.ts");
+var ajax_service_1 = __webpack_require__("./src/app/services/ajax.service.ts");
+var util_service_1 = __webpack_require__("./src/app/services/util.service.ts");
+var common_1 = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+var app_component_1 = __webpack_require__("./src/app/app.component.ts");
 var LiveComponent = /** @class */ (function () {
-    function LiveComponent() {
+    function LiveComponent(ajax, util, location, app) {
+        this.ajax = ajax;
+        this.util = util;
+        this.app = app;
     }
     LiveComponent.prototype.ngOnInit = function () {
         this.initializeLiveJSON();
@@ -1148,10 +1155,12 @@ var LiveComponent = /** @class */ (function () {
         var _this = this;
         setTimeout(function () {
             _this.initializaMapProperties();
+            _this.updateUserLocation();
         }, 1000);
     };
     LiveComponent.prototype.initializeLiveJSON = function () {
         this.liveJSON = {
+            "errors": [],
             "map": undefined,
             "mapOptions": {
                 disableDefaultUI: true,
@@ -1211,31 +1220,60 @@ var LiveComponent = /** @class */ (function () {
                 disableDoubleClickZoom: true
             },
             "userLocation": JSON.parse(localStorage.getItem("userLoc")) ? JSON.parse(localStorage.getItem("userLoc")) : {
-                "lat": "",
-                "lng": ""
+                "lat": 0,
+                "lng": 0
             },
-            "userMapMarker": ""
+            "userMapMarker": "",
+            "activity": {
+                "user_id": JSON.parse(localStorage.getItem("user"))._id,
+                "shift_state": "",
+                "speed": 0,
+                "power": 0,
+                "latitude": 0,
+                "longitude": 0,
+                "geohash": "",
+                "heading": "",
+                "gps_as_of": "",
+                "native_location_supported": "",
+                "native_latitude": 0,
+                "native_longitude": 0,
+                "native_geohash": "",
+                "native_type": "",
+                "milestone": {
+                    "name": "",
+                    "size": "",
+                    "type": "",
+                    "lastModifiedDate": "",
+                    "result": "",
+                }
+            }
         };
     };
     LiveComponent.prototype.initializaMapProperties = function () {
         var _this = this;
         this.liveJSON.map = new google.maps.Map(document.getElementById('map-canvas'), this.liveJSON.mapOptions);
         this.liveJSON.streetViewPanorama = new google.maps.StreetViewPanorama(document.getElementById('street-view'), this.liveJSON.streetViewOptions);
-        google.maps.event.addListener(this.liveJSON.streetViewPanorama, 'position_changed', function () {
-            _this.liveJSON.map.panTo(_this.liveJSON.streetViewPanorama.getPosition());
-            _this.liveJSON.userMapMarker.setPosition(_this.liveJSON.streetViewPanorama.getPosition());
-        });
         this.liveJSON.userMapMarker = new google.maps.Marker({
             position: this.getGoogleLatLangObject(this.liveJSON.userLocation.lat, this.liveJSON.userLocation.lng),
             map: this.liveJSON.map,
             animation: google.maps.Animation.DROP,
             draggable: true
         });
+        google.maps.event.addListener(this.liveJSON.userMapMarker, 'position_changed', function () {
+            console.info("userMapMarker position changes t0 --", _this.liveJSON.streetViewPanorama.getPosition());
+            _this.logActivity();
+            _this.refreshMaps();
+        });
+        this.refreshMaps();
     };
     LiveComponent.prototype.getGoogleLatLangObject = function (lat, lng) {
         return new google.maps.LatLng(lat, lng);
     };
-    LiveComponent.prototype.resizeMaps = function () {
+    LiveComponent.prototype.refreshMaps = function () {
+        this.liveJSON.map.panTo(this.liveJSON.userMapMarker.getPosition());
+        // this.liveJSON.map.setCenter(this.liveJSON.userMapMarker.getPosition());
+        this.liveJSON.streetViewPanorama = new google.maps.StreetViewPanorama(document.getElementById('street-view'), this.liveJSON.streetViewOptions);
+        this.liveJSON.streetViewPanorama.setPosition(this.liveJSON.userMapMarker.getPosition());
         google.maps.event.trigger(this.liveJSON.map, 'resize');
         google.maps.event.trigger(this.liveJSON.streetViewPanorama, 'resize');
     };
@@ -1247,16 +1285,53 @@ var LiveComponent = /** @class */ (function () {
         if (this.liveJSON.enableStreetView) {
             setTimeout(function () {
                 _this.liveJSON.map.setMapTypeId(google.maps.MapTypeId.HYBRID);
-                _this.liveJSON.streetViewPanorama.setPosition({ lat: _this.liveJSON.userLocation.lat, lng: _this.liveJSON.userLocation.lng });
+                _this.liveJSON.streetViewPanorama.setPosition({
+                    lat: _this.liveJSON.userLocation.lat,
+                    lng: _this.liveJSON.userLocation.lng
+                });
             }, 0);
         }
         else {
             this.liveJSON.map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
-            this.resizeMaps();
+            this.refreshMaps();
         }
     };
     LiveComponent.prototype.toggleStreetView = function () {
         this.liveJSON.enableStreetView = !this.liveJSON.enableStreetView;
+    };
+    LiveComponent.prototype.fileEvent = function (event) {
+        this.liveJSON.activity.milestone = this.util.readfile(event);
+        console.info("added cover -- ", this.liveJSON.activity.milestone);
+    };
+    LiveComponent.prototype.updateUserLocation = function () {
+        console.info("updateUserLocation..");
+        this.liveJSON.userLocation = JSON.parse(localStorage.getItem("userLoc"));
+        this.liveJSON.userMapMarker.setPosition(this.getGoogleLatLangObject(this.liveJSON.userLocation.lat, this.liveJSON.userLocation.lng));
+        this.refreshMaps();
+    };
+    LiveComponent.prototype.logActivity = function () {
+        var _this = this;
+        this.liveJSON.errors = [];
+        this.liveJSON.activity.latitude = this.liveJSON.userMapMarker.getPosition().lat();
+        this.liveJSON.activity.latitude = this.liveJSON.userMapMarker.getPosition().lng();
+        this.ajax.apiCall_POST(this.liveJSON.activity, environment_1.environment.API_USER_DRIVE)
+            .subscribe(function (data) {
+            if (data.status) {
+                console.info("activity saved");
+                _this.liveJSON.activity.milestone = {
+                    "name": "",
+                    "size": "",
+                    "type": "",
+                    "lastModifiedDate": "",
+                    "result": "",
+                };
+            }
+            else {
+                _this.liveJSON.errors = data.errors;
+            }
+        }, function (error) {
+            console.info("error.status:: ", error);
+        });
     };
     LiveComponent = __decorate([
         core_1.Component({
@@ -1264,7 +1339,7 @@ var LiveComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/live/live.component.html"),
             styles: [__webpack_require__("./src/app/live/live.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [ajax_service_1.AjaxService, util_service_1.UtilService, common_1.Location, app_component_1.AppComponent])
     ], LiveComponent);
     return LiveComponent;
 }());
@@ -1483,6 +1558,9 @@ var AjaxService = /** @class */ (function () {
                 break;
             case environment_1.environment.API_REFRESH:
                 url = environment_1.environment.API_REFRESH;
+                break;
+            case environment_1.environment.API_USER_DRIVE:
+                url = environment_1.environment.API_USER_DRIVE;
                 break;
             default:
                 console.error("ERROR -- : @apiCall_POST api path not added.");
@@ -2028,7 +2106,8 @@ exports.environment = {
     API_SAVE_IDEAS: "/save/idea/v1",
     API_LIST_PUBLIC_IDEAS: "/list/ideas/v1",
     API_LIST_USER_IDEAS: "/list/user/ideas/v1",
-    API_DELETE_IDEA: "ideas/delete/v1/",
+    API_DELETE_IDEA: "/ideas/delete/v1/",
+    API_USER_DRIVE: "/user/drive/v1",
     // error codes --
     HTTP_ERROR_404: 404,
     API_STATUS_SUCCESS: 1,

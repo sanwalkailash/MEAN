@@ -31,9 +31,9 @@ module.exports = function(router, port,environment,server,console,models,passpor
 
 
     //car activity api
-    router.get('/car/drive/v1',carActivityApi.saveCarPosition)
-    router.get('/car/drive/history/v1',carActivityApi.fetchCarActivityForTheDay)
-    router.get('/car/stream/activity/v1',carActivityApi.streamCarActivityToClient)
+    router.post('/user/drive/v1',carActivityApi.saveCarPosition)
+    router.get('/user/drive/history/v1',carActivityApi.fetchCarActivityForTheDay)
+    router.get('/user/stream/activity/v1',carActivityApi.streamCarActivityToClient)
     // api route setting ends ---
 
     // ui routes setting --

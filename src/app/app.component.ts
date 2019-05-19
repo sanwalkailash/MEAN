@@ -15,9 +15,9 @@ export class AppComponent {
     }
 
     ngOnInit() {
-        localStorage.setItem("userLoc", JSON.stringify(this.userLocation))
         let loctimer = setInterval(() => {
             this.getLocation();
+            console.info("updated user location--",this.userLocation)
         }, 2000);
         // clearInterval(loctimer);
     }
@@ -48,8 +48,8 @@ export class AppComponent {
     }
 
     setUserLocation = (position) => {
-        this.userLocation.lat = position.coords.latitude;
-        this.userLocation.lng = position.coords.longitude;
+        this.userLocation.lat = position.coords.latitude?position.coords.latitude:0;
+        this.userLocation.lng = position.coords.longitude?position.coords.longitude:0;
         localStorage.setItem("userLoc", JSON.stringify(this.userLocation))
     }
 
