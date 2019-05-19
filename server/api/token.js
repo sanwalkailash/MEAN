@@ -8,7 +8,7 @@ module.exports = function (app, port,environment,server,console,models) {
             console.info("@generateAuthToken..");
             try {
                 var errors=[];
-                console.info("Authorizing user by generating token.. ")
+                console.info("Authorizing user by generating app token for google user.. ",req.user)
                 new models.tokenSchema({"token":req.user.created_at+","+req.user.appName+","+req.user.email+","+req.user.password})
                     .save()
                     .then(token => {
@@ -89,7 +89,7 @@ module.exports = function (app, port,environment,server,console,models) {
                             });
                         }
                         console.info("------####-----")
-                        console.info("Decrypted token >>> " + util.decrypt(req.headers.authorization)+" <<<");
+                        console.info("Decrypted Old token >>> " + util.decrypt(req.headers.authorization)+" <<<");
                         console.info("------####-----")
                         if(util.tokenExpired(util.decrypt(req.headers.authorization))) {
                             errors.push("Token Expired.");

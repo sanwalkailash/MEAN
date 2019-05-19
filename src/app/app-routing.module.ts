@@ -8,6 +8,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {HomeComponent} from './home/home.component';
 import {IdeasComponent} from './ideas/ideas.component';
 import {ActivityComponent} from './activity/activity.component';
+import {LiveComponent} from './live/live.component';
 
 const routes: Routes = [
     {path: environment.ROUTE_LOGIN, component: SigninComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
     {path: environment.ROUTE_EDIT_IDEA, component: IdeasComponent, canActivate: [AuthGuard]},
     {path: environment.ROUTE_SHARE_IDEA, component: IdeasComponent, canActivate: [AuthGuard]},
     {path: environment.ROUTE_ACTIVITY, component: ActivityComponent, canActivate: [AuthGuard]},
+    {path: environment.ROUTE_LIVE, component: LiveComponent, canActivate: [AuthGuard]},
     {path: 'oops', component: PageNotFoundComponent},
     {path: '', redirectTo: '/login', pathMatch: 'full'},
     {path: '**', redirectTo: '/oops', pathMatch: 'full'},

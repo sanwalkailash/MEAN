@@ -1,0 +1,23 @@
+
+<div id="maps-container">
+  <div id="map-canvas"></div>
+  <div id="street-view" [hidden]="!liveJSON.enableStreetView"></div>
+</div>
+<div class="menu">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <b class="nav-link " [ngClass]="{'active':liveJSON.enableStreetView}" (click)="toggleStreetView()">Streets</b>
+    </li>
+    <li class="nav-item">
+      <b class="nav-link" (click)="toggleMapView()">
+        <input type="file" accept="image/*" capture="camera">
+      </b>
+    </li>
+    <li class="nav-item">
+      <b class="nav-link" (click)="toggleMapView()">Link</b>
+    </li>
+    <li class="nav-item">
+      <b class="nav-link disabled" (click)="toggleMapView()">Disabled</b>
+    </li>
+  </ul>
+</div>

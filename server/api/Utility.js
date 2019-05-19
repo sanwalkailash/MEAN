@@ -90,14 +90,15 @@ module.exports = function (app, port,environment,server,console,models) {
             console.info("2019-03-28T04:58:58.000Z -- ",moment("2019-03-28T04:58:58.000Z").format("YYYY-MM-DD HH:mm:ss"))
             console.info("token to check -- ",token);
             console.info("session time :: ",(moment().diff(moment(token.created_at), 'seconds')))
-            return (moment().diff(token.created_at, 'hours', true)) > appConstants.AppProperties.tokenLife;
+            return (moment().diff(token.created_at, 'seconds', true)) > appConstants.AppProperties.tokenLife;
         },
         tokenExpired: function(tokenString){
             console.warn("@tokenExpired..tokenString---",tokenString)
             let tokenProperties=tokenString.split(",");
             console.warn("tokenProperties--",tokenProperties);
-            console.warn("token time in millis--",tokenProperties[tokenProperties.length-1])
-            return (moment().diff(tokenProperties[tokenProperties.length-1], 'hours', true)) > appConstants.AppProperties.tokenLife;
+            console.warn("token time --",tokenProperties[tokenProperties.length-1])
+            console.warn("token session in seconds --",(moment().diff(tokenProperties[tokenProperties.length-1], 'seconds', true)))
+            return (moment().diff(tokenProperties[tokenProperties.length-1], 'seconds', true)) > appConstants.AppProperties.tokenLife;
         },
         getUsernameFromToken: function(tokenString){
             let tokenProperties=tokenString.split(",");

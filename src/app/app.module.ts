@@ -27,6 +27,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {HomeComponent} from './home/home.component';
 import {IdeasComponent} from './ideas/ideas.component';
 import { ActivityComponent } from './activity/activity.component';
+import { LiveComponent } from './live/live.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ActivityComponent } from './activity/activity.component';
         HomeComponent,
         IdeasComponent,
         ActivityComponent,
+        LiveComponent,
     ],
     imports: [
         BrowserModule,

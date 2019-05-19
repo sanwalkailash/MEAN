@@ -1,0 +1,38 @@
+#maps-container{
+    position: fixed !important;
+    width: 100%;
+    height: 900px;
+    /* Firefox */
+    min-height: -moz-calc(100% - 50px);
+    /* WebKit */
+    min-height: -webkit-calc(100% - 50px);
+    /* Opera */
+    min-height: -o-calc(100% - 50px);
+    /* Standard */
+    min-height: calc(100% - 50px);
+    margin: auto;
+    display: inline-flex;
+     padding-right: 25px;
+    /* padding-left: 20px; */
+}
+
+#map-canvas {
+    width: calc(100% - 1px);
+    height: calc(100% - 1px;);
+    margin: 0px;
+}
+
+#street-view {
+    position:fixed !important;
+    width: 333px;
+    height: 150px;
+    bottom:10px;
+    float:left;
+}
+
+.menu{
+    top:55px;
+    width: calc(100% - 1px);
+    position:fixed;
+    background:white;
+}

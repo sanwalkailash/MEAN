@@ -10,24 +10,24 @@ declare var EventSource:any
   styleUrls: ['./activity.component.css']
 })
 export class ActivityComponent implements OnInit {
+  private sseSource = new EventSource('http://localhost:8888/car/stream/activity/v1');
 
   constructor() { }
 
   ngOnInit() {
-    const sseSource = new EventSource('http://localhost:8888/car/stream/activity/v1');
-    console.info(sseSource);
-    sseSource.addEventListener('myEvent', (e) => {
+    console.info(this.sseSource);
+    this.sseSource.addEventListener('myEvent', (e) => {
       const messageData = e.data;
       console.info("message",e)
       // ...
       // ...
     });
-    sseSource.onmessage = (e) => {
+    this.sseSource.onmessage = (e) => {
       const messageData = e.data;
       console.info("message",e)
       if (e.lastEventId === '-1') {
         // This is the end of the stream
-        sseSource.close();
+        this.sseSource.close();
       }
       // ...
       // ...
@@ -35,6 +35,10 @@ export class ActivityComponent implements OnInit {
 
 // When finished with the source close the connection
 //     sseSource.close();
+  }
+
+  ngOnDestroy(){
+    this.sseSource.close();
   }
 
   // public getActivtyStream(processName: string): Observable<any> {

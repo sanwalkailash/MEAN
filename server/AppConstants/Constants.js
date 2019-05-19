@@ -1,13 +1,13 @@
 module.exports = {
     "AppProperties":{
-        "appName":"travelLine",
+        "appName":"travellineOne",
         "database":process.env.NODE_ENV=='production'?"mongodb+srv://demo:demo@cluster0-tl9za.mongodb.net/test?retryWrites=true":"mongodb://127.0.0.1:27017/travelline",
         "secret":"QwErt!2#4",
         "GOOGLE_CLIENT_ID":"107698569510-edomo02jgeqr6k4hcqtl4kdhevnvrj17.apps.googleusercontent.com",
         "GOOGLE_CLIENT_SECRET":"jf3tFbZE1-WXMRRyqaBGFf9w",
         "googleOAuthcallbackURL":"/auth/google/callback",
         "providerGoogle":"google",
-        "tokenLife":60,
+        "tokenLife":3600,
         "profileFolder":"uploads/profile/",
         "coverFolder":"uploads/covers/",
     },

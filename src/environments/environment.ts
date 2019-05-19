@@ -2,6 +2,17 @@ export const environment = {
     production: true,
 
     MAP_KEY: 'AIzaSyAcV5MCnHAvcYREiHZfZR58oMTs_msaJvc',
+    DEFAULT_MAP_SETTINGS :{
+        "lat":32.715738,
+        "lng":-117.161084,
+        "zoom":18,
+        "geofeneZoom":21,
+        "pov":{
+            heading: 360,
+            pitch: 10
+        },
+        "streetViewDefaultPosition":{lat: 42.345573, lng: -71.098326}
+    },
     codes: ['AB', 'AC', 'XYZ'],
 
 
@@ -23,6 +34,7 @@ export const environment = {
     ROUTE_EDIT_IDEA: "ideas/edit/:id",
     ROUTE_SHARE_IDEA: "ideas/share/:id",
     ROUTE_ACTIVITY: "activity/:id",
+    ROUTE_LIVE: "live",
 
 // api paths --
     apiHost: 'https://api.somedomain.com/prod/v1/',

@@ -15,12 +15,12 @@ module.exports = function (connection) {
 
 
     TokenSchema.pre('save', function (next) {
-        this.token = util.encrypt(this.token + ",timestamp," + moment().add(1, 'hour').format())
+        this.token = util.encrypt(this.token + ",timestamp," + moment().format())
         this.refreshToken = util.encrypt(this.token + ",reftimestamp," + moment().add(1, 'hour').format())
         console.info("generated token...", this.token)
         console.info("generated refreshToken...", this.refreshToken)
-        console.info(" token expire time ",moment().format())
-        console.info("refresh token expire time ",moment().add(1, 'hour').format())
+        console.info(" token expire time ",moment().add(1, 'hour').format())
+        console.info("refresh token expire time ",moment().add(2, 'hour').format())
         next();
     })
 

@@ -51,28 +51,32 @@ __webpack_require__("./node_modules/rxjs/_esm5/add/observable/throw.js");
 __webpack_require__("./node_modules/rxjs/_esm5/add/operator/catch.js");
 var ActivityComponent = /** @class */ (function () {
     function ActivityComponent() {
+        this.sseSource = new EventSource('http://localhost:8888/car/stream/activity/v1');
     }
     ActivityComponent.prototype.ngOnInit = function () {
-        var sseSource = new EventSource('http://localhost:8888/car/stream/activity/v1');
-        console.info(sseSource);
-        sseSource.addEventListener('myEvent', function (e) {
+        var _this = this;
+        console.info(this.sseSource);
+        this.sseSource.addEventListener('myEvent', function (e) {
             var messageData = e.data;
             console.info("message", e);
             // ...
             // ...
         });
-        sseSource.onmessage = function (e) {
+        this.sseSource.onmessage = function (e) {
             var messageData = e.data;
             console.info("message", e);
             if (e.lastEventId === '-1') {
                 // This is the end of the stream
-                sseSource.close();
+                _this.sseSource.close();
             }
             // ...
             // ...
         };
         // When finished with the source close the connection
         //     sseSource.close();
+    };
+    ActivityComponent.prototype.ngOnDestroy = function () {
+        this.sseSource.close();
     };
     ActivityComponent = __decorate([
         core_1.Component({
@@ -110,6 +114,7 @@ var page_not_found_component_1 = __webpack_require__("./src/app/page-not-found/p
 var home_component_1 = __webpack_require__("./src/app/home/home.component.ts");
 var ideas_component_1 = __webpack_require__("./src/app/ideas/ideas.component.ts");
 var activity_component_1 = __webpack_require__("./src/app/activity/activity.component.ts");
+var live_component_1 = __webpack_require__("./src/app/live/live.component.ts");
 var routes = [
     { path: environment_1.environment.ROUTE_LOGIN, component: signin_component_1.SigninComponent },
     { path: environment_1.environment.ROUTE_HOME, component: home_component_1.HomeComponent, canActivate: [auth_guard_1.AuthGuard] },
@@ -118,6 +123,7 @@ var routes = [
     { path: environment_1.environment.ROUTE_EDIT_IDEA, component: ideas_component_1.IdeasComponent, canActivate: [auth_guard_1.AuthGuard] },
     { path: environment_1.environment.ROUTE_SHARE_IDEA, component: ideas_component_1.IdeasComponent, canActivate: [auth_guard_1.AuthGuard] },
     { path: environment_1.environment.ROUTE_ACTIVITY, component: activity_component_1.ActivityComponent, canActivate: [auth_guard_1.AuthGuard] },
+    { path: environment_1.environment.ROUTE_LIVE, component: live_component_1.LiveComponent, canActivate: [auth_guard_1.AuthGuard] },
     { path: 'oops', component: page_not_found_component_1.PageNotFoundComponent },
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: '**', redirectTo: '/oops', pathMatch: 'full' },
@@ -206,8 +212,12 @@ var AppComponent = /** @class */ (function () {
         };
     }
     AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
         localStorage.setItem("userLoc", JSON.stringify(this.userLocation));
-        this.getLocation();
+        var loctimer = setInterval(function () {
+            _this.getLocation();
+        }, 2000);
+        // clearInterval(loctimer);
     };
     AppComponent.prototype.getLocation = function () {
         if (navigator.geolocation) {
@@ -266,6 +276,7 @@ var page_not_found_component_1 = __webpack_require__("./src/app/page-not-found/p
 var home_component_1 = __webpack_require__("./src/app/home/home.component.ts");
 var ideas_component_1 = __webpack_require__("./src/app/ideas/ideas.component.ts");
 var activity_component_1 = __webpack_require__("./src/app/activity/activity.component.ts");
+var live_component_1 = __webpack_require__("./src/app/live/live.component.ts");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -281,6 +292,7 @@ var AppModule = /** @class */ (function () {
                 home_component_1.HomeComponent,
                 ideas_component_1.IdeasComponent,
                 activity_component_1.ActivityComponent,
+                live_component_1.LiveComponent,
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -614,7 +626,7 @@ exports.TokeninterceptorService = TokeninterceptorService;
 /***/ "./src/app/footer/footer.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "\n.footer {\n    width: 100%;\n    padding:18px 0;\n    background: #f6f6f6;\n\tposition:relative;\n\tbottom:0;\n\tz-index:9;\n\tmargin-top:37px;\n}\n.footer p {\n    text-align: center;\n    font-size: 10px;\n    color: #999;\n    font-weight: 600;\n\n}\n"
+module.exports = "\n.footer {\n    width: 100%;\n    padding:18px 0;\n    background: #f6f6f6;\n\tposition:inherit;\n\tbottom:0px;\n\tz-index:9;\n\tmargin-top:37px;\n}\n.footer p {\n    text-align: center;\n    font-size: 10px;\n    color: #999;\n    font-weight: 600;\n\n}\n"
 
 /***/ }),
 
@@ -671,7 +683,7 @@ module.exports = ""
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-sm navbar-light bg-light mb-3\">\n    <a class=\"navbar-brand\" href=\"/\"><img class=\"icon\" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/></a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\"\n            aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\"  *ngIf=\"headerJSON.isLoggedIn\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"#/home\">Market <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/ideas\">Mine</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/live\">Live</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/activity/5caf92bdb7e8a638f268f99e\">Live</a>\n            </li>\n        </ul>\n        <form class=\"form-inline my-2 my-lg-0\">\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\">\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n        </form>\n    </div>\n    &nbsp;\n    <div class=\"btn-group\" *ngIf=\"headerJSON.isLoggedIn\">\n        <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" style=\"max-width:150px;overflow:hidden;text-overflow: ellipsis;\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n                aria-expanded=\"false\">\n            <img class=\"icon rounded\" style=\"width:20px;height:20px; border:1px solid white; margin-bottom:1px;  \" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/>\n            {{headerJSON.user.name}}\n        </button>\n        <div class=\"dropdown-menu dropdown-menu-right\">\n            <button class=\"dropdown-item\" type=\"button\" (click)=\"logout()\">Logout</button>\n        </div>\n    </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-expand-sm navbar-light bg-light mb-3\">\n    <a class=\"navbar-brand\" href=\"/\"><img class=\"icon\" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/></a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\"\n            aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\"  *ngIf=\"headerJSON.isLoggedIn\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"#/home\">Market <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/ideas\">Mine</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/live\">Live</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/activity/5caf92bdb7e8a638f268f99e\">Activity</a>\n            </li>\n        </ul>\n        <form class=\"form-inline my-2 my-lg-0\">\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\">\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n        </form>\n    </div>\n    &nbsp;\n    <div class=\"btn-group\" *ngIf=\"headerJSON.isLoggedIn\">\n        <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" style=\"max-width:150px;overflow:hidden;text-overflow: ellipsis;\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n                aria-expanded=\"false\">\n            <img class=\"icon rounded\" style=\"width:20px;height:20px; border:1px solid white; margin-bottom:1px;  \" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/>\n            {{headerJSON.user.name}}\n        </button>\n        <div class=\"dropdown-menu dropdown-menu-right\">\n            <button class=\"dropdown-item\" type=\"button\" (click)=\"logout()\">Logout</button>\n        </div>\n    </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1091,6 +1103,172 @@ var IdeasComponent = /** @class */ (function () {
     return IdeasComponent;
 }());
 exports.IdeasComponent = IdeasComponent;
+
+
+/***/ }),
+
+/***/ "./src/app/live/live.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "#maps-container{\n    position: fixed !important;\n    width: 100%;\n    height: 900px;\n    /* Firefox */\n    /* WebKit */\n    /* Opera */\n    min-height: -o-calc(100% - 50px);\n    /* Standard */\n    min-height: calc(100% - 50px);\n    margin: auto;\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n     padding-right: 25px;\n    /* padding-left: 20px; */\n}\n\n#map-canvas {\n    width: calc(100% - 1px);\n    height: calc(100% - 1px;);\n    margin: 0px;\n}\n\n#street-view {\n    position:fixed !important;\n    width: 333px;\n    height: 150px;\n    bottom:10px;\n    float:left;\n}\n\n.menu{\n    top:55px;\n    width: calc(100% - 1px);\n    position:fixed;\n    background:white;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/live/live.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<div id=\"maps-container\">\n  <div id=\"map-canvas\"></div>\n  <div id=\"street-view\" [hidden]=\"!liveJSON.enableStreetView\"></div>\n</div>\n<div class=\"menu\">\n  <ul class=\"nav nav-pills\">\n    <li class=\"nav-item\">\n      <b class=\"nav-link \" [ngClass]=\"{'active':liveJSON.enableStreetView}\" (click)=\"toggleStreetView()\">Streets</b>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"nav-link\" (click)=\"toggleMapView()\">\n        <input type=\"file\" accept=\"image/*\" capture=\"camera\">\n      </b>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"nav-link\" (click)=\"toggleMapView()\">Link</b>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"nav-link disabled\" (click)=\"toggleMapView()\">Disabled</b>\n    </li>\n  </ul>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/live/live.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var environment_1 = __webpack_require__("./src/environments/environment.ts");
+var LiveComponent = /** @class */ (function () {
+    function LiveComponent() {
+    }
+    LiveComponent.prototype.ngOnInit = function () {
+        this.initializeLiveJSON();
+    };
+    LiveComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this.initializaMapProperties();
+        }, 1000);
+    };
+    LiveComponent.prototype.initializeLiveJSON = function () {
+        this.liveJSON = {
+            "map": undefined,
+            "mapOptions": {
+                disableDefaultUI: true,
+                center: new google.maps.LatLng(environment_1.environment.DEFAULT_MAP_SETTINGS.lat, environment_1.environment.DEFAULT_MAP_SETTINGS.lng),
+                zoom: environment_1.environment.DEFAULT_MAP_SETTINGS.zoom,
+                zoomControl: false,
+                scrollwheel: false,
+                zoomControlOptions: {
+                    style: google.maps.ZoomControlStyle.LARGE,
+                    position: google.maps.ControlPosition.RIGHT_CENTER
+                },
+                draggableCursor: 'pointer',
+                mapTypeControl: false,
+                mapTypeControlOptions: {
+                    mapTypeIds: [google.maps.MapTypeId.HYBRID, google.maps.MapTypeId.ROADMAP],
+                    style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                    position: google.maps.ControlPosition.TOP_CENTER
+                },
+                streetViewControl: false,
+                streetViewControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_CENTER,
+                    addressControl: true,
+                    panControl: true,
+                    zoomControl: true,
+                    fullscreenControl: false
+                },
+                rotateControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_TOP
+                },
+                fullscreenControl: false,
+                styles: [{ elementType: 'labels', stylers: [{ visibility: 'on' }] }],
+                tilt: 10
+            },
+            "streetViewPanorama": undefined,
+            "enableStreetView": true,
+            "streetViewOptions": {
+                disableDefaultUI: true,
+                mapTypeControl: false,
+                position: environment_1.environment.DEFAULT_MAP_SETTINGS.streetViewDefaultPosition,
+                pov: environment_1.environment.DEFAULT_MAP_SETTINGS.pov,
+                addressControl: false,
+                addressControlOptions: {
+                    position: google.maps.ControlPosition.TOP_LEFT
+                },
+                fullscreenControl: false,
+                linksControl: false,
+                panControl: false,
+                panControlOptions: {
+                    position: google.maps.ControlPosition.TOP_LEFT
+                },
+                zoomControl: false,
+                zoomControlOptions: {
+                    style: google.maps.ZoomControlStyle.LARGE,
+                    position: google.maps.ControlPosition.TOP_LEFT
+                },
+                enableCloseButton: false,
+                disableDoubleClickZoom: true
+            },
+            "userLocation": JSON.parse(localStorage.getItem("userLoc")) ? JSON.parse(localStorage.getItem("userLoc")) : {
+                "lat": "",
+                "lng": ""
+            },
+            "userMapMarker": ""
+        };
+    };
+    LiveComponent.prototype.initializaMapProperties = function () {
+        var _this = this;
+        this.liveJSON.map = new google.maps.Map(document.getElementById('map-canvas'), this.liveJSON.mapOptions);
+        this.liveJSON.streetViewPanorama = new google.maps.StreetViewPanorama(document.getElementById('street-view'), this.liveJSON.streetViewOptions);
+        google.maps.event.addListener(this.liveJSON.streetViewPanorama, 'position_changed', function () {
+            _this.liveJSON.map.panTo(_this.liveJSON.streetViewPanorama.getPosition());
+            _this.liveJSON.userMapMarker.setPosition(_this.liveJSON.streetViewPanorama.getPosition());
+        });
+        this.liveJSON.userMapMarker = new google.maps.Marker({
+            position: this.getGoogleLatLangObject(this.liveJSON.userLocation.lat, this.liveJSON.userLocation.lng),
+            map: this.liveJSON.map,
+            animation: google.maps.Animation.DROP,
+            draggable: true
+        });
+    };
+    LiveComponent.prototype.getGoogleLatLangObject = function (lat, lng) {
+        return new google.maps.LatLng(lat, lng);
+    };
+    LiveComponent.prototype.resizeMaps = function () {
+        google.maps.event.trigger(this.liveJSON.map, 'resize');
+        google.maps.event.trigger(this.liveJSON.streetViewPanorama, 'resize');
+    };
+    LiveComponent.prototype.toggleMapView = function () {
+        var _this = this;
+        console.info("map defaults :::", this.liveJSON.mapOptions);
+        console.info("street view defaults :::", this.liveJSON.streetViewOptions);
+        this.liveJSON.enableStreetView = !this.liveJSON.enableStreetView;
+        if (this.liveJSON.enableStreetView) {
+            setTimeout(function () {
+                _this.liveJSON.map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+                _this.liveJSON.streetViewPanorama.setPosition({ lat: _this.liveJSON.userLocation.lat, lng: _this.liveJSON.userLocation.lng });
+            }, 0);
+        }
+        else {
+            this.liveJSON.map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+            this.resizeMaps();
+        }
+    };
+    LiveComponent.prototype.toggleStreetView = function () {
+        this.liveJSON.enableStreetView = !this.liveJSON.enableStreetView;
+    };
+    LiveComponent = __decorate([
+        core_1.Component({
+            selector: 'app-live',
+            template: __webpack_require__("./src/app/live/live.component.html"),
+            styles: [__webpack_require__("./src/app/live/live.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], LiveComponent);
+    return LiveComponent;
+}());
+exports.LiveComponent = LiveComponent;
 
 
 /***/ }),
@@ -1717,19 +1895,19 @@ var SigninComponent = /** @class */ (function () {
         console.info("@initJSON..", this.loginJSON);
     };
     SigninComponent.prototype.ngOnInit = function () {
-        if (document.cookie) {
-            var decodedCookie = decodeURIComponent(document.cookie);
-            var cookies = decodedCookie.split(';');
-            console.info("document.cookie array --- ", cookies);
-            if (cookies.length == 3) {
-                localStorage.setItem("token", cookies[0]);
-                localStorage.setItem("refreshToken", cookies[1]);
-                localStorage.setItem("user", JSON.stringify(cookies[2]));
-            }
-            if (localStorage.getItem("token") && localStorage.getItem("refreshToken") && localStorage.getItem("user")) {
-                this.util.getRouter().navigate([environment_1.environment.ROUTE_HOME]);
-            }
-        }
+        // if(document.cookie && this.util.isVoid(localStorage.getItem("token"))){
+        //     var decodedCookie = decodeURIComponent(document.cookie);
+        //     var cookies = decodedCookie.split(';');
+        //     console.info("document.cookie array --- ",cookies)
+        //     if(cookies.length==3){
+        //         localStorage.setItem("token", cookies[0])
+        //         localStorage.setItem("refreshToken", cookies[1])
+        //         localStorage.setItem("user", JSON.stringify(cookies[2]))
+        //     }
+        //     if(localStorage.getItem("token") && localStorage.getItem("refreshToken") && localStorage.getItem("user")){
+        //         this.util.getRouter().navigate([environment.ROUTE_HOME]);
+        //     }
+        // }
         this.fetchCities();
     };
     SigninComponent.prototype.login = function () {
@@ -1808,6 +1986,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.environment = {
     production: true,
     MAP_KEY: 'AIzaSyAcV5MCnHAvcYREiHZfZR58oMTs_msaJvc',
+    DEFAULT_MAP_SETTINGS: {
+        "lat": 32.715738,
+        "lng": -117.161084,
+        "zoom": 18,
+        "geofeneZoom": 21,
+        "pov": {
+            heading: 360,
+            pitch: 10
+        },
+        "streetViewDefaultPosition": { lat: 42.345573, lng: -71.098326 }
+    },
     codes: ['AB', 'AC', 'XYZ'],
     APP_NAME: "travellineOne",
     APP_LOCALE: "en",
@@ -1825,6 +2014,7 @@ exports.environment = {
     ROUTE_EDIT_IDEA: "ideas/edit/:id",
     ROUTE_SHARE_IDEA: "ideas/share/:id",
     ROUTE_ACTIVITY: "activity/:id",
+    ROUTE_LIVE: "live",
     // api paths --
     apiHost: 'https://api.somedomain.com/prod/v1/',
     API_LOGIN: '/login/v1',

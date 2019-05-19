@@ -16,7 +16,10 @@ export class AppComponent {
 
     ngOnInit() {
         localStorage.setItem("userLoc", JSON.stringify(this.userLocation))
-        this.getLocation()
+        let loctimer = setInterval(() => {
+            this.getLocation();
+        }, 2000);
+        // clearInterval(loctimer);
     }
 
     getLocation() {
