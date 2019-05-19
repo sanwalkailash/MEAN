@@ -79,6 +79,36 @@ module.exports =  function (app, port,environment,server,console,models) {
                 });
             })
         },
+        fetchUserMilestones:function(req,res){
+            console.info("@fetchCarActivityForTheDay.")
+            let errors = []
+            if(util.isVoid(req.body.user_id)){
+                errors.push("User does not exist.")
+            }
+
+            // if(errors.length>0){
+            //     res.json({
+            //         "status":appConstants.failure,
+            //         "errors" : errors
+            //     });
+
+            models.carPositionSchema.find({"user_id":"5caf92bdb7e8a638f268f99e","isMilestone":true}).skip(0).limit(10000)
+                .then( carActivityLog => {
+                res.json({
+                    "status":appConstants.success,
+                    "carActivityLog":carActivityLog
+                });
+            },
+                err => {
+                console.info("error occured ",err);
+                errors.push(appConstants.serverError)
+                errors.push(err)
+                res.json({
+                    "status":appConstants.failure,
+                    "errors" : errors
+                });
+            })
+        },
         streamCarActivityToClient:function(req,res){
                     res.writeHead(200, {
                         'Content-Type': 'text/event-stream',

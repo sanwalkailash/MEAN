@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/activity/activity.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  activity works!\n</p>\n"
+module.exports = "<div class=\"row\"\n     id=\"recordssDiv\"\n     style=\"height: 80vh;\n        overflow: scroll;\">\n  <div class=\"col-sm-2 jumbotron jumbotron-fluid\" >\n    <ul>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Everything</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Delhi</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Gurgaon</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Noida</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Hotel</a>\n    </ul>\n  </div>\n  <div class=\"col-sm-5\">\n    <div  *ngFor=\" let records of activityJSON.milestones \">\n      <div class=\"card mb-3\" (click)=\"addView(records)\">\n        <img class=\"card-img-top rounded\" [src]=\"records.milestone.result\" alt=\"Cover\" />\n        <br/>\n        <div class=\"card-body\">\n          <div style=\"float:right;width:fit-content;right:10px;position: absolute;\">\n                  <span class=\"card-link\">\n                    <span>{{records.views}}</span>\n                    <i class=\"material-icons\">\n                      face\n                    </i>\n                  </span>\n          </div>\n          <h5 class=\"card-title\">{{records.title}}</h5>\n          <h6 class=\"card-subtitle mb-2 text-muted\">\n            {{records.created_at}}\n          </h6>\n          <p class=\"card-text\">\n            {{records.details}}\n          </p>\n          <p class=\"card-text\"><small class=\"text-muted\">Last updated {{records.updated_at}}</small></p>\n          <b (click)=\"addLike(records)\" class=\"card-link\">\n            <span>{{records.like}}</span>\n            <i class=\"material-icons\">\n              thumb_up_alt\n            </i>\n          </b>\n          <b class=\"card-link\">\n            <i class=\"material-icons\">\n              rate_review\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"shareIdea(records)\">\n            <i class=\"material-icons\">\n              share\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"_getDirectionsInGoogleMap(records.lat,records.lng)\">\n            <i class=\"material-icons\">\n              directions\n            </i>\n          </b>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"activityJSON.milestones.length==0\">\n      No Activity present\n    </div>\n  </div>\n  <div class=\"col-sm-3 card-body\" >\n    <img class=\" rounded\" src=\"/assets/images/pnf.jpg\" alt=\"Cover\" />\n    <hr/>\n  </div>\n  <div class=\"col-sm-2 card\" >\n    * Travelline Live\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -53,6 +53,11 @@ var ActivityComponent = /** @class */ (function () {
     function ActivityComponent() {
         this.sseSource = new EventSource('http://localhost:8888/car/stream/activity/v1');
     }
+    ActivityComponent.prototype.initActivityJSON = function () {
+        this.activityJSON = {
+            "milestones": []
+        };
+    };
     ActivityComponent.prototype.ngOnInit = function () {
         var _this = this;
         console.info(this.sseSource);
@@ -1240,12 +1245,18 @@ var LiveComponent = /** @class */ (function () {
                 "native_geohash": "",
                 "native_type": "",
                 "milestone": {
-                    "name": "",
-                    "size": "",
-                    "type": "",
-                    "lastModifiedDate": "",
-                    "result": "",
-                }
+                    "cover": {
+                        "name": "",
+                        "size": "",
+                        "type": "",
+                        "lastModifiedDate": "",
+                        "result": "",
+                    },
+                    "views": 0,
+                    "likes": 0,
+                    "comments": []
+                },
+                "isMilestone": false
             }
         };
     };
@@ -1300,7 +1311,9 @@ var LiveComponent = /** @class */ (function () {
         this.liveJSON.enableStreetView = !this.liveJSON.enableStreetView;
     };
     LiveComponent.prototype.fileEvent = function (event) {
-        this.liveJSON.activity.milestone = this.util.readfile(event);
+        this.liveJSON.activity.milestone.cover = this.util.readfile(event);
+        this.liveJSON.isMilestone = true;
+        this.logActivity();
         console.info("added cover -- ", this.liveJSON.activity.milestone);
     };
     LiveComponent.prototype.updateUserLocation = function () {
@@ -1318,17 +1331,23 @@ var LiveComponent = /** @class */ (function () {
             .subscribe(function (data) {
             if (data.status) {
                 console.info("activity saved");
-                _this.liveJSON.activity.milestone = {
+            }
+            else {
+                _this.liveJSON.errors = data.errors;
+            }
+            _this.liveJSON.activity.milestone = {
+                "cover": {
                     "name": "",
                     "size": "",
                     "type": "",
                     "lastModifiedDate": "",
                     "result": "",
-                };
-            }
-            else {
-                _this.liveJSON.errors = data.errors;
-            }
+                },
+                "views": 0,
+                "likes": 0,
+                "comments": []
+            };
+            _this.liveJSON.isMilestone = false;
         }, function (error) {
             console.info("error.status:: ", error);
         });

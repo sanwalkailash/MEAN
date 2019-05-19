@@ -12,7 +12,14 @@ declare var EventSource:any
 export class ActivityComponent implements OnInit {
   private sseSource = new EventSource('http://localhost:8888/car/stream/activity/v1');
 
+  activityJSON:any;
   constructor() { }
+
+  initActivityJSON(){
+    this.activityJSON={
+      "milestones":[]
+    }
+  }
 
   ngOnInit() {
     console.info(this.sseSource);

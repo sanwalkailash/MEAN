@@ -23,11 +23,16 @@ module.exports = function (connection) {
         "native_geohash": {type:String},
         "native_type": {type:String},
         "milestone":{
-            "name":{type: String},
-            "size":{type: String},
-            "type":{type: String},
-            "lastModifiedDate":{type: String},
-            "result":{type: String},
+            "cover":{
+                "name":{type: String},
+                "size":{type: String},
+                "type":{type: String},
+                "lastModifiedDate":{type: String},
+                "result":{type: String},
+            },
+            "views":{type:Number, default:0},
+            "likes":{type:Number, default:0},
+            "comments":[String]
         },
         "isMilestone":{type: Boolean, default: false},
         "created_at": {type: Date, required: true, default: moment()},

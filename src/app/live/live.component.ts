@@ -113,11 +113,16 @@ export class LiveComponent implements OnInit {
         "native_geohash": "",
         "native_type": "",
         "milestone":{
-          "name":"",
-          "size":"",
-          "type":"",
-          "lastModifiedDate":"",
-          "result":"",
+          "cover":{
+            "name":"",
+            "size":"",
+            "type":"",
+            "lastModifiedDate":"",
+            "result":"",
+          },
+          "views":0
+          "likes":0
+          "comments":[]
         },
         "isMilestone":false
       }
@@ -182,7 +187,7 @@ export class LiveComponent implements OnInit {
   }
 
   fileEvent(event) {
-    this.liveJSON.activity.milestone = this.util.readfile(event);
+    this.liveJSON.activity.milestone.cover = this.util.readfile(event);
     this.liveJSON.isMilestone=true;
     this.logActivity();
     console.info("added cover -- ", this.liveJSON.activity.milestone)
@@ -204,15 +209,20 @@ export class LiveComponent implements OnInit {
             data => {
               if (data.status) {
                 console.info("activity saved");
-                this.liveJSON.activity.milestone={
+              } else {
+                this.liveJSON.errors = data.errors;
+              }
+              this.liveJSON.activity.milestone={
+                "cover":{
                   "name":"",
                   "size":"",
                   "type":"",
                   "lastModifiedDate":"",
                   "result":"",
-                }
-              } else {
-                this.liveJSON.errors = data.errors;
+                },
+                "views":0
+                "likes":0
+                "comments":[]
               }
               this.liveJSON.isMilestone=false;
             },

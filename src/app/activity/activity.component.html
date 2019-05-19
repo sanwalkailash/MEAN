@@ -1,3 +1,71 @@
-<p>
-  activity works!
-</p>
+<div class="row"
+     id="recordssDiv"
+     style="height: 80vh;
+        overflow: scroll;">
+  <div class="col-sm-2 jumbotron jumbotron-fluid" >
+    <ul>
+      <a class="btn btn-outline-primary" href="#">Everything</a>
+      <a class="btn btn-outline-primary" href="#">Delhi</a>
+      <a class="btn btn-outline-primary" href="#">Gurgaon</a>
+      <a class="btn btn-outline-primary" href="#">Noida</a>
+      <a class="btn btn-outline-primary" href="#">Hotel</a>
+    </ul>
+  </div>
+  <div class="col-sm-5">
+    <div  *ngFor=" let records of activityJSON.milestones ">
+      <div class="card mb-3" (click)="addView(records)">
+        <img class="card-img-top rounded" [src]="records.milestone.result" alt="Cover" />
+        <br/>
+        <div class="card-body">
+          <div style="float:right;width:fit-content;right:10px;position: absolute;">
+                  <span class="card-link">
+                    <span>{{records.views}}</span>
+                    <i class="material-icons">
+                      face
+                    </i>
+                  </span>
+          </div>
+          <h5 class="card-title">{{records.title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            {{records.created_at}}
+          </h6>
+          <p class="card-text">
+            {{records.details}}
+          </p>
+          <p class="card-text"><small class="text-muted">Last updated {{records.updated_at}}</small></p>
+          <b (click)="addLike(records)" class="card-link">
+            <span>{{records.like}}</span>
+            <i class="material-icons">
+              thumb_up_alt
+            </i>
+          </b>
+          <b class="card-link">
+            <i class="material-icons">
+              rate_review
+            </i>
+          </b>
+          <b class="card-link" (click)="shareIdea(records)">
+            <i class="material-icons">
+              share
+            </i>
+          </b>
+          <b class="card-link" (click)="_getDirectionsInGoogleMap(records.lat,records.lng)">
+            <i class="material-icons">
+              directions
+            </i>
+          </b>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="activityJSON.milestones.length==0">
+      No Activity present
+    </div>
+  </div>
+  <div class="col-sm-3 card-body" >
+    <img class=" rounded" src="/assets/images/pnf.jpg" alt="Cover" />
+    <hr/>
+  </div>
+  <div class="col-sm-2 card" >
+    * Travelline Live
+  </div>
+</div>
