@@ -53,6 +53,9 @@ export class AjaxService {
             case environment.API_CITIES_INDIA:
                 url = environment.API_CITIES_INDIA;
                 break;
+            case environment.API_USER_DRIVE_MILESTONES:
+                url = environment.API_USER_DRIVE_MILESTONES + "?page=" + perameterjson.page + "&id=" + perameterjson.id;
+                break;
             default:
                 console.error("ERROR -- : @apiCall_GET api path not added.");
                 return Observable.throw("api path not added.");

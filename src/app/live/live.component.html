@@ -11,7 +11,7 @@
     <li class="nav-item">
       <div>
         <input class="btn btn-outline-primary"  type="button" id="milestone" value="Add Milestone" onclick="document.getElementById('file').click()" />
-        <input style="display:none;" id="file" name="file" type="file" accept="image/*" capture="camera" (change)=fileEvent($event)>
+        <input style="display:none;" id="file" name="file" type="file" accept="image/*" capture="camera" onclick="this.value = null" (change)=fileEvent($event)>
       </div>
     </li>
     <li class="nav-item">

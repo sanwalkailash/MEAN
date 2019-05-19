@@ -120,8 +120,8 @@ export class LiveComponent implements OnInit {
             "lastModifiedDate":"",
             "result":"",
           },
-          "views":0
-          "likes":0
+          "views":0,
+          "likes":0,
           "comments":[]
         },
         "isMilestone":false
@@ -143,7 +143,7 @@ export class LiveComponent implements OnInit {
 
     google.maps.event.addListener(this.liveJSON.userMapMarker, 'position_changed', () => {
       console.info("userMapMarker position changes t0 --", this.liveJSON.streetViewPanorama.getPosition());
-      this.logActivity();
+      this.logActivity(false);
       this.refreshMaps();
     });
 
@@ -187,10 +187,12 @@ export class LiveComponent implements OnInit {
   }
 
   fileEvent(event) {
+    console.info("fileEvent..")
     this.liveJSON.activity.milestone.cover = this.util.readfile(event);
-    this.liveJSON.isMilestone=true;
-    this.logActivity();
-    console.info("added cover -- ", this.liveJSON.activity.milestone)
+    setTimeout( ()=>{
+      console.info("added cover -- ", this.liveJSON.activity)
+      this.logActivity(true);
+    },2000)
   }
 
   updateUserLocation() {
@@ -200,8 +202,9 @@ export class LiveComponent implements OnInit {
     this.refreshMaps();
   }
   
-  logActivity(){
+  logActivity(milestone=false){
     this.liveJSON.errors = [];
+    this.liveJSON.activity.isMilestone=milestone;
     this.liveJSON.activity.latitude = this.liveJSON.userMapMarker.getPosition().lat();
     this.liveJSON.activity.latitude = this.liveJSON.userMapMarker.getPosition().lng();
     this.ajax.apiCall_POST(this.liveJSON.activity, environment.API_USER_DRIVE)
@@ -212,19 +215,21 @@ export class LiveComponent implements OnInit {
               } else {
                 this.liveJSON.errors = data.errors;
               }
-              this.liveJSON.activity.milestone={
-                "cover":{
-                  "name":"",
-                  "size":"",
-                  "type":"",
-                  "lastModifiedDate":"",
-                  "result":"",
-                },
-                "views":0
-                "likes":0
-                "comments":[]
+              if(milestone){
+                this.liveJSON.activity.milestone={
+                  "cover":{
+                    "name":"",
+                    "size":"",
+                    "type":"",
+                    "lastModifiedDate":"",
+                    "result":"",
+                  },
+                  "views":0,
+                  "likes":0,
+                  "comments":[]
+                }
+                this.liveJSON.activity.isMilestone=false;
               }
-              this.liveJSON.isMilestone=false;
             },
             error => {
               console.info("error.status:: ", error);

@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/activity/activity.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\"\n     id=\"recordssDiv\"\n     style=\"height: 80vh;\n        overflow: scroll;\">\n  <div class=\"col-sm-2 jumbotron jumbotron-fluid\" >\n    <ul>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Everything</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Delhi</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Gurgaon</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Noida</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Hotel</a>\n    </ul>\n  </div>\n  <div class=\"col-sm-5\">\n    <div  *ngFor=\" let records of activityJSON.milestones \">\n      <div class=\"card mb-3\" (click)=\"addView(records)\">\n        <img class=\"card-img-top rounded\" [src]=\"records.milestone.result\" alt=\"Cover\" />\n        <br/>\n        <div class=\"card-body\">\n          <div style=\"float:right;width:fit-content;right:10px;position: absolute;\">\n                  <span class=\"card-link\">\n                    <span>{{records.views}}</span>\n                    <i class=\"material-icons\">\n                      face\n                    </i>\n                  </span>\n          </div>\n          <h5 class=\"card-title\">{{records.title}}</h5>\n          <h6 class=\"card-subtitle mb-2 text-muted\">\n            {{records.created_at}}\n          </h6>\n          <p class=\"card-text\">\n            {{records.details}}\n          </p>\n          <p class=\"card-text\"><small class=\"text-muted\">Last updated {{records.updated_at}}</small></p>\n          <b (click)=\"addLike(records)\" class=\"card-link\">\n            <span>{{records.like}}</span>\n            <i class=\"material-icons\">\n              thumb_up_alt\n            </i>\n          </b>\n          <b class=\"card-link\">\n            <i class=\"material-icons\">\n              rate_review\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"shareIdea(records)\">\n            <i class=\"material-icons\">\n              share\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"_getDirectionsInGoogleMap(records.lat,records.lng)\">\n            <i class=\"material-icons\">\n              directions\n            </i>\n          </b>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"activityJSON.milestones.length==0\">\n      No Activity present\n    </div>\n  </div>\n  <div class=\"col-sm-3 card-body\" >\n    <img class=\" rounded\" src=\"/assets/images/pnf.jpg\" alt=\"Cover\" />\n    <hr/>\n  </div>\n  <div class=\"col-sm-2 card\" >\n    * Travelline Live\n  </div>\n</div>\n"
+module.exports = "<div class=\"row\"\n     id=\"recordssDiv\"\n     style=\"height: 80vh;\n        overflow: scroll;\">\n  <div class=\"col-sm-2 jumbotron jumbotron-fluid\" >\n    <ul>\n      <button class=\"btn btn-outline-primary\" (click)=\"fetchMilestones()\">Milestones</button>\n      <button class=\"btn btn-outline-primary\" href=\"#\">Credit Analysis</button>\n    </ul>\n  </div>\n  <div class=\"col-sm-5\">\n    <div  *ngFor=\" let records of activityJSON.milestones \">\n      <div class=\"card mb-3\" (click)=\"addView(records)\">\n        <img class=\"card-img-top rounded\" [src]=\"records.milestone.cover.result\" alt=\"Cover\" />\n        <br/>\n        <div class=\"card-body\">\n          <div style=\"float:right;width:fit-content;right:10px;position: absolute;\">\n                  <span class=\"card-link\">\n                    <span>{{records.views}}</span>\n                    <i class=\"material-icons\">\n                      face\n                    </i>\n                  </span>\n          </div>\n          <h5 class=\"card-title\">{{records.title}}</h5>\n          <h6 class=\"card-subtitle mb-2 text-muted\">\n            {{records.created_at}}\n          </h6>\n          <p class=\"card-text\">\n            {{records.details}}\n          </p>\n          <p class=\"card-text\"><small class=\"text-muted\">Last updated {{records.updated_at}}</small></p>\n          <b (click)=\"addLike(records)\" class=\"card-link\">\n            <span>{{records.like}}</span>\n            <i class=\"material-icons\">\n              thumb_up_alt\n            </i>\n          </b>\n          <b class=\"card-link\">\n            <i class=\"material-icons\">\n              rate_review\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"shareIdea(records)\">\n            <i class=\"material-icons\">\n              share\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"_getDirectionsInGoogleMap(records.lat,records.lng)\">\n            <i class=\"material-icons\">\n              directions\n            </i>\n          </b>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"activityJSON.milestones.length==0\">\n      No Activity present\n    </div>\n  </div>\n  <div class=\"col-sm-3 card-body\" >\n    <img class=\" rounded\" src=\"/assets/images/pnf.jpg\" alt=\"Cover\" />\n    <hr/>\n  </div>\n  <div class=\"col-sm-2 card\" >\n    * Travelline Live\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -49,39 +49,95 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 __webpack_require__("./node_modules/rxjs/_esm5/add/observable/throw.js");
 __webpack_require__("./node_modules/rxjs/_esm5/add/operator/catch.js");
+var environment_1 = __webpack_require__("./src/environments/environment.ts");
+var ajax_service_1 = __webpack_require__("./src/app/services/ajax.service.ts");
+var util_service_1 = __webpack_require__("./src/app/services/util.service.ts");
+var common_1 = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+var app_component_1 = __webpack_require__("./src/app/app.component.ts");
 var ActivityComponent = /** @class */ (function () {
-    function ActivityComponent() {
-        this.sseSource = new EventSource('http://localhost:8888/car/stream/activity/v1');
+    function ActivityComponent(ajax, util, location, app) {
+        this.ajax = ajax;
+        this.util = util;
+        this.app = app;
+        this.initActivityJSON();
     }
     ActivityComponent.prototype.initActivityJSON = function () {
         this.activityJSON = {
+            "errors": [],
+            "user_id": JSON.parse(localStorage.getItem("user"))._id,
             "milestones": []
         };
     };
     ActivityComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        console.info(this.sseSource);
-        this.sseSource.addEventListener('myEvent', function (e) {
-            var messageData = e.data;
-            console.info("message", e);
-            // ...
-            // ...
-        });
-        this.sseSource.onmessage = function (e) {
-            var messageData = e.data;
-            console.info("message", e);
-            if (e.lastEventId === '-1') {
-                // This is the end of the stream
-                _this.sseSource.close();
-            }
-            // ...
-            // ...
-        };
+        // this.sseSource.addEventListener('myEvent', (e) => {
+        //   const messageData = e.data;
+        //   console.info("message",e)
+        //   // ...
+        //   // ...
+        // });
+        // this.sseSource.onmessage = (e) => {
+        //   const messageData = e.data;
+        //   console.info("message",e)
+        //   if (e.lastEventId === '-1') {
+        //     // This is the end of the stream
+        //     this.sseSource.close();
+        //   }
+        //   // ...
+        //   // ...
+        // };
         // When finished with the source close the connection
         //     sseSource.close();
     };
     ActivityComponent.prototype.ngOnDestroy = function () {
-        this.sseSource.close();
+        // this.sseSource.close();
+    };
+    // public getActivtyStream(processName: string): Observable<any> {
+    //   let headers: HttpHeaders = new HttpHeaders();
+    //   headers = headers.append('X-Authorization', "");
+    //   headers = headers.append('accept', 'text/event-stream');
+    //
+    //   let url = "/api"
+    //   return Observable.create(observer => {
+    //     let eventSource = new EventSourcePolyfill(url, { headers: headers });
+    //     eventSource.onmessage = (event => {
+    //       observer.next(event);
+    //       this.zone.run(() => {
+    //         console.log('prpprpr');
+    //       });
+    //     });
+    //     eventSource.onopen = (event) => {
+    //       observer.next(event);
+    //     };
+    //     eventSource.onerror = (error) => {
+    //       if (eventSource.readyState === 0) {
+    //         console.log('The stream has been closed by the server.');
+    //         eventSource.close();
+    //         observer.complete();
+    //       } else {
+    //         observer.error('EventSource error: ' + error);
+    //       }
+    //     };
+    //   });
+    // }
+    ActivityComponent.prototype.fetchMilestones = function (page, _id) {
+        var _this = this;
+        if (page === void 0) { page = 1; }
+        console.info("@fetchIdeas...");
+        this.activityJSON.errors = [];
+        // this.activityJSON.milestones=[]
+        this.ajax.apiCall_GET({ page: page, id: this.activityJSON.user_id }, environment_1.environment.API_USER_DRIVE_MILESTONES)
+            .subscribe(function (data) {
+            console.info("response", data);
+            if (data.status) {
+                _this.activityJSON.milestones = data.milestones;
+            }
+            else {
+                _this.activityJSON.errors = data.errors;
+            }
+        }, function (error) {
+            console.info("error.status:: ", error);
+            _this.activityJSON.errors = error;
+        });
     };
     ActivityComponent = __decorate([
         core_1.Component({
@@ -89,7 +145,7 @@ var ActivityComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/activity/activity.component.html"),
             styles: [__webpack_require__("./src/app/activity/activity.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [ajax_service_1.AjaxService, util_service_1.UtilService, common_1.Location, app_component_1.AppComponent])
     ], ActivityComponent);
     return ActivityComponent;
 }());
@@ -688,7 +744,7 @@ module.exports = ""
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-sm navbar-light bg-light mb-3\">\n    <a class=\"navbar-brand\" href=\"/\"><img class=\"icon\" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/></a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\"\n            aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\"  *ngIf=\"headerJSON.isLoggedIn\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"#/home\">Market <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/ideas\">Mine</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/live\">Live</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/activity/5caf92bdb7e8a638f268f99e\">Activity</a>\n            </li>\n        </ul>\n        <form class=\"form-inline my-2 my-lg-0\">\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\">\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n        </form>\n    </div>\n    &nbsp;\n    <div class=\"btn-group\" *ngIf=\"headerJSON.isLoggedIn\">\n        <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" style=\"max-width:150px;overflow:hidden;text-overflow: ellipsis;\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n                aria-expanded=\"false\">\n            <img class=\"icon rounded\" style=\"width:20px;height:20px; border:1px solid white; margin-bottom:1px;  \" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/>\n            {{headerJSON.user.name}}\n        </button>\n        <div class=\"dropdown-menu dropdown-menu-right\">\n            <button class=\"dropdown-item\" type=\"button\" (click)=\"logout()\">Logout</button>\n        </div>\n    </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-expand-sm navbar-light bg-light mb-3\">\n    <a class=\"navbar-brand\" href=\"/\"><img class=\"icon\" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/></a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\"\n            aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\"  *ngIf=\"headerJSON.isLoggedIn\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"#/home\">Market <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/ideas\">Mine</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/live\">Live</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/activity\">Activity</a>\n            </li>\n        </ul>\n        <form class=\"form-inline my-2 my-lg-0\">\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\">\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n        </form>\n    </div>\n    &nbsp;\n    <div class=\"btn-group\" *ngIf=\"headerJSON.isLoggedIn\">\n        <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" style=\"max-width:150px;overflow:hidden;text-overflow: ellipsis;\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n                aria-expanded=\"false\">\n            <img class=\"icon rounded\" style=\"width:20px;height:20px; border:1px solid white; margin-bottom:1px;  \" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/>\n            {{headerJSON.user.name}}\n        </button>\n        <div class=\"dropdown-menu dropdown-menu-right\">\n            <button class=\"dropdown-item\" type=\"button\" (click)=\"logout()\">Logout</button>\n        </div>\n    </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1122,7 +1178,7 @@ module.exports = "#maps-container{\n    position: fixed !important;\n    width: 
 /***/ "./src/app/live/live.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div id=\"maps-container\">\n  <div id=\"map-canvas\"></div>\n  <div id=\"street-view\" [hidden]=\"!liveJSON.enableStreetView\"></div>\n</div>\n<div class=\"menu\">\n  <ul class=\"nav nav-pills\">\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primary\" [ngClass]=\"{'active':liveJSON.enableStreetView}\" (click)=\"toggleStreetView()\">Streets</b>\n    </li>\n    <li class=\"nav-item\">\n      <div>\n        <input class=\"btn btn-outline-primary\"  type=\"button\" id=\"milestone\" value=\"Add Milestone\" onclick=\"document.getElementById('file').click()\" />\n        <input style=\"display:none;\" id=\"file\" name=\"file\" type=\"file\" accept=\"image/*\" capture=\"camera\" (change)=fileEvent($event)>\n      </div>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primary\" (click)=\"updateUserLocation()\">Update</b>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primarydisabled\" (click)=\"toggleMapView()\">Disabled</b>\n    </li>\n  </ul>\n  <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" *ngIf=\"liveJSON.errors.length>0\">\n    <p *ngFor=\" let error of liveJSON.errors\">{{error}} <br/></p>\n    <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n</div>\n"
+module.exports = "\n<div id=\"maps-container\">\n  <div id=\"map-canvas\"></div>\n  <div id=\"street-view\" [hidden]=\"!liveJSON.enableStreetView\"></div>\n</div>\n<div class=\"menu\">\n  <ul class=\"nav nav-pills\">\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primary\" [ngClass]=\"{'active':liveJSON.enableStreetView}\" (click)=\"toggleStreetView()\">Streets</b>\n    </li>\n    <li class=\"nav-item\">\n      <div>\n        <input class=\"btn btn-outline-primary\"  type=\"button\" id=\"milestone\" value=\"Add Milestone\" onclick=\"document.getElementById('file').click()\" />\n        <input style=\"display:none;\" id=\"file\" name=\"file\" type=\"file\" accept=\"image/*\" capture=\"camera\" onclick=\"this.value = null\" (change)=fileEvent($event)>\n      </div>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primary\" (click)=\"updateUserLocation()\">Update</b>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primarydisabled\" (click)=\"toggleMapView()\">Disabled</b>\n    </li>\n  </ul>\n  <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" *ngIf=\"liveJSON.errors.length>0\">\n    <p *ngFor=\" let error of liveJSON.errors\">{{error}} <br/></p>\n    <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1272,7 +1328,7 @@ var LiveComponent = /** @class */ (function () {
         });
         google.maps.event.addListener(this.liveJSON.userMapMarker, 'position_changed', function () {
             console.info("userMapMarker position changes t0 --", _this.liveJSON.streetViewPanorama.getPosition());
-            _this.logActivity();
+            _this.logActivity(false);
             _this.refreshMaps();
         });
         this.refreshMaps();
@@ -1311,10 +1367,13 @@ var LiveComponent = /** @class */ (function () {
         this.liveJSON.enableStreetView = !this.liveJSON.enableStreetView;
     };
     LiveComponent.prototype.fileEvent = function (event) {
+        var _this = this;
+        console.info("fileEvent..");
         this.liveJSON.activity.milestone.cover = this.util.readfile(event);
-        this.liveJSON.isMilestone = true;
-        this.logActivity();
-        console.info("added cover -- ", this.liveJSON.activity.milestone);
+        setTimeout(function () {
+            console.info("added cover -- ", _this.liveJSON.activity);
+            _this.logActivity(true);
+        }, 2000);
     };
     LiveComponent.prototype.updateUserLocation = function () {
         console.info("updateUserLocation..");
@@ -1322,9 +1381,11 @@ var LiveComponent = /** @class */ (function () {
         this.liveJSON.userMapMarker.setPosition(this.getGoogleLatLangObject(this.liveJSON.userLocation.lat, this.liveJSON.userLocation.lng));
         this.refreshMaps();
     };
-    LiveComponent.prototype.logActivity = function () {
+    LiveComponent.prototype.logActivity = function (milestone) {
         var _this = this;
+        if (milestone === void 0) { milestone = false; }
         this.liveJSON.errors = [];
+        this.liveJSON.activity.isMilestone = milestone;
         this.liveJSON.activity.latitude = this.liveJSON.userMapMarker.getPosition().lat();
         this.liveJSON.activity.latitude = this.liveJSON.userMapMarker.getPosition().lng();
         this.ajax.apiCall_POST(this.liveJSON.activity, environment_1.environment.API_USER_DRIVE)
@@ -1335,19 +1396,21 @@ var LiveComponent = /** @class */ (function () {
             else {
                 _this.liveJSON.errors = data.errors;
             }
-            _this.liveJSON.activity.milestone = {
-                "cover": {
-                    "name": "",
-                    "size": "",
-                    "type": "",
-                    "lastModifiedDate": "",
-                    "result": "",
-                },
-                "views": 0,
-                "likes": 0,
-                "comments": []
-            };
-            _this.liveJSON.isMilestone = false;
+            if (milestone) {
+                _this.liveJSON.activity.milestone = {
+                    "cover": {
+                        "name": "",
+                        "size": "",
+                        "type": "",
+                        "lastModifiedDate": "",
+                        "result": "",
+                    },
+                    "views": 0,
+                    "likes": 0,
+                    "comments": []
+                };
+                _this.liveJSON.activity.isMilestone = false;
+            }
         }, function (error) {
             console.info("error.status:: ", error);
         });
@@ -1522,6 +1585,9 @@ var AjaxService = /** @class */ (function () {
                 break;
             case environment_1.environment.API_CITIES_INDIA:
                 url = environment_1.environment.API_CITIES_INDIA;
+                break;
+            case environment_1.environment.API_USER_DRIVE_MILESTONES:
+                url = environment_1.environment.API_USER_DRIVE_MILESTONES + "?page=" + perameterjson.page + "&id=" + perameterjson.id;
                 break;
             default:
                 console.error("ERROR -- : @apiCall_GET api path not added.");
@@ -2110,7 +2176,7 @@ exports.environment = {
     ROUTE_ADD_IDEA: 'ideas/add',
     ROUTE_EDIT_IDEA: "ideas/edit/:id",
     ROUTE_SHARE_IDEA: "ideas/share/:id",
-    ROUTE_ACTIVITY: "activity/:id",
+    ROUTE_ACTIVITY: "activity",
     ROUTE_LIVE: "live",
     // api paths --
     apiHost: 'https://api.somedomain.com/prod/v1/',
@@ -2127,6 +2193,7 @@ exports.environment = {
     API_LIST_USER_IDEAS: "/list/user/ideas/v1",
     API_DELETE_IDEA: "/ideas/delete/v1/",
     API_USER_DRIVE: "/user/drive/v1",
+    API_USER_DRIVE_MILESTONES: "/user/drive/milestones/v1",
     // error codes --
     HTTP_ERROR_404: 404,
     API_STATUS_SUCCESS: 1,

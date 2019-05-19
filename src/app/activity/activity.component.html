@@ -4,17 +4,14 @@
         overflow: scroll;">
   <div class="col-sm-2 jumbotron jumbotron-fluid" >
     <ul>
-      <a class="btn btn-outline-primary" href="#">Everything</a>
-      <a class="btn btn-outline-primary" href="#">Delhi</a>
-      <a class="btn btn-outline-primary" href="#">Gurgaon</a>
-      <a class="btn btn-outline-primary" href="#">Noida</a>
-      <a class="btn btn-outline-primary" href="#">Hotel</a>
+      <button class="btn btn-outline-primary" (click)="fetchMilestones()">Milestones</button>
+      <button class="btn btn-outline-primary" href="#">Credit Analysis</button>
     </ul>
   </div>
   <div class="col-sm-5">
     <div  *ngFor=" let records of activityJSON.milestones ">
       <div class="card mb-3" (click)="addView(records)">
-        <img class="card-img-top rounded" [src]="records.milestone.result" alt="Cover" />
+        <img class="card-img-top rounded" [src]="records.milestone.cover.result" alt="Cover" />
         <br/>
         <div class="card-body">
           <div style="float:right;width:fit-content;right:10px;position: absolute;">

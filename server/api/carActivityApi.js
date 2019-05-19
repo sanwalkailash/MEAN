@@ -80,9 +80,9 @@ module.exports =  function (app, port,environment,server,console,models) {
             })
         },
         fetchUserMilestones:function(req,res){
-            console.info("@fetchCarActivityForTheDay.")
+            console.info("@fetchUserMilestones. id ["+req.query.id+"]")
             let errors = []
-            if(util.isVoid(req.body.user_id)){
+            if(util.isVoid(req.query.id)){
                 errors.push("User does not exist.")
             }
 
@@ -92,11 +92,12 @@ module.exports =  function (app, port,environment,server,console,models) {
             //         "errors" : errors
             //     });
 
-            models.carPositionSchema.find({"user_id":"5caf92bdb7e8a638f268f99e","isMilestone":true}).skip(0).limit(10000)
+            models.carPositionSchema.find({"user_id":req.query.id,"isMilestone":true}).skip(0).limit(10000)
                 .then( carActivityLog => {
+                    console.info("milestones--",carActivityLog);
                 res.json({
                     "status":appConstants.success,
-                    "carActivityLog":carActivityLog
+                    "milestones":carActivityLog
                 });
             },
                 err => {

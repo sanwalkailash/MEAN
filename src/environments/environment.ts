@@ -33,7 +33,7 @@ export const environment = {
     ROUTE_ADD_IDEA: 'ideas/add',
     ROUTE_EDIT_IDEA: "ideas/edit/:id",
     ROUTE_SHARE_IDEA: "ideas/share/:id",
-    ROUTE_ACTIVITY: "activity/:id",
+    ROUTE_ACTIVITY: "activity",
     ROUTE_LIVE: "live",
 
 // api paths --
@@ -51,6 +51,7 @@ export const environment = {
     API_LIST_USER_IDEAS: "/list/user/ideas/v1",
     API_DELETE_IDEA: "/ideas/delete/v1/",
     API_USER_DRIVE: "/user/drive/v1",
+    API_USER_DRIVE_MILESTONES: "/user/drive/milestones/v1",
 
 // error codes --
     HTTP_ERROR_404: 404,
