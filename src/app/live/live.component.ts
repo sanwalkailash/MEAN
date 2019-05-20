@@ -28,7 +28,7 @@ export class LiveComponent implements OnInit {
     setTimeout(() => {
       this.initializaMapProperties();
       this.updateUserLocation();
-    }, 1000);
+    }, 100);
   }
 
   initializeLiveJSON() {

@@ -498,6 +498,7 @@ var AuthService = /** @class */ (function () {
     }
     AuthService.prototype.logOut = function () {
         localStorage.clear();
+        localStorage.setItem("socialLogin", "false");
         this.broadcast.sendMessage("isLoggedIn", false);
         this.router.navigate([environment_1.environment.ROUTE_LOGIN]);
     };
@@ -1220,7 +1221,7 @@ var LiveComponent = /** @class */ (function () {
         setTimeout(function () {
             _this.initializaMapProperties();
             _this.updateUserLocation();
-        }, 1000);
+        }, 100);
     };
     LiveComponent.prototype.initializeLiveJSON = function () {
         this.liveJSON = {
@@ -2004,7 +2005,7 @@ module.exports = "/*------------------------ Responsive stylesheet start -------
 /***/ "./src/app/signin/signin.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" *ngIf=\"loginJSON.errors.length>0\">\n        <p *ngFor=\" let error of loginJSON.errors\">{{error}} <br/></p>\n        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n            <span aria-hidden=\"true\">&times;</span>\n        </button>\n    </div>\n    <div class=\"card \" style=\"max-width: 500px;margin: auto;\">\n        <div class=\"card-body\">\n            <div class=\"logo_continer_home\">\n                <a href=\"#\"><img src=\"assets/images/company-logo/logo.png\" alt=\"EXL Services\"/></a>\n            </div>\n            <div class=\"input_form\">\n                <h4 style=\"padding-bottom:0;\">Log In</h4>\n                <span class=\"tagline_short height_sht\">\n            Please log In to proceed....\n        </span>\n                <!--login box-->\n                <form class=\"px-4 py-3\" *ngIf=\"loginJSON.loginFormVeiw==0\">\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormEmail1\">Email address</label>\n                        <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormEmail1\"\n                               [(ngModel)]=\"loginJSON.login.email\" name=\"email\" placeholder=\"email@example.com\"\n                               required>\n                    </div>\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormPassword1\">Password</label>\n                        <input type=\"password\" class=\"form-control\" id=\"exampleDropdownFormPassword1\"\n                               [(ngModel)]=\"loginJSON.login.password\" name=\"pass\" placeholder=\"Password\" required>\n                    </div>\n                    <div class=\"form-check\">\n                        <input type=\"checkbox\" class=\"form-check-input\" id=\"dropdownCheck\">\n                        <label class=\"form-check-label\" for=\"dropdownCheck\">\n                            Remember me\n                        </label>\n                    </div>\n                    <button type=\"submit\" (click)=\"login()\" class=\"btn btn-primary\"> Sign in</button>\n                </form>\n                <!--sign up form-->\n                <form class=\"px-4 py-3\" *ngIf=\"loginJSON.loginFormVeiw==1\">\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormEmail1\">Name</label>\n                        <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormname\"\n                               [(ngModel)]=\"loginJSON.register.name\" name=\"name\" placeholder=\"John Singh\" required>\n                    </div>\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormEmail1\">Email address</label>\n                        <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormEmail1\"\n                               [(ngModel)]=\"loginJSON.register.email\" name=\"email\" placeholder=\"email@example.com\"\n                               required>\n                    </div>\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormEmail1\">Company Name</label>\n                        <input type=\"email\" class=\"form-control\" id=\"company\"\n                               [(ngModel)]=\"loginJSON.register.company\" name=\"company\" placeholder=\"abc limited\"\n                               required>\n                    </div>\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormPassword1\">Password</label>\n                        <input type=\"password\" class=\"form-control\" id=\"exampleDropdownFormPassword1\"\n                               [(ngModel)]=\"loginJSON.register.password\" name=\"pass\" placeholder=\"Password\" required>\n                    </div>\n                    <div class=\"form-check\" *ngIf=\"loginJSON.loginFormVeiw==0\">\n                        <input type=\"checkbox\" class=\"form-check-input\" id=\"dropdownCheck\">\n                        <label class=\"form-check-label\" for=\"dropdownCheck\">\n                            Remember me\n                        </label>\n                    </div>\n                    <select\n                            [(ngModel)]=\"loginJSON.register.location\" name=\"loc\" required>\n                        <option *ngFor=\"let city of loginJSON.cities\">{{city.city}}</option>\n                    </select>\n                    <button type=\"submit\" (click)=\"register()\" class=\"btn btn-primary\"> Sign up</button>\n                </form>\n                <!--forgot password form -->\n                <form class=\"px-4 py-3\" *ngIf=\"loginJSON.loginFormVeiw==2\">\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormEmail1\">Email address</label>\n                        <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormEmail1\"\n                               [(ngModel)]=\"loginJSON.login.email\" name=\"email\" placeholder=\"email@example.com\"\n                               required>\n                    </div>\n                    <button type=\"submit\" (click)=\"forgot()\" class=\"btn btn-primary\">Send Link</button>\n                </form>\n                <div class=\"dropdown-divider\"></div>\n                <a class=\"dropdown-item\" href=\"#/login\" *ngIf=\"loginJSON.loginFormVeiw==0\"\n                   (click)=\"loginJSON.loginFormVeiw=1\">New around here? Sign up</a>\n                <a class=\"dropdown-item\" href=\"#/login\" *ngIf=\"loginJSON.loginFormVeiw==1\"\n                   (click)=\"loginJSON.loginFormVeiw=0\">Have account? Sign in</a>\n                <a class=\"dropdown-item\" href=\"#/login\" *ngIf=\"loginJSON.loginFormVeiw!=2\"\n                   (click)=\"loginJSON.loginFormVeiw=2\">Forgot password?</a>\n                <a class=\"dropdown-item\" href=\"/auth/google\" *ngIf=\"loginJSON.loginFormVeiw!=2\">\n                    Login With Google\n                </a>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n    <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" *ngIf=\"loginJSON.errors.length>0\">\n        <p *ngFor=\" let error of loginJSON.errors\">{{error}} <br/></p>\n        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n            <span aria-hidden=\"true\">&times;</span>\n        </button>\n    </div>\n    <div class=\"card \" style=\"max-width: 500px;margin: auto;\">\n        <div class=\"card-body\">\n            <div class=\"logo_continer_home\">\n                <a href=\"#\"><img src=\"assets/images/company-logo/logo.png\" alt=\"EXL Services\"/></a>\n            </div>\n            <div class=\"input_form\">\n                <h4 style=\"padding-bottom:0;\">Log In</h4>\n                <span class=\"tagline_short height_sht\">\n            Please log In to proceed....\n        </span>\n                <!--login box-->\n                <form class=\"px-4 py-3\" *ngIf=\"loginJSON.loginFormVeiw==0\">\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormEmail1\">Email address</label>\n                        <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormEmail1\"\n                               [(ngModel)]=\"loginJSON.login.email\" name=\"email\" placeholder=\"email@example.com\"\n                               required>\n                    </div>\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormPassword1\">Password</label>\n                        <input type=\"password\" class=\"form-control\" id=\"exampleDropdownFormPassword1\"\n                               [(ngModel)]=\"loginJSON.login.password\" name=\"pass\" placeholder=\"Password\" required>\n                    </div>\n                    <div class=\"form-check\">\n                        <input type=\"checkbox\" class=\"form-check-input\" id=\"dropdownCheck\">\n                        <label class=\"form-check-label\" for=\"dropdownCheck\">\n                            Remember me\n                        </label>\n                    </div>\n                    <button type=\"submit\" (click)=\"login()\" class=\"btn btn-primary\"> Sign in</button>\n                </form>\n                <!--sign up form-->\n                <form class=\"px-4 py-3\" *ngIf=\"loginJSON.loginFormVeiw==1\">\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormEmail1\">Name</label>\n                        <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormname\"\n                               [(ngModel)]=\"loginJSON.register.name\" name=\"name\" placeholder=\"John Singh\" required>\n                    </div>\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormEmail1\">Email address</label>\n                        <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormEmail1\"\n                               [(ngModel)]=\"loginJSON.register.email\" name=\"email\" placeholder=\"email@example.com\"\n                               required>\n                    </div>\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormEmail1\">Company Name</label>\n                        <input type=\"email\" class=\"form-control\" id=\"company\"\n                               [(ngModel)]=\"loginJSON.register.company\" name=\"company\" placeholder=\"abc limited\"\n                               required>\n                    </div>\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormPassword1\">Password</label>\n                        <input type=\"password\" class=\"form-control\" id=\"exampleDropdownFormPassword1\"\n                               [(ngModel)]=\"loginJSON.register.password\" name=\"pass\" placeholder=\"Password\" required>\n                    </div>\n                    <div class=\"form-check\" *ngIf=\"loginJSON.loginFormVeiw==0\">\n                        <input type=\"checkbox\" class=\"form-check-input\" id=\"dropdownCheck\">\n                        <label class=\"form-check-label\" for=\"dropdownCheck\">\n                            Remember me\n                        </label>\n                    </div>\n                    <select\n                            [(ngModel)]=\"loginJSON.register.location\" name=\"loc\" required>\n                        <option *ngFor=\"let city of loginJSON.cities\">{{city.city}}</option>\n                    </select>\n                    <button type=\"submit\" (click)=\"register()\" class=\"btn btn-primary\"> Sign up</button>\n                </form>\n                <!--forgot password form -->\n                <form class=\"px-4 py-3\" *ngIf=\"loginJSON.loginFormVeiw==2\">\n                    <div class=\"form-group\">\n                        <label for=\"exampleDropdownFormEmail1\">Email address</label>\n                        <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormEmail1\"\n                               [(ngModel)]=\"loginJSON.login.email\" name=\"email\" placeholder=\"email@example.com\"\n                               required>\n                    </div>\n                    <button type=\"submit\" (click)=\"forgot()\" class=\"btn btn-primary\">Send Link</button>\n                    <button type=\"submit\" (click)=\"loginJSON.loginFormVeiw=0\" class=\"btn btn-primary\">Cancel</button>\n                </form>\n                <div class=\"dropdown-divider\"></div>\n                <a class=\"dropdown-item\" href=\"#/login\" *ngIf=\"loginJSON.loginFormVeiw==0\"\n                   (click)=\"loginJSON.loginFormVeiw=1\">New around here? Sign up</a>\n                <a class=\"dropdown-item\" href=\"#/login\" *ngIf=\"loginJSON.loginFormVeiw==1\"\n                   (click)=\"loginJSON.loginFormVeiw=0\">Have account? Sign in</a>\n                <a class=\"dropdown-item\" href=\"#/login\" *ngIf=\"loginJSON.loginFormVeiw!=2\"\n                   (click)=\"loginJSON.loginFormVeiw=2\">Forgot password?</a>\n                <a class=\"dropdown-item\" href=\"\" onclick=\"event.preventDefault()\" (click)=\"googleLogin()\" *ngIf=\"loginJSON.loginFormVeiw!=2\">\n                    Login With Google\n                </a>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2026,11 +2027,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var util_service_1 = __webpack_require__("./src/app/services/util.service.ts");
 var ajax_service_1 = __webpack_require__("./src/app/services/ajax.service.ts");
+var auth_service_1 = __webpack_require__("./src/app/auth/auth.service.ts");
 var environment_1 = __webpack_require__("./src/environments/environment.ts");
 var SigninComponent = /** @class */ (function () {
-    function SigninComponent(ajax, util) {
+    function SigninComponent(ajax, util, auth) {
         this.ajax = ajax;
         this.util = util;
+        this.auth = auth;
         this.initJSON();
     }
     SigninComponent.prototype.initJSON = function () {
@@ -2061,16 +2064,25 @@ var SigninComponent = /** @class */ (function () {
         console.info("@initJSON..", this.loginJSON);
     };
     SigninComponent.prototype.ngOnInit = function () {
-        localStorage.setItem("socialLogin", "false");
-        if (document.cookie) {
+        if (document.cookie && localStorage.getItem("socialLogin") == "true") {
             var decodedCookie = decodeURIComponent(document.cookie);
             var cookies = decodedCookie.split(';');
             console.info("document.cookie array --- ", cookies);
-            if (cookies.length == 3) {
-                localStorage.setItem("token", cookies[0].replace('=undefined', ''));
-                localStorage.setItem("refreshToken", cookies[1].replace('=undefined', ''));
-                localStorage.setItem("user", JSON.stringify(cookies[2].replace('=undefined', '')));
-                localStorage.setItem("socialLogin", "true");
+            var keyvals = void 0;
+            for (var i = 0; i < cookies.length; i++) {
+                keyvals = cookies[i].split("=");
+                console.info("keyvals--", keyvals);
+                if (keyvals[0].trim() == "token") {
+                    localStorage.setItem("token", keyvals[1]);
+                }
+                else if (keyvals[0].trim() == "refreshToken") {
+                    localStorage.setItem("refreshToken", keyvals[1]);
+                }
+                else if (keyvals[0].trim() == "user") {
+                    localStorage.setItem("user", keyvals[1]);
+                }
+            }
+            if (this.auth.isLoggedIn()) {
                 this.util.getRouter().navigate([environment_1.environment.ROUTE_HOME]);
             }
         }
@@ -2083,7 +2095,7 @@ var SigninComponent = /** @class */ (function () {
         this.ajax.apiCall_POST(this.loginJSON.login, environment_1.environment.API_LOGIN)
             .subscribe(function (data) {
             if (data.status) {
-                localStorage.setItem("user", JSON.stringify(data.user));
+                localStorage.setItem("user", data.user);
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("refreshToken", data.refreshToken);
                 _this.util.getRouter().navigate([environment_1.environment.ROUTE_HOME]);
@@ -2128,13 +2140,17 @@ var SigninComponent = /** @class */ (function () {
             console.info("error.status:: ", error.status);
         });
     };
+    SigninComponent.prototype.googleLogin = function () {
+        localStorage.setItem("socialLogin", "true");
+        window.location.href = "/auth/google";
+    };
     SigninComponent = __decorate([
         core_1.Component({
             selector: 'app-signin',
             template: __webpack_require__("./src/app/signin/signin.component.html"),
             styles: [__webpack_require__("./src/app/signin/signin.component.css")]
         }),
-        __metadata("design:paramtypes", [ajax_service_1.AjaxService, util_service_1.UtilService])
+        __metadata("design:paramtypes", [ajax_service_1.AjaxService, util_service_1.UtilService, auth_service_1.AuthService])
     ], SigninComponent);
     return SigninComponent;
 }());

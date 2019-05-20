@@ -13,9 +13,9 @@ module.exports = function (app, port,environment,server,console,models) {
                     .save()
                     .then(token => {
                         console.info("social login token--",token)
-                            res.cookie('token', token.token,{maxAge: 1000, httpOnly: true, secure: false, overwrite: true});
-                            res.cookie('refreshToken', token.refreshToken,{maxAge: 1000, httpOnly: true, secure: false, overwrite: true});
-                            res.cookie('user', req.user,{maxAge: 1000, httpOnly: true, secure: false, overwrite: true});
+                            res.cookie('token', token.token,appConstants.cookieOptions);
+                            res.cookie('refreshToken', token.refreshToken,appConstants.cookieOptions);
+                            res.cookie('user', util.userObjectForClient(req.user),appConstants.cookieOptions);
                             res.render('index');
                     },
                     err => {
@@ -40,7 +40,7 @@ module.exports = function (app, port,environment,server,console,models) {
                         console.info("generated fresh token..",token)
                             res.json({
                                 "status":appConstants.success,
-                                "user":user,
+                                "user":util.userObjectForClient(user),
                                 "token":token.token,
                                 "refreshToken":token.refreshToken
                             });
@@ -67,19 +67,20 @@ module.exports = function (app, port,environment,server,console,models) {
             console.info("@authenticateToken token received [ ",req.headers.authorization," ]");
             try {
                 var errors=[];
-                if(util.isVoid(req.headers.authorization)){
-                    errors.push("Required authentication.");
-                    console.info("token not present, redirect to login.")
-                    return res.redirect("/");
-                }
-                if(errors.length>0){
-                    return res.status(401).json({
-                        "status":appConstants.failure,
-                        "errors" : errors,
-                        "errorcode": 401
-                    });
-                }
-                models.tokenSchema.findOne({"token":req.headers.authorization})
+                // if(util.isVoid(req.headers.authorization)){
+                //     errors.push("Required authentication.");
+                //     console.info("token not present, redirect to login.")
+                //     return res.redirect("/");
+                // }
+                // if(errors.length>0){
+                //     return res.status(401).json({
+                //         "status":appConstants.failure,
+                //         "errors" : errors,
+                //         "errorcode": 401
+                //     });
+                // }
+                console.info("find token in db--",req.headers.authorization.trim())
+                models.tokenSchema.findOne({"token":req.headers.authorization.trim()})
                     .then(token => {
                         if(util.isVoid(token)){
                             errors.push("Invlaid token.");
@@ -92,7 +93,7 @@ module.exports = function (app, port,environment,server,console,models) {
                         console.info("------####-----")
                         console.info("Decrypted Old token >>> " + util.decrypt(req.headers.authorization)+" <<<");
                         console.info("------####-----")
-                        if(util.tokenExpired(util.decrypt(req.headers.authorization))) {
+                        if(util.tokenExpired(util.decrypt(req.headers.authorization.trim()))) {
                             errors.push("Token Expired.");
                             return res.status(401).json({
                                 "status": appConstants.failure,
@@ -123,7 +124,7 @@ module.exports = function (app, port,environment,server,console,models) {
             }
         },
         authenticateRefreshToken(req,res,next){
-            console.info("@authenticateToken token received [ ",req.headers.authorization," ]");
+            console.info("@authenticateRefreshToken token received [ ",req.headers.authorization," ]");
             try {
                 var errors=[];
                 if(util.isVoid(req.headers.authorization)){
@@ -137,7 +138,7 @@ module.exports = function (app, port,environment,server,console,models) {
                         "errorcode": 419
                     });
                 }
-                models.tokenSchema.findOne({"refreshToken":req.body.refreshToken})
+                models.tokenSchema.findOne({"refreshToken":req.body.refreshToken.trim()})
                     .then(token => {
                         if(util.isVoid(token)){
                             errors.push("Invlaid token.");
@@ -148,9 +149,9 @@ module.exports = function (app, port,environment,server,console,models) {
                             });
                         }
                         console.info("------####-----")
-                        console.info("Decrypted regresh token >>> " + util.decrypt(req.body.refreshToken)+" <<<");
+                        console.info("Decrypted regresh token >>> " + util.decrypt(req.body.refreshToken.trim())+" <<<");
                         console.info("------####-----")
-                        if(util.tokenExpired(util.decrypt(req.body.refreshToken))) {
+                        if(util.tokenExpired(util.decrypt(req.body.refreshToken.trim()))) {
                             errors.push("Token Expired.");
                             return res.status(419).json({
                                 "status": appConstants.failure,

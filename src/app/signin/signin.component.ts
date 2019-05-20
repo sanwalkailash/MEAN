@@ -1,7 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {UtilService} from '../services/util.service'
 import {AjaxService} from '../services/ajax.service';
+import {AuthService} from '../auth/auth.service';
 import {environment} from '../../environments/environment';
+
+declare const window:any;
 
 @Component({
     selector: 'app-signin',
@@ -11,7 +14,7 @@ import {environment} from '../../environments/environment';
 export class SigninComponent implements OnInit {
     loginJSON: any;
 
-    constructor(private ajax: AjaxService, private util: UtilService) {
+    constructor(private ajax: AjaxService, private util: UtilService,private auth:AuthService) {
         this.initJSON()
     }
 
@@ -45,16 +48,23 @@ export class SigninComponent implements OnInit {
     }
 
     ngOnInit() {
-        localStorage.setItem("socialLogin", "false")
-        if(document.cookie){
+        if(document.cookie && localStorage.getItem("socialLogin") == "true"){
             var decodedCookie = decodeURIComponent(document.cookie);
             var cookies = decodedCookie.split(';');
-            console.info("document.cookie array --- ",cookies)
-            if(cookies.length==3){
-                localStorage.setItem("token", cookies[0].replace('=undefined',''))
-                localStorage.setItem("refreshToken", cookies[1].replace('=undefined',''))
-                localStorage.setItem("user", JSON.stringify(cookies[2].replace('=undefined','')))
-                localStorage.setItem("socialLogin", "true")
+            console.info("document.cookie array --- ",cookies);
+            let keyvals;
+            for(let i=0;i<cookies.length;i++){
+                keyvals=cookies[i].split("=");
+                console.info("keyvals--",keyvals)
+                if( keyvals[0].trim()== "token"){
+                    localStorage.setItem("token", keyvals[1])
+                }else if (keyvals[0].trim() == "refreshToken"){
+                    localStorage.setItem("refreshToken", keyvals[1])
+                }else if(keyvals[0].trim() == "user"){
+                    localStorage.setItem("user", keyvals[1])
+                }
+            }
+            if(this.auth.isLoggedIn()){
                 this.util.getRouter().navigate([environment.ROUTE_HOME]);
             }
         }
@@ -68,7 +78,7 @@ export class SigninComponent implements OnInit {
             .subscribe(
                 data => {
                     if (data.status) {
-                        localStorage.setItem("user", JSON.stringify(data.user))
+                        localStorage.setItem("user", data.user)
                         localStorage.setItem("token", data.token)
                         localStorage.setItem("refreshToken", data.refreshToken);
                         this.util.getRouter().navigate([environment.ROUTE_HOME]);
@@ -119,6 +129,11 @@ export class SigninComponent implements OnInit {
                     console.info("error.status:: ", error.status);
                 }
             );
+    }
+
+    googleLogin(){
+        localStorage.setItem("socialLogin", "true");
+        window.location.href="/auth/google";
     }
 
 }

@@ -10,6 +10,12 @@ module.exports = {
         "tokenLife":3600,
         "profileFolder":"uploads/profile/",
         "coverFolder":"uploads/covers/",
+        "cookieOptions":{
+            "maxAge": 1000 * 60 * 15, // would expire after 15 minutes
+            "httpOnly": true, // The cookie only accessible by the web server
+            "secure": false,
+            "overwrite": true
+        }
     },
     "success":1,
     "failure":0,

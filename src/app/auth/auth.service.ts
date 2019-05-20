@@ -26,6 +26,7 @@ export class AuthService {
 
     public logOut(): void {
         localStorage.clear();
+        localStorage.setItem("socialLogin", "false");
         this.broadcast.sendMessage("isLoggedIn",false);
         this.router.navigate([environment.ROUTE_LOGIN]);
     }

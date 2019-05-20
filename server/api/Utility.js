@@ -108,6 +108,13 @@ module.exports = function (app, port,environment,server,console,models) {
         getRandomInRange : function(from, to, fixed) {
             return (Math.random() * (to - from) + from).toFixed(fixed) * 1;
             // .toFixed() returns string, so ' * 1' is a trick to convert to number
+        },
+        userObjectForClient(user){
+            return JSON.stringify({
+                appName: user.appName,
+                name: user.name,
+                email: user.email
+            });
         }
     }
 }
