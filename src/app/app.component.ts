@@ -15,6 +15,8 @@ export class AppComponent {
     }
 
     ngOnInit() {
+        localStorage.setItem("userLoc", JSON.stringify(this.userLocation));
+        this.getLocation();
         let loctimer = setInterval(() => {
             this.getLocation();
             console.info("updated user location--",this.userLocation)
@@ -33,7 +35,7 @@ export class AppComponent {
     showError = (error) => {
         switch (error.code) {
             case error.PERMISSION_DENIED:
-                this.Notification = "Please provide us your location."
+                this.Notification = "Please provide your location."
                 break;
             case error.POSITION_UNAVAILABLE:
                 this.Notification = "Location information is unavailable."
@@ -50,7 +52,7 @@ export class AppComponent {
     setUserLocation = (position) => {
         this.userLocation.lat = position.coords.latitude?position.coords.latitude:0;
         this.userLocation.lng = position.coords.longitude?position.coords.longitude:0;
-        localStorage.setItem("userLoc", JSON.stringify(this.userLocation))
+        localStorage.setItem("userLoc", JSON.stringify(this.userLocation));
     }
 
 }

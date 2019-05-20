@@ -256,7 +256,7 @@ var AppComponent = /** @class */ (function () {
         this.showError = function (error) {
             switch (error.code) {
                 case error.PERMISSION_DENIED:
-                    _this.Notification = "Please provide us your location.";
+                    _this.Notification = "Please provide your location.";
                     break;
                 case error.POSITION_UNAVAILABLE:
                     _this.Notification = "Location information is unavailable.";
@@ -277,6 +277,8 @@ var AppComponent = /** @class */ (function () {
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
+        localStorage.setItem("userLoc", JSON.stringify(this.userLocation));
+        this.getLocation();
         var loctimer = setInterval(function () {
             _this.getLocation();
             console.info("updated user location--", _this.userLocation);
