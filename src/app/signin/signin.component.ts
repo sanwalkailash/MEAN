@@ -45,19 +45,19 @@ export class SigninComponent implements OnInit {
     }
 
     ngOnInit() {
-        // if(document.cookie && this.util.isVoid(localStorage.getItem("token"))){
-        //     var decodedCookie = decodeURIComponent(document.cookie);
-        //     var cookies = decodedCookie.split(';');
-        //     console.info("document.cookie array --- ",cookies)
-        //     if(cookies.length==3){
-        //         localStorage.setItem("token", cookies[0])
-        //         localStorage.setItem("refreshToken", cookies[1])
-        //         localStorage.setItem("user", JSON.stringify(cookies[2]))
-        //     }
-        //     if(localStorage.getItem("token") && localStorage.getItem("refreshToken") && localStorage.getItem("user")){
-        //         this.util.getRouter().navigate([environment.ROUTE_HOME]);
-        //     }
-        // }
+        localStorage.setItem("socialLogin", "false")
+        if(document.cookie){
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var cookies = decodedCookie.split(';');
+            console.info("document.cookie array --- ",cookies)
+            if(cookies.length==3){
+                localStorage.setItem("token", cookies[0].replace('=undefined',''))
+                localStorage.setItem("refreshToken", cookies[1].replace('=undefined',''))
+                localStorage.setItem("user", JSON.stringify(cookies[2].replace('=undefined','')))
+                localStorage.setItem("socialLogin", "true")
+                this.util.getRouter().navigate([environment.ROUTE_HOME]);
+            }
+        }
         this.fetchCities();
     }
 

@@ -81,7 +81,7 @@
       <hr style="width: 100%; height: 1px;"/>
       <div class="container">
         <div class="row" *ngFor=" let idea of homeJSON.ideas ">
-          <img class="col-sm-5 card-img-left rounded" [src]="idea.cover.result" alt="Cover" style="max-height: 80px;" />
+          <img class="col-sm-5 card-img-left rounded" [src]="idea.cover.result" alt="Cover" style="max-height: 50px;max-width:100px;" />
           <div class="col-sm-7" >
             {{idea.user}}
             <a class="btn btn-sm btn-outline-primary" href="#">Follow</a>

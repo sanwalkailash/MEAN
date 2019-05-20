@@ -206,7 +206,7 @@ export class LiveComponent implements OnInit {
     this.liveJSON.errors = [];
     this.liveJSON.activity.isMilestone=milestone;
     this.liveJSON.activity.latitude = this.liveJSON.userMapMarker.getPosition().lat();
-    this.liveJSON.activity.latitude = this.liveJSON.userMapMarker.getPosition().lng();
+    this.liveJSON.activity.longitude = this.liveJSON.userMapMarker.getPosition().lng();
     this.ajax.apiCall_POST(this.liveJSON.activity, environment.API_USER_DRIVE)
         .subscribe(
             data => {

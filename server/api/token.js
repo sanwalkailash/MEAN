@@ -12,6 +12,7 @@ module.exports = function (app, port,environment,server,console,models) {
                 new models.tokenSchema({"token":req.user.created_at+","+req.user.appName+","+req.user.email+","+req.user.password})
                     .save()
                     .then(token => {
+                        console.info("social login token--",token)
                             res.cookie('token', token.token,{maxAge: 1000, httpOnly: true, secure: false, overwrite: true});
                             res.cookie('refreshToken', token.refreshToken,{maxAge: 1000, httpOnly: true, secure: false, overwrite: true});
                             res.cookie('user', req.user,{maxAge: 1000, httpOnly: true, secure: false, overwrite: true});

@@ -3,35 +3,40 @@
      style="height: 80vh;
         overflow: scroll;">
   <div class="col-sm-2 jumbotron jumbotron-fluid" >
-    <ul>
-      <button class="btn btn-outline-primary" (click)="fetchMilestones()">Milestones</button>
-      <button class="btn btn-outline-primary" href="#">Credit Analysis</button>
+    <ul style="display: inline-flex;">
+      <li>
+        <button class="btn btn-outline-primary" [ngClass]="{'active':activityJSON.activeTab==0}" (click)="fetchMilestones()">milestones</button>
+      </li>
+      <li>
+        <button class="btn btn-outline-primary" [ngClass]="{'active':activityJSON.activeTab==1}">analytics</button>
+      </li>
     </ul>
   </div>
-  <div class="col-sm-5">
+  <div class="col-sm-5"  style="border-left: 2px solid green;">
     <div  *ngFor=" let records of activityJSON.milestones ">
+      <h6 class="card-subtitle mb-2 text-muted timeseries" >
+        {{records.created_at | date:'medium'}}
+      </h6>&nbsp;
       <div class="card mb-3" (click)="addView(records)">
         <img class="card-img-top rounded" [src]="records.milestone.cover.result" alt="Cover" />
         <br/>
         <div class="card-body">
           <div style="float:right;width:fit-content;right:10px;position: absolute;">
                   <span class="card-link">
-                    <span>{{records.views}}</span>
+                    <span>{{records.milestone.views}}</span>
                     <i class="material-icons">
                       face
                     </i>
                   </span>
           </div>
           <h5 class="card-title">{{records.title}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">
-            {{records.created_at}}
-          </h6>
+
           <p class="card-text">
             {{records.details}}
           </p>
           <p class="card-text"><small class="text-muted">Last updated {{records.updated_at}}</small></p>
           <b (click)="addLike(records)" class="card-link">
-            <span>{{records.like}}</span>
+            <span>{{records.milestone.like}}</span>
             <i class="material-icons">
               thumb_up_alt
             </i>
@@ -62,7 +67,7 @@
     <img class=" rounded" src="/assets/images/pnf.jpg" alt="Cover" />
     <hr/>
   </div>
-  <div class="col-sm-2 card" >
+  <div class="col-sm-2 jumbotron jumbotron-fluid" >
     * Travelline Live
   </div>
 </div>

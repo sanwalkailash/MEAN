@@ -20,14 +20,14 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /***/ "./src/app/activity/activity.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".timeseries{\n    border-radius: 50px;\n    /*border: 2px solid green;*/\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n    padding: 5px;\n    margin-top: 12px;\n    margin-left: -5px;\n}\n\n.timeseries:before {\n    content: '';\n    position: absolute;\n    width: 25px;\n    height: 25px;\n    /*right: -17px;*/\n    float:left;\n    margin-left: -28px;\n    background-color: white;\n    border: 4px solid #FF9F55;\n    top: 15px;\n    border-radius: 50%;\n    z-index: 1;\n}\n"
 
 /***/ }),
 
 /***/ "./src/app/activity/activity.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\"\n     id=\"recordssDiv\"\n     style=\"height: 80vh;\n        overflow: scroll;\">\n  <div class=\"col-sm-2 jumbotron jumbotron-fluid\" >\n    <ul>\n      <button class=\"btn btn-outline-primary\" (click)=\"fetchMilestones()\">Milestones</button>\n      <button class=\"btn btn-outline-primary\" href=\"#\">Credit Analysis</button>\n    </ul>\n  </div>\n  <div class=\"col-sm-5\">\n    <div  *ngFor=\" let records of activityJSON.milestones \">\n      <div class=\"card mb-3\" (click)=\"addView(records)\">\n        <img class=\"card-img-top rounded\" [src]=\"records.milestone.cover.result\" alt=\"Cover\" />\n        <br/>\n        <div class=\"card-body\">\n          <div style=\"float:right;width:fit-content;right:10px;position: absolute;\">\n                  <span class=\"card-link\">\n                    <span>{{records.views}}</span>\n                    <i class=\"material-icons\">\n                      face\n                    </i>\n                  </span>\n          </div>\n          <h5 class=\"card-title\">{{records.title}}</h5>\n          <h6 class=\"card-subtitle mb-2 text-muted\">\n            {{records.created_at}}\n          </h6>\n          <p class=\"card-text\">\n            {{records.details}}\n          </p>\n          <p class=\"card-text\"><small class=\"text-muted\">Last updated {{records.updated_at}}</small></p>\n          <b (click)=\"addLike(records)\" class=\"card-link\">\n            <span>{{records.like}}</span>\n            <i class=\"material-icons\">\n              thumb_up_alt\n            </i>\n          </b>\n          <b class=\"card-link\">\n            <i class=\"material-icons\">\n              rate_review\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"shareIdea(records)\">\n            <i class=\"material-icons\">\n              share\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"_getDirectionsInGoogleMap(records.lat,records.lng)\">\n            <i class=\"material-icons\">\n              directions\n            </i>\n          </b>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"activityJSON.milestones.length==0\">\n      No Activity present\n    </div>\n  </div>\n  <div class=\"col-sm-3 card-body\" >\n    <img class=\" rounded\" src=\"/assets/images/pnf.jpg\" alt=\"Cover\" />\n    <hr/>\n  </div>\n  <div class=\"col-sm-2 card\" >\n    * Travelline Live\n  </div>\n</div>\n"
+module.exports = "<div class=\"row\"\n     id=\"recordssDiv\"\n     style=\"height: 80vh;\n        overflow: scroll;\">\n  <div class=\"col-sm-2 jumbotron jumbotron-fluid\" >\n    <ul style=\"display: inline-flex;\">\n      <li>\n        <button class=\"btn btn-outline-primary\" [ngClass]=\"{'active':activityJSON.activeTab==0}\" (click)=\"fetchMilestones()\">milestones</button>\n      </li>\n      <li>\n        <button class=\"btn btn-outline-primary\" [ngClass]=\"{'active':activityJSON.activeTab==1}\">analytics</button>\n      </li>\n    </ul>\n  </div>\n  <div class=\"col-sm-5\"  style=\"border-left: 2px solid green;\">\n    <div  *ngFor=\" let records of activityJSON.milestones \">\n      <h6 class=\"card-subtitle mb-2 text-muted timeseries\" >\n        {{records.created_at | date:'medium'}}\n      </h6>&nbsp;\n      <div class=\"card mb-3\" (click)=\"addView(records)\">\n        <img class=\"card-img-top rounded\" [src]=\"records.milestone.cover.result\" alt=\"Cover\" />\n        <br/>\n        <div class=\"card-body\">\n          <div style=\"float:right;width:fit-content;right:10px;position: absolute;\">\n                  <span class=\"card-link\">\n                    <span>{{records.milestone.views}}</span>\n                    <i class=\"material-icons\">\n                      face\n                    </i>\n                  </span>\n          </div>\n          <h5 class=\"card-title\">{{records.title}}</h5>\n\n          <p class=\"card-text\">\n            {{records.details}}\n          </p>\n          <p class=\"card-text\"><small class=\"text-muted\">Last updated {{records.updated_at}}</small></p>\n          <b (click)=\"addLike(records)\" class=\"card-link\">\n            <span>{{records.milestone.like}}</span>\n            <i class=\"material-icons\">\n              thumb_up_alt\n            </i>\n          </b>\n          <b class=\"card-link\">\n            <i class=\"material-icons\">\n              rate_review\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"shareIdea(records)\">\n            <i class=\"material-icons\">\n              share\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"_getDirectionsInGoogleMap(records.lat,records.lng)\">\n            <i class=\"material-icons\">\n              directions\n            </i>\n          </b>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"activityJSON.milestones.length==0\">\n      No Activity present\n    </div>\n  </div>\n  <div class=\"col-sm-3 card-body\" >\n    <img class=\" rounded\" src=\"/assets/images/pnf.jpg\" alt=\"Cover\" />\n    <hr/>\n  </div>\n  <div class=\"col-sm-2 jumbotron jumbotron-fluid\" >\n    * Travelline Live\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -65,10 +65,12 @@ var ActivityComponent = /** @class */ (function () {
         this.activityJSON = {
             "errors": [],
             "user_id": JSON.parse(localStorage.getItem("user"))._id,
-            "milestones": []
+            "milestones": [],
+            "activeTab": 0,
         };
     };
     ActivityComponent.prototype.ngOnInit = function () {
+        this.fetchMilestones();
         // this.sseSource.addEventListener('myEvent', (e) => {
         //   const messageData = e.data;
         //   console.info("message",e)
@@ -124,6 +126,7 @@ var ActivityComponent = /** @class */ (function () {
         if (page === void 0) { page = 1; }
         console.info("@fetchIdeas...");
         this.activityJSON.errors = [];
+        this.activityJSON.activeTab = 0;
         // this.activityJSON.milestones=[]
         this.ajax.apiCall_GET({ page: page, id: this.activityJSON.user_id }, environment_1.environment.API_USER_DRIVE_MILESTONES)
             .subscribe(function (data) {
@@ -817,7 +820,7 @@ module.exports = ""
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" *ngIf=\"homeJSON.errors.length>0\">\n  <p *ngFor=\" let error of homeJSON.errors\">{{error}} <br/></p>\n  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n\n<div class=\"row\"\n     id=\"ideasDiv\"\n     style=\"height: 80vh;\n        overflow: scroll;\">\n  <div class=\"col-sm-2 jumbotron jumbotron-fluid\" >\n    <ul>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Everything</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Delhi</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Gurgaon</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Noida</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Hotel</a>\n    </ul>\n  </div>\n  <div class=\"col-sm-5\">\n    <h3 class=\"mb-2\">\n      Trending Ideas\n      <b [routerLink]=\"['/ideas/add']\" class=\" btn btn-primary\">\n        <i class=\"material-icons \">add_box</i>\n      </b>\n    </h3>\n    <div  *ngFor=\" let idea of homeJSON.ideas \">\n      <div class=\"card mb-3\" (click)=\"addView(idea)\">\n        <img class=\"card-img-top rounded\" [src]=\"idea.cover.result\" alt=\"Cover\" />\n        <br/>\n        <div class=\"card-body\">\n          <div style=\"float:right;width:fit-content;right:10px;position: absolute;\">\n                  <span class=\"card-link\">\n                    <span>{{idea.views}}</span>\n                    <i class=\"material-icons\">\n                      face\n                    </i>\n                  </span>\n          </div>\n          <h5 class=\"card-title\">{{idea.title}}</h5>\n          <h6 class=\"card-subtitle mb-2 text-muted\">\n            {{idea.created_at}}\n          </h6>\n          <p class=\"card-text\">\n            {{idea.details}}\n          </p>\n          <p class=\"card-text\"><small class=\"text-muted\">Last updated {{idea.updated_at}}</small></p>\n          <b (click)=\"addLike(idea)\" class=\"card-link\">\n            <span>{{idea.like}}</span>\n            <i class=\"material-icons\">\n              thumb_up_alt\n            </i>\n          </b>\n          <b class=\"card-link\">\n            <i class=\"material-icons\">\n              rate_review\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"shareIdea(idea)\">\n            <i class=\"material-icons\">\n              share\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"_getDirectionsInGoogleMap(idea.lat,idea.lng)\">\n            <i class=\"material-icons\">\n              directions\n            </i>\n          </b>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"homeJSON.ideas.length==0\">\n      No Ideas So Far\n    </div>\n  </div>\n  <div class=\"col-sm-3 card-body\" >\n    <img class=\" rounded\" src=\"/assets/images/pnf.jpg\" alt=\"Cover\" />\n    <hr/>\n    <div class=\"jumbotron jumbotron-fluid card-body\">\n      <hr style=\"width: 100%; height: 1px;\"/>\n      <div class=\"container\">\n        <div class=\"row\" *ngFor=\" let idea of homeJSON.ideas \">\n          <img class=\"col-sm-5 card-img-left rounded\" [src]=\"idea.cover.result\" alt=\"Cover\" style=\"max-height: 80px;\" />\n          <div class=\"col-sm-7\" >\n            {{idea.user}}\n            <a class=\"btn btn-sm btn-outline-primary\" href=\"#\">Follow</a>\n          </div>\n          <hr style=\"width: 100%; height: 1px;\"/>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-2 card\" >\n    * Travelline Live\n    <img class=\" rounded\" src=\"/assets/images/pnf.jpg\" alt=\"Cover\" />\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" *ngIf=\"homeJSON.errors.length>0\">\n  <p *ngFor=\" let error of homeJSON.errors\">{{error}} <br/></p>\n  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n\n<div class=\"row\"\n     id=\"ideasDiv\"\n     style=\"height: 80vh;\n        overflow: scroll;\">\n  <div class=\"col-sm-2 jumbotron jumbotron-fluid\" >\n    <ul>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Everything</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Delhi</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Gurgaon</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Noida</a>\n      <a class=\"btn btn-outline-primary\" href=\"#\">Hotel</a>\n    </ul>\n  </div>\n  <div class=\"col-sm-5\">\n    <h3 class=\"mb-2\">\n      Trending Ideas\n      <b [routerLink]=\"['/ideas/add']\" class=\" btn btn-primary\">\n        <i class=\"material-icons \">add_box</i>\n      </b>\n    </h3>\n    <div  *ngFor=\" let idea of homeJSON.ideas \">\n      <div class=\"card mb-3\" (click)=\"addView(idea)\">\n        <img class=\"card-img-top rounded\" [src]=\"idea.cover.result\" alt=\"Cover\" />\n        <br/>\n        <div class=\"card-body\">\n          <div style=\"float:right;width:fit-content;right:10px;position: absolute;\">\n                  <span class=\"card-link\">\n                    <span>{{idea.views}}</span>\n                    <i class=\"material-icons\">\n                      face\n                    </i>\n                  </span>\n          </div>\n          <h5 class=\"card-title\">{{idea.title}}</h5>\n          <h6 class=\"card-subtitle mb-2 text-muted\">\n            {{idea.created_at}}\n          </h6>\n          <p class=\"card-text\">\n            {{idea.details}}\n          </p>\n          <p class=\"card-text\"><small class=\"text-muted\">Last updated {{idea.updated_at}}</small></p>\n          <b (click)=\"addLike(idea)\" class=\"card-link\">\n            <span>{{idea.like}}</span>\n            <i class=\"material-icons\">\n              thumb_up_alt\n            </i>\n          </b>\n          <b class=\"card-link\">\n            <i class=\"material-icons\">\n              rate_review\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"shareIdea(idea)\">\n            <i class=\"material-icons\">\n              share\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"_getDirectionsInGoogleMap(idea.lat,idea.lng)\">\n            <i class=\"material-icons\">\n              directions\n            </i>\n          </b>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"homeJSON.ideas.length==0\">\n      No Ideas So Far\n    </div>\n  </div>\n  <div class=\"col-sm-3 card-body\" >\n    <img class=\" rounded\" src=\"/assets/images/pnf.jpg\" alt=\"Cover\" />\n    <hr/>\n    <div class=\"jumbotron jumbotron-fluid card-body\">\n      <hr style=\"width: 100%; height: 1px;\"/>\n      <div class=\"container\">\n        <div class=\"row\" *ngFor=\" let idea of homeJSON.ideas \">\n          <img class=\"col-sm-5 card-img-left rounded\" [src]=\"idea.cover.result\" alt=\"Cover\" style=\"max-height: 50px;max-width:100px;\" />\n          <div class=\"col-sm-7\" >\n            {{idea.user}}\n            <a class=\"btn btn-sm btn-outline-primary\" href=\"#\">Follow</a>\n          </div>\n          <hr style=\"width: 100%; height: 1px;\"/>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-2 card\" >\n    * Travelline Live\n    <img class=\" rounded\" src=\"/assets/images/pnf.jpg\" alt=\"Cover\" />\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -1387,7 +1390,7 @@ var LiveComponent = /** @class */ (function () {
         this.liveJSON.errors = [];
         this.liveJSON.activity.isMilestone = milestone;
         this.liveJSON.activity.latitude = this.liveJSON.userMapMarker.getPosition().lat();
-        this.liveJSON.activity.latitude = this.liveJSON.userMapMarker.getPosition().lng();
+        this.liveJSON.activity.longitude = this.liveJSON.userMapMarker.getPosition().lng();
         this.ajax.apiCall_POST(this.liveJSON.activity, environment_1.environment.API_USER_DRIVE)
             .subscribe(function (data) {
             if (data.status) {
@@ -2058,19 +2061,19 @@ var SigninComponent = /** @class */ (function () {
         console.info("@initJSON..", this.loginJSON);
     };
     SigninComponent.prototype.ngOnInit = function () {
-        // if(document.cookie && this.util.isVoid(localStorage.getItem("token"))){
-        //     var decodedCookie = decodeURIComponent(document.cookie);
-        //     var cookies = decodedCookie.split(';');
-        //     console.info("document.cookie array --- ",cookies)
-        //     if(cookies.length==3){
-        //         localStorage.setItem("token", cookies[0])
-        //         localStorage.setItem("refreshToken", cookies[1])
-        //         localStorage.setItem("user", JSON.stringify(cookies[2]))
-        //     }
-        //     if(localStorage.getItem("token") && localStorage.getItem("refreshToken") && localStorage.getItem("user")){
-        //         this.util.getRouter().navigate([environment.ROUTE_HOME]);
-        //     }
-        // }
+        localStorage.setItem("socialLogin", "false");
+        if (document.cookie) {
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var cookies = decodedCookie.split(';');
+            console.info("document.cookie array --- ", cookies);
+            if (cookies.length == 3) {
+                localStorage.setItem("token", cookies[0].replace('=undefined', ''));
+                localStorage.setItem("refreshToken", cookies[1].replace('=undefined', ''));
+                localStorage.setItem("user", JSON.stringify(cookies[2].replace('=undefined', '')));
+                localStorage.setItem("socialLogin", "true");
+                this.util.getRouter().navigate([environment_1.environment.ROUTE_HOME]);
+            }
+        }
         this.fetchCities();
     };
     SigninComponent.prototype.login = function () {

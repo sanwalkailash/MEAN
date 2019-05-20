@@ -27,11 +27,13 @@ export class ActivityComponent implements OnInit {
     this.activityJSON={
       "errors":[],
       "user_id":JSON.parse(localStorage.getItem("user"))._id,
-      "milestones":[]
+      "milestones":[],
+      "activeTab":0,
     }
   }
 
   ngOnInit() {
+    this.fetchMilestones();
     // this.sseSource.addEventListener('myEvent', (e) => {
     //   const messageData = e.data;
     //   console.info("message",e)
@@ -89,6 +91,7 @@ export class ActivityComponent implements OnInit {
   fetchMilestones(page = 1, _id?: any) {
     console.info("@fetchIdeas...");
     this.activityJSON.errors = [];
+    this.activityJSON.activeTab=0;
     // this.activityJSON.milestones=[]
     this.ajax.apiCall_GET({page: page, id: this.activityJSON.user_id}, environment.API_USER_DRIVE_MILESTONES)
         .subscribe(
