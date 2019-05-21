@@ -157,7 +157,7 @@ export class IdeasComponent implements OnInit {
             this.ideaJSON.idea.lng = this.userLoc.lng;
         }else {
             this.ideaJSON.errors.push("Please provide your location.");
-            this.app.getLocation();
+            this.app.watchLocation();
             return;
         }
         this.ajax.apiCall_POST(this.ideaJSON.idea, environment.API_SAVE_IDEAS)

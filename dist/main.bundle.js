@@ -243,11 +243,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var broadcast_service_1 = __webpack_require__("./src/app/services/broadcast.service.ts");
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(broadcast) {
         var _this = this;
+        this.broadcast = broadcast;
         this.title = 'ImHere';
         this.userLocation = {
             "lat": 0.0,
@@ -270,24 +275,27 @@ var AppComponent = /** @class */ (function () {
             }
         };
         this.setUserLocation = function (position) {
+            console.info("gps-", position);
             _this.userLocation.lat = position.coords.latitude ? position.coords.latitude : 0;
             _this.userLocation.lng = position.coords.longitude ? position.coords.longitude : 0;
+            // localStorage.setItem("gps",position);
             localStorage.setItem("userLoc", JSON.stringify(_this.userLocation));
+            _this.broadcast.sendMessage("gps", position);
         };
     }
     AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
         localStorage.setItem("userLoc", JSON.stringify(this.userLocation));
-        this.getLocation();
-        var loctimer = setInterval(function () {
-            _this.getLocation();
-            console.info("updated user location--", _this.userLocation);
-        }, 2000);
+        this.watchLocation();
+        // let loctimer = setInterval(() => {
+        //     this.watchLocation();
+        //     console.info("updated user location--",this.userLocation)
+        //     navigator.geolocation.clearWatch()
+        // }, 1000*60*2);
         // clearInterval(loctimer);
     };
-    AppComponent.prototype.getLocation = function () {
+    AppComponent.prototype.watchLocation = function () {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError);
+            navigator.geolocation.watchPosition(this.setUserLocation, this.showError);
         }
         else {
             this.Notification = "Geolocation is not supported by this browser.";
@@ -298,7 +306,8 @@ var AppComponent = /** @class */ (function () {
             selector: 'app-root',
             template: __webpack_require__("./src/app/app.component.html"),
             styles: [__webpack_require__("./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [broadcast_service_1.BroadcastService])
     ], AppComponent);
     return AppComponent;
 }());
@@ -1107,7 +1116,7 @@ var IdeasComponent = /** @class */ (function () {
         }
         else {
             this.ideaJSON.errors.push("Please provide your location.");
-            this.app.getLocation();
+            this.app.watchLocation();
             return;
         }
         this.ajax.apiCall_POST(this.ideaJSON.idea, environment_1.environment.API_SAVE_IDEAS)
@@ -1209,14 +1218,21 @@ var ajax_service_1 = __webpack_require__("./src/app/services/ajax.service.ts");
 var util_service_1 = __webpack_require__("./src/app/services/util.service.ts");
 var common_1 = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
 var app_component_1 = __webpack_require__("./src/app/app.component.ts");
+var broadcast_service_1 = __webpack_require__("./src/app/services/broadcast.service.ts");
 var LiveComponent = /** @class */ (function () {
-    function LiveComponent(ajax, util, location, app) {
+    function LiveComponent(ajax, util, location, app, broadcast) {
         this.ajax = ajax;
         this.util = util;
         this.app = app;
+        this.broadcast = broadcast;
+        this.pipe = new common_1.DatePipe('en-US'); // Use your own locale
     }
     LiveComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.initializeLiveJSON();
+        this.broadcast.getMessage("gps").subscribe(function (status) {
+            _this.updateUserLocation();
+        });
     };
     LiveComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
@@ -1319,11 +1335,11 @@ var LiveComponent = /** @class */ (function () {
                     "comments": []
                 },
                 "isMilestone": false
-            }
+            },
+            "markerInfoWindow": new google.maps.InfoWindow()
         };
     };
     LiveComponent.prototype.initializaMapProperties = function () {
-        var _this = this;
         this.liveJSON.map = new google.maps.Map(document.getElementById('map-canvas'), this.liveJSON.mapOptions);
         this.liveJSON.streetViewPanorama = new google.maps.StreetViewPanorama(document.getElementById('street-view'), this.liveJSON.streetViewOptions);
         this.liveJSON.userMapMarker = new google.maps.Marker({
@@ -1332,11 +1348,7 @@ var LiveComponent = /** @class */ (function () {
             animation: google.maps.Animation.DROP,
             draggable: true
         });
-        google.maps.event.addListener(this.liveJSON.userMapMarker, 'position_changed', function () {
-            console.info("userMapMarker position changes t0 --", _this.liveJSON.streetViewPanorama.getPosition());
-            _this.logActivity(false);
-            _this.refreshMaps();
-        });
+        this.addEventListnersOnMarker();
         this.refreshMaps();
     };
     LiveComponent.prototype.getGoogleLatLangObject = function (lat, lng) {
@@ -1398,27 +1410,58 @@ var LiveComponent = /** @class */ (function () {
             .subscribe(function (data) {
             if (data.status) {
                 console.info("activity saved");
+                if (milestone) {
+                    _this.liveJSON.errors.push("Activity Saved.");
+                }
             }
             else {
                 _this.liveJSON.errors = data.errors;
             }
             if (milestone) {
-                _this.liveJSON.activity.milestone = {
-                    "cover": {
-                        "name": "",
-                        "size": "",
-                        "type": "",
-                        "lastModifiedDate": "",
-                        "result": "",
-                    },
-                    "views": 0,
-                    "likes": 0,
-                    "comments": []
-                };
+                // this.liveJSON.activity.milestone={
+                //   "cover":{
+                //     "name":"",
+                //     "size":"",
+                //     "type":"",
+                //     "lastModifiedDate":"",
+                //     "result":"",
+                //   },
+                //   "views":0,
+                //   "likes":0,
+                //   "comments":[]
+                // }
                 _this.liveJSON.activity.isMilestone = false;
             }
         }, function (error) {
             console.info("error.status:: ", error);
+        });
+    };
+    LiveComponent.prototype.addEventListnersOnMarker = function (marker) {
+        var _this = this;
+        if (marker === void 0) { marker = this.liveJSON.userMapMarker; }
+        google.maps.event.addListener(marker, 'position_changed', function () {
+            console.info("userMapMarker position changes t0 --", _this.liveJSON.streetViewPanorama.getPosition());
+            var content;
+            content = "ImHere";
+            if (!_this.util.isVoid(_this.liveJSON.activity.milestone.cover.result)) {
+                content += '<h4 id="milestone">' + _this.liveJSON.activity.milestone.cover.name + '</h4>';
+                content += '<img style="width:150px;height:100px;" src="' + _this.liveJSON.activity.milestone.cover.result + '"></img>';
+                content += '<p>' + _this.pipe.transform(_this.liveJSON.activity.milestone.cover.lastModifiedDate, "yyyy-MM-dd hh:mm:ss") + '</p>';
+            }
+            _this.liveJSON.markerInfoWindow.setContent(content);
+            _this.liveJSON.markerInfoWindow.setPosition(_this.getGoogleLatLangObject(marker.getPosition().lat(), marker.getPosition().lng()));
+            _this.liveJSON.markerInfoWindow.open(_this.liveJSON.map, marker);
+            _this.logActivity(false);
+            _this.refreshMaps();
+        });
+        google.maps.event.addListener(marker, "click", function (event) {
+            var content;
+            content = '<h4 id="milestone">' + _this.liveJSON.activity.milestone.cover.name + '</h4>';
+            content += '<img style="width:150px;height:100px;" src="' + _this.liveJSON.activity.milestone.cover.result + '"></img>';
+            content += '<p>' + _this.liveJSON.activity.milestone.cover.lastModifiedDate + '</p>';
+            _this.liveJSON.markerInfoWindow.setContent(content);
+            _this.liveJSON.markerInfoWindow.setPosition(_this.getGoogleLatLangObject(marker.getPosition().lat(), marker.getPosition().lng()));
+            _this.liveJSON.markerInfoWindow.open(_this.liveJSON.map, marker);
         });
     };
     LiveComponent = __decorate([
@@ -1427,7 +1470,7 @@ var LiveComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/live/live.component.html"),
             styles: [__webpack_require__("./src/app/live/live.component.css")]
         }),
-        __metadata("design:paramtypes", [ajax_service_1.AjaxService, util_service_1.UtilService, common_1.Location, app_component_1.AppComponent])
+        __metadata("design:paramtypes", [ajax_service_1.AjaxService, util_service_1.UtilService, common_1.Location, app_component_1.AppComponent, broadcast_service_1.BroadcastService])
     ], LiveComponent);
     return LiveComponent;
 }());

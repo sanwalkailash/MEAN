@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {environment} from '../../environments/environment';
 import {AjaxService} from "../services/ajax.service";
 import {UtilService} from "../services/util.service";
-import {Location} from "@angular/common";
+import {Location,DatePipe} from "@angular/common";
 import {AppComponent} from "../app.component";
+import {BroadcastService} from '../services/broadcast.service';
 
 declare const google: any;
 declare const window:any;
@@ -16,12 +17,16 @@ declare const window:any;
 export class LiveComponent implements OnInit {
 
   liveJSON: any;
+  pipe = new DatePipe('en-US'); // Use your own locale
 
-  constructor(private ajax: AjaxService, private util: UtilService, location: Location, private app: AppComponent) {
+  constructor(private ajax: AjaxService, private util: UtilService, location: Location, private app: AppComponent,private broadcast:BroadcastService) {
   }
 
   ngOnInit() {
     this.initializeLiveJSON();
+    this.broadcast.getMessage("gps").subscribe((status)=>{
+      this.updateUserLocation();
+    })
   }
 
   ngAfterViewInit() {
@@ -125,7 +130,8 @@ export class LiveComponent implements OnInit {
           "comments":[]
         },
         "isMilestone":false
-      }
+      },
+      "markerInfoWindow":new google.maps.InfoWindow()
     }
 
   }
@@ -141,11 +147,7 @@ export class LiveComponent implements OnInit {
       draggable: true
     });
 
-    google.maps.event.addListener(this.liveJSON.userMapMarker, 'position_changed', () => {
-      console.info("userMapMarker position changes t0 --", this.liveJSON.streetViewPanorama.getPosition());
-      this.logActivity(false);
-      this.refreshMaps();
-    });
+    this.addEventListnersOnMarker();
 
     this.refreshMaps();
   }
@@ -212,22 +214,25 @@ export class LiveComponent implements OnInit {
             data => {
               if (data.status) {
                 console.info("activity saved");
+                if(milestone){
+                  this.liveJSON.errors.push("Activity Saved.");
+                }
               } else {
                 this.liveJSON.errors = data.errors;
               }
               if(milestone){
-                this.liveJSON.activity.milestone={
-                  "cover":{
-                    "name":"",
-                    "size":"",
-                    "type":"",
-                    "lastModifiedDate":"",
-                    "result":"",
-                  },
-                  "views":0,
-                  "likes":0,
-                  "comments":[]
-                }
+                // this.liveJSON.activity.milestone={
+                //   "cover":{
+                //     "name":"",
+                //     "size":"",
+                //     "type":"",
+                //     "lastModifiedDate":"",
+                //     "result":"",
+                //   },
+                //   "views":0,
+                //   "likes":0,
+                //   "comments":[]
+                // }
                 this.liveJSON.activity.isMilestone=false;
               }
             },
@@ -236,4 +241,38 @@ export class LiveComponent implements OnInit {
             }
         );
   }
+
+  addEventListnersOnMarker(marker=this.liveJSON.userMapMarker){
+    google.maps.event.addListener(marker, 'position_changed', () => {
+      console.info("userMapMarker position changes t0 --", this.liveJSON.streetViewPanorama.getPosition());
+      var content;
+      content ="ImHere"
+      if(!this.util.isVoid(this.liveJSON.activity.milestone.cover.result)) {
+        content += '<h4 id="milestone">' + this.liveJSON.activity.milestone.cover.name +'</h4>';
+        content += '<img style="width:150px;height:100px;" src="' + this.liveJSON.activity.milestone.cover.result +'"></img>';
+        content += '<p>'+ this.pipe.transform(this.liveJSON.activity.milestone.cover.lastModifiedDate,"yyyy-MM-dd hh:mm:ss") +'</p>';
+      }
+
+      this.liveJSON.markerInfoWindow.setContent(content);
+      this.liveJSON.markerInfoWindow.setPosition(this.getGoogleLatLangObject(marker.getPosition().lat(), marker.getPosition().lng()))
+      this.liveJSON.markerInfoWindow.open(this.liveJSON.map, marker);
+
+      this.logActivity(false);
+      this.refreshMaps();
+    });
+
+    google.maps.event.addListener(marker,"click",(event) => {
+      var content;
+      content = '<h4 id="milestone">' + this.liveJSON.activity.milestone.cover.name +'</h4>';
+      content += '<img style="width:150px;height:100px;" src="' + this.liveJSON.activity.milestone.cover.result +'"></img>';
+      content += '<p>'+ this.liveJSON.activity.milestone.cover.lastModifiedDate +'</p>';
+
+      this.liveJSON.markerInfoWindow.setContent(content);
+      this.liveJSON.markerInfoWindow.setPosition(this.getGoogleLatLangObject(marker.getPosition().lat(), marker.getPosition().lng()))
+      this.liveJSON.markerInfoWindow.open(this.liveJSON.map, marker);
+    });
+  }
+
+
+
 }

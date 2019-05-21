@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-
+import {BroadcastService} from './services/broadcast.service';
 
 @Component({
     selector: 'app-root',
@@ -13,20 +13,22 @@ export class AppComponent {
         "lat": 0.0,
         "lng": 0.0
     }
+    constructor(private broadcast:BroadcastService){}
 
     ngOnInit() {
         localStorage.setItem("userLoc", JSON.stringify(this.userLocation));
-        this.getLocation();
-        let loctimer = setInterval(() => {
-            this.getLocation();
-            console.info("updated user location--",this.userLocation)
-        }, 2000);
+        this.watchLocation();
+        // let loctimer = setInterval(() => {
+        //     this.watchLocation();
+        //     console.info("updated user location--",this.userLocation)
+        //     navigator.geolocation.clearWatch()
+        // }, 1000*60*2);
         // clearInterval(loctimer);
     }
 
-    getLocation() {
+    watchLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError);
+            navigator.geolocation.watchPosition(this.setUserLocation, this.showError);
         } else {
             this.Notification = "Geolocation is not supported by this browser.";
         }
@@ -50,9 +52,12 @@ export class AppComponent {
     }
 
     setUserLocation = (position) => {
+        console.info("gps-",position)
         this.userLocation.lat = position.coords.latitude?position.coords.latitude:0;
         this.userLocation.lng = position.coords.longitude?position.coords.longitude:0;
+        // localStorage.setItem("gps",position);
         localStorage.setItem("userLoc", JSON.stringify(this.userLocation));
+        this.broadcast.sendMessage("gps",position)
     }
 
 }
