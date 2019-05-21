@@ -291,13 +291,12 @@ var AppComponent = /** @class */ (function () {
         var loctimer = setInterval(function () {
             _this.watchLocation();
             console.info("updated user location--", _this.userLocation);
-            // navigator.geolocation.clearWatch()
-        }, 1000 * 60 * 2);
+        }, 1000 * 60 * 1); // 1 minute
         // clearInterval(loctimer);
     };
     AppComponent.prototype.watchLocation = function () {
         if (navigator.geolocation) {
-            navigator.geolocation.watchPosition(this.setUserLocation, this.showError);
+            navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError, { maximumAge: 1000, timeout: 5000, enableHighAccuracy: true });
         }
         else {
             this.Notification = "Geolocation is not supported by this browser.";
