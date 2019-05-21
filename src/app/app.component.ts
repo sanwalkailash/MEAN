@@ -13,16 +13,18 @@ export class AppComponent {
         "lat": 0.0,
         "lng": 0.0
     }
-    constructor(private broadcast:BroadcastService){}
+    constructor(private broadcast:BroadcastService){
+        console.info(`%c Stop, Its Dangerous !`, "background:red;color:white;font-size:15px;padding:5px;")
+    }
 
     ngOnInit() {
         localStorage.setItem("userLoc", JSON.stringify(this.userLocation));
         this.watchLocation();
-        // let loctimer = setInterval(() => {
-        //     this.watchLocation();
-        //     console.info("updated user location--",this.userLocation)
-        //     navigator.geolocation.clearWatch()
-        // }, 1000*60*2);
+        let loctimer = setInterval(() => {
+            this.watchLocation();
+            console.info("updated user location--",this.userLocation)
+            // navigator.geolocation.clearWatch()
+        }, 1000*60*2);
         // clearInterval(loctimer);
     }
 

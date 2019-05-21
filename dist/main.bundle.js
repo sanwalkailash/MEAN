@@ -282,15 +282,17 @@ var AppComponent = /** @class */ (function () {
             localStorage.setItem("userLoc", JSON.stringify(_this.userLocation));
             _this.broadcast.sendMessage("gps", position);
         };
+        console.info("%c Stop, Its Dangerous !", "background:red;color:white;font-size:15px;padding:5px;");
     }
     AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
         localStorage.setItem("userLoc", JSON.stringify(this.userLocation));
         this.watchLocation();
-        // let loctimer = setInterval(() => {
-        //     this.watchLocation();
-        //     console.info("updated user location--",this.userLocation)
-        //     navigator.geolocation.clearWatch()
-        // }, 1000*60*2);
+        var loctimer = setInterval(function () {
+            _this.watchLocation();
+            console.info("updated user location--", _this.userLocation);
+            // navigator.geolocation.clearWatch()
+        }, 1000 * 60 * 2);
         // clearInterval(loctimer);
     };
     AppComponent.prototype.watchLocation = function () {
