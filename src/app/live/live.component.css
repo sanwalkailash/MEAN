@@ -1,7 +1,7 @@
 #maps-container{
     position: fixed !important;
     width: 100%;
-    height: 900px;
+    /*max-height: 500px;*/
     /* Firefox */
     min-height: -moz-calc(100% - 50px);
     /* WebKit */

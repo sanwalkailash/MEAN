@@ -44,7 +44,7 @@ export class LiveComponent implements OnInit {
         disableDefaultUI: true,
         center: new google.maps.LatLng(environment.DEFAULT_MAP_SETTINGS.lat, environment.DEFAULT_MAP_SETTINGS.lng),
         zoom: environment.DEFAULT_MAP_SETTINGS.zoom,
-        zoomControl: false,
+        zoomControl: true,
         scrollwheel: false,
         zoomControlOptions: {
           style: google.maps.ZoomControlStyle.LARGE,
