@@ -60,11 +60,12 @@ export class PushNotificationService {
     });
   }
   generateNotification(source: Array < any > ): void {
+    console.info("@generateNotification..")
     let self = this;
     source.forEach((item) => {
       let options = {
         body: item.alertContent,
-        icon: "../resource/images/bell-icon.png"
+        icon: "./assets/images/bell.png"
       };
       let notify = self.create(item.title, options).subscribe();
     })

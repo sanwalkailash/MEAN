@@ -1244,11 +1244,7 @@ var LiveComponent = /** @class */ (function () {
         });
     };
     LiveComponent.prototype.ngAfterViewInit = function () {
-        var _this = this;
-        setTimeout(function () {
-            _this.initializaMapProperties();
-            _this.updateUserLocation();
-        }, 100);
+        this.initializaMapProperties();
     };
     LiveComponent.prototype.initializeLiveJSON = function () {
         this.liveJSON = {
@@ -1359,6 +1355,7 @@ var LiveComponent = /** @class */ (function () {
         });
         this.addEventListnersOnMarker();
         this.refreshMaps();
+        this.updateUserLocation();
     };
     LiveComponent.prototype.getGoogleLatLangObject = function (lat, lng) {
         return new google.maps.LatLng(lat, lng);
@@ -2003,11 +2000,12 @@ var PushNotificationService = /** @class */ (function () {
         });
     };
     PushNotificationService.prototype.generateNotification = function (source) {
+        console.info("@generateNotification..");
         var self = this;
         source.forEach(function (item) {
             var options = {
                 body: item.alertContent,
-                icon: "../resource/images/bell-icon.png"
+                icon: "./assets/images/bell.png"
             };
             var notify = self.create(item.title, options).subscribe();
         });

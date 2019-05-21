@@ -30,10 +30,7 @@ export class LiveComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.initializaMapProperties();
-      this.updateUserLocation();
-    }, 100);
+    this.initializaMapProperties();
   }
 
   initializeLiveJSON() {
@@ -150,6 +147,8 @@ export class LiveComponent implements OnInit {
     this.addEventListnersOnMarker();
 
     this.refreshMaps();
+    this.updateUserLocation();
+
   }
 
   getGoogleLatLangObject(lat: any, lng: any) {
