@@ -23,13 +23,13 @@ export class AppComponent {
         let loctimer = setInterval(() => {
             this.watchLocation();
             console.info("updated user location--",this.userLocation)
-        }, 1000*60*1); // 1 minute
+        }, 1000); // 1 minute = 1000*60*1
         // clearInterval(loctimer);
     }
 
     watchLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError,{maximumAge:1000, timeout:5000, enableHighAccuracy: true});
+            navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError,{ enableHighAccuracy: true});
         } else {
             this.Notification = "Geolocation is not supported by this browser.";
         }
