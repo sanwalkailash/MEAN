@@ -7,17 +7,21 @@
     margin-left: -5px;
 }
 
-.timeseries:before {
+.timeseries span {
     content: '';
-    position: absolute;
     width: 25px;
     height: 25px;
     /*right: -17px;*/
     float:left;
-    margin-left: -28px;
+    margin-left: -14px;
+    margin-top: -8px;
     background-color: white;
     border: 4px solid #FF9F55;
-    top: 15px;
+    top: 10px;
     border-radius: 50%;
     z-index: 1;
+}
+.timeseries p {
+    width: fit-content;
+    margin-left: 15px;
 }

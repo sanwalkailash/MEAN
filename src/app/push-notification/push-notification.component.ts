@@ -13,7 +13,7 @@ export class PushNotificationComponent implements OnInit {
 
 
   constructor(private _notificationService: PushNotificationService) {
-    this._notificationService.requestPermission();
+    // this._notificationService.requestPermission();
   }
 
   ngOnInit() {

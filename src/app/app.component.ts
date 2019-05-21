@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {BroadcastService} from './services/broadcast.service';
+import {AuthService} from './auth/auth.service'
+import {PushNotificationService} from "./services/push-notification.service";
 
 @Component({
     selector: 'app-root',
@@ -13,23 +15,26 @@ export class AppComponent {
         "lat": 0.0,
         "lng": 0.0
     }
-    constructor(private broadcast:BroadcastService){
-        console.info(`%c Stop, Its Dangerous !`, "background:red;color:white;font-size:15px;padding:5px;")
+    constructor(private broadcast:BroadcastService,private auth:AuthService,private _notificationService: PushNotificationService){
+        console.info(`%c Stop, Its Dangerous !`, "background:red;color:white;font-size:15px;padding:5px;");
     }
 
     ngOnInit() {
         localStorage.setItem("userLoc", JSON.stringify(this.userLocation));
-        this.watchLocation();
-        let loctimer = setInterval(() => {
+        if(this.auth.isLoggedIn()){
             this.watchLocation();
-            console.info("updated user location--",this.userLocation)
-        }, 1000); // 1 minute = 1000*60*1
+        }
+        // let loctimer = setInterval(() => {
+        //     this.watchLocation();
+        //     console.info("updated user location--",this.userLocation)
+        // }, 1000); // 1 minute = 1000*60*1
         // clearInterval(loctimer);
+        this._notificationService.requestPermission();
     }
 
     watchLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError,{
+            navigator.geolocation.watchPosition(this.setUserLocation, this.showError,{
                 enableHighAccuracy: true,
                 timeout: 5000,
                 maximumAge: 0

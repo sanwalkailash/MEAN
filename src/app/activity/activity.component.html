@@ -12,10 +12,11 @@
       </li>
     </ul>
   </div>
-  <div class="col-sm-5"  style="border-left: 2px solid #ec9946;">
-    <div  *ngFor=" let records of activityJSON.milestones ">
-      <h6 class="card-subtitle mb-2 text-muted timeseries" >
-        {{records.created_at | date:'medium'}}
+  <div class="col-sm-5" style="border-left: 2px solid #ec9946;">
+    <div  *ngFor=" let records of activityJSON.milestones " >
+      <h6 class="timeseries">
+        <span></span>
+        <p class="card-subtitle mb-2 text-muted">{{records.created_at | date:'medium'}}</p>
       </h6>&nbsp;
       <div class="card mb-3" (click)="addView(records)">
         <img class="card-img-top rounded" [src]="records.milestone.cover.result" alt="Cover" />

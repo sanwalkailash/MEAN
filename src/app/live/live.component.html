@@ -15,10 +15,7 @@
       </div>
     </li>
     <li class="nav-item">
-      <b class="btn btn-outline-primary" (click)="updateUserLocation()">Update</b>
-    </li>
-    <li class="nav-item">
-      <b class="btn btn-outline-primarydisabled" (click)="toggleMapView()">Disabled</b>
+      <b class="btn  btn-outline-primary" (click)="toggleMapView()">Change</b>
     </li>
   </ul>
   <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="liveJSON.errors.length>0">

@@ -14,7 +14,8 @@ export class HeaderComponent implements OnInit {
 
     headerJSON=this.headerJSON={
         "isLoggedIn": false,
-        "user": localStorage.getItem("user")? JSON.parse(localStorage.getItem("user")) : {}
+        "user": localStorage.getItem("user")? JSON.parse(localStorage.getItem("user")) : {},
+        "activeTab":0
     }
     status:any;
     constructor(private util: UtilService,private broadcast:BroadcastService,private authService:AuthService) {

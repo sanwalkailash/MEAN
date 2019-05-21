@@ -24,13 +24,13 @@ export class LiveComponent implements OnInit {
 
   ngOnInit() {
     this.initializeLiveJSON();
-    this.broadcast.getMessage("gps").subscribe((status)=>{
-      this.updateUserLocation();
-    })
   }
 
   ngAfterViewInit() {
     this.initializaMapProperties();
+    this.broadcast.getMessage("gps").subscribe((status)=>{
+      this.updateUserLocation();
+    })
   }
 
   initializeLiveJSON() {

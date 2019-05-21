@@ -20,14 +20,14 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /***/ "./src/app/activity/activity.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".timeseries{\n    border-radius: 50px;\n    /*border: 2px solid green;*/\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n    padding: 5px;\n    margin-top: 12px;\n    margin-left: -5px;\n}\n\n.timeseries:before {\n    content: '';\n    position: absolute;\n    width: 25px;\n    height: 25px;\n    /*right: -17px;*/\n    float:left;\n    margin-left: -28px;\n    background-color: white;\n    border: 4px solid #FF9F55;\n    top: 15px;\n    border-radius: 50%;\n    z-index: 1;\n}\n"
+module.exports = ".timeseries{\n    border-radius: 50px;\n    /*border: 2px solid green;*/\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n    padding: 5px;\n    margin-top: 12px;\n    margin-left: -5px;\n}\n\n.timeseries span {\n    content: '';\n    width: 25px;\n    height: 25px;\n    /*right: -17px;*/\n    float:left;\n    margin-left: -14px;\n    margin-top: -8px;\n    background-color: white;\n    border: 4px solid #FF9F55;\n    top: 10px;\n    border-radius: 50%;\n    z-index: 1;\n}\n\n.timeseries p {\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n    margin-left: 15px;\n}\n"
 
 /***/ }),
 
 /***/ "./src/app/activity/activity.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\"\n     id=\"recordssDiv\"\n     style=\"height: 80vh;\n        overflow: scroll;\">\n  <div class=\"col-sm-2 jumbotron jumbotron-fluid\" >\n    <ul style=\"display: inline-flex;\">\n      <li>\n        <button class=\"btn btn-outline-primary\" [ngClass]=\"{'active':activityJSON.activeTab==0}\" (click)=\"fetchMilestones()\">milestones</button>\n      </li>\n      <li>\n        <button class=\"btn btn-outline-primary\" [ngClass]=\"{'active':activityJSON.activeTab==1}\">analytics</button>\n      </li>\n    </ul>\n  </div>\n  <div class=\"col-sm-5\"  style=\"border-left: 2px solid #ec9946;\">\n    <div  *ngFor=\" let records of activityJSON.milestones \">\n      <h6 class=\"card-subtitle mb-2 text-muted timeseries\" >\n        {{records.created_at | date:'medium'}}\n      </h6>&nbsp;\n      <div class=\"card mb-3\" (click)=\"addView(records)\">\n        <img class=\"card-img-top rounded\" [src]=\"records.milestone.cover.result\" alt=\"Cover\" />\n        <br/>\n        <div class=\"card-body\">\n          <div style=\"float:right;width:fit-content;right:10px;position: absolute;\">\n                  <span class=\"card-link\">\n                    <span>{{records.milestone.views}}</span>\n                    <i class=\"material-icons\">\n                      face\n                    </i>\n                  </span>\n          </div>\n          <h5 class=\"card-title\">{{records.title}}</h5>\n\n          <p class=\"card-text\">\n            {{records.details}}\n          </p>\n          <p class=\"card-text\"><small class=\"text-muted\">Last updated {{records.updated_at}}</small></p>\n          <b (click)=\"addLike(records)\" class=\"card-link\">\n            <span>{{records.milestone.like}}</span>\n            <i class=\"material-icons\">\n              thumb_up_alt\n            </i>\n          </b>\n          <b class=\"card-link\">\n            <i class=\"material-icons\">\n              rate_review\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"shareIdea(records)\">\n            <i class=\"material-icons\">\n              share\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"_getDirectionsInGoogleMap(records.lat,records.lng)\">\n            <i class=\"material-icons\">\n              directions\n            </i>\n          </b>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"activityJSON.milestones.length==0\">\n      No Activity present\n    </div>\n  </div>\n  <div class=\"col-sm-3 card-body\" >\n    <img class=\" rounded\" src=\"/assets/images/pnf.jpg\" alt=\"Cover\" />\n    <hr/>\n  </div>\n  <div class=\"col-sm-2 jumbotron jumbotron-fluid\" >\n    * Travelline Live\n  </div>\n</div>\n"
+module.exports = "<div class=\"row\"\n     id=\"recordssDiv\"\n     style=\"height: 80vh;\n        overflow: scroll;\">\n  <div class=\"col-sm-2 jumbotron jumbotron-fluid\" >\n    <ul style=\"display: inline-flex;\">\n      <li>\n        <button class=\"btn btn-outline-primary\" [ngClass]=\"{'active':activityJSON.activeTab==0}\" (click)=\"fetchMilestones()\">milestones</button>\n      </li>\n      <li>\n        <button class=\"btn btn-outline-primary\" [ngClass]=\"{'active':activityJSON.activeTab==1}\">analytics</button>\n      </li>\n    </ul>\n  </div>\n  <div class=\"col-sm-5\" style=\"border-left: 2px solid #ec9946;\">\n    <div  *ngFor=\" let records of activityJSON.milestones \" >\n      <h6 class=\"timeseries\">\n        <span></span>\n        <p class=\"card-subtitle mb-2 text-muted\">{{records.created_at | date:'medium'}}</p>\n      </h6>&nbsp;\n      <div class=\"card mb-3\" (click)=\"addView(records)\">\n        <img class=\"card-img-top rounded\" [src]=\"records.milestone.cover.result\" alt=\"Cover\" />\n        <br/>\n        <div class=\"card-body\">\n          <div style=\"float:right;width:fit-content;right:10px;position: absolute;\">\n                  <span class=\"card-link\">\n                    <span>{{records.milestone.views}}</span>\n                    <i class=\"material-icons\">\n                      face\n                    </i>\n                  </span>\n          </div>\n          <h5 class=\"card-title\">{{records.title}}</h5>\n\n          <p class=\"card-text\">\n            {{records.details}}\n          </p>\n          <p class=\"card-text\"><small class=\"text-muted\">Last updated {{records.updated_at}}</small></p>\n          <b (click)=\"addLike(records)\" class=\"card-link\">\n            <span>{{records.milestone.like}}</span>\n            <i class=\"material-icons\">\n              thumb_up_alt\n            </i>\n          </b>\n          <b class=\"card-link\">\n            <i class=\"material-icons\">\n              rate_review\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"shareIdea(records)\">\n            <i class=\"material-icons\">\n              share\n            </i>\n          </b>\n          <b class=\"card-link\" (click)=\"_getDirectionsInGoogleMap(records.lat,records.lng)\">\n            <i class=\"material-icons\">\n              directions\n            </i>\n          </b>\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"activityJSON.milestones.length==0\">\n      No Activity present\n    </div>\n  </div>\n  <div class=\"col-sm-3 card-body\" >\n    <img class=\" rounded\" src=\"/assets/images/pnf.jpg\" alt=\"Cover\" />\n    <hr/>\n  </div>\n  <div class=\"col-sm-2 jumbotron jumbotron-fluid\" >\n    * Travelline Live\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -249,10 +249,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var broadcast_service_1 = __webpack_require__("./src/app/services/broadcast.service.ts");
+var auth_service_1 = __webpack_require__("./src/app/auth/auth.service.ts");
+var push_notification_service_1 = __webpack_require__("./src/app/services/push-notification.service.ts");
 var AppComponent = /** @class */ (function () {
-    function AppComponent(broadcast) {
+    function AppComponent(broadcast, auth, _notificationService) {
         var _this = this;
         this.broadcast = broadcast;
+        this.auth = auth;
+        this._notificationService = _notificationService;
         this.title = 'ImHere';
         this.userLocation = {
             "lat": 0.0,
@@ -285,18 +289,20 @@ var AppComponent = /** @class */ (function () {
         console.info("%c Stop, Its Dangerous !", "background:red;color:white;font-size:15px;padding:5px;");
     }
     AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
         localStorage.setItem("userLoc", JSON.stringify(this.userLocation));
-        this.watchLocation();
-        var loctimer = setInterval(function () {
-            _this.watchLocation();
-            console.info("updated user location--", _this.userLocation);
-        }, 1000); // 1 minute = 1000*60*1
+        if (this.auth.isLoggedIn()) {
+            this.watchLocation();
+        }
+        // let loctimer = setInterval(() => {
+        //     this.watchLocation();
+        //     console.info("updated user location--",this.userLocation)
+        // }, 1000); // 1 minute = 1000*60*1
         // clearInterval(loctimer);
+        this._notificationService.requestPermission();
     };
     AppComponent.prototype.watchLocation = function () {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError, {
+            navigator.geolocation.watchPosition(this.setUserLocation, this.showError, {
                 enableHighAccuracy: true,
                 timeout: 5000,
                 maximumAge: 0
@@ -312,7 +318,7 @@ var AppComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/app.component.html"),
             styles: [__webpack_require__("./src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [broadcast_service_1.BroadcastService])
+        __metadata("design:paramtypes", [broadcast_service_1.BroadcastService, auth_service_1.AuthService, push_notification_service_1.PushNotificationService])
     ], AppComponent);
     return AppComponent;
 }());
@@ -768,7 +774,7 @@ module.exports = ""
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-sm navbar-light bg-light mb-3\">\n    <a class=\"navbar-brand\" href=\"/\"><img class=\"icon\" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/></a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\"\n            aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\"  *ngIf=\"headerJSON.isLoggedIn\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"#/home\">Market <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/ideas\">Mine</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/live\">Live</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/activity\">Activity</a>\n            </li>\n            <app-push-notification></app-push-notification>\n        </ul>\n        <form class=\"form-inline my-2 my-lg-0\">\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\">\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n        </form>\n    </div>\n    &nbsp;\n    <div class=\"btn-group\" *ngIf=\"headerJSON.isLoggedIn\">\n        <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" style=\"max-width:150px;overflow:hidden;text-overflow: ellipsis;\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n                aria-expanded=\"false\">\n            <img class=\"icon rounded\" style=\"width:20px;height:20px; border:1px solid white; margin-bottom:1px;  \" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/>\n            {{headerJSON.user.name}}\n        </button>\n        <div class=\"dropdown-menu dropdown-menu-right\">\n            <button class=\"dropdown-item\" type=\"button\" (click)=\"logout()\">Logout</button>\n        </div>\n    </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-expand-sm navbar-light bg-light mb-3\">\n    <a class=\"navbar-brand\" href=\"/\"><img class=\"icon\" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/></a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\"\n            aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\"  *ngIf=\"headerJSON.isLoggedIn\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n            <li class=\"nav-item\" [ngClass]=\"{'active':(headerJSON.activeTab==0)}\">\n                <a class=\"nav-link\" href=\"#/home\" (click)=\"headerJSON.activeTab=0\" >Market</a>\n            </li>\n            <li class=\"nav-item\" [ngClass]=\"{'active':(headerJSON.activeTab==1)}\">\n                <a class=\"nav-link\" href=\"#/ideas\" (click)=\"headerJSON.activeTab=1\">Mine</a>\n            </li>\n            <li class=\"nav-item\" [ngClass]=\"{'active':(headerJSON.activeTab==2)}\">\n                <a class=\"nav-link\" href=\"#/live\" (click)=\"headerJSON.activeTab=2\" >Live</a>\n            </li>\n            <li class=\"nav-item\" [ngClass]=\"{'active':(headerJSON.activeTab==3)}\">\n                <a class=\"nav-link\" href=\"#/activity\" (click)=\"headerJSON.activeTab=3\" >Activity</a>\n            </li>\n            <app-push-notification class=\"nav-link\"></app-push-notification>\n        </ul>\n        <form class=\"form-inline my-2 my-lg-0\">\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\">\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n        </form>\n    </div>\n    &nbsp;\n    <div class=\"btn-group\" *ngIf=\"headerJSON.isLoggedIn\">\n        <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" style=\"max-width:150px;overflow:hidden;text-overflow: ellipsis;\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n                aria-expanded=\"false\">\n            <img class=\"icon rounded\" style=\"width:20px;height:20px; border:1px solid white; margin-bottom:1px;  \" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/>\n            {{headerJSON.user.name}}\n        </button>\n        <div class=\"dropdown-menu dropdown-menu-right\">\n            <button class=\"dropdown-item\" type=\"button\" (click)=\"logout()\">Logout</button>\n        </div>\n    </div>\n</nav>\n"
 
 /***/ }),
 
@@ -798,7 +804,8 @@ var HeaderComponent = /** @class */ (function () {
         this.authService = authService;
         this.headerJSON = this.headerJSON = {
             "isLoggedIn": false,
-            "user": localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {}
+            "user": localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {},
+            "activeTab": 0
         };
     }
     HeaderComponent.prototype.initJSON = function () {
@@ -1202,7 +1209,7 @@ module.exports = "#maps-container{\n    position: fixed !important;\n    width: 
 /***/ "./src/app/live/live.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div id=\"maps-container\">\n  <div id=\"map-canvas\"></div>\n  <div id=\"street-view\" [hidden]=\"!liveJSON.enableStreetView\"></div>\n</div>\n<div class=\"menu\">\n  <ul class=\"nav nav-pills\">\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primary\" [ngClass]=\"{'active':liveJSON.enableStreetView}\" (click)=\"toggleStreetView()\">Streets</b>\n    </li>\n    <li class=\"nav-item\">\n      <div>\n        <input class=\"btn btn-outline-primary\"  type=\"button\" id=\"milestone\" value=\"Add Milestone\" onclick=\"document.getElementById('file').click()\" />\n        <input style=\"display:none;\" id=\"file\" name=\"file\" type=\"file\" accept=\"image/*\" capture=\"camera\" onclick=\"this.value = null\" (change)=fileEvent($event)>\n      </div>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primary\" (click)=\"updateUserLocation()\">Update</b>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primarydisabled\" (click)=\"toggleMapView()\">Disabled</b>\n    </li>\n  </ul>\n  <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" *ngIf=\"liveJSON.errors.length>0\">\n    <p *ngFor=\" let error of liveJSON.errors\">{{error}} <br/></p>\n    <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n</div>\n"
+module.exports = "\n<div id=\"maps-container\">\n  <div id=\"map-canvas\"></div>\n  <div id=\"street-view\" [hidden]=\"!liveJSON.enableStreetView\"></div>\n</div>\n<div class=\"menu\">\n  <ul class=\"nav nav-pills\">\n    <li class=\"nav-item\">\n      <b class=\"btn btn-outline-primary\" [ngClass]=\"{'active':liveJSON.enableStreetView}\" (click)=\"toggleStreetView()\">Streets</b>\n    </li>\n    <li class=\"nav-item\">\n      <div>\n        <input class=\"btn btn-outline-primary\"  type=\"button\" id=\"milestone\" value=\"Add Milestone\" onclick=\"document.getElementById('file').click()\" />\n        <input style=\"display:none;\" id=\"file\" name=\"file\" type=\"file\" accept=\"image/*\" capture=\"camera\" onclick=\"this.value = null\" (change)=fileEvent($event)>\n      </div>\n    </li>\n    <li class=\"nav-item\">\n      <b class=\"btn  btn-outline-primary\" (click)=\"toggleMapView()\">Change</b>\n    </li>\n  </ul>\n  <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\" *ngIf=\"liveJSON.errors.length>0\">\n    <p *ngFor=\" let error of liveJSON.errors\">{{error}} <br/></p>\n    <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1237,14 +1244,14 @@ var LiveComponent = /** @class */ (function () {
         this.pipe = new common_1.DatePipe('en-US'); // Use your own locale
     }
     LiveComponent.prototype.ngOnInit = function () {
-        var _this = this;
         this.initializeLiveJSON();
+    };
+    LiveComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        this.initializaMapProperties();
         this.broadcast.getMessage("gps").subscribe(function (status) {
             _this.updateUserLocation();
         });
-    };
-    LiveComponent.prototype.ngAfterViewInit = function () {
-        this.initializaMapProperties();
     };
     LiveComponent.prototype.initializeLiveJSON = function () {
         this.liveJSON = {
@@ -1620,7 +1627,7 @@ var PushNotificationComponent = /** @class */ (function () {
     function PushNotificationComponent(_notificationService) {
         this._notificationService = _notificationService;
         this.title = 'Browser Push Notifications!';
-        this._notificationService.requestPermission();
+        // this._notificationService.requestPermission();
     }
     PushNotificationComponent.prototype.ngOnInit = function () {
     };

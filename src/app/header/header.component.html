@@ -6,19 +6,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02"  *ngIf="headerJSON.isLoggedIn">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="#/home">Market <span class="sr-only">(current)</span></a>
+            <li class="nav-item" [ngClass]="{'active':(headerJSON.activeTab==0)}">
+                <a class="nav-link" href="#/home" (click)="headerJSON.activeTab=0" >Market</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#/ideas">Mine</a>
+            <li class="nav-item" [ngClass]="{'active':(headerJSON.activeTab==1)}">
+                <a class="nav-link" href="#/ideas" (click)="headerJSON.activeTab=1">Mine</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#/live">Live</a>
+            <li class="nav-item" [ngClass]="{'active':(headerJSON.activeTab==2)}">
+                <a class="nav-link" href="#/live" (click)="headerJSON.activeTab=2" >Live</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#/activity">Activity</a>
+            <li class="nav-item" [ngClass]="{'active':(headerJSON.activeTab==3)}">
+                <a class="nav-link" href="#/activity" (click)="headerJSON.activeTab=3" >Activity</a>
             </li>
-            <app-push-notification></app-push-notification>
+            <app-push-notification class="nav-link"></app-push-notification>
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search">
