@@ -29,7 +29,11 @@ export class AppComponent {
 
     watchLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError,{ enableHighAccuracy: true});
+            navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError,{
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            });
         } else {
             this.Notification = "Geolocation is not supported by this browser.";
         }

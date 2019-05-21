@@ -296,7 +296,11 @@ var AppComponent = /** @class */ (function () {
     };
     AppComponent.prototype.watchLocation = function () {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError, { enableHighAccuracy: true });
+            navigator.geolocation.getCurrentPosition(this.setUserLocation, this.showError, {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            });
         }
         else {
             this.Notification = "Geolocation is not supported by this browser.";
@@ -334,6 +338,7 @@ var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var app_component_1 = __webpack_require__("./src/app/app.component.ts");
 var logger_service_1 = __webpack_require__("./src/app/services/logger.service.ts");
 var util_service_1 = __webpack_require__("./src/app/services/util.service.ts");
+var push_notification_service_1 = __webpack_require__("./src/app/services/push-notification.service.ts");
 var config_loader_service_1 = __webpack_require__("./src/app/services/config-loader.service.ts");
 var route_configration_service_1 = __webpack_require__("./src/app/services/route-configration.service.ts");
 var http_1 = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
@@ -353,6 +358,7 @@ var home_component_1 = __webpack_require__("./src/app/home/home.component.ts");
 var ideas_component_1 = __webpack_require__("./src/app/ideas/ideas.component.ts");
 var activity_component_1 = __webpack_require__("./src/app/activity/activity.component.ts");
 var live_component_1 = __webpack_require__("./src/app/live/live.component.ts");
+var push_notification_component_1 = __webpack_require__("./src/app/push-notification/push-notification.component.ts");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -369,6 +375,7 @@ var AppModule = /** @class */ (function () {
                 ideas_component_1.IdeasComponent,
                 activity_component_1.ActivityComponent,
                 live_component_1.LiveComponent,
+                push_notification_component_1.PushNotificationComponent,
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -379,6 +386,7 @@ var AppModule = /** @class */ (function () {
             providers: [
                 logger_service_1.LoggerService,
                 util_service_1.UtilService,
+                push_notification_service_1.PushNotificationService,
                 config_loader_service_1.AppConfigLoaderService,
                 config_loader_service_1.AppConfigLoaderService,
                 route_configration_service_1.RouteConfigLoaderService,
@@ -760,7 +768,7 @@ module.exports = ""
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-sm navbar-light bg-light mb-3\">\n    <a class=\"navbar-brand\" href=\"/\"><img class=\"icon\" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/></a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\"\n            aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\"  *ngIf=\"headerJSON.isLoggedIn\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"#/home\">Market <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/ideas\">Mine</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/live\">Live</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/activity\">Activity</a>\n            </li>\n        </ul>\n        <form class=\"form-inline my-2 my-lg-0\">\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\">\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n        </form>\n    </div>\n    &nbsp;\n    <div class=\"btn-group\" *ngIf=\"headerJSON.isLoggedIn\">\n        <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" style=\"max-width:150px;overflow:hidden;text-overflow: ellipsis;\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n                aria-expanded=\"false\">\n            <img class=\"icon rounded\" style=\"width:20px;height:20px; border:1px solid white; margin-bottom:1px;  \" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/>\n            {{headerJSON.user.name}}\n        </button>\n        <div class=\"dropdown-menu dropdown-menu-right\">\n            <button class=\"dropdown-item\" type=\"button\" (click)=\"logout()\">Logout</button>\n        </div>\n    </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-expand-sm navbar-light bg-light mb-3\">\n    <a class=\"navbar-brand\" href=\"/\"><img class=\"icon\" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/></a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo02\"\n            aria-controls=\"navbarTogglerDemo02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo02\"  *ngIf=\"headerJSON.isLoggedIn\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n            <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"#/home\">Market <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/ideas\">Mine</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/live\">Live</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#/activity\">Activity</a>\n            </li>\n            <app-push-notification></app-push-notification>\n        </ul>\n        <form class=\"form-inline my-2 my-lg-0\">\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\">\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n        </form>\n    </div>\n    &nbsp;\n    <div class=\"btn-group\" *ngIf=\"headerJSON.isLoggedIn\">\n        <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" style=\"max-width:150px;overflow:hidden;text-overflow: ellipsis;\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n                aria-expanded=\"false\">\n            <img class=\"icon rounded\" style=\"width:20px;height:20px; border:1px solid white; margin-bottom:1px;  \" src=\"assets/images/company-logo/logo.png\" alt=\"travelline\"/>\n            {{headerJSON.user.name}}\n        </button>\n        <div class=\"dropdown-menu dropdown-menu-right\">\n            <button class=\"dropdown-item\" type=\"button\" (click)=\"logout()\">Logout</button>\n        </div>\n    </div>\n</nav>\n"
 
 /***/ }),
 
@@ -1580,6 +1588,84 @@ exports.PageNotFoundComponent = PageNotFoundComponent;
 
 /***/ }),
 
+/***/ "./src/app/push-notification/push-notification.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/push-notification/push-notification.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<button (click)=\"notify()\">Notify</button>\n"
+
+/***/ }),
+
+/***/ "./src/app/push-notification/push-notification.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var push_notification_service_1 = __webpack_require__("./src/app/services/push-notification.service.ts");
+var PushNotificationComponent = /** @class */ (function () {
+    function PushNotificationComponent(_notificationService) {
+        this._notificationService = _notificationService;
+        this.title = 'Browser Push Notifications!';
+        this._notificationService.requestPermission();
+    }
+    PushNotificationComponent.prototype.ngOnInit = function () {
+    };
+    PushNotificationComponent.prototype.notify = function () {
+        var data = [];
+        data.push({
+            'title': 'Approval',
+            'alertContent': 'This is First Alert -- By Debasis Saha'
+        });
+        data.push({
+            'title': 'Request',
+            'alertContent': 'This is Second Alert -- By Debasis Saha'
+        });
+        data.push({
+            'title': 'Leave Application',
+            'alertContent': 'This is Third Alert -- By Debasis Saha'
+        });
+        data.push({
+            'title': 'Approval',
+            'alertContent': 'This is Fourth Alert -- By Debasis Saha'
+        });
+        data.push({
+            'title': 'To Do Task',
+            'alertContent': 'This is Fifth Alert -- By Debasis Saha'
+        });
+        this._notificationService.generateNotification(data);
+    };
+    PushNotificationComponent = __decorate([
+        core_1.Component({
+            selector: 'app-push-notification',
+            template: __webpack_require__("./src/app/push-notification/push-notification.component.html"),
+            styles: [__webpack_require__("./src/app/push-notification/push-notification.component.css")]
+        }),
+        __metadata("design:paramtypes", [push_notification_service_1.PushNotificationService])
+    ], PushNotificationComponent);
+    return PushNotificationComponent;
+}());
+exports.PushNotificationComponent = PushNotificationComponent;
+
+
+/***/ }),
+
 /***/ "./src/app/services/ajax.service.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1845,6 +1931,94 @@ var LoggerService = /** @class */ (function () {
     return LoggerService;
 }());
 exports.LoggerService = LoggerService;
+
+
+/***/ }),
+
+/***/ "./src/app/services/push-notification.service.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var Observable_1 = __webpack_require__("./node_modules/rxjs/_esm5/Observable.js");
+var PushNotificationService = /** @class */ (function () {
+    function PushNotificationService() {
+        this.permission = this.isSupported() ? 'default' : 'denied';
+    }
+    PushNotificationService.prototype.isSupported = function () {
+        return 'Notification' in window;
+    };
+    PushNotificationService.prototype.requestPermission = function () {
+        var self = this;
+        if ('Notification' in window) {
+            Notification.requestPermission(function (status) {
+                return self.permission = status;
+            });
+        }
+    };
+    PushNotificationService.prototype.create = function (title, options) {
+        var self = this;
+        return new Observable_1.Observable(function (obs) {
+            if (!('Notification' in window)) {
+                console.log('Notifications are not available in this environment');
+                obs.complete();
+            }
+            if (self.permission !== 'granted') {
+                console.log("The user hasn't granted you permission to send push notifications");
+                obs.complete();
+            }
+            var _notify = new Notification(title, options);
+            _notify.onshow = function (e) {
+                return obs.next({
+                    notification: _notify,
+                    event: e
+                });
+            };
+            _notify.onclick = function (e) {
+                return obs.next({
+                    notification: _notify,
+                    event: e
+                });
+            };
+            _notify.onerror = function (e) {
+                return obs.error({
+                    notification: _notify,
+                    event: e
+                });
+            };
+            _notify.onclose = function () {
+                return obs.complete();
+            };
+        });
+    };
+    PushNotificationService.prototype.generateNotification = function (source) {
+        var self = this;
+        source.forEach(function (item) {
+            var options = {
+                body: item.alertContent,
+                icon: "../resource/images/bell-icon.png"
+            };
+            var notify = self.create(item.title, options).subscribe();
+        });
+    };
+    PushNotificationService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [])
+    ], PushNotificationService);
+    return PushNotificationService;
+}());
+exports.PushNotificationService = PushNotificationService;
 
 
 /***/ }),

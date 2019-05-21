@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 
 import {LoggerService} from './services/logger.service';
 import {UtilService} from './services/util.service';
+import {PushNotificationService} from './services/push-notification.service';
 import {AppConfigLoaderService} from './services/config-loader.service';
 import {RouteConfigLoaderService} from "./services/route-configration.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
@@ -28,6 +29,7 @@ import {HomeComponent} from './home/home.component';
 import {IdeasComponent} from './ideas/ideas.component';
 import { ActivityComponent } from './activity/activity.component';
 import { LiveComponent } from './live/live.component';
+import { PushNotificationComponent } from './push-notification/push-notification.component';
 
 
 @NgModule({
@@ -42,6 +44,7 @@ import { LiveComponent } from './live/live.component';
         IdeasComponent,
         ActivityComponent,
         LiveComponent,
+        PushNotificationComponent,
     ],
     imports: [
         BrowserModule,
@@ -52,6 +55,7 @@ import { LiveComponent } from './live/live.component';
     providers: [
         LoggerService,
         UtilService,
+        PushNotificationService,
         AppConfigLoaderService,
         AppConfigLoaderService,
         RouteConfigLoaderService,

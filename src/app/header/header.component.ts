@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UtilService} from '../services/util.service';
+import {PushNotificationComponent} from '../push-notification/push-notification.component';
 import {BroadcastService} from '../services/broadcast.service';
 import {AuthService} from '../auth/auth.service';
 import {environment} from '../../environments/environment';
