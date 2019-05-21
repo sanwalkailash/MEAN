@@ -113,7 +113,8 @@ module.exports = function (app, port,environment,server,console,models) {
             return JSON.stringify({
                 appName: user.appName,
                 name: user.name,
-                email: user.email
+                email: user.email,
+                _id: user._id
             });
         }
     }
