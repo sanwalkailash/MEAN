@@ -7,6 +7,7 @@ module.exports = function (connection) {
         tokenSchema: require('./Token')(connection),
         applicationSchema: require('./Applications')(connection),
         accountSchema: require('./Accounts')(connection),
-        carPositionSchema: require('./CarPosition')(connection)
+        carPositionSchema: require('./CarPosition')(connection),
+        moviesSchema: require('./movies')(connection)
     }
 }

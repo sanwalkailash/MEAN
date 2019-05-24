@@ -214,6 +214,40 @@ module.exports = function (app, port,environment,server,console,models) {
               });
           }
       },
+      listMoives:async function(req,res)        {
+          try {
+              console.info("@listMoives...")
+              let errors = [];
+              if(!req.query.page){
+                  req.query.page=1
+              }
+              if(!req.query.per_page){
+                  req.query.per_page=10
+              }
+              console.info(req.query.page,":",req.query.per_page)
+              let movies = await models.moviesSchema
+                  .find({"Title":{'$regex': req.query.Title, '$options': 'i'}})
+                  .skip((req.query.page-1)*req.query.per_page)
+                  .limit(req.query.per_page)
+                  .sort({"Title":'asc'})
+              let count = await models.moviesSchema.count();
+
+              res.json({
+                  "page": req.query.page,
+                  "per_page": req.query.per_page,
+                  "total": count,
+                  "total_pages":Math.ceil(count/req.query.per_page),
+                  "data":movies
+              })
+          }catch(e) {
+              console.trace(e);
+              res.json({
+                  "status": appConstants.failure,
+                  "message": e,
+                  "errorcode": 500
+              });
+          }
+      }
   }
 };
 

@@ -26,6 +26,7 @@ module.exports = function(router, port,environment,server,console,models,passpor
     // activity apies
     router.post('/save/idea/v1',tokenApi.authenticateToken,util.getClientIp,activityApi.saveIdea)
     router.get('/list/ideas/v1',tokenApi.authenticateToken,activityApi.listIdeas)
+    router.get('/api/movies/search',activityApi.listMoives)
     router.get('/list/user/ideas/v1',tokenApi.authenticateToken,activityApi.listUserIdeas)
     router.delete('/ideas/delete/v1/:id',tokenApi.authenticateToken,util.getClientIp,activityApi.deleteIdea)
 
