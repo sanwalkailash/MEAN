@@ -38,7 +38,7 @@
     "latlon-geohash": "^1.1.0",
     "log4js": "^4.1.0",
     "method-override": "^3.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongoose": "^5.4.11",
     "mongoose-double": "0.0.1",
     "ngx-infinite-scroll": "^0.8.4",
